@@ -84,13 +84,13 @@ function Route({ curve, offset }: { curve: THREE.QuadraticBezierCurve3; offset: 
         object={
           new THREE.Line(
             geometry,
-            new THREE.LineBasicMaterial({ color: "#0b8a6e", transparent: true, opacity: 0.35 })
+            new THREE.LineBasicMaterial({ color: "#0b8a6e", transparent: true, opacity: 0.55 })
           )
         }
         ref={lineRef}
       />
       <mesh ref={headRef}>
-        <sphereGeometry args={[0.035, 12, 12]} />
+        <sphereGeometry args={[0.045, 12, 12]} />
         <meshBasicMaterial color="#e4572e" />
       </mesh>
     </group>
@@ -108,24 +108,25 @@ function Planet() {
 
   return (
     <group ref={group} rotation={[0.32, -0.8, 0.06]}>
+      {/* Inner body drawn FIRST (renderOrder -1) writing depth, so back-face
+          dots are hidden while front dots stay crisp on top of it. */}
+      <mesh renderOrder={-1}>
+        <sphereGeometry args={[RADIUS * 0.96, 48, 48]} />
+        <meshBasicMaterial color="#f4f3ec" transparent opacity={0.55} />
+      </mesh>
       <points>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          color="#0a6b57"
-          size={0.028}
+          color="#085744"
+          size={0.038}
           sizeAttenuation
           transparent
-          opacity={0.65}
+          opacity={0.9}
           depthWrite={false}
         />
       </points>
-      {/* soft inner body so back-face dots recede */}
-      <mesh>
-        <sphereGeometry args={[RADIUS * 0.985, 48, 48]} />
-        <meshBasicMaterial color="#f6f4ef" transparent opacity={0.92} />
-      </mesh>
       {curves.map((c, i) => (
         <Route key={i} curve={c} offset={i * 0.22} />
       ))}
