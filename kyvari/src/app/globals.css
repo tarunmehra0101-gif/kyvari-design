@@ -208,40 +208,42 @@ body {
 
 /* ------------------------------------------------------------------ */
 /*  Destination gradient "art" — stands in for photography.           */
+/*  Plain classes (not @utility) because they are composed            */
+/*  dynamically as `scene-${trip.scene}` and must always be emitted.  */
 /*  Swap for real imagery by replacing these classes with <Image>.    */
 /* ------------------------------------------------------------------ */
 
-@utility scene-santorini {
+.scene-santorini {
   background:
     radial-gradient(120% 90% at 85% 0%, #dbeafe 0%, transparent 50%),
     radial-gradient(90% 70% at 15% 100%, #0a6b8a 0%, transparent 60%),
     linear-gradient(160deg, #7cb8e8 0%, #2a6fb0 45%, #0d3b66 100%);
 }
-@utility scene-bali {
+.scene-bali {
   background:
     radial-gradient(110% 80% at 80% 10%, #fde9c8 0%, transparent 45%),
     radial-gradient(90% 80% at 10% 95%, #073f33 0%, transparent 65%),
     linear-gradient(155deg, #57b98a 0%, #0b8a6e 50%, #0a2e26 100%);
 }
-@utility scene-rajasthan {
+.scene-rajasthan {
   background:
     radial-gradient(110% 80% at 78% 8%, #ffe3b3 0%, transparent 50%),
     radial-gradient(100% 80% at 15% 100%, #6b1d1d 0%, transparent 60%),
     linear-gradient(155deg, #e8a04c 0%, #c05a2e 50%, #7c2d2d 100%);
 }
-@utility scene-kyoto {
+.scene-kyoto {
   background:
     radial-gradient(110% 80% at 80% 5%, #fbd5e0 0%, transparent 50%),
     radial-gradient(90% 70% at 12% 100%, #3d1f3d 0%, transparent 60%),
     linear-gradient(155deg, #e88ba4 0%, #a04a6e 50%, #45213f 100%);
 }
-@utility scene-swiss {
+.scene-swiss {
   background:
     radial-gradient(110% 80% at 82% 6%, #eef6ff 0%, transparent 50%),
     radial-gradient(90% 75% at 10% 100%, #1e3a5f 0%, transparent 60%),
     linear-gradient(155deg, #a8c8e8 0%, #5a7fa8 50%, #23405e 100%);
 }
-@utility scene-amalfi {
+.scene-amalfi {
   background:
     radial-gradient(110% 80% at 82% 4%, #fff1cf 0%, transparent 50%),
     radial-gradient(95% 75% at 12% 100%, #0d3b66 0%, transparent 60%),
