@@ -1,134 +1,206 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-export function Settings({ setView }: { setView: (v: string) => void }) {
+export function Settings() {
+  const router = useRouter();
+  const [primaryColor, setPrimaryColor] = useState('#e8543f');
+  const [secondaryColor, setSecondaryColor] = useState('#ffc24d');
+
   return (
-    <div style={{padding:"40px 60px",animation:"fadeUp .4s ease-out"}}>
-      <div style={{marginBottom:"32px"}}>
-        <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"32px",color:"#14183a"}}>Settings</div>
-        <div style={{fontSize:"14px",color:"#5a6474",marginTop:"6px"}}>Manage your account, branding, and preferences</div>
+    <div style={{ padding: "34px 40px 64px", maxWidth: "1420px", margin: "0 auto", animation: "fadeUp .4s ease-out both" }}>
+      
+      {/* Settings Header */}
+      <div style={{ marginBottom: "32px" }}>
+        <h1 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "30px", letterSpacing: "-.03em", margin: 0 }}>
+          Settings
+        </h1>
+        <div style={{ fontSize: "13.5px", color: "#a09d92", fontWeight: 500, marginTop: "5px" }}>
+          Manage your account, branding, and preferences
+        </div>
       </div>
 
-      <div style={{maxWidth:"800px", display:"flex", flexDirection:"column", gap:"32px"}}>
+      <div style={{ maxWidth: "840px", display: "flex", flexDirection: "column", gap: "24px" }}>
         
         {/* Business Profile */}
-        <section style={{background:"#fff", borderRadius:"16px", padding:"24px", boxShadow:"0 4px 20px rgba(0,0,0,0.03)", border:"1px solid #eef0f7"}}>
-          <h3 style={{fontSize:"18px", fontWeight:600, color:"#14183a", marginBottom:"20px"}}>Business Profile</h3>
+        <section style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "22px", padding: "28px", boxShadow: "0 6px 16px rgba(84,62,40,.02)" }}>
+          <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "19px", color: "#1d1f24", marginBottom: "20px", margin: "0 0 20px" }}>
+            Business Profile
+          </h3>
           
-          <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"24px", marginBottom:"24px"}}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "24px" }} className="flex flex-col md:grid">
             <div>
-              <label style={{display:"block", fontSize:"13px", fontWeight:500, color:"#5a6474", marginBottom:"8px"}}>Business Name</label>
-              <input type="text" defaultValue="Wanderlust" style={{width:"100%", padding:"10px 14px", borderRadius:"8px", border:"1px solid #eef0f7", outline:"none", fontSize:"14px"}} />
+              <label style={{ display: "block", fontSize: "12.5px", fontWeight: 500, color: "#6f6d64", marginBottom: "8px" }}>Business Name</label>
+              <input 
+                type="text" 
+                defaultValue="Wanderlust Travel Co." 
+                style={{ width: "100%", padding: "11px 14px", borderRadius: "10px", border: "1px solid #eeece5", outline: "none", fontSize: "14px", fontFamily: "var(--font-figtree), sans-serif", background: "#faf9f6" }} 
+              />
             </div>
             <div>
-              <label style={{display:"block", fontSize:"13px", fontWeight:500, color:"#5a6474", marginBottom:"8px"}}>Email</label>
-              <input type="email" defaultValue="tarun.mehra0101@gmail.com" disabled style={{width:"100%", padding:"10px 14px", borderRadius:"8px", border:"1px solid #eef0f7", outline:"none", fontSize:"14px", background:"#f8fafc", color:"#8a90a6"}} />
+              <label style={{ display: "block", fontSize: "12.5px", fontWeight: 500, color: "#6f6d64", marginBottom: "8px" }}>Business Email</label>
+              <input 
+                type="email" 
+                defaultValue="hello@wanderlust.co" 
+                disabled 
+                style={{ width: "100%", padding: "11px 14px", borderRadius: "10px", border: "1px solid #eeece5", outline: "none", fontSize: "14px", fontFamily: "var(--font-figtree), sans-serif", background: "#f1efe8", color: "#a09d92", cursor: "not-allowed" }} 
+              />
             </div>
           </div>
 
-          <div style={{borderTop:"1px solid #eef0f7", paddingTop:"24px"}}>
-            <label style={{display:"block", fontSize:"13px", fontWeight:500, color:"#5a6474", marginBottom:"12px"}}>Subscription</label>
+          <div style={{ borderTop: "1px solid #f4f2ec", paddingTop: "20px" }}>
+            <label style={{ display: "block", fontSize: "12.5px", fontWeight: 500, color: "#6f6d64", marginBottom: "12px" }}>Subscription Tier</label>
             
-            <div style={{borderRadius:"20px",padding:"20px",background:"linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)",boxShadow:"0 10px 20px rgba(30, 27, 75, 0.15)", position:"relative", overflow:"hidden", border: "1px solid rgba(255,255,255,0.1)"}}>
-              <div style={{position:"absolute", top:"-50%", right:"-10%", width:"300px", height:"300px", background:"radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%)", borderRadius:"50%", animation:"pulseDarkBorder 8s infinite"}}></div>
-              <div style={{position:"absolute", bottom:"-20%", left:"-10%", width:"200px", height:"200px", background:"radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%)", borderRadius:"50%"}}></div>
+            {/* Premium Dark Pro Card */}
+            <div style={{ position: "relative", overflow: "hidden", borderRadius: "20px", background: "linear-gradient(155deg,#22242b 0%,#2e3039 100%)", padding: "24px", color: "#fff", boxShadow: "0 14px 30px rgba(29,31,36,.25)", border: "1px solid rgba(255,255,255,0.04)" }}>
+              <span style={{ position: "absolute", top: "-50px", right: "-30px", width: "180px", height: "180px", borderRadius: "50%", background: "radial-gradient(circle,rgba(232,84,63,.4),transparent 68%)", animation: "haloBreathe 6s ease-in-out infinite", display: "block" }}></span>
+              <span style={{ position: "absolute", bottom: "-40px", left: "-30px", width: "140px", height: "140px", borderRadius: "50%", background: "radial-gradient(circle,rgba(255,194,77,.22),transparent 68%)", animation: "haloBreathe 8s ease-in-out 1.5s infinite", display: "block" }}></span>
               
-              <div style={{position:"relative", zIndex:2, display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px"}}>
-                <div style={{flex: 1}}>
-                  <div style={{display:"inline-flex",alignItems:"center",gap:"6px",padding:"4px 10px",borderRadius:"99px",background:"rgba(255,255,255,0.1)",fontSize:"10px",fontWeight:600,letterSpacing:".1em",color:"#c7d2fe", marginBottom:"12px", border: "1px solid rgba(255,255,255,0.1)"}}>
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.8 5.2L13 7L8.8 8.8L7 13L5.2 8.8L1 7L5.2 5.2L7 1Z" fill="#a5b4fc"/></svg>
-                    ULTIMATE TIER
+              <div style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px", flexWrap: "wrap" }}>
+                <div style={{ flex: 1, minWidth: "260px" }}>
+                  <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "4px 10.5px", borderRadius: "99px", background: "rgba(255,255,255,0.1)", fontSize: "9.5px", fontWeight: 500, letterSpacing: ".15em", color: "#ffd4b8", marginBottom: "12px", border: "1px solid rgba(255,255,255,0.06)" }}>
+                    <svg width="12" height="12" viewBox="0 0 14 14">
+                      <path d="M7 0l1.7 5.3L14 7l-5.3 1.7L7 14 5.3 8.7 0 7l5.3-1.7z" fill="#ffd4b8"/>
+                    </svg>
+                    PRO TIER ACTIVE
                   </div>
                   
-                  <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"20px",lineHeight:1.2,marginBottom:"8px",color:"#ffffff"}}>Unlock limitless travel creation</div>
-                  <div style={{fontSize:"13px",color:"#a5b4fc",lineHeight:1.5,fontWeight:400, marginBottom:"16px"}}>500 itineraries per month, extended 28-day trips, and priority access to our next-gen AI generation engine.</div>
+                  <h4 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "20px", margin: "0 0 8px" }}>Wanderlust Ultimate Itineraries</h4>
+                  <div style={{ fontSize: "13px", color: "#a5a7ad", lineHeight: 1.55, fontWeight: 400, marginBottom: "16px" }}>
+                    500 itineraries per month, extended multi-day trips, and priority access to our next-gen AI auto-generation engine.
+                  </div>
                   
-                  <div style={{display:"flex", alignItems:"center", gap: "12px", maxWidth: "400px"}}>
-                    <div style={{flex: 1}}>
-                      <div style={{display:"flex",justifyContent:"space-between",fontSize:"11px",fontWeight:500,color:"#c7d2fe",marginBottom:"6px"}}><span>24 / 100 credits used</span><span style={{color:"#ffffff"}}>76 remaining</span></div>
-                      <div style={{height:"4px",borderRadius:"99px",background:"rgba(255,255,255,0.1)",overflow:"hidden", width:"100%"}}>
-                        <div style={{width:"24%",height:"100%",borderRadius:"99px",background:"linear-gradient(90deg, #818cf8, #c084fc)",position:"relative",overflow:"hidden"}}>
-                          <span style={{position:"absolute",inset:0,background:"linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent)",animation:"shine 2.6s linear infinite"}}></span>
-                        </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "6px", maxWidth: "340px" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", fontSize: "11px", fontWeight: 500, color: "#a5a7ad" }}>
+                      <span>24 / 100 credits used</span>
+                      <span style={{ color: "#ffc24d" }}>76 remaining</span>
+                    </div>
+                    <div style={{ height: "5px", borderRadius: "99px", background: "rgba(255,255,255,.12)", overflow: "hidden" }}>
+                      <div style={{ width: "24%", height: "100%", borderRadius: "99px", background: "linear-gradient(90deg,#ffc24d,#e8543f)", position: "relative", overflow: "hidden" }}>
+                        <span style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)", animation: "shine 2.8s linear infinite" }}></span>
                       </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="hover-scale" style={{position:"relative", background:"#ffffff",color:"#312e81",borderRadius:"10px",padding:"10px 20px",textAlign:"center",fontWeight:600,fontSize:"14px",cursor:"pointer",boxShadow:"0 8px 16px rgba(0,0,0,0.15)", flexShrink: 0, transition: "all 0.2s"}}>
-                  Upgrade Now
-                </div>
+                <span 
+                  className="hover:scale-105 active:scale-95 transition-all"
+                  style={{ background: "#fff", color: "#1d1f24", borderRadius: "10px", padding: "10px 18px", fontSize: "13.5px", fontWeight: 500, cursor: "pointer", boxShadow: "0 8px 16px rgba(0,0,0,0.15)" }}
+                >
+                  Manage Billing
+                </span>
               </div>
             </div>
           </div>
         </section>
 
         {/* Brand Identity */}
-        <section style={{background:"linear-gradient(145deg, #f8f9fc, #f1f5f9)", borderRadius:"24px", padding:"32px", boxShadow:"0 4px 24px rgba(0,0,0,0.04)", border:"1px solid #e2e8f0", position:"relative", overflow:"hidden"}}>
-          <div style={{position:"absolute", top:0, left:0, width:"100%", height:"6px", background:"linear-gradient(90deg, #3e2b1e, #868bb1)"}}></div>
-          <div style={{marginBottom:"28px"}}>
-            <h3 style={{fontSize:"20px", fontWeight:600, color:"#1e293b"}}>Brand Identity</h3>
-            <p style={{fontSize:"14px", color:"#64748b", marginTop:"6px"}}>Customize how your itineraries look when shared with clients.</p>
+        <section style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "22px", padding: "28px", boxShadow: "0 6px 16px rgba(84,62,40,.02)" }}>
+          <div style={{ marginBottom: "20px" }}>
+            <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "19px", color: "#1d1f24", margin: 0 }}>
+              Brand Identity
+            </h3>
+            <div style={{ fontSize: "13px", color: "#a09d92", fontWeight: 500, marginTop: "5px" }}>
+              Customize how your itineraries look when shared with clients.
+            </div>
           </div>
-          <div style={{display:"flex", gap:"32px", marginBottom:"32px", flexWrap:"wrap"}}>
-            <div style={{flex:1, minWidth:"250px"}}>
-              <label style={{display:"block", fontSize:"13px", fontWeight:500, color:"#475569", marginBottom:"12px"}}>Company Logo</label>
-              <div style={{display:"flex", alignItems:"center", gap:"16px", background:"#ffffff", padding:"16px", borderRadius:"16px", border:"1px solid #e2e8f0"}}>
-                <div style={{width:"56px", height:"56px", borderRadius:"12px", background:"#f8fafc", display:"flex", alignItems:"center", justifyContent:"center", border:"1px dashed #cbd5e1"}}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+
+          <div style={{ display: "flex", gap: "24px", marginBottom: "24px", flexWrap: "wrap" }}>
+            <div style={{ flex: 1, minWidth: "260px" }}>
+              <label style={{ display: "block", fontSize: "12.5px", fontWeight: 500, color: "#6f6d64", marginBottom: "10px" }}>Company Logo</label>
+              <div style={{ display: "flex", alignItems: "center", gap: "16px", background: "#faf9f6", padding: "14px 16px", borderRadius: "14px", border: "1px solid #eeece5" }}>
+                <div style={{ width: "52px", height: "52px", borderRadius: "10px", background: "#fff", display: "flex", alignItems: "center", justifyContent: "center", border: "1px dashed #ddd9cc" }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a09d92" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
                 </div>
                 <div>
-                  <button style={{padding:"8px 16px", borderRadius:"8px", background:"#ffffff", color:"#0f172a", fontSize:"13px", fontWeight:500, cursor:"pointer", border:"1px solid #cbd5e1", marginBottom:"4px", transition:"all 0.2s"}} onMouseOver={(e) => e.currentTarget.style.background="#f8fafc"} onMouseOut={(e) => e.currentTarget.style.background="#ffffff"}>Change logo</button>
-                  <div style={{fontSize:"12px", color:"#64748b"}}>PNG, SVG, or JPG. Max 2MB.</div>
+                  <button 
+                    style={{ padding: "7px 14px", borderRadius: "8px", background: "#fff", color: "#1d1f24", fontSize: "12.5px", fontWeight: 500, cursor: "pointer", border: "1px solid #eeece5" }}
+                    className="hover:border-[#1d1f24] active:scale-95 transition-all"
+                  >
+                    Change Logo
+                  </button>
+                  <div style={{ fontSize: "11px", color: "#a09d92", marginTop: "4px" }}>PNG, SVG, or JPG. Max 2MB.</div>
                 </div>
               </div>
             </div>
-            <div style={{flex:1, minWidth:"250px", display:"flex", gap:"24px"}}>
-              <div style={{flex:1}}>
-                <label style={{display:"block", fontSize:"13px", fontWeight:500, color:"#475569", marginBottom:"12px"}}>Primary Color</label>
-                <div style={{display:"flex", alignItems:"center", gap:"12px", border:"1px solid #e2e8f0", padding:"8px 16px", borderRadius:"12px", background:"#ffffff"}}>
-                  <div style={{width:"24px", height:"24px", borderRadius:"6px", background:"#3e2b1e", boxShadow:"inset 0 2px 4px rgba(0,0,0,0.1)"}}></div>
-                  <span style={{fontSize:"14px", color:"#334155", fontFamily:"monospace", fontWeight:500}}>#3e2b1e</span>
+
+            <div style={{ flex: 1, minWidth: "260px", display: "flex", gap: "16px" }}>
+              <div style={{ flex: 1 }}>
+                <label style={{ display: "block", fontSize: "12.5px", fontWeight: 500, color: "#6f6d64", marginBottom: "10px" }}>Primary Color</label>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", border: "1px solid #eeece5", padding: "8px 12px", borderRadius: "10px", background: "#faf9f6" }}>
+                  <input 
+                    type="color" 
+                    value={primaryColor} 
+                    onChange={(e) => setPrimaryColor(e.target.value)}
+                    style={{ width: "24px", height: "24px", borderRadius: "6px", border: "none", cursor: "pointer", background: "none" }} 
+                  />
+                  <span style={{ fontSize: "13.5px", color: "#1d1f24", fontFamily: "ui-monospace, monospace" }}>{primaryColor}</span>
                 </div>
               </div>
-              <div style={{flex:1}}>
-                <label style={{display:"block", fontSize:"13px", fontWeight:500, color:"#475569", marginBottom:"12px"}}>Secondary Color</label>
-                <div style={{display:"flex", alignItems:"center", gap:"12px", border:"1px solid #e2e8f0", padding:"8px 16px", borderRadius:"12px", background:"#ffffff"}}>
-                  <div style={{width:"24px", height:"24px", borderRadius:"6px", background:"#868bb1", boxShadow:"inset 0 2px 4px rgba(0,0,0,0.1)"}}></div>
-                  <span style={{fontSize:"14px", color:"#334155", fontFamily:"monospace", fontWeight:500}}>#868bb1</span>
+              <div style={{ flex: 1 }}>
+                <label style={{ display: "block", fontSize: "12.5px", fontWeight: 500, color: "#6f6d64", marginBottom: "10px" }}>Secondary Color</label>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", border: "1px solid #eeece5", padding: "8px 12px", borderRadius: "10px", background: "#faf9f6" }}>
+                  <input 
+                    type="color" 
+                    value={secondaryColor} 
+                    onChange={(e) => setSecondaryColor(e.target.value)}
+                    style={{ width: "24px", height: "24px", borderRadius: "6px", border: "none", cursor: "pointer", background: "none" }} 
+                  />
+                  <span style={{ fontSize: "13.5px", color: "#1d1f24", fontFamily: "ui-monospace, monospace" }}>{secondaryColor}</span>
                 </div>
               </div>
             </div>
           </div>
           
-          <div style={{background:"linear-gradient(135deg, rgba(62,43,30,0.05), rgba(134,139,177,0.1))", padding:"24px", borderRadius:"16px", border:"1px solid rgba(62,43,30,0.1)"}}>
-            <label style={{display:"block", fontSize:"12px", fontWeight:600, color:"#475569", marginBottom:"16px", textTransform:"uppercase", letterSpacing:"0.5px"}}>Component Preview</label>
-            <button style={{background:"linear-gradient(135deg, #3e2b1e, #868bb1)", color:"#fff", padding:"12px 28px", borderRadius:"10px", border:"none", fontSize:"14px", fontWeight:600, cursor:"pointer", boxShadow:"0 4px 12px rgba(62,43,30,0.2)"}}>
-              Sample Button
+          <div style={{ background: "#faf9f6", padding: "20px", borderRadius: "14px", border: "1px solid #eeece5", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "12px" }}>
+            <div>
+              <div style={{ fontSize: "10px", fontWeight: 500, letterSpacing: ".15em", color: "#a09d92", textTransform: "uppercase" }}>Brand Component Preview</div>
+              <div style={{ fontSize: "13px", color: "#6f6d64", marginTop: "3px" }}>Check the live contrast matching of your selected brand colors.</div>
+            </div>
+            <button 
+              style={{ background: `linear-gradient(135deg, ${primaryColor}, ${secondaryColor})`, color: "#fff", padding: "10px 22px", borderRadius: "10px", border: "none", fontSize: "13.5px", fontWeight: 500, cursor: "pointer", boxShadow: `0 6px 14px rgba(84,62,40,.12)` }}
+              className="hover:-translate-y-[1px] active:scale-95 transition-all"
+            >
+              Action Button
             </button>
           </div>
         </section>
 
-        {/* Custom Domain */}
-        <section style={{background:"linear-gradient(135deg, #ffffff, #f0fdf4)", borderRadius:"24px", padding:"32px", boxShadow:"0 4px 24px rgba(0,0,0,0.04)", border:"1px solid #dcfce7", position:"relative", overflow:"hidden"}}>
-          <div style={{position:"absolute", top:"-50%", right:"-20%", width:"300px", height:"300px", background:"radial-gradient(circle, rgba(134,239,172,0.4) 0%, transparent 70%)", borderRadius:"50%"}}></div>
-          <div style={{position:"absolute", top:"16px", right:"16px", background:"#dcfce7", padding:"6px 14px", borderRadius:"99px", fontSize:"12px", fontWeight:600, color:"#166534"}}>
-            Coming soon
-          </div>
-          <div style={{position:"relative", zIndex:2}}>
-            <h3 style={{fontSize:"20px", fontWeight:600, color:"#14532d", marginBottom:"12px"}}>Custom Domain</h3>
-            <div style={{display:"flex", alignItems:"center", gap:"12px", marginBottom:"16px", opacity:0.8}}>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#166534" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-              <span style={{fontSize:"15px", color:"#14532d", fontFamily:"monospace", fontWeight:600}}>trips.youragency.com</span>
+        {/* Custom Domain white-label */}
+        <section style={{ background: "linear-gradient(135deg,#fff,#f8faf9)", border: "1px solid #eeece5", borderRadius: "22px", padding: "28px", boxShadow: "0 6px 16px rgba(84,62,40,.02)", position: "relative", overflow: "hidden" }}>
+          <span style={{ position: "absolute", top: "14px", right: "14px", display: "inline-flex", alignItems: "center", gap: "4px", background: "#f1fbf4", color: "#2e7d32", padding: "4px 10.5px", borderRadius: "99px", fontSize: "11px", fontWeight: 500, border: "1px solid #d5f3dc" }}>
+            <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "#2e7d32" }}></span>
+            Active white-label
+          </span>
+          
+          <div style={{ maxWidth: "480px" }}>
+            <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "19px", color: "#1d1f24", marginBottom: "12px", margin: "0 0 12px" }}>
+              Custom Domains
+            </h3>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "10px" }}>
+              <span style={{ fontSize: "16px" }}>🔗</span>
+              <span style={{ fontSize: "14.5px", color: "#1d1f24", fontFamily: "ui-monospace, monospace", fontWeight: 500 }}>
+                trips.wanderlust.co
+              </span>
             </div>
-            <p style={{fontSize:"14px", color:"#166534", opacity:0.8}}>White-label custom domains are on the roadmap. Soon you'll be able to host itineraries on your own URL.</p>
+            <p style={{ fontSize: "13px", color: "#6f6d64", lineHeight: 1.5, margin: 0 }}>
+              Your itineraries are securely white-labeled and hosted directly on your custom sub-domain to keep your travel brand consistent and premium.
+            </p>
           </div>
         </section>
 
-        <div style={{display:"flex", justifyContent:"flex-end", marginTop:"8px"}}>
-          <button style={{padding:"12px 28px", borderRadius:"8px", background:"#18181b", color:"#fff", fontSize:"14.5px", fontWeight:600, cursor:"pointer", border:"none", transition:"background 0.2s", boxShadow:"0 4px 12px rgba(0,0,0,0.15)"}} onMouseOver={(e) => e.currentTarget.style.background="#27272a"} onMouseOut={(e) => e.currentTarget.style.background="#18181b"}>
+        {/* Save CTA */}
+        <div style={{ display: "flex", justifyContent: "flex-end", marginTop: "8px" }}>
+          <div 
+            onClick={() => router.push('/trips')}
+            className="hover:-translate-y-[1.5px] active:scale-95 transition-all"
+            style={{ position: "relative", overflow: "hidden", borderRadius: "12px", padding: "12px 28px", background: "#1d1f24", color: "#fff", fontWeight: 500, fontSize: "14px", cursor: "pointer", boxShadow: "0 8px 20px rgba(29,31,36,.22)" }}
+          >
             Save Changes
-          </button>
+            <span style={{ position: "absolute", top: 0, bottom: 0, width: "32px", background: "linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent)", animation: "shine 4s ease-in-out infinite" }}></span>
+          </div>
         </div>
+
       </div>
     </div>
   );

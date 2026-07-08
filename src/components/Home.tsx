@@ -1,231 +1,459 @@
+'use client';
 import React from 'react';
+import { useRouter } from 'next/navigation';
+import { AreaChart, Area, ResponsiveContainer } from 'recharts';
+import { Palmtree, Utensils, Heart, Mountain } from 'lucide-react';
 import { trips } from '../data';
 
-export function Home({ setView }: { setView: (v: string) => void }) {
-  return (
-    <div data-screen-label="Home" className="flex flex-col xl:flex-row gap-7 p-6 md:p-8 max-w-[1460px] mx-auto">
-      <div className="flex-1 min-w-0 flex flex-col">
+export function Home() {
+  const router = useRouter();
 
-        {/* big animated travel scene */}
-        <div style={{position:"relative",height:"280px",borderRadius:"26px",overflow:"hidden",background:"#020617",boxShadow:"0 20px 44px rgba(2,6,23,.25)"}}>
-          
+  // Color mappings for the small "Jump back in" trip cards
+  const homeTrips = trips.slice(0, 4);
+
+  return (
+    <div data-screen-label="Home" className="flex flex-col xl:flex-row gap-[30px] p-[30px] md:p-[40px] w-full" style={{ animation: "fadeUp .4s ease-out both" }}>
+      
+      {/* Global Metallic Gradients for Home */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <linearGradient id="metal-red" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fca5a5" />
+            <stop offset="50%" stopColor="#dc2626" />
+            <stop offset="100%" stopColor="#7f1d1d" />
+          </linearGradient>
+          <linearGradient id="metal-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#93c5fd" />
+            <stop offset="50%" stopColor="#2563eb" />
+            <stop offset="100%" stopColor="#1e3a8a" />
+          </linearGradient>
+          <linearGradient id="metal-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fde68a" />
+            <stop offset="50%" stopColor="#d97706" />
+            <stop offset="100%" stopColor="#78350f" />
+          </linearGradient>
+          <filter id="metal-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="2" stdDeviation="1" floodColor="#000" floodOpacity="0.4" />
+          </filter>
+        </defs>
+      </svg>
+
+      <div className="flex-1 min-w-0">
+
+        {/* Video Hero Scene */}
+        <div style={{
+          position: "relative",
+          height: "280px",
+          width: "100%",
+          borderRadius: "26px",
+          overflow: "hidden",
+          boxShadow: "0 24px 50px rgba(84,62,40,.14)"
+        }}>
           <video 
             autoPlay 
             loop 
             muted 
             playsInline
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
           >
-            <source src="https://storage.googleapis.com/aistudio-assets/video/mountain_landscape.mp4" type="video/mp4" />
+            <source src="/265655_medium.mp4" type="video/mp4" />
           </video>
-          
-          <div style={{position:"absolute",inset:0,background:"linear-gradient(to top, rgba(2,6,23,1.0) 0%, rgba(2,6,23,0.6) 50%, transparent 100%)"}}></div>
-          
-          <div style={{position:"absolute",left:"32px",bottom:"28px",color:"#fff"}}>
-            <div style={{fontSize:"13px",fontWeight:500,letterSpacing:".22em",textShadow:"0 2px 8px rgba(2,6,23,.6)"}}>TUESDAY · JULY 7</div>
-            <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"42px",letterSpacing:"-.02em",textShadow:"0 3px 14px rgba(2,6,23,.6)",marginTop:"8px"}}>Where to today, Wanderlust?</div>
+          {/* Gradient overlay for text readability */}
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.85) 100%)"
+          }}></div>
+
+          {/* Hero Content */}
+          <div style={{ position: "absolute", left: "32px", bottom: "32px", zIndex: 10 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(0,0,0,0.45)", backdropFilter: "blur(12px)", padding: "7px 14px", borderRadius: "99px", fontSize: "10px", fontWeight: 700, letterSpacing: ".15em", color: "#fff", border: "1px solid rgba(255,255,255,0.15)", marginBottom: "12px", boxShadow: "0 4px 12px rgba(0,0,0,0.2)" }}>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              WEDNESDAY · JULY 8
+            </div>
+            <div style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "36px", letterSpacing: "-.02em", color: "#fff", marginTop: "2px", textShadow: "0 2px 8px rgba(0,0,0,0.6)" }}>
+              Where to today, Wanderlust?
+            </div>
           </div>
         </div>
 
-        <p style={{textAlign:"center",color:"#5a6474",maxWidth:"640px",margin:"28px auto 0",fontSize:"17px",lineHeight:1.7}}>Type a brief, paste a WhatsApp chat, or drop a PDF — Kyvari empowers travel agents to transform offline assets into beautiful, bookable itineraries in seconds.</p>
-        
-        {/* AI prompt box */}
-        <div style={{width:"100%", maxWidth:"920px",margin:"32px auto 0",borderRadius:"28px",padding:"2px",background:"linear-gradient(120deg,#9ca3af,#10b981,#d1d5db,#34d399)",backgroundSize:"300% 100%",animation:"gradShift 6s linear infinite",boxShadow:"0 20px 48px rgba(16,185,129,.15)"}}>
-          <div style={{borderRadius:"26px",background:"#fff",display:"flex",alignItems:"center",gap:"16px",padding:"22px 28px"}}>
-            <span className="hover:bg-[#d1fae5] hover:rotate-90 transition-all duration-200" style={{width:"44px",height:"44px",flex:"none",borderRadius:"14px",background:"#ecfdf5",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>
-              <svg width="20" height="20" viewBox="0 0 15 15"><rect x="6.4" y="1.5" width="2.2" height="12" rx="1.1" fill="#059669"/><rect x="1.5" y="6.4" width="12" height="2.2" rx="1.1" fill="#059669"/></svg>
-            </span>
-            <span style={{flex:1,color:"#8a90a6",fontSize:"18px"}}>Plan a 7-day honeymoon in Santorini for $5k...<span style={{display:"inline-block",width:"2px",height:"22px",background:"#059669",marginLeft:"3px",verticalAlign:"middle",animation:"caret 1.1s step-end infinite"}}></span></span>
-            <span className="hover:border-[#10b981]" style={{width:"44px",height:"44px",flex:"none",borderRadius:"50%",border:"2px solid #ecfdf5",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",transition:"border-color 0.2s"}}>
-              <svg width="20" height="20" viewBox="0 0 15 15"><rect x="5.4" y="1" width="4.2" height="8" rx="2.1" fill="#5a6474"/><path d="M3 7.5a4.5 4.5 0 0 0 9 0M7.5 12v2.2" stroke="#5a6474" strokeWidth="1.5" fill="none" strokeLinecap="round"/></svg>
-            </span>
-            <span className="hover:scale-110" style={{width:"50px",height:"50px",flex:"none",borderRadius:"50%",background:"#1f2937",display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",boxShadow:"0 8px 24px rgba(31,41,55,.25)",transition:"transform 0.2s"}}>
-              <svg width="20" height="20" viewBox="0 0 15 15"><path d="M2 7.5h9M8 3.5l4 4-4 4" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
-            </span>
+        {/* AI Prompt Box Wrapper for guaranteed centering */}
+        <div className="w-full flex justify-center" style={{ marginTop: "36px", position: "relative", zIndex: 2 }}>
+          {/* AI Prompt Box with Glowing Halo */}
+          <div style={{ position: "relative", width: "100%", maxWidth: "760px" }}>
+            <span style={{
+              position: "absolute",
+              inset: "-20px -28px",
+              borderRadius: "40px",
+              background: "radial-gradient(60% 100% at 50% 60%,rgba(255,138,92,.35),rgba(255,194,77,.25) 60%,transparent)",
+              filter: "blur(14px)",
+              animation: "haloBreathe 4s ease-in-out infinite",
+              display: "block"
+            }}></span>
+            <div style={{
+              position: "relative",
+              borderRadius: "24px",
+              background: "#fff",
+              border: "1px solid #eeece5",
+              boxShadow: "0 18px 44px rgba(84,62,40,.14)",
+              padding: "16px 24px",
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              width: "100%"
+            }}>
+              <span style={{ position: "relative", width: "28px", height: "28px", flex: "none", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ position: "absolute", width: "28px", height: "28px", borderRadius: "50%", border: "1.5px solid rgba(232,84,63,.4)", animation: "ringVibe 2.6s ease-out infinite", display: "block" }}></span>
+                <span style={{ width: "16px", height: "16px", borderRadius: "50%", background: "radial-gradient(circle at 32% 30%,#ffd3b0,#e8543f 65%,#b23520)", display: "block" }}></span>
+              </span>
+              <span style={{ flex: 1, color: "#1d1f24", fontSize: "16px", lineHeight: 1.5 }}>
+                Plan a 7-day honeymoon in Santorini for $5k.<br/>
+                Focus on boutique hotels and private sunset cruises.
+                <span style={{ display: "inline-block", width: "2px", height: "18px", background: "#e8543f", marginLeft: "4px", verticalAlign: "middle", animation: "caret 1.1s step-end infinite" }}></span>
+              </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", flex: "none" }}>
+                <span className="hover:bg-[#f5f3ec] transition-colors" style={{ width: "38px", height: "38px", borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
+                  <svg width="15" height="15" viewBox="0 0 15 15">
+                    <rect x="5.4" y="1" width="4.2" height="8" rx="2.1" fill="none" stroke="#6f6d64" strokeWidth="1.5"/>
+                    <path d="M3 7.5a4.5 4.5 0 0 0 9 0M7.5 12v2" stroke="#6f6d64" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+                  </svg>
+                </span>
+                <span className="hover:scale-105 hover:bg-[#e8543f] active:scale-95 transition-all" style={{ width: "42px", height: "42px", borderRadius: "14px", background: "#1d1f24", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", boxShadow: "0 8px 18px rgba(29,31,36,.3)" }}>
+                  <svg width="16" height="16" viewBox="0 0 16 16">
+                    <path d="M2.5 8h10M8.5 3.5L13 8l-4.5 4.5" stroke="#fff" strokeWidth="1.9" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* suggestion chips w/ custom icons */}
-        <div style={{display:"flex",justifyContent:"center",gap:"11px",flexWrap:"wrap",marginTop:"18px"}}>
-          <div className="hover:-translate-y-[3px] hover:shadow-[0_12px_22px_rgba(20,24,58,0.12)] transition-all duration-200" style={{display:"flex",alignItems:"center",gap:"9px",background:"#fff",border:"1px solid #e9ecf4",borderRadius:"99px",padding:"8px 15px 8px 9px",fontSize:"13px",fontWeight:400,color:"#3b4258",cursor:"pointer",boxShadow:"0 3px 10px rgba(20,24,58,.05)"}}>
-            <svg width="24" height="24" viewBox="0 0 24 24"><defs><linearGradient id="cPalm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#7fe0c3"/><stop offset="1" stopColor="#2ba98c"/></linearGradient></defs><circle cx="12" cy="12" r="11" fill="#e8faf3"/><path d="M11 20c.4-4 .8-7 2.4-9.6" stroke="#8a6142" strokeWidth="1.8" fill="none" strokeLinecap="round"/><path d="M13.5 10.5C15 8 18 7.6 20 9c-2.6.2-4.4 1-5.8 2.2zM13.5 10.5C13 7.6 10.6 5.8 8 6.4c2 1.4 3.6 2.6 4.6 4.4zM13.2 10.8C10.8 9.6 7.8 10.4 6.6 12.8c2.4-1 4.6-1.4 6.6-1z" fill="url(#cPalm)"/><ellipse cx="12" cy="20.4" rx="5" ry="1.2" fill="#ffd9a8"/></svg>
+        {/* Suggestion Chips */}
+        <div style={{ display: "flex", justifyContent: "center", gap: "10px", flexWrap: "wrap", marginTop: "28px" }}>
+          <div className="hover:-translate-y-[2px] hover:border-[#1d1f24] hover:shadow-[0_8px_18px_rgba(84,62,40,.1)] transition-all" style={{ display: "flex", alignItems: "center", gap: "10px", background: "#fff", border: "1px solid #eeece5", borderRadius: "99px", padding: "10px 18px", fontSize: "13px", fontWeight: 600, color: "#1d1f24", cursor: "pointer" }}>
+            <span style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#f0fdfa", padding: "6px", borderRadius: "50%", color: "#0d9488" }}>
+              <Palmtree size={14} strokeWidth={2.5} />
+            </span>
             7-day Bali family
           </div>
-          <div className="hover:-translate-y-[3px] hover:shadow-[0_12px_22px_rgba(20,24,58,0.12)] transition-all duration-200" style={{display:"flex",alignItems:"center",gap:"9px",background:"#fff",border:"1px solid #e9ecf4",borderRadius:"99px",padding:"8px 15px 8px 9px",fontSize:"13px",fontWeight:400,color:"#3b4258",cursor:"pointer",boxShadow:"0 3px 10px rgba(20,24,58,.05)"}}>
-            <svg width="24" height="24" viewBox="0 0 24 24"><defs><linearGradient id="cTori" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#ff7a6b"/><stop offset="1" stopColor="#e04848"/></linearGradient></defs><circle cx="12" cy="12" r="11" fill="#fdeeed"/><path d="M4.5 8c5-1.6 10-1.6 15 0l-.5 2h-14z" fill="url(#cTori)"/><rect x="6.4" y="9.6" width="2" height="9" rx="1" fill="url(#cTori)"/><rect x="15.6" y="9.6" width="2" height="9" rx="1" fill="url(#cTori)"/><rect x="5.6" y="12.4" width="12.8" height="1.7" rx=".85" fill="url(#cTori)"/></svg>
+          <div className="hover:-translate-y-[2px] hover:border-[#1d1f24] hover:shadow-[0_8px_18px_rgba(84,62,40,.1)] transition-all" style={{ display: "flex", alignItems: "center", gap: "10px", background: "#fff", border: "1px solid #eeece5", borderRadius: "99px", padding: "10px 18px", fontSize: "13px", fontWeight: 600, color: "#1d1f24", cursor: "pointer" }}>
+            <span style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#fff1f2", padding: "6px", borderRadius: "50%", color: "#e11d48" }}>
+              <Utensils size={14} strokeWidth={2.5} />
+            </span>
             Tokyo foodie escape
           </div>
-          <div className="hover:-translate-y-[3px] hover:shadow-[0_12px_22px_rgba(20,24,58,0.12)] transition-all duration-200" style={{display:"flex",alignItems:"center",gap:"9px",background:"#fff",border:"1px solid #e9ecf4",borderRadius:"99px",padding:"8px 15px 8px 9px",fontSize:"13px",fontWeight:400,color:"#3b4258",cursor:"pointer",boxShadow:"0 3px 10px rgba(20,24,58,.05)"}}>
-            <svg width="24" height="24" viewBox="0 0 24 24"><defs><linearGradient id="cEif" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#a78bfa"/><stop offset="1" stopColor="#6d4fd8"/></linearGradient></defs><circle cx="12" cy="12" r="11" fill="#f1edfd"/><path d="M12 4c1.4 4.6 3.4 9.6 6.4 15h-2.6c-1-2.4-2.2-4-3.8-4s-2.8 1.6-3.8 4H5.6C8.6 13.6 10.6 8.6 12 4z" fill="url(#cEif)"/><path d="M8.8 13.4h6.4" stroke="#fff" strokeWidth="1.2" opacity=".7"/><circle cx="12" cy="4" r="1" fill="#ffd66b"/></svg>
+          <div className="hover:-translate-y-[2px] hover:border-[#1d1f24] hover:shadow-[0_8px_18px_rgba(84,62,40,.1)] transition-all" style={{ display: "flex", alignItems: "center", gap: "10px", background: "#fff", border: "1px solid #eeece5", borderRadius: "99px", padding: "10px 18px", fontSize: "13px", fontWeight: 600, color: "#1d1f24", cursor: "pointer" }}>
+            <span style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#f5f3ff", padding: "6px", borderRadius: "50%", color: "#7c3aed" }}>
+              <Heart size={14} strokeWidth={2.5} />
+            </span>
             Paris romance
           </div>
-          <div className="hover:-translate-y-[3px] hover:shadow-[0_12px_22px_rgba(20,24,58,0.12)] transition-all duration-200" style={{display:"flex",alignItems:"center",gap:"9px",background:"#fff",border:"1px solid #e9ecf4",borderRadius:"99px",padding:"8px 15px 8px 9px",fontSize:"13px",fontWeight:400,color:"#3b4258",cursor:"pointer",boxShadow:"0 3px 10px rgba(20,24,58,.05)"}}>
-            <svg width="24" height="24" viewBox="0 0 24 24"><defs><linearGradient id="cAlp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#7c89f0"/><stop offset="1" stopColor="#4a55b8"/></linearGradient></defs><circle cx="12" cy="12" r="11" fill="#edf0fd"/><path d="M4 18L10 7l4 7 2-3 4 7z" fill="url(#cAlp)"/><path d="M10 7l2 3.6L10.6 12 9 10.4z" fill="#fff" opacity=".9"/><path d="M16 11l1.2 2-1 1-1-1.4z" fill="#fff" opacity=".85"/></svg>
+          <div className="hover:-translate-y-[2px] hover:border-[#1d1f24] hover:shadow-[0_8px_18px_rgba(84,62,40,.1)] transition-all" style={{ display: "flex", alignItems: "center", gap: "10px", background: "#fff", border: "1px solid #eeece5", borderRadius: "99px", padding: "10px 18px", fontSize: "13px", fontWeight: 600, color: "#1d1f24", cursor: "pointer" }}>
+            <span style={{ display: "flex", alignItems: "center", justifyContent: "center", background: "#eff6ff", padding: "6px", borderRadius: "50%", color: "#2563eb" }}>
+              <Mountain size={14} strokeWidth={2.5} />
+            </span>
             Swiss mountain retreat
           </div>
         </div>
 
-        {/* Kyvari Spark: orb with vibrating rings */}
-        <div style={{background:"#fff",border:"1px solid #eef0f7",borderRadius:"20px",padding:"17px",boxShadow:"0 5px 16px rgba(20,24,58,.05)",marginTop:"24px"}}>
-          <div style={{display:"flex",alignItems:"center",gap:"12px"}}>
-            <span style={{position:"relative",width:"40px",height:"40px",flex:"none",display:"flex",alignItems:"center",justifyContent:"center"}}>
-              <span style={{position:"absolute",width:"40px",height:"40px",borderRadius:"50%",border:"1.5px solid rgba(14,165,233,.5)",animation:"ringVibe 2.4s ease-out infinite",display:"block"}}></span>
-              <span style={{position:"absolute",width:"40px",height:"40px",borderRadius:"50%",border:"1.5px solid rgba(79,70,229,.45)",animation:"ringVibe 2.4s ease-out .8s infinite",display:"block"}}></span>
-              <span style={{position:"absolute",width:"40px",height:"40px",borderRadius:"50%",border:"1.5px solid rgba(99,102,241,.4)",animation:"ringVibe 2.4s ease-out 1.6s infinite",display:"block"}}></span>
-              <span style={{width:"22px",height:"22px",borderRadius:"50%",background:"radial-gradient(circle at 32% 30%,#e0f2fe,#0ea5c9 60%,#1e3a8a)",boxShadow:"0 4px 12px rgba(14,165,233,.5)",position:"relative",display:"block"}}></span>
-            </span>
-            <div style={{fontSize:"10.5px",fontWeight:500,letterSpacing:".18em",color:"#0ea5c9"}}>KYVARI SPARK</div>
+        {/* Jump Back In Section */}
+        <div style={{ marginTop: "38px" }}>
+          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "16px" }}>
+            <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "21px", letterSpacing: "-.02em", margin: 0 }}>Jump back in</h2>
+            <span onClick={() => router.push('/trips')} className="hover:text-[#1d1f24] transition-all" style={{ fontSize: "13px", fontWeight: 500, color: "#e8543f", cursor: "pointer" }}>See all →</span>
           </div>
-          <div style={{fontSize:"13px",lineHeight:1.6,color:"#3b4258",marginTop:"11px",fontWeight:500}}>Clients open itineraries <b>3× more</b> when the first day leads with a flight card. Try opening with arrivals.</div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "20px" }}>
+            {homeTrips.map((t: any, i: number) => {
+              return (
+                <div 
+                  key={i} 
+                  onClick={() => router.push('/detail')} 
+                  className="group hover:-translate-y-[6px] hover:shadow-[0_24px_48px_rgba(0,0,0,.25)] transition-all duration-400"
+                  style={{
+                    position: "relative",
+                    height: "380px",
+                    borderRadius: "22px",
+                    overflow: "hidden",
+                    cursor: "pointer",
+                    boxShadow: "0 12px 24px rgba(0,0,0,.08)"
+                  }}
+                >
+                  <img 
+                    src={t.image} 
+                    alt={t.title} 
+                    className="group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    style={{ width: "100%", height: "100%", objectFit: "cover" }} 
+                  />
+                  
+                  {/* Elegant dark gradient overlay to deepen edges */}
+                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 35%, transparent 60%, rgba(0,0,0,0.5) 100%)", pointerEvents: "none" }} />
+
+                  {/* Top Bar: Themes & Metrics */}
+                  <div style={{ position: "absolute", top: "16px", left: "16px", right: "16px", display: "flex", justifyContent: "space-between", alignItems: "flex-start", zIndex: 10 }}>
+                    
+                    {/* Unique Theme Labels: Flat minimalist pill */}
+                    <div style={{ display: "flex", gap: "6px", flexDirection: "column", alignItems: "flex-start" }}>
+                      {(t.themes || []).map((th: any, idx: number) => {
+                        return (
+                          <div key={idx} style={{ 
+                            display: "inline-flex",
+                            alignItems: "center",
+                            background: "rgba(20, 20, 22, 0.5)", 
+                            backdropFilter: "blur(12px)",
+                            WebkitBackdropFilter: "blur(12px)",
+                            padding: "5px 10px", 
+                            borderRadius: "99px",
+                            border: "1px solid rgba(255, 255, 255, 0.15)",
+                            gap: "6px"
+                          }}>
+                            {/* Flat Icon */}
+                            <div style={{ color: "rgba(255,255,255,0.9)", display: "flex", alignItems: "center" }}>
+                              {(() => {
+                                switch (th.t) {
+                                  case 'ADVENTURE': return <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>;
+                                  case 'ROMANTIC': return <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>;
+                                  case 'URBAN': return <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>;
+                                  case 'LUXURY': return <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>;
+                                  default: return <span style={{ fontSize: "10px" }}>{th.i}</span>;
+                                }
+                              })()}
+                            </div>
+                            
+                            {/* Divider Line */}
+                            <div style={{ width: "1px", height: "10px", background: "rgba(255,255,255,0.3)" }}></div>
+                            
+                            {/* Text */}
+                            <span style={{ 
+                              fontSize: "9px", 
+                              fontWeight: 700, 
+                              color: "#ffffff", 
+                              letterSpacing: "0.08em",
+                              textTransform: "uppercase",
+                              paddingTop: "1px"
+                            }}>
+                              {th.t}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Metrics: Just the Heart */}
+                    <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "flex-end" }}>
+                      {/* Heart Button: Circular action button */}
+                      <div className="group/love hover:scale-110 transition-all duration-300 cursor-pointer" style={{
+                        width: "34px",
+                        height: "34px",
+                        borderRadius: "50%",
+                        background: "rgba(0, 0, 0, 0.4)",
+                        backdropFilter: "blur(12px)",
+                        WebkitBackdropFilter: "blur(12px)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#ffffff"
+                      }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="group-hover/love:fill-[#FF385C] group-hover/love:stroke-[#FF385C] transition-colors"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Bottom Glass Card */}
+                  <div style={{ position: "absolute", bottom: "12px", left: "12px", right: "12px", background: "rgba(20,22,26,0.45)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderRadius: "18px", border: "1px solid rgba(255,255,255,0.15)", borderTopColor: "rgba(255,255,255,0.25)", padding: "16px", display: "flex", flexDirection: "column", boxShadow: "0 8px 32px rgba(0,0,0,0.2)" }}>
+                    
+                    <div style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "18px", color: "#fff", lineHeight: 1.25, marginBottom: "10px", letterSpacing: "0.01em" }}>
+                      {t.title}
+                    </div>
+
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "14px" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "5px", flexShrink: 1, minWidth: 0, overflow: "hidden" }}>
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#d6d3c7" strokeWidth="2.5" style={{ flexShrink: 0 }}><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span style={{ fontSize: "9px", fontWeight: 600, color: "#d6d3c7", letterSpacing: "0.06em", textTransform: "uppercase", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{t.city}</span>
+                      </div>
+                      
+                      <div style={{ display: "flex", alignItems: "center", gap: "4px", fontSize: "9px", fontWeight: 600, color: "rgba(255,255,255,0.55)", letterSpacing: "0.05em", textTransform: "uppercase" }}>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        {t.createdDate}
+                      </div>
+                    </div>
+
+                    <div style={{ height: "1px", background: "linear-gradient(90deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05))", marginBottom: "14px" }}></div>
+
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                      {/* Creator & Client */}
+                      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                        <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "#fff", padding: "1.5px", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}>
+                          <img src={`https://api.dicebear.com/9.x/micah/svg?seed=${t.agentSeed || 'Agent'}&backgroundColor=e8543f`} alt={t.agentSeed} style={{ width: "100%", height: "100%", borderRadius: "50%", background: "#f4f2ec", objectFit: "cover" }} />
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                          <span style={{ fontSize: "8px", color: "rgba(255,255,255,0.55)", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: "1px" }}>Created For</span>
+                          <span style={{ fontSize: "12px", color: "#fff", fontWeight: 600, letterSpacing: "-0.01em" }}>{t.client}</span>
+                        </div>
+                      </div>
+
+                      {/* Right side: Avatars + Views */}
+                      <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+                        {/* Avatars */}
+                        <div className="flex items-center -space-x-2">
+                          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop" className="w-[26px] h-[26px] rounded-full border-2 border-[#1a1c20] object-cover" />
+                          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=64&h=64&fit=crop" className="w-[26px] h-[26px] rounded-full border-2 border-[#1a1c20] object-cover" />
+                          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop" className="w-[26px] h-[26px] rounded-full border-2 border-[#1a1c20] object-cover" />
+                          <div className="w-[26px] h-[26px] rounded-full border-2 border-[#1a1c20] bg-[#6366f1] flex items-center justify-center text-white text-[12px] font-medium">+</div>
+                        </div>
+
+                        {/* Views Highlighted */}
+                        <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "6px", color: "#fff" }}>
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <span style={{ fontFamily: "var(--font-figtree), sans-serif", fontSize: "20px", fontWeight: 700, lineHeight: 1, letterSpacing: "-0.02em" }}>{t.views}</span>
+                          </div>
+                          <span style={{ fontSize: "9px", fontWeight: 700, color: "rgba(255,255,255,0.5)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "4px" }}>Views</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
-        {/* Jump back in */}
-        <div style={{marginTop:"32px"}}>
-          <div style={{display:"flex",alignItems:"baseline",justifyContent:"space-between",marginBottom:"16px"}}>
-            <h2 style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"22px",letterSpacing:"-.02em",margin:0}}>Jump back in</h2>
-            <span onClick={() => setView('trips')} className="hover:text-[#14183a] transition-colors" style={{fontSize:"13px",fontWeight:500,color:"#4f5de4",cursor:"pointer"}}>See all →</span>
-          </div>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit, minmax(200px, 1fr))",gap:"16px"}}>
-            {trips.slice(0, 4).map((t, i) => (
-              <div key={i} onClick={() => setView('detail')} className="hover:-translate-y-[5px] hover:shadow-[0_18px_34px_rgba(20,24,58,0.13)] transition-all duration-200" style={{background:"#fff",borderRadius:"18px",overflow:"hidden",cursor:"pointer",boxShadow:"0 5px 16px rgba(20,24,58,.06)",border:"1px solid #eef0f7"}}>
-                <div style={{position:"relative",height:"120px",backgroundImage:`url(${t.image})`,backgroundSize:"cover",backgroundPosition:"center",overflow:"hidden"}}>
-                  <div style={{position:"absolute",inset:0,background:"linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%)"}}></div>
-                  <div style={{position:"absolute",bottom:"8px",left:"12px",right:"12px",fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"14px",lineHeight:1.2,color:"#fff",textShadow:"0 2px 6px rgba(0,0,0,0.5)"}}>{t.short}</div>
-                </div>
-                <div style={{padding:"10px 12px 12px"}}>
-                  <div style={{fontSize:"11.5px",color:"#8a90a6",fontWeight:400}}>{t.city} · {t.dates}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
-      {/* Right rail */}
-      <div className="w-full xl:w-[300px] flex-none flex flex-col gap-4 xl:pt-1">
-        <h3 style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"18px",margin:"0 0 2px"}}>Your week</h3>
+      {/* Right Rail / Your Week Column */}
+      <div className="w-full xl:w-[290px] flex-none flex flex-col gap-[12px]">
+        <h3 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "17px", margin: "0 0 4px" }}>Your week</h3>
 
-        <div className="hover:translate-x-[4px] transition-transform duration-200" style={{background:"#fff",border:"1px solid #eef0f7",borderRadius:"18px",padding:"15px 17px",display:"flex",alignItems:"center",gap:"14px",boxShadow:"0 5px 16px rgba(20,24,58,.05)"}}>
-          <div style={{width:"44px",height:"44px",background:"#eef1ff",borderRadius:"14px",boxShadow:"inset 2px 4px 6px rgba(255,255,255,1), inset -2px -4px 6px rgba(107,116,248,0.2), 0 8px 12px rgba(107,116,248,0.15)",display:"flex",alignItems:"center",justifyContent:"center",animation:"clayMorph 8s ease-in-out infinite, floatClay 6s ease-in-out infinite"}}>
-            <svg width="26" height="26" viewBox="0 0 32 32" style={{animation: "floatPlane 3s ease-in-out infinite", filter: "drop-shadow(0 4px 6px rgba(67,56,202,0.35))"}}>
-              <defs>
-                <radialGradient id="planeGrad1" cx="0.3" cy="0.2" r="0.8">
-                  <stop offset="0" stopColor="#a5b4fc" />
-                  <stop offset="1" stopColor="#4f46e5" />
-                </radialGradient>
-                <radialGradient id="planeGrad2" cx="0.5" cy="0.2" r="0.8">
-                  <stop offset="0" stopColor="#ffffff" />
-                  <stop offset="1" stopColor="#c7d2fe" />
-                </radialGradient>
-              </defs>
-              <path d="M26.5 7.5 C 28.5 5.5, 29 4, 28 3 C 27 2, 25.5 2.5, 23.5 4.5 L 14 14 L 5 13 L 2 16 L 10 19 L 12 27 L 15 24 L 14 16 L 26.5 7.5 Z" fill="url(#planeGrad2)" />
-              <path d="M 23 10 L 16 27 L 10 19 Z" fill="url(#planeGrad1)" />
-              <path d="M 23.5 8 L 8 20 L 10 19 Z" fill="url(#planeGrad1)" opacity="0.6"/>
-            </svg>
+        {/* Trips Crafted */}
+        <div className="hover:-translate-y-[2px] transition-all" style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "20px", display: "flex", justifyContent: "space-between", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#6f6d64", fontWeight: 600, marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>TRIPS CRAFTED</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+              <div style={{ fontFamily: "var(--font-figtree), sans-serif", fontWeight: 700, fontSize: "24px", color: "#1d1f24" }}>15</div>
+              <div style={{ display: "inline-flex", alignItems: "center", fontSize: "11px", fontWeight: 700, color: "#16a34a", background: "#dcfce7", padding: "2px 6px", borderRadius: "4px" }}>
+                ↑ 27%
+              </div>
+            </div>
+            <div style={{ fontSize: "11px", color: "#a09d92", fontWeight: 500 }}>compared to last week</div>
           </div>
-          <div style={{flex:"none"}}>
-            <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"22px"}}>15</div>
-            <div style={{fontSize:"10px",fontWeight:500,color:"#8a90a6",letterSpacing:".05em"}}>TRIPS CRAFTED</div>
-          </div>
-          <div style={{flex:1, position:"relative", height:"40px", marginLeft:"8px", display:"flex", alignItems:"center", justifyContent:"flex-end"}}>
-            <svg width="80" height="40" viewBox="0 0 80 40" style={{position:"absolute", right:"10px", top:"0", zIndex:0}}>
-               <defs>
-                 <linearGradient id="spark1" x1="0" y1="0" x2="0" y2="1">
-                   <stop offset="0%" stopColor="#1f7a5c" stopOpacity="0.25"/>
-                   <stop offset="100%" stopColor="#1f7a5c" stopOpacity="0"/>
-                 </linearGradient>
-               </defs>
-               <path d="M 0 28 C 10 28, 15 15, 25 15 C 35 15, 40 30, 50 30 C 60 30, 65 10, 80 5 L 80 40 L 0 40 Z" fill="url(#spark1)" />
-               <path d="M 0 28 C 10 28, 15 15, 25 15 C 35 15, 40 30, 50 30 C 60 30, 65 10, 80 5" fill="none" stroke="#1f7a5c" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
-            <span style={{position:"relative", zIndex:2, fontSize:"11.5px",fontWeight:500,color:"#1f7a5c",background:"#e7f6ef",borderRadius:"99px",padding:"4px 9px",boxShadow:"0 2px 8px rgba(31,122,92,0.15)"}}>+4</span>
+          <div style={{ width: "90px", height: "50px", alignSelf: "flex-end", position: "relative", bottom: "-6px" }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={[{v:10},{v:12},{v:9},{v:14},{v:12},{v:15}]}>
+                <defs>
+                  <linearGradient id="fill-trips" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.2}/>
+                    <stop offset="100%" stopColor="#8b5cf6" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <Area type="monotone" dataKey="v" stroke="#8b5cf6" strokeWidth={2} fill="url(#fill-trips)" isAnimationActive={false} />
+              </AreaChart>
+            </ResponsiveContainer>
           </div>
         </div>
 
-        <div className="hover:translate-x-[4px] transition-transform duration-200" style={{background:"#fff",border:"1px solid #eef0f7",borderRadius:"18px",padding:"15px 17px",display:"flex",alignItems:"center",gap:"14px",boxShadow:"0 5px 16px rgba(20,24,58,.05)"}}>
-          <div style={{width:"44px",height:"44px",background:"#e6f9fd",borderRadius:"14px",boxShadow:"inset 2px 4px 6px rgba(255,255,255,1), inset -2px -4px 6px rgba(14,165,201,0.2), 0 8px 12px rgba(14,165,201,0.15)",display:"flex",alignItems:"center",justifyContent:"center",animation:"clayMorph 7s ease-in-out infinite 1s, floatClay 5s ease-in-out infinite 1s"}}>
-            <svg width="26" height="26" viewBox="0 0 32 32" style={{animation: "blinkEye 4s ease-in-out infinite", filter: "drop-shadow(0 4px 6px rgba(14,165,201,0.35))"}}>
-              <defs>
-                <radialGradient id="eyeGrad1" cx="0.5" cy="0.3" r="0.7">
-                  <stop offset="0" stopColor="#ffffff" />
-                  <stop offset="1" stopColor="#67e8f9" />
-                </radialGradient>
-                <radialGradient id="eyeGrad2" cx="0.4" cy="0.4" r="0.5">
-                  <stop offset="0" stopColor="#0891b2" />
-                  <stop offset="1" stopColor="#164e63" />
-                </radialGradient>
-                <radialGradient id="eyeGrad3" cx="0.4" cy="0.4" r="0.5">
-                  <stop offset="0" stopColor="#ffffff" />
-                  <stop offset="1" stopColor="#cbd5e1" />
-                </radialGradient>
-              </defs>
-              <path d="M 2 16 C 8 8, 24 8, 30 16 C 24 24, 8 24, 2 16 Z" fill="url(#eyeGrad3)" />
-              <circle cx="16" cy="16" r="7" fill="url(#eyeGrad2)" />
-              <circle cx="15" cy="14" r="2.5" fill="#ffffff" />
-              <circle cx="17.5" cy="17" r="1" fill="#ffffff" opacity="0.8" />
-            </svg>
+        {/* Client Views */}
+        <div className="hover:-translate-y-[2px] transition-all" style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "20px", display: "flex", justifyContent: "space-between", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#6f6d64", fontWeight: 600, marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>CLIENT VIEWS</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+              <div style={{ fontFamily: "var(--font-figtree), sans-serif", fontWeight: 700, fontSize: "24px", color: "#1d1f24" }}>128</div>
+              <div style={{ display: "inline-flex", alignItems: "center", fontSize: "11px", fontWeight: 700, color: "#ea580c", background: "#ffedd5", padding: "2px 6px", borderRadius: "4px" }}>
+                ↓ 4%
+              </div>
+            </div>
+            <div style={{ fontSize: "11px", color: "#a09d92", fontWeight: 500 }}>compared to last week</div>
           </div>
-          <div style={{flex:"none"}}>
-            <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"22px"}}>128</div>
-            <div style={{fontSize:"10px",fontWeight:500,color:"#8a90a6",letterSpacing:".05em"}}>CLIENT VIEWS</div>
-          </div>
-          <div style={{flex:1, position:"relative", height:"40px", marginLeft:"8px", display:"flex", alignItems:"center", justifyContent:"flex-end"}}>
-            <svg width="80" height="40" viewBox="0 0 80 40" style={{position:"absolute", right:"10px", top:"0", zIndex:0}}>
-               <defs>
-                 <linearGradient id="spark2" x1="0" y1="0" x2="0" y2="1">
-                   <stop offset="0%" stopColor="#1f7a5c" stopOpacity="0.25"/>
-                   <stop offset="100%" stopColor="#1f7a5c" stopOpacity="0"/>
-                 </linearGradient>
-               </defs>
-               <path d="M 0 32 C 10 32, 15 20, 25 20 C 35 20, 40 32, 50 32 C 60 32, 65 14, 80 8 L 80 40 L 0 40 Z" fill="url(#spark2)" />
-               <path d="M 0 32 C 10 32, 15 20, 25 20 C 35 20, 40 32, 50 32 C 60 32, 65 14, 80 8" fill="none" stroke="#64748b" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
-            <span style={{position:"relative", zIndex:2, fontSize:"11.5px",fontWeight:500,color:"#1f7a5c",background:"#e7f6ef",borderRadius:"99px",padding:"4px 9px",boxShadow:"0 2px 8px rgba(31,122,92,0.15)"}}>+31</span>
+          <div style={{ width: "90px", height: "50px", alignSelf: "flex-end", position: "relative", bottom: "-6px" }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={[{v:150},{v:145},{v:130},{v:135},{v:120},{v:128}]}>
+                <defs>
+                  <linearGradient id="fill-views" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#f97316" stopOpacity={0.2}/>
+                    <stop offset="100%" stopColor="#f97316" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <Area type="monotone" dataKey="v" stroke="#f97316" strokeWidth={2} fill="url(#fill-views)" isAnimationActive={false} />
+              </AreaChart>
+            </ResponsiveContainer>
           </div>
         </div>
 
-        <div className="hover:translate-x-[4px] transition-transform duration-200" style={{background:"#fff",border:"1px solid #eef0f7",borderRadius:"18px",padding:"15px 17px",display:"flex",alignItems:"center",gap:"14px",boxShadow:"0 5px 16px rgba(20,24,58,.05)"}}>
-          <div style={{width:"44px",height:"44px",background:"#fdf1e4",borderRadius:"14px",boxShadow:"inset 2px 4px 6px rgba(255,255,255,1), inset -2px -4px 6px rgba(240,165,76,0.2), 0 8px 12px rgba(240,165,76,0.15)",display:"flex",alignItems:"center",justifyContent:"center",animation:"clayMorph 9s ease-in-out infinite 2s, floatClay 7s ease-in-out infinite 2s"}}>
-            <svg width="24" height="24" viewBox="0 0 32 32" style={{animation: "spinHourglass 4s ease-in-out infinite", filter: "drop-shadow(0 4px 6px rgba(234,88,12,0.35))"}}>
-              <defs>
-                <linearGradient id="hgGlass" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stopColor="#ffedd5" stopOpacity="0.8" />
-                  <stop offset="1" stopColor="#fdba74" stopOpacity="0.3" />
-                </linearGradient>
-                <linearGradient id="hgSand" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stopColor="#f97316" />
-                  <stop offset="1" stopColor="#c2410c" />
-                </linearGradient>
-                <linearGradient id="hgWood" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0" stopColor="#9a3412" />
-                  <stop offset="1" stopColor="#431407" />
-                </linearGradient>
-              </defs>
-              <path d="M 8 6 L 24 6 L 19 16 L 24 26 L 8 26 L 13 16 Z" fill="url(#hgGlass)" />
-              <path d="M 11 20 L 21 20 L 24 25 L 8 25 Z" fill="url(#hgSand)" />
-              <path d="M 11 11 L 21 11 L 19 16 L 13 16 Z" fill="url(#hgSand)" />
-              <rect x="6" y="2" width="20" height="4" rx="2" fill="url(#hgWood)" />
-              <rect x="6" y="26" width="20" height="4" rx="2" fill="url(#hgWood)" />
-            </svg>
+        {/* Avg Dwell Time */}
+        <div className="hover:-translate-y-[2px] transition-all" style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "20px", display: "flex", justifyContent: "space-between", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <div style={{ flex: 1 }}>
+            <div style={{ fontSize: "12px", color: "#6f6d64", fontWeight: 600, marginBottom: "8px", textTransform: "uppercase", letterSpacing: "0.05em" }}>AVG. DWELL TIME</div>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+              <div style={{ fontFamily: "var(--font-figtree), sans-serif", fontWeight: 700, fontSize: "24px", color: "#1d1f24" }}>4m 12s</div>
+              <div style={{ display: "inline-flex", alignItems: "center", fontSize: "11px", fontWeight: 700, color: "#16a34a", background: "#dcfce7", padding: "2px 6px", borderRadius: "4px" }}>
+                ↑ 18%
+              </div>
+            </div>
+            <div style={{ fontSize: "11px", color: "#a09d92", fontWeight: 500 }}>compared to last week</div>
           </div>
-          <div style={{flex:"none"}}>
-            <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"22px"}}>4m 12s</div>
-            <div style={{fontSize:"10px",fontWeight:500,color:"#8a90a6",letterSpacing:".05em"}}>AVG. DWELL TIME</div>
-          </div>
-          <div style={{flex:1, position:"relative", height:"40px", marginLeft:"8px", display:"flex", alignItems:"center", justifyContent:"flex-end"}}>
-            <svg width="80" height="40" viewBox="0 0 80 40" style={{position:"absolute", right:"10px", top:"0", zIndex:0}}>
-               <defs>
-                 <linearGradient id="spark3" x1="0" y1="0" x2="0" y2="1">
-                   <stop offset="0%" stopColor="#9a6216" stopOpacity="0.25"/>
-                   <stop offset="100%" stopColor="#9a6216" stopOpacity="0"/>
-                 </linearGradient>
-               </defs>
-               <path d="M 0 25 C 10 25, 15 35, 25 35 C 35 35, 40 15, 50 15 C 60 15, 65 5, 80 5 L 80 40 L 0 40 Z" fill="url(#spark3)" />
-               <path d="M 0 25 C 10 25, 15 35, 25 35 C 35 35, 40 15, 50 15 C 60 15, 65 5, 80 5" fill="none" stroke="#9a6216" strokeWidth="2.5" strokeLinecap="round" />
-            </svg>
-            <span style={{position:"relative", zIndex:2, fontSize:"11.5px",fontWeight:500,color:"#9a6216",background:"#fbf1df",borderRadius:"99px",padding:"4px 9px",boxShadow:"0 2px 8px rgba(154,98,22,0.15)"}}>+18%</span>
+          <div style={{ width: "90px", height: "50px", alignSelf: "flex-end", position: "relative", bottom: "-6px" }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={[{v:3},{v:3.5},{v:3.2},{v:4},{v:3.8},{v:4.2}]}>
+                <defs>
+                  <linearGradient id="fill-dwell" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity={0.2}/>
+                    <stop offset="100%" stopColor="#10b981" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <Area type="monotone" dataKey="v" stroke="#10b981" strokeWidth={2} fill="url(#fill-dwell)" isAnimationActive={false} />
+              </AreaChart>
+            </ResponsiveContainer>
           </div>
         </div>
+
+        {/* Kyvari Spark Card */}
+        <div style={{
+          background: "linear-gradient(160deg,#f0f9ff,#e0f2fe)",
+          border: "1px solid #bae6fd",
+          borderRadius: "18px",
+          padding: "16px",
+          marginTop: "6px",
+          position: "relative",
+          overflow: "hidden"
+        }}>
+          
+          <div style={{ display: "flex", alignItems: "center", gap: "11px", position: "relative", zIndex: 1 }}>
+            <div style={{ position: "relative", width: "18px", height: "18px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <span style={{
+                position: "absolute",
+                width: "36px",
+                height: "36px",
+                borderRadius: "50%",
+                border: "1.5px solid rgba(59,130,246,.45)",
+                animation: "ringVibe 2.5s ease-out infinite",
+                display: "block"
+              }}></span>
+              <span style={{
+                position: "absolute",
+                width: "36px",
+                height: "36px",
+                borderRadius: "50%",
+                border: "1.5px solid rgba(147,197,253,.5)",
+                animation: "ringVibe 2.5s ease-out 1.2s infinite",
+                display: "block"
+              }}></span>
+              <span style={{
+                position: "relative",
+                width: "18px",
+                height: "18px",
+                borderRadius: "50%",
+                background: "radial-gradient(circle at 32% 30%,#bfdbfe,#3b82f6 65%,#1e40af)",
+                boxShadow: "0 3px 10px rgba(59,130,246,.4)",
+                display: "block"
+              }}></span>
+            </div>
+            <span style={{ fontSize: "10px", fontWeight: 500, letterSpacing: ".2em", color: "#0369a1" }}>KYVARI SPARK</span>
+          </div>
+          <div style={{ fontSize: "12.5px", lineHeight: 1.6, color: "#0c4a6e", marginTop: "10px", fontWeight: 500, position: "relative", zIndex: 1 }}>
+            Clients open itineraries <span style={{ fontWeight: 700 }}>3× more</span> when the first day leads with a flight card. Try opening with arrivals.
+          </div>
+        </div>
+
       </div>
     </div>
   );

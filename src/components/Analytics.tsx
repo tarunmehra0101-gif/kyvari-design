@@ -1,323 +1,312 @@
 import React, { useState } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend, Cell, PieChart, Pie, LineChart, Line } from 'recharts';
-import { ArrowUpRight, ArrowDownRight, Activity, Users, Clock, DollarSign, Calendar, TrendingUp } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { AreaChart, Area, BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
 
-export function Analytics({ setView }: { setView: (v: string) => void }) {
-  const [timeRange, setTimeRange] = useState('30D');
+export function Analytics() {
+  const router = useRouter();
+  const [timeRange, setTimeRange] = useState('30 days');
 
   const engagementData = [
-    { name: 'Mon', views: 400, interactions: 240, shares: 120 },
-    { name: 'Tue', views: 300, interactions: 139, shares: 80 },
-    { name: 'Wed', views: 550, interactions: 380, shares: 190 },
-    { name: 'Thu', views: 420, interactions: 290, shares: 140 },
-    { name: 'Fri', views: 700, interactions: 480, shares: 250 },
-    { name: 'Sat', views: 600, interactions: 390, shares: 210 },
-    { name: 'Sun', views: 800, interactions: 520, shares: 280 },
+    { name: '27 May', views: 42, sessions: 25 },
+    { name: '3 Jun', views: 50, sessions: 30 },
+    { name: '10 Jun', views: 48, sessions: 32 },
+    { name: '17 Jun', views: 65, sessions: 40 },
+    { name: '24 Jun', views: 72, sessions: 52 },
+    { name: '1 Jul', views: 90, sessions: 62 },
+  ];
+
+  const funnelData = [
+    { label: 'Sent', value: 38, percent: '100%', color: '#a4d673' },
+    { label: 'Opened', value: 32, percent: '84%', color: '#a4d673' },
+    { label: 'Engaged 3+ min', value: 21, percent: '55%', color: '#a4d673' },
+    { label: 'Booked', value: 12, percent: '32%', color: '#608c35' },
   ];
 
   const destinationData = [
-    { name: 'Japan', clients: 85, color: '#ec4899' },
-    { name: 'Italy', clients: 60, color: '#0ea5e9' },
-    { name: 'Thailand', clients: 45, color: '#f59e0b' },
-    { name: 'Maldives', clients: 25, color: '#8b5cf6' },
+    { name: 'Santorini', value: 26000, width: '92%' },
+    { name: 'Bali', value: 21000, width: '75%' },
+    { name: 'Rajasthan', value: 15000, width: '55%' },
+    { name: 'Swiss Alps', value: 13000, width: '48%' },
+    { name: 'Kyoto', value: 10000, width: '38%' },
   ];
 
-  const itineraryStats = [
-    { title: "Bhutanese Bliss: A Himalayan Adventure", client: "Meera & Arjun", sent: "Jul 12", opens: 14, time: "8m 45s", status: "Booked", revenue: "$8,400" },
-    { title: "Hanoi's Romantic Charms", client: "The Kapoors", sent: "Jul 14", opens: 8, time: "5m 20s", status: "Reviewing", revenue: "-" },
-    { title: "Bangkok Bazaar: A Luxury Shopping Spree", client: "Ritu S.", sent: "Jul 15", opens: 22, time: "12m 10s", status: "Booked", revenue: "$4,250" },
-    { title: "Azure Escapes: Lakshadweep Retreat", client: "Honeymoon", sent: "Jul 18", opens: 3, time: "1m 40s", status: "Sent", revenue: "-" },
-    { title: "Kuala Lumpur Skyline & Street Food", client: "Solo · Dev", sent: "Jul 20", opens: 6, time: "4m 15s", status: "Booked", revenue: "$1,800" },
+  const clientActivity = [
+    { initials: 'RA', name: 'Rohan & Ananya Sharma', action: 'viewed Santorini, Slowly for 9 min', time: '12 MIN AGO' },
+    { initials: 'AM', name: 'Arjun Mehta', action: 'shared Alps on Rails with 2 people', time: '1 H AGO' },
+    { initials: 'TF', name: 'The Fernandes family', action: 'confirmed booking · $4,720 total', time: '3 H AGO' },
+    { initials: 'KF', name: 'Kapoor family reunion', action: 'opened Forts & Thali Trails', time: 'YESTERDAY' },
+    { initials: 'PN', name: 'Priya Nair', action: 'requested dates in late November', time: 'YESTERDAY' },
   ];
 
-  
+  const topItineraries = [
+    { title: "Santorini, Slowly", client: "R. & A. Sharma", views: 14, time: "6m 12s", status: "Viewed", statusColor: "#f59e0b" },
+    { title: "Bali, Barefoot", client: "Fernandes family", views: 22, time: "8m 24s", status: "Booked", statusColor: "#10b981" },
+    { title: "Alps on Rails", client: "Arjun Mehta +2", views: 9, time: "5m 36s", status: "Viewed", statusColor: "#f59e0b" },
+    { title: "Forts & Thali Trails", client: "Kapoor reunion", views: 6, time: "3m 06s", status: "Sent", statusColor: "#6b7280" },
+  ];
+
   const kpis = [
-    { label: "Total Views", value: "2,543", change: "+12.5%", isUp: true, color: "text-pink-500", bg: "#fdf2f8", shadow: "rgba(236,72,153,0.15)", svg: (
-      <svg width="26" height="26" viewBox="0 0 32 32" style={{animation: "floatClay 5s ease-in-out infinite 0s", filter: "drop-shadow(0 4px 6px rgba(236,72,153,0.35))"}}>
-        <defs>
-          <radialGradient id="eyePink" cx="0.4" cy="0.4" r="0.5">
-            <stop offset="0" stopColor="#f472b6" />
-            <stop offset="1" stopColor="#be185d" />
-          </radialGradient>
-          <radialGradient id="eyeWhite" cx="0.4" cy="0.4" r="0.5">
-            <stop offset="0" stopColor="#ffffff" />
-            <stop offset="1" stopColor="#fbcfe8" />
-          </radialGradient>
-        </defs>
-        <path d="M 2 16 C 8 8, 24 8, 30 16 C 24 24, 8 24, 2 16 Z" fill="url(#eyeWhite)" />
-        <circle cx="16" cy="16" r="7" fill="url(#eyePink)" />
-        <circle cx="15" cy="14" r="2.5" fill="#ffffff" />
-        <circle cx="17.5" cy="17" r="1" fill="#ffffff" opacity="0.8" />
-      </svg>
-    )},
-    { label: "Client Bookings", value: "32", change: "+4.1%", isUp: true, color: "text-blue-500", bg: "#eff6ff", shadow: "rgba(59,130,246,0.15)", svg: (
-      <svg width="26" height="26" viewBox="0 0 32 32" style={{animation: "floatClay 5s ease-in-out infinite 0.5s", filter: "drop-shadow(0 4px 6px rgba(59,130,246,0.35))"}}>
-        <defs>
-          <linearGradient id="userBlue" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#60a5fa" />
-            <stop offset="1" stopColor="#1d4ed8" />
-          </linearGradient>
-          <linearGradient id="userHead" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#bfdbfe" />
-            <stop offset="1" stopColor="#3b82f6" />
-          </linearGradient>
-        </defs>
-        <circle cx="16" cy="10" r="7" fill="url(#userHead)" />
-        <path d="M 4 30 C 4 20, 10 18, 16 18 C 22 18, 28 20, 28 30 Z" fill="url(#userBlue)" />
-      </svg>
-    )},
-    { label: "Avg. Dwell Time", value: "4m 12s", change: "-2.4%", isUp: false, color: "text-amber-500", bg: "#fffbeb", shadow: "rgba(245,158,11,0.15)", svg: (
-      <svg width="26" height="26" viewBox="0 0 32 32" style={{animation: "floatClay 5s ease-in-out infinite 1s", filter: "drop-shadow(0 4px 6px rgba(245,158,11,0.35))"}}>
-        <defs>
-          <linearGradient id="hgGlassA" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#fef3c7" stopOpacity="0.8" />
-            <stop offset="1" stopColor="#fcd34d" stopOpacity="0.4" />
-          </linearGradient>
-          <linearGradient id="hgSandA" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#f59e0b" />
-            <stop offset="1" stopColor="#b45309" />
-          </linearGradient>
-          <linearGradient id="hgWoodA" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0" stopColor="#78350f" />
-            <stop offset="1" stopColor="#451a03" />
-          </linearGradient>
-        </defs>
-        <path d="M 8 6 L 24 6 L 19 16 L 24 26 L 8 26 L 13 16 Z" fill="url(#hgGlassA)" />
-        <path d="M 11 20 L 21 20 L 24 25 L 8 25 Z" fill="url(#hgSandA)" />
-        <path d="M 11 11 L 21 11 L 19 16 L 13 16 Z" fill="url(#hgSandA)" />
-        <rect x="6" y="2" width="20" height="4" rx="2" fill="url(#hgWoodA)" />
-        <rect x="6" y="26" width="20" height="4" rx="2" fill="url(#hgWoodA)" />
-      </svg>
-    )},
-    { label: "Revenue Generated", value: "$42,500", change: "+24.8%", isUp: true, color: "text-emerald-500", bg: "#ecfdf5", shadow: "rgba(16,185,129,0.15)", svg: (
-      <svg width="26" height="26" viewBox="0 0 32 32" style={{animation: "floatClay 5s ease-in-out infinite 1.5s", filter: "drop-shadow(0 4px 6px rgba(16,185,129,0.35))"}}>
-        <defs>
-          <linearGradient id="coinGold" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#6ee7b7" />
-            <stop offset="1" stopColor="#047857" />
-          </linearGradient>
-          <linearGradient id="coinInner" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#a7f3d0" />
-            <stop offset="1" stopColor="#10b981" />
-          </linearGradient>
-        </defs>
-        <circle cx="16" cy="16" r="14" fill="url(#coinGold)" />
-        <circle cx="16" cy="16" r="10" fill="url(#coinInner)" />
-        <path d="M16 9 L16 23 M13 12 L18 12 M13 19 L18 19 M13 12 Q 18 12 18 15.5 T 13 19" stroke="#ffffff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )}
+    { label: "Itineraries sent", value: "38", subValue: "15%", subText: "compared to last week", isUp: true, sparkline: [10, 15, 12, 22, 18, 38], color: "#8b5cf6" },
+    { label: "Client view rate", value: "84%", subValue: "4%", subText: "compared to last week", isUp: false, sparkline: [90, 85, 88, 80, 82, 84], color: "#f97316" },
+    { label: "Avg. dwell time", value: "5m 42s", subValue: "8%", subText: "compared to last week", isUp: true, sparkline: [3, 4, 3.5, 5, 4.5, 5.7], color: "#8b5cf6" },
   ];
-
 
   return (
-    <div className="p-8 md:p-12 max-w-7xl mx-auto w-full animate-[fadeUp_0.4s_ease-out]">
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-6">
+    <div style={{ padding: "34px 40px", maxWidth: "1420px", margin: "0 auto", animation: "fadeUp .4s ease-out both" }}>
+      
+      {/* SVG Defs for Metallic Gradients */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <linearGradient id="metal-green" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#34d399" />
+            <stop offset="50%" stopColor="#10b981" />
+            <stop offset="100%" stopColor="#059669" />
+          </linearGradient>
+          <linearGradient id="metal-green-dark" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#059669" />
+            <stop offset="100%" stopColor="#064e3b" />
+          </linearGradient>
+          <linearGradient id="metal-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60a5fa" />
+            <stop offset="100%" stopColor="#2563eb" />
+          </linearGradient>
+          <linearGradient id="spark-purple" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#8b5cf6" stopOpacity={0.2} />
+            <stop offset="100%" stopColor="#8b5cf6" stopOpacity={0} />
+          </linearGradient>
+          <linearGradient id="spark-orange" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#f97316" stopOpacity={0.2} />
+            <stop offset="100%" stopColor="#f97316" stopOpacity={0} />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      {/* Analytics Header */}
+      <div style={{ display: "flex", alignItems: "center", gap: "18px", marginBottom: "26px", flexWrap: "wrap", justifyContent: "space-between" }}>
         <div>
-          <h1 className="text-3xl font-medium text-slate-900 mb-2" style={{fontFamily:"'Playfair Display', serif"}}>Analytics Overview</h1>
-          <p className="text-sm text-slate-500">Track client engagement and booking conversions over time.</p>
+          <h1 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "42px", letterSpacing: "-.02em", margin: 0, color: "#1d1f24" }}>Analytics</h1>
+          <div style={{ color: "#6f6d64", fontSize: "15px", fontWeight: 500, marginTop: "8px" }}>How clients are engaging with your itineraries.</div>
         </div>
-        <div className="flex p-1 bg-slate-100 rounded-xl border border-slate-200">
-          {['7D', '30D', '90D', '1Y'].map(range => (
-            <button
+        <div style={{ display: "flex", background: "#fff", border: "1px solid #eeece5", borderRadius: "99px", padding: "4px", gap: "4px", boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+          {['7 days', '30 days', '90 days', 'This year'].map(range => (
+            <span
               key={range}
               onClick={() => setTimeRange(range)}
-              className={`px-4 py-1.5 text-sm font-medium rounded-lg transition-all ${
-                timeRange === range 
-                  ? 'bg-white text-slate-900 shadow-sm border border-slate-200/50' 
-                  : 'text-slate-500 hover:text-slate-700 hover:bg-slate-200/50'
-              }`}
+              style={{ 
+                padding: "8px 16px", 
+                borderRadius: "99px", 
+                background: timeRange === range ? "#1d1f24" : "transparent", 
+                color: timeRange === range ? "#fff" : "#6f6d64", 
+                fontSize: "13px", 
+                fontWeight: 600, 
+                cursor: "pointer",
+                transition: "all 0.2s"
+              }}
             >
               {range}
-            </button>
+            </span>
           ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-        {kpis.map((kpi, i) => (
-          <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col hover:shadow-md transition-shadow">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{background: kpi.bg, boxShadow: `inset 2px 4px 6px rgba(255,255,255,0.8), inset -2px -4px 6px ${kpi.shadow}, 0 8px 12px ${kpi.shadow}`}}>
-                {kpi.svg}
+      {/* KPI Cards Row */}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "0", marginBottom: "32px", background: "#fff", border: "1px solid #eeece5", borderRadius: "12px", overflow: "hidden", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+        {kpis.map((kpi, idx) => (
+          <div key={idx} style={{ padding: "24px", borderRight: idx !== kpis.length - 1 ? "1px solid #eeece5" : "none", display: "flex", justifyContent: "space-between" }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: "14px", color: "#1d1f24", fontWeight: 600, marginBottom: "16px" }}>{kpi.label}</div>
+              <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+                <div style={{ fontFamily: "var(--font-figtree), sans-serif", fontWeight: 700, fontSize: "24px", color: "#1d1f24" }}>{kpi.value}</div>
+                <div style={{ display: "inline-flex", alignItems: "center", fontSize: "12px", fontWeight: 700, color: kpi.isUp ? "#16a34a" : "#ea580c", background: kpi.isUp ? "#dcfce7" : "#ffedd5", padding: "2px 6px", borderRadius: "4px" }}>
+                  {kpi.isUp ? "↑" : "↓"} {kpi.subValue}
+                </div>
               </div>
-              <div>
-                <p className="text-sm font-medium text-slate-500">{kpi.label}</p>
-                <h3 className="text-2xl font-bold text-slate-900">{kpi.value}</h3>
-              </div>
+              <div style={{ fontSize: "12px", color: "#a09d92", fontWeight: 500 }}>{kpi.subText}</div>
             </div>
-            <div className="flex items-center gap-2 mt-auto">
-              <div className={`flex items-center gap-1 text-xs font-medium px-2 py-1 rounded-full ${kpi.isUp ? 'bg-emerald-50 text-emerald-600' : 'bg-red-50 text-red-600'}`}>
-                {kpi.isUp ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
-                {kpi.change}
-              </div>
-              <span className="text-xs text-slate-400">vs last period</span>
+            
+            {/* Sparkline Chart */}
+            <div style={{ width: "100px", height: "60px", alignSelf: "flex-end" }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={kpi.sparkline.map((v, i) => ({ value: v, index: i }))}>
+                  <defs>
+                    <linearGradient id={`fill-${idx}`} x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor={kpi.color} stopOpacity={0.2}/>
+                      <stop offset="100%" stopColor={kpi.color} stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <Area type="monotone" dataKey="value" stroke={kpi.color} strokeWidth={2} fill={`url(#fill-${idx})`} isAnimationActive={false} />
+                </AreaChart>
+              </ResponsiveContainer>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
-        <div className="lg:col-span-2 bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-xl font-medium text-slate-900 flex items-center gap-3" style={{fontFamily:"'Playfair Display', serif"}}>
-              <div className="w-10 h-10 rounded-full bg-pink-50 flex items-center justify-center relative">
-                <div className="absolute inset-0 rounded-full border-2 border-pink-200 animate-ping opacity-20"></div>
-                <Activity className="w-5 h-5 text-pink-500 animate-[bounce_3s_infinite]" />
-              </div>
-              Engagement & Interactions
-            </h2>
-            <button className="text-sm font-medium text-slate-500 flex items-center gap-2 hover:text-slate-900 transition-colors">
-              <Calendar className="w-4 h-4" />
-              Detailed Report
-            </button>
+      {/* Charts Row 1 */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "24px", marginBottom: "24px" }} className="lg:grid-cols-3">
+        
+        {/* Engagement Rounded Bar Chart */}
+        <div className="lg:col-span-2" style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "32px", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "22px", color: "#1d1f24", margin: "0 0 16px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+            Statistic
+          </h2>
+          <div style={{ display: "flex", gap: "20px", marginBottom: "32px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", fontWeight: 600, color: "#6f6d64" }}>
+              <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#a4d673" }}></span> Views
+            </div>
+            <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", fontWeight: 600, color: "#6f6d64" }}>
+              <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#608c35" }}></span> Peak sessions
+            </div>
           </div>
-          <div className="h-72 w-full">
+          
+          <div style={{ height: "260px", width: "100%" }}>
             <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={engagementData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="colorViews" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#ec4899" stopOpacity={0.4}/>
-                    <stop offset="95%" stopColor="#ec4899" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="colorInts" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#0ea5e9" stopOpacity={0.4}/>
-                    <stop offset="95%" stopColor="#0ea5e9" stopOpacity={0}/>
-                  </linearGradient>
-                  <linearGradient id="colorShares" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#8b5cf6" stopOpacity={0.4}/>
-                    <stop offset="95%" stopColor="#8b5cf6" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="4 4" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{fill:'#94a3b8', fontSize:12, fontWeight:500}} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{fill:'#94a3b8', fontSize:12, fontWeight:500}} />
+              <BarChart data={engagementData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }} barGap={4} barCategoryGap="20%">
+                <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f4f2ec" />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#8b8b8b', fontSize: 13, fontWeight: 500 }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#8b8b8b', fontSize: 13, fontWeight: 500 }} dx={-10} />
                 <Tooltip 
-                  contentStyle={{borderRadius:"16px",border:"1px solid #f1f5f9",boxShadow:"0 10px 30px rgba(0,0,0,0.08)",padding:"16px",background:"rgba(255,255,255,0.95)",backdropFilter:"blur(10px)"}}
-                  itemStyle={{fontSize:"14px",fontWeight:600,padding:"4px 0"}}
-                  labelStyle={{fontSize:"13px",color:"#64748b",marginBottom:"8px",fontWeight:500,textTransform:"uppercase",letterSpacing:"0.05em"}}
+                  contentStyle={{ borderRadius: "12px", border: "1px solid #eeece5", boxShadow: "0 8px 24px rgba(0,0,0,.08)", padding: "12px" }}
+                  itemStyle={{ fontSize: "13px", fontWeight: 600 }}
+                  cursor={{ fill: '#f8f7f4' }}
                 />
-                <Legend iconType="circle" wrapperStyle={{fontSize:"13px", fontWeight:500, color:"#475569", paddingTop:"12px"}} />
-                <Area type="monotone" dataKey="views" name="Total Views" stroke="#ec4899" strokeWidth={3} fillOpacity={1} fill="url(#colorViews)" activeDot={{r: 6, strokeWidth: 0, fill: '#ec4899'}} />
-                <Area type="monotone" dataKey="interactions" name="Link Clicks" stroke="#0ea5e9" strokeWidth={3} fillOpacity={1} fill="url(#colorInts)" activeDot={{r: 6, strokeWidth: 0, fill: '#0ea5e9'}} />
-                <Area type="monotone" dataKey="shares" name="Shares" stroke="#8b5cf6" strokeWidth={3} fillOpacity={1} fill="url(#colorShares)" activeDot={{r: 6, strokeWidth: 0, fill: '#8b5cf6'}} />
-              </AreaChart>
+                <Bar dataKey="views" radius={[20, 20, 20, 20]}>
+                  {engagementData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={index === 4 ? '#608c35' : '#a4d673'} />
+                  ))}
+                </Bar>
+                <Bar dataKey="sessions" radius={[20, 20, 20, 20]}>
+                  {engagementData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={index === 4 ? '#4a6d29' : '#88c54c'} />
+                  ))}
+                </Bar>
+              </BarChart>
             </ResponsiveContainer>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
-          <h2 className="text-xl font-medium text-slate-900 mb-8 flex items-center gap-3" style={{fontFamily:"'Playfair Display', serif"}}>
-             <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{background: "#fdf2f8", boxShadow: "inset 2px 4px 6px rgba(255,255,255,0.8), inset -2px -4px 6px rgba(236,72,153,0.15), 0 4px 10px rgba(236,72,153,0.15)"}}>
-                <svg width="20" height="20" viewBox="0 0 24 24" style={{animation: "floatClay 4.5s ease-in-out infinite 0.5s"}}>
-                  <defs>
-                    <linearGradient id="destGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#f472b6" />
-                      <stop offset="1" stopColor="#be185d" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z" stroke="url(#destGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <circle cx="12" cy="10" r="3" stroke="url(#destGrad)" strokeWidth="2.5" fill="none"/>
-                </svg>
-              </div>
-            Top Destinations
-          </h2>
-          <div className="h-48 w-full mb-8">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={destinationData}
-                  cx="50%"
-                  cy="50%"
-                  innerRadius={65}
-                  outerRadius={90}
-                  paddingAngle={6}
-                  dataKey="clients"
-                  stroke="none"
-                  cornerRadius={4}
-                >
-                  {destinationData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={entry.color} />
-                  ))}
-                </Pie>
-                <Tooltip 
-                  contentStyle={{borderRadius:"12px",border:"none",boxShadow:"0 8px 24px rgba(20,24,58,.12)"}}
-                  itemStyle={{fontSize:"13px",fontWeight:500}}
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-          <div className="flex flex-col gap-4">
-            {destinationData.map((d,i) => (
-              <div key={i} className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="w-3 h-3 rounded-full shadow-sm" style={{background: d.color}}></span>
-                  <span className="text-sm text-slate-600 font-medium">{d.name}</span>
+        {/* Conversion Funnel */}
+        <div style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "32px", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "22px", color: "#1d1f24", margin: "0 0 8px" }}>Conversion funnel</h2>
+          <div style={{ fontSize: "13px", color: "#a09d92", fontWeight: 500, marginBottom: "32px" }}>Last 30 days, 38 sent</div>
+          
+          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+            {funnelData.map((item, idx) => (
+              <div key={idx}>
+                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px", fontSize: "14px", fontWeight: 600, color: "#1d1f24" }}>
+                  <span>{item.label}</span>
+                  <span>{item.value} <span style={{ color: "#a09d92", fontWeight: 500, marginLeft: "4px" }}>· {item.percent}</span></span>
                 </div>
-                <span className="text-sm font-semibold text-slate-900">{d.clients} <span className="text-slate-400 font-normal">bookings</span></span>
+                <div style={{ height: "12px", background: "#f4f2ec", borderRadius: "99px", overflow: "hidden" }}>
+                  <div style={{ height: "100%", width: item.percent, background: item.color, borderRadius: "99px" }}></div>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 mb-10 overflow-hidden">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-xl font-medium text-slate-900 flex items-center gap-3" style={{fontFamily:"'Playfair Display', serif"}}>
-            <div className="w-10 h-10 rounded-full flex items-center justify-center shrink-0" style={{background: "#fffbeb", boxShadow: "inset 2px 4px 6px rgba(255,255,255,0.8), inset -2px -4px 6px rgba(245,158,11,0.15), 0 4px 10px rgba(245,158,11,0.15)"}}>
-                <svg width="20" height="20" viewBox="0 0 24 24" style={{animation: "floatClay 5s ease-in-out infinite 1s"}}>
-                  <defs>
-                    <linearGradient id="recGrad" x1="0" y1="0" x2="1" y2="1">
-                      <stop offset="0" stopColor="#fbbf24" />
-                      <stop offset="1" stopColor="#b45309" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="url(#recGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M14 2v6h6" stroke="url(#recGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M16 13H8" stroke="url(#recGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M16 17H8" stroke="url(#recGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  <path d="M10 9H8" stroke="url(#recGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                </svg>
-              </div>
-            Recent Itineraries Performance
-          </h2>
-          <button className="text-sm font-medium text-indigo-600 hover:text-indigo-700 transition-colors flex items-center gap-2 bg-indigo-50 px-4 py-2 rounded-lg">
-            <TrendingUp className="w-4 h-4" />
-            View All Reports
-          </button>
-        </div>
+      {/* Charts Row 2 */}
+      <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: "24px", marginBottom: "24px" }} className="lg:grid-cols-3">
         
-        <div className="overflow-x-auto -mx-8 px-8">
-          <table className="w-full min-w-[800px] border-collapse text-left">
+        {/* Revenue by destination */}
+        <div className="lg:col-span-2" style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "32px", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "22px", color: "#1d1f24", margin: "0 0 8px" }}>Revenue by destination</h2>
+          <div style={{ fontSize: "13px", color: "#a09d92", fontWeight: 500, marginBottom: "32px" }}>Confirmed bookings this quarter</div>
+          
+          <div style={{ display: "flex", flexDirection: "column", gap: "20px", marginBottom: "32px" }}>
+            {destinationData.map((item, idx) => (
+              <div key={idx} style={{ display: "flex", alignItems: "center" }}>
+                <div style={{ width: "100px", fontSize: "13px", fontWeight: 500, color: "#6f6d64", textAlign: "right", paddingRight: "16px" }}>{item.name}</div>
+                <div style={{ flex: 1, position: "relative", height: "16px", borderLeft: "1px solid #eeece5", paddingLeft: "16px" }}>
+                   <div style={{ width: item.width, height: "100%", background: "url(#metal-green)", borderRadius: "2px" }}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div style={{ display: "flex", borderTop: "1px solid #eeece5", paddingTop: "12px", paddingLeft: "116px", color: "#a09d92", fontSize: "12px", fontWeight: 500 }}>
+            <div style={{ flex: 1 }}>$0k</div>
+            <div style={{ flex: 1, textAlign: "center" }}>$7k</div>
+            <div style={{ flex: 1, textAlign: "center" }}>$14k</div>
+            <div style={{ flex: 1, textAlign: "center" }}>$21k</div>
+            <div style={{ flex: 1, textAlign: "right" }}>$28k</div>
+          </div>
+          
+          <div style={{ marginTop: "16px", fontSize: "13px", fontWeight: 600, color: "#a09d92", cursor: "pointer", display: "inline-flex", alignItems: "center" }} className="hover:text-[#1d1f24]">
+            ▶ View as table
+          </div>
+        </div>
+
+        {/* Client Activity */}
+        <div style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "32px", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+          <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "22px", color: "#1d1f24", margin: "0 0 24px", display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ display: "inline-flex", color: "#d97746" }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M8.5 14.5A2.5 2.5 0 0011 12c-3.968-3-4.98-6-3-9-2.5 2-4 5-3 9s1.5 5 3.5 2.5z"/><path d="M12 22a7 7 0 007-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 007 7z"/></svg>
+            </span>
+            Client activity
+          </h2>
+          
+          <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
+            {clientActivity.map((activity, idx) => (
+              <div key={idx} style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: "#f4f2ec", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "12px", fontWeight: 700, color: "#6f6d64", flexShrink: 0 }}>
+                  {activity.initials}
+                </div>
+                <div>
+                  <div style={{ fontSize: "14px", fontWeight: 700, color: "#1d1f24", marginBottom: "2px" }}>{activity.name}</div>
+                  <div style={{ fontSize: "13px", color: "#6f6d64", marginBottom: "6px" }}>{activity.action}</div>
+                  <div style={{ fontSize: "10px", fontWeight: 800, letterSpacing: "0.05em", color: "#d97746", textTransform: "uppercase" }}>{activity.time}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Top Itineraries Table */}
+      <div style={{ background: "#fff", border: "1px solid #eeece5", borderRadius: "16px", padding: "32px", boxShadow: "0 4px 12px rgba(84,62,40,.03)" }}>
+        <h2 style={{ fontFamily: "var(--font-fraunces), serif", fontWeight: 400, fontSize: "22px", color: "#1d1f24", margin: "0 0 24px" }}>
+          Top itineraries
+        </h2>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", minWidth: "750px", textAlign: "left" }}>
             <thead>
-              <tr className="border-b border-slate-100">
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider">Itinerary</th>
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider">Client</th>
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider">Sent On</th>
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider">Opens</th>
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider">Time Spent</th>
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider">Revenue</th>
-                <th className="pb-4 font-semibold text-xs text-slate-500 uppercase tracking-wider text-right">Status</th>
+              <tr style={{ borderBottom: "1px solid #eeece5" }}>
+                <th style={{ paddingBottom: "12px", fontSize: "11px", fontWeight: 700, color: "#a09d92", textTransform: "uppercase", letterSpacing: ".05em" }}>Itinerary</th>
+                <th style={{ paddingBottom: "12px", fontSize: "11px", fontWeight: 700, color: "#a09d92", textTransform: "uppercase", letterSpacing: ".05em" }}>Client</th>
+                <th style={{ paddingBottom: "12px", fontSize: "11px", fontWeight: 700, color: "#a09d92", textTransform: "uppercase", letterSpacing: ".05em" }}>Views</th>
+                <th style={{ paddingBottom: "12px", fontSize: "11px", fontWeight: 700, color: "#a09d92", textTransform: "uppercase", letterSpacing: ".05em" }}>Avg. Dwell</th>
+                <th style={{ paddingBottom: "12px", fontSize: "11px", fontWeight: 700, color: "#a09d92", textTransform: "uppercase", letterSpacing: ".05em" }}>Status</th>
               </tr>
             </thead>
             <tbody>
-              {itineraryStats.map((itinerary, i) => (
-                <tr key={i} onClick={() => setView('detail')} className="group border-b border-slate-50 hover:bg-slate-50/50 transition-colors cursor-pointer last:border-0">
-                  <td className="py-5 font-medium text-slate-900 text-sm max-w-[250px] truncate pr-4 group-hover:text-indigo-600 transition-colors">
-                    {itinerary.title}
-                  </td>
-                  <td className="py-5 text-slate-500 text-sm">{itinerary.client}</td>
-                  <td className="py-5 text-slate-500 text-sm">{itinerary.sent}</td>
-                  <td className="py-5 text-slate-900 text-sm font-semibold">{itinerary.opens}</td>
-                  <td className="py-5 text-slate-500 text-sm">{itinerary.time}</td>
-                  <td className="py-5 text-emerald-600 text-sm font-semibold">{itinerary.revenue}</td>
-                  <td className="py-5 text-right">
-                    <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold ${
-                      itinerary.status === 'Booked' ? 'bg-emerald-50 text-emerald-700 border border-emerald-100' : 
-                      itinerary.status === 'Reviewing' ? 'bg-amber-50 text-amber-700 border border-amber-100' : 
-                      'bg-indigo-50 text-indigo-700 border border-indigo-100'
-                    }`}>
-                      <span className={`w-1.5 h-1.5 rounded-full ${itinerary.status === 'Booked' ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]' : itinerary.status === 'Reviewing' ? 'bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)] animate-pulse' : 'bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)] animate-pulse'}`}></span>
-                      {itinerary.status}
+              {topItineraries.map((item, idx) => (
+                <tr 
+                  key={idx} 
+                  className="hover:bg-[#faf9f6] transition-colors cursor-pointer"
+                  style={{ borderBottom: "1px solid #f4f2ec" }}
+                >
+                  <td style={{ padding: "16px 0", fontSize: "14px", fontWeight: 700, color: "#1d1f24" }}>{item.title}</td>
+                  <td style={{ padding: "16px 0", fontSize: "14px", color: "#6f6d64" }}>{item.client}</td>
+                  <td style={{ padding: "16px 0", fontSize: "14px", fontWeight: 600, color: "#1d1f24" }}>{item.views}</td>
+                  <td style={{ padding: "16px 0", fontSize: "14px", color: "#6f6d64" }}>{item.time}</td>
+                  <td style={{ padding: "16px 0" }}>
+                    <span style={{ 
+                      display: "inline-flex", 
+                      alignItems: "center", 
+                      gap: "6px", 
+                      padding: "4px 12px", 
+                      borderRadius: "99px", 
+                      fontSize: "12px", 
+                      fontWeight: 600,
+                      border: "1px solid #eeece5",
+                      color: "#6f6d64"
+                    }}>
+                      <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: item.statusColor }}></span>
+                      {item.status}
                     </span>
                   </td>
                 </tr>
@@ -326,6 +315,7 @@ export function Analytics({ setView }: { setView: (v: string) => void }) {
           </table>
         </div>
       </div>
+
     </div>
   );
 }

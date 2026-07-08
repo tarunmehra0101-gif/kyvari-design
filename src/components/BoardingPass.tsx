@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 export function BoardingPass({
@@ -12,7 +13,7 @@ export function BoardingPass({
         <svg width="26" height="26" viewBox="0 0 26 26"><circle cx="13" cy="13" r="12" fill="rgba(255,255,255,.12)"/><path d="M5 16L18 7.5c1.2-.8 2.5-.4 2.9.2.4.7 0 2-1.1 2.8L8.2 17.8z" fill="#fff"/><path d="M5 16l3.2 1.6L7.2 20z" fill="#ffd66b"/></svg>
         <div>
           <div style={{fontSize:"9.5px",fontWeight:500,letterSpacing:".22em",color:"#9aa0c2"}}>BOARDING PASS · ECONOMY</div>
-          <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"14.5px"}}>Drukair · KB205</div>
+          <div style={{fontFamily:"var(--font-fraunces), serif",fontWeight:500,fontSize:"14.5px"}}>Drukair · KB205</div>
         </div>
         <span style={{flex:1}}></span>
         <span style={{borderRadius:"99px",padding:"5px 12px",background:"rgba(255,255,255,.12)",border:"1px solid rgba(255,255,255,.18)",fontSize:"10.5px",fontWeight:500,letterSpacing:".1em"}}>NONSTOP · 2H 30M</span>
@@ -60,7 +61,7 @@ export function BoardingPass({
 
       <div style={{display:"flex",alignItems:"center",gap:"16px",padding:"16px 22px 6px"}}>
         <div>
-          <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"30px",letterSpacing:"-.01em"}}>{fromCode}</div>
+          <div style={{fontFamily:"var(--font-fraunces), serif",fontWeight:500,fontSize:"30px",letterSpacing:"-.01em"}}>{fromCode}</div>
           <div style={{fontSize:"11.5px",fontWeight:500,color:"#8a90a6"}}>{fromTime} · {fromCity}</div>
         </div>
         <div style={{flex:1,position:"relative",height:"26px"}}>
@@ -71,7 +72,7 @@ export function BoardingPass({
           <span style={{position:"absolute",right:"-3px",top:"50%",marginTop:"-7px",width:"14px",height:"14px",borderRadius:"50%",background:"rgba(5,150,105,.3)",animation:"bpPing 2s ease-out 1s infinite",display:"block"}}></span>
         </div>
         <div style={{textAlign:"right"}}>
-          <div style={{fontFamily:"'Playfair Display', serif",fontWeight:500,fontSize:"30px",letterSpacing:"-.01em"}}>{toCode}</div>
+          <div style={{fontFamily:"var(--font-fraunces), serif",fontWeight:500,fontSize:"30px",letterSpacing:"-.01em"}}>{toCode}</div>
           <div style={{fontSize:"11.5px",fontWeight:500,color:"#8a90a6"}}>{toTime} · {toCity}</div>
         </div>
       </div>

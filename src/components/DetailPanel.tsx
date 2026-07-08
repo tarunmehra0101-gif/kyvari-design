@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { X, ArrowLeft, Heart, CheckCircle, Share, Headphones, MoreHorizontal, MapPin, Plane, Clock, Calendar, CheckCircle2 } from 'lucide-react';
 
@@ -34,7 +35,7 @@ export function DetailPanel() {
             <div className="flex items-center gap-2 text-white/80 text-sm font-medium mb-2 uppercase tracking-wider">
               <MapPin size={16} /> Paris, France
             </div>
-            <h1 className="text-4xl md:text-5xl font-medium text-white" style={{fontFamily:"'Playfair Display', serif"}}>Five Days in Paris</h1>
+            <h1 className="text-4xl md:text-5xl font-medium text-white" style={{fontFamily:"var(--font-fraunces), serif"}}>Five Days in Paris</h1>
           </div>
         </div>
 
@@ -81,23 +82,53 @@ export function DetailPanel() {
                 <div className="space-y-4">
                   <div className="flex gap-4">
                     <div className="w-12 text-sm font-medium text-slate-400 pt-1">2:00 PM</div>
-                    <div className="flex-1 bg-slate-50 rounded-2xl p-4 border border-slate-100 flex items-start gap-4">
-                      <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&q=80&w=200&h=200" className="w-16 h-16 rounded-xl object-cover" />
-                      <div>
-                        <h4 className="font-medium text-slate-900">Check-in: Kimpton St Honoré</h4>
-                        <p className="text-sm text-slate-500 mt-1">Drop off luggage and rest.</p>
+                    <div className="flex-1 bg-white border border-slate-200 hover:border-slate-300 rounded-2xl overflow-hidden flex items-stretch shadow-sm transition-all cursor-pointer group">
+                      <div className="w-[80px] bg-sky-50 relative overflow-hidden flex-shrink-0 p-3 flex items-center justify-center">
+                         <span className="absolute bottom-0 right-0 w-[60px] h-[60px] bg-indigo-500 clip-path-polygon-[50%_0,0_100%,100%_100%]"></span>
+                         <span className="absolute bottom-0 left-[-10px] w-[80px] h-[40px] bg-indigo-600 clip-path-polygon-[50%_0,0_100%,100%_100%]"></span>
+                         <div className="absolute bottom-2 right-2 w-[22px] h-[22px] rounded-full bg-white shadow-sm flex items-center justify-center p-1">
+                           <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 20v-8a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8"/><path d="M2 18h20"/><path d="M7 14v4"/><path d="M17 14v4"/><path d="M8 10V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"/></svg>
+                         </div>
+                      </div>
+                      <div className="p-4 flex-1 flex items-center justify-between">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="inline-flex bg-emerald-50 text-emerald-500 text-[9px] font-extrabold tracking-widest uppercase px-2 py-1 rounded-full">HOTEL</span>
+                            <span className="text-[11px] font-bold text-amber-600 flex items-center gap-1"><span className="text-amber-500">★</span> 4.8</span>
+                          </div>
+                          <h4 className="font-semibold text-slate-900 text-sm">Kimpton St Honoré</h4>
+                          <p className="text-xs text-slate-500 font-medium mt-1">Check-in 14:00 · 4 nights</p>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm font-bold text-slate-900">$320/nt</div>
+                          <div className="text-[10px] font-bold text-rose-500 mt-1 flex items-center gap-1 justify-end">Details <span className="group-hover:translate-x-1 transition-transform">→</span></div>
+                        </div>
                       </div>
                     </div>
                   </div>
                   <div className="flex gap-4">
                     <div className="w-12 text-sm font-medium text-slate-400 pt-1">4:00 PM</div>
-                    <div className="flex-1 bg-slate-50 rounded-2xl p-4 border border-slate-100 flex items-start gap-4">
-                      <div className="w-16 h-16 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center flex-shrink-0">
-                        <CheckCircle2 size={24} />
+                    <div className="flex-1 bg-white border border-slate-200 hover:border-slate-300 rounded-2xl overflow-hidden flex items-stretch shadow-sm transition-all cursor-pointer group">
+                      <div className="w-[80px] bg-rose-50 relative overflow-hidden flex-shrink-0 p-3 flex items-center justify-center">
+                         <span className="absolute bottom-0 right-0 w-[60px] h-[60px] bg-rose-400 clip-path-polygon-[50%_0,0_100%,100%_100%]"></span>
+                         <span className="absolute bottom-0 left-[-10px] w-[80px] h-[40px] bg-rose-500 clip-path-polygon-[50%_0,0_100%,100%_100%]"></span>
+                         <div className="absolute bottom-2 right-2 w-[22px] h-[22px] rounded-full bg-white shadow-sm flex items-center justify-center p-1">
+                           <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19 4h-2l-1-2H8L7 4H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/></svg>
+                         </div>
                       </div>
-                      <div>
-                        <h4 className="font-medium text-slate-900">Seine River Stroll</h4>
-                        <p className="text-sm text-slate-500 mt-1">Walk along the Seine, taking in the classic Parisian views as the sun begins to set.</p>
+                      <div className="p-4 flex-1 flex items-center justify-between">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="inline-flex bg-blue-50 text-blue-500 text-[9px] font-extrabold tracking-widest uppercase px-2 py-1 rounded-full">SIGHTSEEING</span>
+                            <span className="text-[11px] font-bold text-amber-600 flex items-center gap-1"><span className="text-amber-500">★</span> 4.9</span>
+                          </div>
+                          <h4 className="font-semibold text-slate-900 text-sm">Seine River Stroll</h4>
+                          <p className="text-xs text-slate-500 font-medium mt-1">16:00 · 60–90 min</p>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm font-bold text-slate-900">Included</div>
+                          <div className="text-[10px] font-bold text-rose-500 mt-1 flex items-center gap-1 justify-end">Details <span className="group-hover:translate-x-1 transition-transform">→</span></div>
+                        </div>
                       </div>
                     </div>
                   </div>

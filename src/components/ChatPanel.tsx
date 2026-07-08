@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import { ChevronLeft, ChevronDown, User, Sparkles, CheckCircle2, Plus, Mic, ArrowUp } from 'lucide-react';
 

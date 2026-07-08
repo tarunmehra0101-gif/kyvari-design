@@ -52,18 +52,21 @@ const TrailCard = React.forwardRef<HTMLDivElement, TrailCardProps>(
         )}
         whileHover={{ y: -5, scale: 1.02, boxShadow: "0 20px 40px rgba(20,24,58,0.1)" }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        {...props}
+        {...(props as any)}
       >
-        <div className="relative h-60 w-full">
-          <img
-            src={imageUrl}
-            alt={title}
-            className="h-full w-full object-cover"
-          />
+        <div className="relative h-60 w-full" style={{background: "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)"}}>
+          {imageUrl && (
+            <img
+              src={imageUrl}
+              alt={title}
+              className="h-full w-full object-cover"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+            />
+          )}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 flex w-full items-end justify-between p-4 z-10">
             <div className="text-white">
-              <h3 className="text-xl font-bold leading-tight drop-shadow-md" style={{fontFamily:"'Playfair Display', serif"}}>{title}</h3>
+              <h3 className="text-xl font-bold leading-tight drop-shadow-md" style={{fontFamily:"var(--font-fraunces), serif"}}>{title}</h3>
               <p className="text-sm text-white/90 drop-shadow-md mt-1">{location}</p>
             </div>
             <motion.div
