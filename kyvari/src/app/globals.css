@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  KYVARI DESIGN TOKENS                                              */
+/*  Single source of truth. Every color, shadow, radius and font      */
+/*  used in the product maps to a token below (Tailwind v4 @theme).   */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* ---- Type families (wired to next/font variables in layout.tsx) */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  /* ---- Neutrals — warm "paper" scale, never pure gray */
+  --color-paper: #f6f4ef; /* page plane */
+  --color-parchment: #efece4; /* recessed wells, hover washes */
+  --color-surface: #ffffff; /* cards */
+  --color-ink: #14201c; /* primary text */
+  --color-ink-soft: #49554f; /* secondary text */
+  --color-ink-mute: #78827c; /* captions, axis labels */
+  --color-line: #e6e2d7; /* hairline borders */
+  --color-line-strong: #d5d0c2; /* emphasized hairlines */
+
+  /* ---- Lagoon — brand primary (deep sea green) */
+  --color-lagoon-50: #edf7f3;
+  --color-lagoon-100: #d7eee5;
+  --color-lagoon-200: #a9decb;
+  --color-lagoon-300: #66bfa6;
+  --color-lagoon-400: #31a487;
+  --color-lagoon-500: #0b8a6e; /* primary actions */
+  --color-lagoon-600: #0a6b57; /* hover */
+  --color-lagoon-700: #085744;
+  --color-lagoon-800: #073f33;
+  --color-lagoon-900: #0a2e26; /* dark sections, footer */
+  --color-lagoon-950: #06201a;
+
+  /* ---- Ember — warm accent (sunset coral) */
+  --color-ember-50: #fdeee8;
+  --color-ember-100: #fadccf;
+  --color-ember-400: #ef7a52;
+  --color-ember-500: #e4572e;
+  --color-ember-600: #c74522;
+
+  /* ---- Dune — amber support (ratings, highlights) */
+  --color-dune-50: #faf3e2;
+  --color-dune-100: #f3e4bd;
+  --color-dune-500: #c98500;
+  --color-dune-600: #a56d00;
+
+  /* ---- Sky & Iris — chart/support hues */
+  --color-sky-50: #eaf2fc;
+  --color-sky-500: #2a78d6;
+  --color-iris-50: #f1edfc;
+  --color-iris-500: #7c5ce0;
+
+  /* ---- Chart roles (categorical order is CVD-validated: do not shuffle) */
+  --color-chart-1: #0b8a6e; /* lagoon  */
+  --color-chart-2: #2a78d6; /* sky     */
+  --color-chart-3: #c98500; /* dune    */
+  --color-chart-4: #7c5ce0; /* iris    */
+  --color-chart-5: #e4572e; /* ember   */
+  --color-chart-grid: #eae6dc;
+  --color-chart-axis: #78827c;
+
+  /* ---- Status (never reused as series colors) */
+  --color-status-good: #0ca30c;
+  --color-status-good-deep: #006300;
+  --color-status-warn: #c98500;
+  --color-status-bad: #d03b3b;
+
+  /* ---- Shadows — soft, warm, layered */
+  --shadow-soft: 0 1px 2px rgb(20 32 28 / 0.04), 0 4px 14px rgb(20 32 28 / 0.05);
+  --shadow-lift: 0 2px 4px rgb(20 32 28 / 0.05), 0 14px 34px rgb(20 32 28 / 0.09);
+  --shadow-pop: 0 4px 10px rgb(20 32 28 / 0.06), 0 28px 64px rgb(20 32 28 / 0.16);
+
+  /* ---- Radii */
+  --radius-card: 1.25rem; /* 20px — default card */
+  --radius-panel: 1.75rem; /* 28px — hero panels, big surfaces */
+
+  /* ---- Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.4, 0.4, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                              */
+/* ------------------------------------------------------------------ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-lagoon-200);
+  color: var(--color-lagoon-900);
+}
+
+/* Visible, branded focus ring for keyboard nav */
+:focus-visible {
+  outline: 2px solid var(--color-lagoon-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Typography utilities                                              */
+/* ------------------------------------------------------------------ */
+
+@utility text-display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.9rem, 6.4vw, 5.4rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  font-weight: 560;
+}
+
+@utility text-display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  font-weight: 560;
+}
+
+@utility text-display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+  font-weight: 560;
+}
+
+@utility text-display-sm {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  font-weight: 580;
+}
+
+/* Small-caps section label */
+@utility text-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Surface & decor utilities                                         */
+/* ------------------------------------------------------------------ */
+
+/* Standard raised card */
+@utility card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Frosted glass (nav, overlays) */
+@utility glass {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.55);
+}
+
+/* Fine grain overlay so gradients never band — pure SVG, no asset */
+@utility grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+
+/* Dotted route connector (itinerary timelines) */
+@utility route-dashed {
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-line-strong) 55%,
+    transparent 45%
+  );
+  background-size: 2px 8px;
+  background-repeat: repeat-y;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Destination gradient "art" — stands in for photography.           */
+/*  Swap for real imagery by replacing these classes with <Image>.    */
+/* ------------------------------------------------------------------ */
+
+@utility scene-santorini {
+  background:
+    radial-gradient(120% 90% at 85% 0%, #dbeafe 0%, transparent 50%),
+    radial-gradient(90% 70% at 15% 100%, #0a6b8a 0%, transparent 60%),
+    linear-gradient(160deg, #7cb8e8 0%, #2a6fb0 45%, #0d3b66 100%);
+}
+@utility scene-bali {
+  background:
+    radial-gradient(110% 80% at 80% 10%, #fde9c8 0%, transparent 45%),
+    radial-gradient(90% 80% at 10% 95%, #073f33 0%, transparent 65%),
+    linear-gradient(155deg, #57b98a 0%, #0b8a6e 50%, #0a2e26 100%);
+}
+@utility scene-rajasthan {
+  background:
+    radial-gradient(110% 80% at 78% 8%, #ffe3b3 0%, transparent 50%),
+    radial-gradient(100% 80% at 15% 100%, #6b1d1d 0%, transparent 60%),
+    linear-gradient(155deg, #e8a04c 0%, #c05a2e 50%, #7c2d2d 100%);
+}
+@utility scene-kyoto {
+  background:
+    radial-gradient(110% 80% at 80% 5%, #fbd5e0 0%, transparent 50%),
+    radial-gradient(90% 70% at 12% 100%, #3d1f3d 0%, transparent 60%),
+    linear-gradient(155deg, #e88ba4 0%, #a04a6e 50%, #45213f 100%);
+}
+@utility scene-swiss {
+  background:
+    radial-gradient(110% 80% at 82% 6%, #eef6ff 0%, transparent 50%),
+    radial-gradient(90% 75% at 10% 100%, #1e3a5f 0%, transparent 60%),
+    linear-gradient(155deg, #a8c8e8 0%, #5a7fa8 50%, #23405e 100%);
+}
+@utility scene-amalfi {
+  background:
+    radial-gradient(110% 80% at 82% 4%, #fff1cf 0%, transparent 50%),
+    radial-gradient(95% 75% at 12% 100%, #0d3b66 0%, transparent 60%),
+    linear-gradient(155deg, #f0b860 0%, #d96b4a 45%, #1e5a8a 100%);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Motion helpers                                                    */
+/* ------------------------------------------------------------------ */
+
+/* Elements revealed by GSAP start hidden — only when JS is running
+   and the user hasn't asked for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    will-change: opacity, transform;
+  }
+}
+
+/* Marquee for the social-proof strip */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 36s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+}
+
+/* Soft pulse for "live" dots */
+@keyframes live-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(11 138 110 / 0.35); }
+  55% { box-shadow: 0 0 0 6px rgb(11 138 110 / 0); }
+}
+.animate-live {
+  animation: live-pulse 2.4s ease-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-live { animation: none; }
+}
