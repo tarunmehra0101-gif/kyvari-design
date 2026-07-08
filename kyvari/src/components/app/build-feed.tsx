@@ -1,26 +1,26 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowUp, Check, CircleDashed, Loader2, Sparkles } from "lucide-react";
+import { ArrowUp, Check, CircleDashed, Loader2 } from "lucide-react";
 import { KyvariMark } from "@/components/ui/logo";
 import { buildSteps } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
 /**
- * Left rail of the builder: the conversation with Kyvari.
- * Shows the client brief, the AI's live build steps, and a refine composer.
+ * The conversation with Kyvari: client brief, live build steps, refine
+ * composer. Deliberately monochrome — the itinerary is the colorful thing.
  */
 export function BuildFeed({ brief }: { brief: string }) {
   const reduce = useReducedMotion();
   const item = {
-    hidden: reduce ? {} : { opacity: 0, y: 14 },
+    hidden: reduce ? {} : { opacity: 0, y: 12 },
     show: (i: number) =>
       reduce
         ? {}
         : {
             opacity: 1,
             y: 0,
-            transition: { delay: 0.08 * i, duration: 0.5, ease: [0.16, 1, 0.3, 1] as const },
+            transition: { delay: 0.07 * i, duration: 0.45, ease: [0.16, 1, 0.3, 1] as const },
           },
   };
 
@@ -33,7 +33,7 @@ export function BuildFeed({ brief }: { brief: string }) {
           initial="hidden"
           animate="show"
           custom={0}
-          className="ml-8 rounded-3xl rounded-br-lg bg-lagoon-500 px-4 py-3 text-sm leading-relaxed text-white shadow-soft"
+          className="ml-8 rounded-2xl rounded-br-md bg-parchment px-4 py-3 text-sm leading-relaxed text-ink"
         >
           {brief}
         </motion.div>
@@ -46,9 +46,9 @@ export function BuildFeed({ brief }: { brief: string }) {
           custom={1}
           className="flex items-start gap-3"
         >
-          <KyvariMark className="mt-0.5 h-7 w-7 shrink-0" />
+          <KyvariMark className="mt-0.5 h-6 w-6 shrink-0" />
           <p className="text-sm leading-relaxed text-ink">
-            On it — building the itinerary now. Watch it come together on the
+            On it — drafting the trip now. Watch it come together on the
             right, and nudge me anytime.
           </p>
         </motion.div>
@@ -59,31 +59,26 @@ export function BuildFeed({ brief }: { brief: string }) {
           initial="hidden"
           animate="show"
           custom={2}
-          className="ml-10 space-y-1 rounded-2xl border border-line bg-surface p-2"
+          className="ml-9 space-y-1 border-l border-line pl-4"
           aria-label="AI build progress"
         >
           {buildSteps.map((step) => (
-            <li
-              key={step.id}
-              className={cn(
-                "flex items-start gap-2.5 rounded-xl px-3 py-2",
-                step.state === "active" && "bg-lagoon-50"
-              )}
-            >
+            <li key={step.id} className="flex items-start gap-2.5 py-1.5">
               {step.state === "done" && (
-                <Check className="mt-0.5 h-4 w-4 shrink-0 text-lagoon-600" />
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-moss-500" />
               )}
               {step.state === "active" && (
-                <Loader2 className="mt-0.5 h-4 w-4 shrink-0 animate-spin text-lagoon-600 motion-reduce:animate-none" />
+                <Loader2 className="mt-0.5 h-4 w-4 shrink-0 animate-spin text-ink motion-reduce:animate-none" />
               )}
               {step.state === "todo" && (
-                <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-ink-mute" />
+                <CircleDashed className="mt-0.5 h-4 w-4 shrink-0 text-ink-mute/60" />
               )}
               <div>
                 <p
                   className={cn(
-                    "text-sm font-medium leading-snug",
-                    step.state === "todo" ? "text-ink-mute" : "text-ink"
+                    "text-sm leading-snug",
+                    step.state === "todo" ? "text-ink-mute" : "text-ink",
+                    step.state === "active" && "font-medium"
                   )}
                 >
                   {step.label}
@@ -102,22 +97,21 @@ export function BuildFeed({ brief }: { brief: string }) {
       {/* Refine composer */}
       <div className="border-t border-line p-4">
         <form
-          className="flex items-center gap-2 rounded-full border border-line bg-surface py-1.5 pl-4 pr-1.5 shadow-soft transition-colors focus-within:border-lagoon-300"
+          className="flex items-center gap-2 rounded-full border border-line bg-surface py-1.5 pl-4 pr-1.5 transition-colors focus-within:border-ink/30"
           onSubmit={(e) => e.preventDefault()}
         >
-          <Sparkles className="h-4 w-4 shrink-0 text-lagoon-500" aria-hidden />
           <label htmlFor="refine" className="sr-only">
             Ask Kyvari to refine the itinerary
           </label>
           <input
             id="refine"
-            placeholder="Swap Day 2 lunch for something vegetarian…"
+            placeholder="Make day 2 slower, swap lunch for vegetarian…"
             className="w-full bg-transparent text-sm text-ink outline-none placeholder:text-ink-mute"
           />
           <button
             type="submit"
             aria-label="Send refinement"
-            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-lagoon-500 text-white transition-colors hover:bg-lagoon-600"
+            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-ink text-paper transition-colors hover:bg-black"
           >
             <ArrowUp className="h-4 w-4" />
           </button>

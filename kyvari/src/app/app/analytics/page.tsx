@@ -12,7 +12,7 @@ const ranges = ["7 days", "30 days", "90 days", "This year"];
 
 export default function AnalyticsPage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:py-12">
+    <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:py-16">
       {/* Header + range filter */}
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div>
@@ -21,7 +21,7 @@ export default function AnalyticsPage() {
             How clients are engaging with your itineraries.
           </p>
         </div>
-        <div role="group" aria-label="Date range" className="flex rounded-full border border-line bg-surface p-1 shadow-soft">
+        <div role="group" aria-label="Date range" className="flex rounded-full border border-line bg-surface p-1">
           {ranges.map((r, i) => (
             <button
               key={r}
@@ -30,7 +30,7 @@ export default function AnalyticsPage() {
               className={cn(
                 "rounded-full px-3.5 py-1.5 text-xs font-semibold transition-colors",
                 i === 1
-                  ? "bg-lagoon-500 text-white"
+                  ? "bg-ink text-paper"
                   : "text-ink-soft hover:text-ink"
               )}
             >
@@ -43,7 +43,7 @@ export default function AnalyticsPage() {
       {/* KPI tiles */}
       <dl className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="card p-5">
+          <div key={kpi.label} className="card p-5 sm:p-6">
             <dt className="text-xs font-semibold uppercase tracking-wide text-ink-mute">
               {kpi.label}
             </dt>
@@ -97,7 +97,7 @@ export default function AnalyticsPage() {
 
         <section aria-labelledby="activity" className="card p-6">
           <h2 id="activity" className="text-display-sm flex items-center gap-2 text-ink">
-            <Flame className="h-4.5 w-4.5 text-ember-500" aria-hidden />
+            <Flame className="h-4.5 w-4.5 text-clay-500" aria-hidden />
             Client activity
           </h2>
           <ul className="mt-5 space-y-5">
@@ -110,7 +110,7 @@ export default function AnalyticsPage() {
                   <p
                     className={cn(
                       "mt-0.5 text-[0.65rem] font-semibold uppercase tracking-wide",
-                      a.signal === "hot" && "text-ember-500",
+                      a.signal === "hot" && "text-clay-500",
                       a.signal === "booked" && "text-status-good-deep",
                       a.signal === "normal" && "text-ink-mute"
                     )}

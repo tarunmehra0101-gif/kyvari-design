@@ -84,14 +84,14 @@ function Route({ curve, offset }: { curve: THREE.QuadraticBezierCurve3; offset: 
         object={
           new THREE.Line(
             geometry,
-            new THREE.LineBasicMaterial({ color: "#0b8a6e", transparent: true, opacity: 0.55 })
+            new THREE.LineBasicMaterial({ color: "#1b1b18", transparent: true, opacity: 0.3 })
           )
         }
         ref={lineRef}
       />
       <mesh ref={headRef}>
         <sphereGeometry args={[0.045, 12, 12]} />
-        <meshBasicMaterial color="#e4572e" />
+        <meshBasicMaterial color="#c47a3d" />
       </mesh>
     </group>
   );
@@ -112,18 +112,18 @@ function Planet() {
           dots are hidden while front dots stay crisp on top of it. */}
       <mesh renderOrder={-1}>
         <sphereGeometry args={[RADIUS * 0.96, 48, 48]} />
-        <meshBasicMaterial color="#f4f3ec" transparent opacity={0.55} />
+        <meshBasicMaterial color="#faf9f6" transparent opacity={0.65} />
       </mesh>
       <points>
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" args={[positions, 3]} />
         </bufferGeometry>
         <pointsMaterial
-          color="#085744"
+          color="#1b1b18"
           size={0.038}
           sizeAttenuation
           transparent
-          opacity={0.9}
+          opacity={0.62}
           depthWrite={false}
         />
       </points>

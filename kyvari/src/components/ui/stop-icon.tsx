@@ -8,28 +8,13 @@ import {
 import { cn } from "@/lib/utils";
 import type { StopType } from "@/lib/data";
 
-/** One place defines the stop-type → icon/tint language used everywhere. */
-const config: Record<
-  StopType,
-  { Icon: typeof Plane; tint: string; label: string }
-> = {
-  flight: { Icon: Plane, tint: "bg-sky-50 text-sky-500", label: "Flight" },
-  hotel: { Icon: BedDouble, tint: "bg-iris-50 text-iris-500", label: "Stay" },
-  experience: {
-    Icon: Sparkles,
-    tint: "bg-lagoon-50 text-lagoon-600",
-    label: "Experience",
-  },
-  meal: {
-    Icon: UtensilsCrossed,
-    tint: "bg-ember-50 text-ember-600",
-    label: "Dining",
-  },
-  transfer: {
-    Icon: CarFront,
-    tint: "bg-parchment text-ink-soft",
-    label: "Transfer",
-  },
+/** Stop-type → icon/label. Icons stay ink-on-parchment; photos carry color. */
+const config: Record<StopType, { Icon: typeof Plane; label: string }> = {
+  flight: { Icon: Plane, label: "Flight" },
+  hotel: { Icon: BedDouble, label: "Stay" },
+  experience: { Icon: Sparkles, label: "Experience" },
+  meal: { Icon: UtensilsCrossed, label: "Dining" },
+  transfer: { Icon: CarFront, label: "Transfer" },
 };
 
 export function stopLabel(type: StopType) {
@@ -43,18 +28,17 @@ export function StopIcon({
   type: StopType;
   className?: string;
 }) {
-  const { Icon, tint, label } = config[type];
+  const { Icon, label } = config[type];
   return (
     <span
       role="img"
       aria-label={label}
       className={cn(
-        "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl",
-        tint,
+        "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line bg-parchment text-ink-soft",
         className
       )}
     >
-      <Icon className="h-[18px] w-[18px]" strokeWidth={2} />
+      <Icon className="h-[17px] w-[17px]" strokeWidth={1.8} />
     </span>
   );
 }

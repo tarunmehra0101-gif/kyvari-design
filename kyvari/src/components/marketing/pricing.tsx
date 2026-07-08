@@ -1,6 +1,5 @@
 import { Check } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
-import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -9,11 +8,11 @@ const tiers = [
     name: "Starter",
     price: "$0",
     period: "forever",
-    blurb: "For trying Kyvari on your next three clients.",
+    blurb: "Try Kyvari on your next three clients.",
     cta: "Start free",
     featured: false,
     features: [
-      "10 AI itineraries / month",
+      "10 AI itineraries a month",
       "2 aggregation sources",
       "Kyvari-branded share pages",
       "Basic open tracking",
@@ -22,32 +21,31 @@ const tiers = [
   {
     name: "Pro",
     price: "$49",
-    period: "per agent / month",
+    period: "per agent, monthly",
     blurb: "For working agents who close on speed and polish.",
     cta: "Start 14-day trial",
     featured: true,
     features: [
-      "100 AI itineraries / month",
-      "All sources · GDS, OTA, chat, PDF",
-      "Your logo, colors & domain",
+      "100 AI itineraries a month",
+      "All sources — GDS, OTA, chat, PDF",
+      "Your logo, colors and domain",
       "Full engagement analytics",
-      "Dwell-time & re-visit alerts",
-      "Priority AI generation",
+      "Dwell-time and re-visit alerts",
     ],
   },
   {
     name: "Agency",
     price: "$199",
-    period: "per team / month",
+    period: "per team, monthly",
     blurb: "For teams that live in itineraries all day.",
     cta: "Talk to us",
     featured: false,
     features: [
       "Unlimited itineraries",
       "5 seats included",
-      "Team analytics & funnels",
+      "Team analytics and funnels",
       "Shared asset library",
-      "API & webhook access",
+      "API and webhooks",
     ],
   },
 ];
@@ -56,48 +54,46 @@ export function Pricing() {
   return (
     <Reveal
       as="section"
-      className="border-y border-line bg-surface/60 px-4 py-24 sm:px-6"
-      stagger={0.12}
+      className="border-t border-line px-5 py-24 sm:px-8 sm:py-32"
+      stagger={0.1}
     >
       <div className="mx-auto max-w-6xl" id="pricing">
-        <div className="mx-auto max-w-2xl text-center">
-          <p data-reveal className="text-eyebrow text-lagoon-600">
-            Pricing
-          </p>
-          <h2 data-reveal className="text-display-lg mt-3 text-ink">
-            Pays for itself with one saved afternoon.
-          </h2>
-        </div>
+        <h2 data-reveal className="text-display-lg max-w-xl text-ink">
+          Pays for itself with one saved afternoon.
+        </h2>
 
-        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {tiers.map((tier) => (
             <div
               key={tier.name}
               data-reveal
               className={cn(
-                "card relative flex flex-col p-8",
-                tier.featured &&
-                  "border-lagoon-300 shadow-pop lg:-my-4 lg:py-12"
+                "flex flex-col rounded-3xl border p-8",
+                tier.featured
+                  ? "border-ink bg-surface shadow-pop"
+                  : "border-line bg-surface"
               )}
             >
-              {tier.featured && (
-                <Badge tone="lagoon" className="absolute -top-3 left-8">
-                  Most popular
-                </Badge>
-              )}
-              <h3 className="text-display-sm text-ink">{tier.name}</h3>
-              <p className="mt-4">
-                <span className="font-display text-5xl font-semibold tracking-tight text-ink">
-                  {tier.price}
-                </span>
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-ink">
+                  {tier.name}
+                </h3>
+                {tier.featured && (
+                  <span className="rounded-full bg-ink px-2.5 py-1 text-[0.65rem] font-semibold text-paper">
+                    Most popular
+                  </span>
+                )}
+              </div>
+              <p className="mt-5">
+                <span className="font-display text-5xl text-ink">{tier.price}</span>
                 <span className="ml-2 text-sm text-ink-mute">{tier.period}</span>
               </p>
               <p className="mt-3 text-[0.95rem] text-ink-soft">{tier.blurb}</p>
 
-              <ul className="mt-7 flex-1 space-y-3">
+              <ul className="mt-7 flex-1 space-y-3 border-t border-line pt-6">
                 {tier.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-ink-soft">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-lagoon-500" />
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-ink" />
                     {f}
                   </li>
                 ))}

@@ -1,29 +1,20 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-type Tone =
-  | "neutral"
-  | "lagoon"
-  | "ember"
-  | "dune"
-  | "sky"
-  | "iris"
-  | "good"
-  | "onDark";
+/**
+ * Chips are deliberately quiet: white or parchment with a hairline.
+ * Meaning is carried by a small dot or icon, never a loud fill.
+ */
+type Tone = "neutral" | "outline" | "onImage";
 
 const tones: Record<Tone, string> = {
   neutral: "bg-parchment text-ink-soft",
-  lagoon: "bg-lagoon-50 text-lagoon-700",
-  ember: "bg-ember-50 text-ember-600",
-  dune: "bg-dune-50 text-dune-600",
-  sky: "bg-sky-50 text-sky-500",
-  iris: "bg-iris-50 text-iris-500",
-  good: "bg-lagoon-50 text-status-good-deep",
-  onDark: "bg-white/12 text-white/90 backdrop-blur-sm",
+  outline: "bg-surface text-ink-soft border border-line",
+  onImage: "bg-white/90 text-ink backdrop-blur-sm",
 };
 
 export function Badge({
-  tone = "neutral",
+  tone = "outline",
   className,
   children,
 }: {
@@ -34,7 +25,7 @@ export function Badge({
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold",
+        "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium",
         tones[tone],
         className
       )}
@@ -44,33 +35,37 @@ export function Badge({
   );
 }
 
-/** Itinerary lifecycle pill — one place defines the status → tone map. */
+const statusDot = {
+  draft: "bg-ink-mute",
+  sent: "bg-ink",
+  viewed: "bg-clay-500",
+  booked: "bg-status-good",
+} as const;
+
+const statusLabel = {
+  draft: "Draft",
+  sent: "Sent",
+  viewed: "Viewed",
+  booked: "Booked",
+} as const;
+
+/** Itinerary lifecycle pill — neutral chip + semantic dot. */
 export function StatusBadge({
   status,
+  tone = "outline",
   className,
 }: {
-  status: "draft" | "sent" | "viewed" | "booked";
+  status: keyof typeof statusDot;
+  tone?: Tone;
   className?: string;
 }) {
-  const map = {
-    draft: { tone: "neutral" as Tone, label: "Draft" },
-    sent: { tone: "sky" as Tone, label: "Sent" },
-    viewed: { tone: "dune" as Tone, label: "Viewed" },
-    booked: { tone: "good" as Tone, label: "Booked" },
-  }[status];
   return (
-    <Badge tone={map.tone} className={className}>
+    <Badge tone={tone} className={className}>
       <span
-        className={cn(
-          "h-1.5 w-1.5 rounded-full",
-          status === "draft" && "bg-ink-mute",
-          status === "sent" && "bg-sky-500",
-          status === "viewed" && "bg-dune-500",
-          status === "booked" && "bg-status-good"
-        )}
+        className={cn("h-1.5 w-1.5 rounded-full", statusDot[status])}
         aria-hidden
       />
-      {map.label}
+      {statusLabel[status]}
     </Badge>
   );
 }

@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * The aggregation strip — where "multi-source" becomes visible.
- * Each chip is a connected source with its live contribution count.
+ * Quiet chips: a check or spinner plus a count, nothing louder.
  */
 export function SourceStrip() {
   return (
@@ -17,28 +17,17 @@ export function SourceStrip() {
         <span
           key={s.id}
           className={cn(
-            "inline-flex shrink-0 items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-semibold",
-            s.status === "parsing"
-              ? "border-dune-100 bg-dune-50 text-dune-600"
-              : "border-line bg-surface text-ink-soft"
+            "inline-flex shrink-0 items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 text-xs font-medium",
+            s.status === "parsing" ? "text-ink" : "text-ink-soft"
           )}
         >
           {s.status === "parsing" ? (
-            <Loader2 className="h-3.5 w-3.5 animate-spin motion-reduce:animate-none" />
+            <Loader2 className="h-3 w-3 animate-spin motion-reduce:animate-none" />
           ) : (
-            <Check className="h-3.5 w-3.5 text-lagoon-600" />
+            <Check className="h-3 w-3 text-moss-500" />
           )}
           {s.name}
-          <span
-            className={cn(
-              "rounded-full px-1.5 py-0.5 text-[0.65rem]",
-              s.status === "parsing"
-                ? "bg-dune-100 text-dune-600"
-                : "bg-lagoon-50 text-lagoon-700"
-            )}
-          >
-            {s.itemsFound}
-          </span>
+          <span className="tabular-nums text-ink-mute">{s.itemsFound}</span>
         </span>
       ))}
     </div>

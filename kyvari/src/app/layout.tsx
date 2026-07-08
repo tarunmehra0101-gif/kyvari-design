@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
 /** UI / body face — quiet, highly legible. */
@@ -9,12 +9,13 @@ const inter = Inter({
   display: "swap",
 });
 
-/** Display face — editorial serif for headlines & itinerary titles. */
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+/** Display face — high-contrast editorial serif for headlines. */
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
   subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
   display: "swap",
-  axes: ["opsz", "SOFT", "WONK"],
 });
 
 export const metadata: Metadata = {
@@ -32,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${fraunces.variable} h-full`}>
+    <html lang="en" className={`${inter.variable} ${instrument.variable} h-full`}>
       <head>
         {/* Adds the `js` class that gates GSAP reveal styles, so content is
             never hidden for users without JavaScript. */}

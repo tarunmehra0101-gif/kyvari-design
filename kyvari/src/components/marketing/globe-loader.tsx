@@ -15,11 +15,10 @@ function StaticFallback() {
   return (
     <div
       aria-hidden
-      className="relative h-full w-full rounded-full border border-lagoon-200/70
-                 bg-[radial-gradient(circle_at_35%_30%,#d7eee5_0%,#f6f4ef_65%)]"
+      className="relative h-full w-full rounded-full border border-line-strong bg-parchment/40"
     >
-      <div className="absolute inset-6 rounded-full border border-lagoon-200/50" />
-      <div className="absolute inset-16 rounded-full border border-lagoon-200/40" />
+      <div className="absolute inset-6 rounded-full border border-line" />
+      <div className="absolute inset-16 rounded-full border border-line" />
     </div>
   );
 }

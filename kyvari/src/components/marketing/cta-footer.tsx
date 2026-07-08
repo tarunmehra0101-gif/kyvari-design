@@ -2,40 +2,36 @@ import Link from "next/link";
 import { Reveal } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { KyvariLogo } from "@/components/ui/logo";
+import { GlobeLoader } from "./globe-loader";
 
-/** Closing CTA — the one dark, dramatic moment on the page. */
+/** Closing CTA — serif headline beside the quiet ink globe. */
 export function ClosingCta() {
   return (
-    <Reveal as="section" className="px-4 py-24 sm:px-6">
-      <div
-        data-reveal
-        className="grain relative mx-auto max-w-6xl overflow-hidden rounded-[var(--radius-panel)] bg-lagoon-900 px-6 py-20 text-center sm:px-12"
-      >
-        {/* aurora wash */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_20%_0%,rgb(11_138_110/0.55)_0%,transparent_60%),radial-gradient(50%_70%_at_85%_100%,rgb(228_87_46/0.28)_0%,transparent_60%)]"
-        />
-        <div className="relative">
-          <h2 className="text-display-lg mx-auto max-w-2xl text-white">
+    <Reveal as="section" className="overflow-hidden border-t border-line">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 px-5 py-24 sm:px-8 sm:py-28 md:grid-cols-[1.1fr_0.9fr]">
+        <div data-reveal>
+          <h2 className="text-display-lg max-w-lg text-ink">
             Your next client is dreaming. Send them somewhere.
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-lagoon-100/85">
-            Paste your last client brief into Kyvari and watch a sellable
-            itinerary take shape before your chai goes cold.
+          <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
+            Paste your last brief into Kyvari and watch a sellable itinerary
+            take shape before your coffee goes cold.
           </p>
-          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
-            <ButtonLink href="/app" variant="onDark" size="lg">
+          <div className="mt-8 flex flex-wrap gap-3">
+            <ButtonLink href="/app" size="lg">
               Build your first itinerary
             </ButtonLink>
-            <ButtonLink
-              href="#pricing"
-              size="lg"
-              className="border border-white/25 bg-white/10 text-white shadow-none hover:bg-white/15"
-            >
+            <ButtonLink href="#pricing" variant="secondary" size="lg">
               Compare plans
             </ButtonLink>
           </div>
+        </div>
+        <div
+          data-reveal
+          className="relative mx-auto aspect-square w-full max-w-90 md:max-w-105"
+          aria-hidden
+        >
+          <GlobeLoader />
         </div>
       </div>
     </Reveal>
@@ -59,7 +55,7 @@ const footerCols = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-line bg-surface/60 px-4 py-14 sm:px-6">
+    <footer className="border-t border-line px-5 py-14 sm:px-8">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           <Link href="/" aria-label="Kyvari home" className="inline-block rounded-lg">
@@ -77,7 +73,7 @@ export function Footer() {
                 <li key={label}>
                   <a
                     href="#"
-                    className="text-sm text-ink-soft transition-colors hover:text-lagoon-600"
+                    className="text-sm text-ink-soft transition-colors hover:text-ink"
                   >
                     {label}
                   </a>

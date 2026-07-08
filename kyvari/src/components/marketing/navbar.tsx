@@ -18,31 +18,33 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
+    <header
+      className={cn(
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        scrolled ? "glass border-b border-line" : "border-b border-transparent"
+      )}
+    >
       <nav
         aria-label="Main"
-        className={cn(
-          "mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full px-5 transition-all duration-300",
-          scrolled ? "glass shadow-lift" : "bg-transparent border border-transparent"
-        )}
+        className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8"
       >
-        <Link href="/" className="rounded-full" aria-label="Kyvari home">
+        <Link href="/" className="rounded-lg" aria-label="Kyvari home">
           <KyvariLogo />
         </Link>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-2 md:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-parchment hover:text-ink"
+                className="rounded-full px-3.5 py-2 text-sm text-ink-soft transition-colors hover:text-ink"
               >
                 {l.label}
               </a>
@@ -50,12 +52,12 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
           <ButtonLink href="/app" variant="ghost" size="sm">
             Sign in
           </ButtonLink>
           <ButtonLink href="/app" size="sm">
-            Start free
+            Get started
           </ButtonLink>
         </div>
 
@@ -70,28 +72,27 @@ export function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile sheet */}
       {open && (
-        <div className="glass mx-auto mt-2 max-w-6xl rounded-3xl p-4 shadow-lift md:hidden">
-          <ul className="flex flex-col">
+        <div className="border-t border-line bg-paper px-5 pb-5 pt-2 md:hidden">
+          <ul>
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-2xl px-4 py-3 text-[0.95rem] font-medium text-ink hover:bg-parchment"
+                  className="block rounded-xl px-2 py-3 text-[0.95rem] font-medium text-ink"
                 >
                   {l.label}
                 </a>
               </li>
             ))}
           </ul>
-          <div className="mt-2 flex gap-2 border-t border-line pt-3">
+          <div className="mt-2 flex gap-2 border-t border-line pt-4">
             <ButtonLink href="/app" variant="secondary" size="sm" className="flex-1">
               Sign in
             </ButtonLink>
             <ButtonLink href="/app" size="sm" className="flex-1">
-              Start free
+              Get started
             </ButtonLink>
           </div>
         </div>

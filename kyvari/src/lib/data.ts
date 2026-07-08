@@ -1,3 +1,5 @@
+import { photos } from "./photos";
+
 /* ------------------------------------------------------------------ */
 /*  Sample data for the whole product.                                */
 /*  Shapes here are the contract every screen renders from — replace  */
@@ -30,6 +32,7 @@ export interface Source {
 export interface Stop {
   id: string;
   time: string;
+  photo?: string;
   type: StopType;
   title: string;
   subtitle: string;
@@ -53,8 +56,10 @@ export interface Itinerary {
   title: string;
   destination: string;
   country: string;
-  /** Maps to a scene-* gradient utility (stand-in for cover photography) */
-  scene: "santorini" | "bali" | "rajasthan" | "kyoto" | "swiss" | "amalfi";
+  /** Cover photography (see lib/photos.ts) */
+  photo: string;
+  /** tone-* fallback class rendered behind the photo while it loads */
+  tone: "sea" | "palm" | "sand" | "blossom" | "alpine" | "citrus";
   theme: string;
   startDate: string;
   endDate: string;
@@ -114,7 +119,8 @@ export const itineraries: Itinerary[] = [
     title: "Santorini, Slowly",
     destination: "Santorini",
     country: "Greece",
-    scene: "santorini",
+    photo: photos.santorini,
+    tone: "sea",
     theme: "Honeymoon · Caldera views",
     startDate: "2026-08-12",
     endDate: "2026-08-19",
@@ -134,6 +140,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "s1-flight",
+            photo: photos.planeWing,
             time: "10:35",
             type: "flight",
             title: "Athens → Santorini · A3 356",
@@ -143,6 +150,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "s1-hotel",
+            photo: photos.poolVilla,
             time: "13:00",
             type: "hotel",
             title: "Aerino Cave Suites, Imerovigli",
@@ -154,6 +162,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "s1-dinner",
+            photo: photos.dinnerTable,
             time: "19:30",
             type: "meal",
             title: "Sunset dinner at Anogi",
@@ -172,6 +181,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "s2-oia",
+            photo: photos.oldTown,
             time: "08:30",
             type: "experience",
             title: "Oia old town & Ammoudi Bay walk",
@@ -182,6 +192,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "s2-lunch",
+            photo: photos.beach,
             time: "13:00",
             type: "meal",
             title: "Seafood lunch at Ammoudi Fish Tavern",
@@ -192,6 +203,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "s2-wine",
+            photo: photos.vineyard,
             time: "17:00",
             type: "experience",
             title: "Santo Wines caldera tasting",
@@ -211,6 +223,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "s3-sail",
+            photo: photos.sailboat,
             time: "10:00",
             type: "experience",
             title: "Caldera catamaran cruise",
@@ -221,6 +234,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "s3-dinner",
+            photo: photos.dinnerTable,
             time: "20:00",
             type: "meal",
             title: "Dinner at Metaxi Mas, Exo Gonia",
@@ -238,7 +252,8 @@ export const itineraries: Itinerary[] = [
     title: "Bali, Barefoot",
     destination: "Ubud & Uluwatu",
     country: "Indonesia",
-    scene: "bali",
+    photo: photos.bali,
+    tone: "palm",
     theme: "Family · Jungle + surf",
     startDate: "2026-07-21",
     endDate: "2026-07-28",
@@ -258,6 +273,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "b1-flight",
+            photo: photos.planeWing,
             time: "09:10",
             type: "flight",
             title: "Singapore → Denpasar · SQ 942",
@@ -266,6 +282,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "b1-hotel",
+            photo: photos.resortPool,
             time: "13:30",
             type: "hotel",
             title: "Alamanda Ridge Villas, Ubud",
@@ -285,6 +302,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "b2-swing",
+            photo: photos.bali,
             time: "09:00",
             type: "experience",
             title: "Jungle swing & terrace walk",
@@ -295,6 +313,7 @@ export const itineraries: Itinerary[] = [
           },
           {
             id: "b2-falls",
+            photo: photos.waterfall,
             time: "14:00",
             type: "experience",
             title: "Tibumana waterfall swim",
@@ -312,7 +331,8 @@ export const itineraries: Itinerary[] = [
     title: "Forts & Thali Trails",
     destination: "Jaipur → Jodhpur → Udaipur",
     country: "India",
-    scene: "rajasthan",
+    photo: photos.rajasthan,
+    tone: "sand",
     theme: "Heritage circuit · 3 cities",
     startDate: "2026-10-03",
     endDate: "2026-10-11",
@@ -332,6 +352,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "r1-fort",
+            photo: photos.rajasthan,
             time: "08:30",
             type: "experience",
             title: "Amber Fort & Sheesh Mahal",
@@ -360,7 +381,8 @@ export const itineraries: Itinerary[] = [
     title: "Kyoto in Momiji",
     destination: "Kyoto",
     country: "Japan",
-    scene: "kyoto",
+    photo: photos.kyoto,
+    tone: "blossom",
     theme: "Autumn leaves · Tea & temples",
     startDate: "2026-11-18",
     endDate: "2026-11-24",
@@ -380,6 +402,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "k1-temple",
+            photo: photos.japanPagoda,
             time: "07:00",
             type: "experience",
             title: "Kiyomizu-dera sunrise visit",
@@ -396,7 +419,8 @@ export const itineraries: Itinerary[] = [
     title: "Alps on Rails",
     destination: "Lucerne & Zermatt",
     country: "Switzerland",
-    scene: "swiss",
+    photo: photos.swiss,
+    tone: "alpine",
     theme: "Scenic rail · Mountain lodges",
     startDate: "2026-09-08",
     endDate: "2026-09-15",
@@ -416,6 +440,7 @@ export const itineraries: Itinerary[] = [
         stops: [
           {
             id: "sw1-steamer",
+            photo: photos.mountain,
             time: "14:00",
             type: "experience",
             title: "Lake Lucerne paddle steamer",

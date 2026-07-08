@@ -1,7 +1,6 @@
 import {
   CalendarDays,
   Check,
-  Clock,
   MapPin,
   MessageCircle,
   Moon,
@@ -10,44 +9,45 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { KyvariMark } from "@/components/ui/logo";
+import { Photo } from "@/components/ui/photo";
 import { StopIcon, stopLabel } from "@/components/ui/stop-icon";
 import { agency, type Itinerary, type Stop } from "@/lib/data";
 import { formatDateRange, formatMoney, nightsBetween } from "@/lib/utils";
 
-/** A stop as the client sees it — read-only, editorial, no chrome. */
+/** A stop as the client sees it — photo, time, essentials. Read-only. */
 function ClientStop({ stop, currency }: { stop: Stop; currency: string }) {
   return (
-    <li data-reveal className="relative flex gap-4 pb-8 last:pb-0">
-      {/* timeline spine */}
-      <div className="flex flex-col items-center">
-        <StopIcon type={stop.type} />
-        <span className="route-dashed mt-2 w-px flex-1 group-last:hidden" aria-hidden />
-      </div>
+    <li data-reveal className="flex gap-4 py-5 sm:gap-5">
+      {stop.photo ? (
+        <span className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl sm:h-24 sm:w-24">
+          <Photo src={stop.photo} alt="" tone="sand" sizes="96px" />
+        </span>
+      ) : (
+        <StopIcon type={stop.type} className="mt-1" />
+      )}
 
-      <div className="min-w-0 flex-1 pt-0.5">
-        <p className="flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-wide text-ink-mute">
-          <span className="text-lagoon-600">{stopLabel(stop.type)}</span>
-          <span aria-hidden>·</span>
-          <span className="inline-flex items-center gap-1">
-            <Clock className="h-3 w-3" /> {stop.time}
-          </span>
+      <div className="min-w-0 flex-1">
+        <p className="text-[0.68rem] font-medium uppercase tracking-wider text-ink-mute">
+          {stop.time} · {stopLabel(stop.type)}
         </p>
-        <h4 className="font-display mt-1 text-xl font-semibold leading-snug text-ink">
+        <h4 className="mt-1 text-[1.05rem] font-medium leading-snug text-ink">
           {stop.title}
         </h4>
-        <p className="mt-1 text-[0.95rem] leading-relaxed text-ink-soft">
+        <p className="mt-0.5 text-sm leading-relaxed text-ink-soft">
           {stop.subtitle}
         </p>
-        {stop.detail && <p className="mt-1 text-sm text-ink-mute">{stop.detail}</p>}
-        <p className="mt-2 flex items-center gap-4 text-sm">
+        {stop.detail && (
+          <p className="mt-0.5 text-xs text-ink-mute">{stop.detail}</p>
+        )}
+        <p className="mt-1.5 flex items-center gap-4 text-sm">
           {stop.rating && (
-            <span className="inline-flex items-center gap-1 font-semibold text-ink">
-              <Star className="h-3.5 w-3.5 fill-dune-500 text-dune-500" />
+            <span className="inline-flex items-center gap-1 text-ink-soft">
+              <Star className="h-3.5 w-3.5 fill-clay-500 text-clay-500" />
               {stop.rating}
             </span>
           )}
-          {stop.pricePerPerson && (
-            <span className="font-semibold text-ink">
+          {stop.pricePerPerson != null && (
+            <span className="font-medium tabular-nums text-ink">
               {formatMoney(stop.pricePerPerson, currency)}
               <span className="font-normal text-ink-mute"> per person</span>
             </span>
@@ -59,8 +59,9 @@ function ClientStop({ stop, currency }: { stop: Stop; currency: string }) {
 }
 
 /**
- * The itinerary exactly as the client receives it — a branded microsite.
- * Rendered standalone at /share/[id] and inside the agent's preview frame.
+ * The itinerary exactly as the client receives it — a photography-led
+ * microsite under the agent's name. Rendered standalone at /share/[id]
+ * and inside the agent's preview frame.
  */
 export function ShareView({ trip }: { trip: Itinerary }) {
   const nights = nightsBetween(trip.startDate, trip.endDate);
@@ -68,77 +69,78 @@ export function ShareView({ trip }: { trip: Itinerary }) {
   return (
     <article className="bg-paper">
       {/* ---------- Cover ---------- */}
-      <header className={`scene-${trip.scene} grain relative`}>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-black/20" />
-        <div className="relative mx-auto flex min-h-[62vh] max-w-3xl flex-col justify-end px-6 py-14">
-          <p className="flex items-center gap-2.5 text-white/90">
-            <KyvariMark className="h-8 w-8" />
+      <header className="relative">
+        <div className="relative h-[68vh] min-h-105">
+          <Photo
+            src={trip.photo}
+            alt={`${trip.destination}, ${trip.country}`}
+            tone={trip.tone}
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/25" />
+
+          <div className="absolute inset-x-0 top-0 mx-auto flex max-w-3xl items-center gap-2.5 px-6 py-6 text-white">
+            <KyvariMark tone="onDark" className="h-7 w-7" />
             <span className="text-sm">
-              <span className="block text-[0.65rem] font-semibold uppercase tracking-widest text-white/65">
+              <span className="block text-[0.62rem] font-medium uppercase tracking-widest text-white/70">
                 Prepared for {trip.client}
               </span>
-              <span className="font-semibold">
+              <span className="font-medium">
                 {agency.agent} · {agency.name}
               </span>
             </span>
-          </p>
+          </div>
 
-          <span className="mt-8 inline-flex w-fit items-center rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
-            {trip.theme}
-          </span>
-          <h1 className="text-display-xl mt-4 text-white [text-shadow:0_2px_24px_rgb(0_0_0/0.3)]">
-            {trip.title}
-          </h1>
-
-          <dl className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-white/90">
-            <div className="flex items-center gap-1.5">
-              <MapPin className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Destination</dt>
-              <dd>
-                {trip.destination}, {trip.country}
-              </dd>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <CalendarDays className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Dates</dt>
-              <dd>{formatDateRange(trip.startDate, trip.endDate)}</dd>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Moon className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Nights</dt>
-              <dd>{nights} nights</dd>
-            </div>
-            <div className="flex items-center gap-1.5">
-              <Users className="h-4 w-4" aria-hidden />
-              <dt className="sr-only">Travellers</dt>
-              <dd>{trip.travelers} travellers</dd>
-            </div>
-          </dl>
+          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-3xl px-6 pb-12">
+            <p className="text-eyebrow text-white/75">{trip.theme}</p>
+            <h1 className="text-display-xl mt-3 text-white">{trip.title}</h1>
+            <dl className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/90">
+              <div className="flex items-center gap-1.5">
+                <MapPin className="h-4 w-4" aria-hidden />
+                <dt className="sr-only">Destination</dt>
+                <dd>
+                  {trip.destination}, {trip.country}
+                </dd>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CalendarDays className="h-4 w-4" aria-hidden />
+                <dt className="sr-only">Dates</dt>
+                <dd>{formatDateRange(trip.startDate, trip.endDate)}</dd>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Moon className="h-4 w-4" aria-hidden />
+                <dt className="sr-only">Nights</dt>
+                <dd>{nights} nights</dd>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Users className="h-4 w-4" aria-hidden />
+                <dt className="sr-only">Travellers</dt>
+                <dd>{trip.travelers} travellers</dd>
+              </div>
+            </dl>
+          </div>
         </div>
       </header>
 
       {/* ---------- Days ---------- */}
-      <div className="mx-auto max-w-3xl px-6 py-14">
-        {trip.days.map((day, i) => (
-          <Reveal key={day.label} as="section" className="mb-14 last:mb-0" stagger={0.07}>
-            <div data-reveal className="flex items-center gap-4">
-              <span className="font-display inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-lagoon-900 text-lg font-semibold text-white">
-                {i + 1}
-              </span>
-              <div>
-                <p className="text-eyebrow text-lagoon-600">{day.label}</p>
-                <h2 className="text-display-md text-ink">{day.title}</h2>
-              </div>
+      <div className="mx-auto max-w-3xl px-6 py-16">
+        {trip.days.map((day) => (
+          <Reveal
+            key={day.label}
+            as="section"
+            className="mb-16 last:mb-0"
+            stagger={0.07}
+          >
+            <div data-reveal>
+              <p className="text-eyebrow text-ink-mute">{day.label}</p>
+              <h2 className="text-display-md mt-2 text-ink">{day.title}</h2>
+              <p className="font-display mt-4 max-w-2xl text-[1.15rem] leading-relaxed text-ink-soft">
+                {day.summary}
+              </p>
             </div>
 
-            <p
-              data-reveal
-              className="font-display mt-5 rounded-2xl border border-dune-100 bg-dune-50/60 p-5 text-[1.05rem] leading-relaxed text-ink-soft"
-            >
-              {day.summary}
-            </p>
-
-            <ol className="mt-8">
+            <ol className="mt-6 divide-y divide-line border-y border-line">
               {day.stops.map((stop) => (
                 <ClientStop key={stop.id} stop={stop} currency={trip.currency} />
               ))}
@@ -147,44 +149,32 @@ export function ShareView({ trip }: { trip: Itinerary }) {
         ))}
 
         {/* ---------- Price + respond ---------- */}
-        <Reveal className="mt-16">
-          <div
-            data-reveal
-            className="grain relative overflow-hidden rounded-[var(--radius-panel)] bg-lagoon-900 p-8 text-center sm:p-10"
-          >
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-[radial-gradient(60%_80%_at_15%_0%,rgb(11_138_110/0.5)_0%,transparent_60%)]"
-            />
-            <div className="relative">
-              <p className="text-eyebrow text-lagoon-200">Your trip, all in</p>
-              <p className="font-display mt-2 text-5xl font-semibold tracking-tight text-white">
-                {formatMoney(trip.pricePerPerson, trip.currency)}
-                <span className="text-lg font-normal text-lagoon-100/80">
-                  {" "}
-                  per person
-                </span>
-              </p>
-              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-lagoon-100/85">
-                Flights, {nights} nights and every listed experience included.
-                Nothing is booked until you say the word.
-              </p>
-              <div className="mt-7 flex flex-wrap justify-center gap-3">
-                <button
-                  type="button"
-                  className="inline-flex h-12 items-center gap-2 rounded-full bg-white px-7 text-[0.95rem] font-semibold text-lagoon-900 shadow-pop transition-transform hover:-translate-y-px"
-                >
-                  <Check className="h-4.5 w-4.5" />
-                  Love it — let&apos;s book
-                </button>
-                <button
-                  type="button"
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-white/25 bg-white/10 px-7 text-[0.95rem] font-semibold text-white transition-colors hover:bg-white/15"
-                >
-                  <MessageCircle className="h-4.5 w-4.5" />
-                  Ask {agency.agent.split(" ")[0]} something
-                </button>
-              </div>
+        <Reveal className="mt-20">
+          <div data-reveal className="rounded-3xl border border-line bg-surface p-8 text-center sm:p-12">
+            <p className="text-eyebrow text-ink-mute">Your trip, all in</p>
+            <p className="font-display mt-3 text-6xl text-ink">
+              {formatMoney(trip.pricePerPerson, trip.currency)}
+            </p>
+            <p className="mt-1 text-sm text-ink-mute">per person</p>
+            <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-ink-soft">
+              Flights, {nights} nights and every listed experience included.
+              Nothing is booked until you say the word.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <button
+                type="button"
+                className="inline-flex h-12 items-center gap-2 rounded-full bg-ink px-7 text-[0.95rem] font-medium text-paper transition-all hover:bg-black hover:shadow-lift"
+              >
+                <Check className="h-4.5 w-4.5" />
+                Love it — let&apos;s book
+              </button>
+              <button
+                type="button"
+                className="inline-flex h-12 items-center gap-2 rounded-full border border-line-strong bg-surface px-7 text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/40"
+              >
+                <MessageCircle className="h-4.5 w-4.5" />
+                Ask {agency.agent.split(" ")[0]} something
+              </button>
             </div>
           </div>
         </Reveal>
@@ -193,7 +183,7 @@ export function ShareView({ trip }: { trip: Itinerary }) {
       {/* ---------- Colophon ---------- */}
       <footer className="border-t border-line py-8 text-center text-xs text-ink-mute">
         Crafted by {agency.name} · Itinerary powered by{" "}
-        <span className="font-semibold text-ink-soft">Kyvari</span>
+        <span className="font-medium text-ink-soft">Kyvari</span>
       </footer>
     </article>
   );

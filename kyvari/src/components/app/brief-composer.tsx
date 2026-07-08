@@ -23,8 +23,8 @@ export function BriefComposer() {
     <section aria-label="New itinerary brief">
       <div
         className={cn(
-          "card p-3 transition-all duration-300",
-          focused && "border-lagoon-300 shadow-lift"
+          "card p-3 shadow-soft transition-all duration-300",
+          focused && "border-ink/30 shadow-lift"
         )}
       >
         <label htmlFor="brief" className="sr-only">
@@ -61,7 +61,7 @@ export function BriefComposer() {
             type="button"
             aria-label="Generate itinerary"
             disabled={!value.trim()}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-lagoon-500 text-white shadow-soft transition-all hover:bg-lagoon-600 disabled:cursor-not-allowed disabled:bg-parchment disabled:text-ink-mute"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-ink text-paper transition-all hover:bg-black disabled:cursor-not-allowed disabled:bg-parchment disabled:text-ink-mute"
           >
             <ArrowUp className="h-5 w-5" />
           </button>
@@ -74,9 +74,9 @@ export function BriefComposer() {
             <button
               type="button"
               onClick={() => setValue(s)}
-              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm font-medium text-ink-soft transition-all hover:border-lagoon-300 hover:text-lagoon-700"
+              className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-3.5 py-2 text-sm text-ink-soft transition-all hover:border-ink/30 hover:text-ink"
             >
-              <Sparkles className="h-3.5 w-3.5 text-lagoon-500" />
+              <Sparkles className="h-3.5 w-3.5 text-ink-mute" />
               {s}
             </button>
           </li>
