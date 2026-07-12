@@ -14,7 +14,7 @@ export function Sidebar() {
     setMobileOpen(false);
   }, [pathname]);
 
-  if (pathname === '/preview') return null;
+  if (pathname === '/preview' || pathname === '/home') return null;
 
   const isHome = pathname === '/';
   const isTrips = pathname === '/trips' || pathname === '/detail';
