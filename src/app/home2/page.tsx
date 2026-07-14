@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Zap, Workflow, Compass, CreditCard, Gift, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+import AuthModal from '../../components/AuthModal';
 
 
 /* ═══════════════════════════════════════════════════════════════
@@ -199,6 +200,7 @@ export default function KyvariHome2() {
   const cases = useRail();
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'annually'>('monthly');
   const [oneToOneMode, setOneToOneMode] = useState<'fulltime' | 'parttime'>('fulltime');
+  const [isAuthModalOpen, setAuthModalOpen] = useState(false);
 
   useEffect(() => {
     const s = document.createElement('style');
@@ -217,7 +219,7 @@ export default function KyvariHome2() {
           <Link href="/dashboard" className="ky-nav__logo" style={{ textDecoration: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <KyvariMark size={32} />
-              <span style={{ fontSize: '20px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>Kyvari</span>
+              <span style={{ fontSize: '20px', fontWeight: 800, color: '#111', letterSpacing: '-0.02em' }}>Kyvari</span>
             </div>
           </Link>
           <div className="ky-nav__links">
@@ -239,10 +241,10 @@ export default function KyvariHome2() {
             </a>
           </div>
           <div className="ky-nav__right">
-            <Link href="/dashboard" className="ky-nav__cta">
+            <a href="#" onClick={(e) => { e.preventDefault(); setAuthModalOpen(true); }} className="ky-nav__cta">
               <span>Start Free</span>
-              <img src={A.loginW} alt="" />
-            </Link>
+              {/* <img src={A.loginW} alt="" /> */}
+            </a>
           </div>
         </nav>
 
@@ -358,10 +360,10 @@ export default function KyvariHome2() {
 
           {/* CTA Button directly below AI Prompt Box */}
           <div style={{ marginTop: "8px" }}>
-            <Link href="/dashboard" className="ky-btn-dark ky-btn--lg" style={{ textDecoration: 'none', padding: "14px 40px", fontSize: "16px", borderRadius: "16px" }}>
+            <a href="#" onClick={(e) => { e.preventDefault(); setAuthModalOpen(true); }} className="ky-btn-dark ky-btn--lg" style={{ textDecoration: 'none', padding: "14px 40px", fontSize: "16px", borderRadius: "16px" }}>
               <span>Start Free</span>
               <img src={A.loginW} alt="" style={{ marginLeft: "8px" }} />
-            </Link>
+            </a>
           </div>
 
           {/* Centered Stats Grid */}
@@ -584,7 +586,7 @@ export default function KyvariHome2() {
           <div className="ky-consult__overlay" />
           <div className="ky-consult__content">
             <h2>Everything you need to plan a<br />great trip, fast</h2>
-            <Link href="/dashboard" className="ky-btn-glassdark" style={{ textDecoration: 'none' }}><span>›››&nbsp;&nbsp;Start Free&nbsp;&nbsp;‹‹‹</span></Link>
+            <a href="#" onClick={(e) => { e.preventDefault(); setAuthModalOpen(true); }} className="ky-btn-glassdark" style={{ textDecoration: 'none' }}><span>›››&nbsp;&nbsp;Start Free&nbsp;&nbsp;‹‹‹</span></a>
           </div>
         </section>
 
@@ -903,9 +905,9 @@ export default function KyvariHome2() {
               </span>
               
               {/* Start Free Button */}
-              <Link href="/dashboard" className="ky-btn-dark" style={{ borderRadius: '18px', padding: '10px 20px', fontSize: '14px', textDecoration: 'none' }}>
+              <a href="#" onClick={(e) => { e.preventDefault(); setAuthModalOpen(true); }} className="ky-btn-dark" style={{ borderRadius: '18px', padding: '10px 20px', fontSize: '14px', textDecoration: 'none' }}>
                 <span>Start Free</span>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -973,7 +975,7 @@ export default function KyvariHome2() {
             </div>
           </div>
         </footer>
-
+        <AuthModal isOpen={isAuthModalOpen} onClose={() => setAuthModalOpen(false)} />
       </div>
     </>
   );
@@ -1162,16 +1164,14 @@ const PAGE_CSS = `
 .ky-case-card .ky-cattag{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(20,20,22,.35);backdrop-filter:blur(6px)}
 
 /* ── Navbar ── */
-.ky-nav{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:92%;max-width:1080px;height:68px;background:rgba(20,22,28,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);border-radius:9999px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000;box-shadow:0 20px 40px rgba(0,0,0,0.2)}
-.ky-nav__logo{color:#fff !important;text-decoration:none}
-.ky-nav__links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.8)}
-.ky .ky-nav__links a{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.8);text-decoration:none;transition:all 0.2s}
-.ky .ky-nav__links a:hover{color:#fff}
+.ky-nav{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:92%;max-width:1080px;height:68px;background:rgba(255,255,255,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.6);border-radius:9999px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000;box-shadow:0 8px 32px rgba(0,0,0,0.08)}
+.ky-nav__logo{color:#111 !important;text-decoration:none}
+.ky-nav__links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;color:rgba(0,0,0,0.6)}
+.ky .ky-nav__links a{display:inline-flex;align-items:center;gap:8px;color:rgba(0,0,0,0.6);text-decoration:none;transition:all 0.2s}
+.ky .ky-nav__links a:hover{color:#000}
 .ky-nav__right{display:flex;align-items:center}
-.ky a.ky-nav__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,0.2);border-radius:9999px;padding:10px 24px;color:#fff;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.25s}
-.ky a.ky-nav__cta img{height:16px;transition:transform 0.25s}
-.ky a.ky-nav__cta:hover{background:rgba(255,255,255,0.1);border-color:#fff;box-shadow:0 0 16px rgba(255,255,255,0.08);color:#fff}
-.ky a.ky-nav__cta:hover img{transform:translateX(2px)}
+.ky a.ky-nav__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#000;border-radius:9999px;padding:10px 24px;color:#fff;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.ky a.ky-nav__cta:hover{background:#333;box-shadow:0 6px 16px rgba(0,0,0,0.15);transform:translateY(-1px)}
 
 
 .ky-banner{margin:108px auto 0;width:92%;max-width:1080px;height:54px;border-radius:9999px;background:linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.88) 24%, rgba(255, 255, 255, 0.88) 76%, rgba(255, 255, 255, 0) 100%), url('/florian-schonbrunner-rj6P1M_fz6M-unsplash.jpg') 50% 22%/cover no-repeat;border:1px solid rgba(0, 0, 0, 0.06);display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 24px;color:#18181b;font-size:14px;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.03);overflow:hidden}
@@ -1184,10 +1184,10 @@ const PAGE_CSS = `
 /* ── Hero ── */
 .ky-hero{position:relative;max-width:960px;margin:0 auto;padding:96px 24px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
 .ky-landmark{position:absolute;pointer-events:none;z-index:10;transition:all 0.3s ease;filter:drop-shadow(0 20px 30px rgba(0,0,0,0.06))}
-.ky-landmark--eiffel{top:10px;left:-150px;width:180px;height:auto;animation:float-eiffel 6s ease-in-out infinite}
-.ky-landmark--bridge{bottom:40px;left:-110px;width:220px;height:auto;animation:float-bridge 7s ease-in-out infinite}
-.ky-landmark--liberty{top:0px;right:-160px;width:220px;height:auto;animation:float-liberty 8s ease-in-out infinite}
-.ky-landmark--burj{bottom:60px;right:-150px;width:180px;height:auto;animation:float-burj 6.5s ease-in-out infinite}
+.ky-landmark--eiffel{top:10px;left:-20px;width:180px;height:auto;animation:float-eiffel 6s ease-in-out infinite}
+.ky-landmark--bridge{bottom:40px;left:-20px;width:220px;height:auto;animation:float-bridge 7s ease-in-out infinite}
+.ky-landmark--liberty{top:0px;right:-20px;width:220px;height:auto;animation:float-liberty 8s ease-in-out infinite}
+.ky-landmark--burj{bottom:60px;right:-20px;width:180px;height:auto;animation:float-burj 6.5s ease-in-out infinite}
 
 @keyframes float-eiffel { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
 @keyframes float-bridge { 0%, 100% { transform: translateY(0) rotate(1deg); } 50% { transform: translateY(-10px) rotate(-1deg); } }
