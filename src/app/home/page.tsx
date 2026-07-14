@@ -234,16 +234,40 @@ export default function KyvariHome() {
             <div className="ky-bottleneck__left">
               <h2 className="ky-h3">We solve the bottlenecks that kill your speed</h2>
             </div>
-            <div className="ky-bottleneck__right">
-              {BOTTLENECK_ITEMS.map((b, i) => (
-                <div key={i} className="ky-bn-item">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, color: '#fff' }}>
-                    <circle cx="12" cy="12" r="10" fill="#27272a" stroke="none" />
-                    <path d="M10 8l4 4-4 4" stroke="#fff" />
-                  </svg>
-                  <span><span className="ky-text-muted">{b.gray}</span>{b.bold}</span>
-                </div>
-              ))}
+            <div className="ky-bottleneck__right" style={{ position: 'relative', overflow: 'hidden' }}>
+              <video 
+                src="/bottle%20neck%20cards.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  zIndex: 1,
+                  opacity: 0.65
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to bottom, rgba(20, 20, 22, 0.4), rgba(20, 20, 22, 0.7))',
+                zIndex: 2
+              }} />
+              <div style={{ position: 'relative', zIndex: 3, width: '100%' }}>
+                {BOTTLENECK_ITEMS.map((b, i) => (
+                  <div key={i} className="ky-bn-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, color: '#fff' }}>
+                      <circle cx="12" cy="12" r="10" fill="#27272a" stroke="none" />
+                      <path d="M10 8l4 4-4 4" stroke="#fff" />
+                    </svg>
+                    <span><span className="ky-text-muted">{b.gray}</span>{b.bold}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="ky-bottleneck__review">
               <div className="ky-review-card">

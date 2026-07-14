@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Zap, Workflow, Compass, CreditCard, Gift, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Zap, Workflow, Compass, CreditCard, Gift, Linkedin, Twitter, Instagram, Youtube, ArrowRight } from 'lucide-react';
 import AuthModal from '../../components/AuthModal';
 
 
@@ -242,8 +242,8 @@ export default function KyvariHome2() {
           </div>
           <div className="ky-nav__right">
             <a href="#" onClick={(e) => { e.preventDefault(); setAuthModalOpen(true); }} className="ky-nav__cta">
-              <span>Start Free</span>
-              {/* <img src={A.loginW} alt="" /> */}
+              <span className="ky-nav__cta-text">Start Free</span>
+              <span className="ky-nav__cta-icon" style={{ display: 'none' }}><ArrowRight size={16} /></span>
             </a>
           </div>
         </nav>
@@ -268,7 +268,7 @@ export default function KyvariHome2() {
           <img src="/liberty.png" alt="" className="ky-landmark ky-landmark--liberty" />
           <img src="/burj.png" alt="" className="ky-landmark ky-landmark--burj" />
 
-          <div className="ky-hero__tags">
+          <div className="ky-hero__tags" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '12px' }}>
             <span className="ky-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><KyvariMark size={14} />Built for travel professionals</span>
             <span className="ky-tag">
               <img src={A.google} alt="" style={{ height: 16 }} /> 4.9
@@ -293,7 +293,7 @@ export default function KyvariHome2() {
           </p>
 
           {/* AI Chat Prompt Box (Centrally aligned, styled like Dashboard) */}
-          <div style={{
+          <div className="ky-hero-prompt-box" style={{
             width: "100%",
             maxWidth: "720px",
             background: "#fff",
@@ -332,7 +332,7 @@ export default function KyvariHome2() {
             />
             
             {/* Mic and Send Button matching dashboard */}
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
               {/* Mic Icon */}
               <span style={{ color: "#a1a1aa", cursor: "pointer", display: "flex", alignItems: "center" }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
@@ -1456,10 +1456,16 @@ const PAGE_CSS = `
   .ky-footer__top{grid-template-columns:1fr 1fr}
 }
 @media(max-width:767px){
-  .ky-hero{padding:48px 20px 0}
-  .ky-banner{border-radius:20px;height:auto;padding:16px;flex-direction:column;gap:12px;text-align:center;background:#ffffff;border:1px solid rgba(0,0,0,0.08)}
+  .ky-nav{padding:0 12px;width:96%;height:60px;top:16px}
+  .ky-nav__logo span{font-size:18px !important}
+  .ky-nav__cta-text{display:none}
+  .ky-nav__cta-icon{display:inline-flex !important}
+  .ky-nav__cta{padding:10px !important;border-radius:50%;width:40px;height:40px}
+  .ky-hero{padding:120px 20px 0}
+  .ky-banner{border-radius:20px;height:auto;padding:16px;flex-direction:column;gap:12px;text-align:center;border:1px solid rgba(0,0,0,0.08)}
   .ky-banner__btn{width:100%;justify-content:center}
   .ky-hero__h1,.ky-hero__h1-sub{font-size:32px}
+  .ky-hero-prompt-box{padding:12px !important;border-radius:24px !important;gap:8px !important}
   .ky-hero__form{flex-direction:column}
   .ky-section{padding:48px 20px}
   .ky-services{padding:0 20px}
@@ -1468,9 +1474,9 @@ const PAGE_CSS = `
   .ky-why2{grid-template-columns:1fr}
   .ky-why2__col:nth-child(2){grid-column:auto;order:0}
   .ky-vetting{grid-template-columns:1fr}
-  .ky-vet-step{border-right:1px solid #ececee;min-height:auto}
+  .ky-vet-step{border-right:none;border-bottom:1px solid #ececee;min-height:auto}
   .ky-vet-step--first{border-radius:36px 36px 0 0}
-  .ky-vet-step--last{border-radius:0 0 36px 36px}
+  .ky-vet-step--last{border-radius:0 0 36px 36px;border-bottom:none}
   .ky-case-card{height:400px}
   .ky-masonry{columns:1}
   .ky-consult{min-height:420px;margin:0 8px}
@@ -1482,5 +1488,6 @@ const PAGE_CSS = `
   .ky-bn-stat__num{font-size:32px}
   .ky-bottleneck__nums{flex-direction:column;gap:24px}
   .ky-pricing-grid{grid-template-columns:1fr !important}
+  .ky-price-card{overflow:hidden}
 }
 `;
