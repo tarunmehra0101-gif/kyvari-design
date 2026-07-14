@@ -4,7 +4,8 @@ import Link from 'next/link';
 import {
   User, Mail, Building, CreditCard, Palette, Image,
   Link2, Eye, Save, Bell, Shield, Globe, Smartphone,
-  Home, FileText, Search, BarChart3, Settings, ChevronLeft, ChevronRight
+  Home, FileText, Search, BarChart3, Settings, ChevronLeft, ChevronRight, Plus,
+  Phone, Lock, Key, Compass, Clock
 } from 'lucide-react';
 
 /* ─── Cosmic Font ─── */
@@ -36,16 +37,20 @@ function KyvariLogo({ size = 32 }: { size?: number }) {
 /* ─── Nav Item ─── */
 function NavItem({ icon: Icon, label, href, active, collapsed }: { icon: any; label: string; href: string; active?: boolean; collapsed?: boolean }) {
   return (
-    <Link href={href} style={{
-      display: "flex", alignItems: "center", gap: collapsed ? "0" : "12px",
-      padding: collapsed ? "12px" : "12px 16px",
-      borderRadius: "12px", textDecoration: "none",
-      color: active ? "#e8543f" : "#52525b",
-      background: active ? "#fef2ef" : "transparent",
-      fontWeight: active ? 600 : 400, fontSize: "14px",
-      transition: "all 0.2s", justifyContent: collapsed ? "center" : "flex-start"
-    }}>
-      <Icon size={20} />
+    <Link href={href} 
+      className={`ky-nav-item ${active ? 'ky-nav-item--active' : ''}`}
+      style={{
+        display: "flex", alignItems: "center", gap: collapsed ? "0" : "12px",
+        padding: collapsed ? "10px" : "12px 16px",
+        borderRadius: "12px", textDecoration: "none",
+        color: active ? "#e8543f" : "#52525b",
+        background: active ? "#fef2ef" : "transparent",
+        fontWeight: active ? 600 : 400, fontSize: "14px",
+        transition: "all 0.2s", justifyContent: collapsed ? "center" : "flex-start",
+        width: "100%"
+      }}
+    >
+      <Icon size={20} style={{ flexShrink: 0 }} />
       {!collapsed && <span>{label}</span>}
     </Link>
   );
@@ -138,14 +143,34 @@ export default function SettingsPage() {
         {/* ─── LEFT SIDEBAR ─── */}
         <aside style={{
           width: sidebarCollapsed ? "72px" : "260px", minHeight: "100vh", background: "#fff",
-          borderRight: "1px solid #ececee", padding: "20px", display: "flex", flexDirection: "column",
-          position: "fixed", left: 0, top: 0, bottom: 0, transition: "width 0.3s", zIndex: 100,
+          borderRight: "1px solid #ececee", padding: sidebarCollapsed ? "24px 8px" : "20px", display: "flex", flexDirection: "column",
+          position: "fixed", left: 0, top: 0, bottom: 0, transition: "all 0.3s", zIndex: 100,
           boxShadow: "4px 0 20px rgba(0,0,0,0.03)"
         }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "40px", justifyContent: sidebarCollapsed ? "center" : "flex-start" }}>
-            <KyvariLogo size={40} />
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px", justifyContent: sidebarCollapsed ? "center" : "flex-start" }}>
+            <img src="/kyvari-logo.png" alt="Kyvari Logo" style={{ width: "40px", height: "40px", borderRadius: "8px", objectFit: "contain" }} />
             {!sidebarCollapsed && <span style={{ fontSize: "20px", fontWeight: 700 }}>Kyvari</span>}
           </div>
+          <Link href="/detail2" style={{ textDecoration: "none", marginBottom: "20px", display: "block" }}>
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: sidebarCollapsed ? "center" : "flex-start",
+              gap: "10px",
+              padding: sidebarCollapsed ? "12px" : "12px 16px",
+              borderRadius: "12px",
+              background: "linear-gradient(135deg, #ff8a5c, #e8543f)",
+              color: "#fff",
+              fontWeight: 600,
+              fontSize: "14px",
+              cursor: "pointer",
+              boxShadow: "0 4px 12px rgba(232,84,63,0.2)",
+              transition: "transform 0.2s"
+            }} className="hover-scale">
+              <Plus size={16} />
+              {!sidebarCollapsed && <span>New Itinerary</span>}
+            </div>
+          </Link>
           <button onClick={() => setSidebarCollapsed(!sidebarCollapsed)} style={{
             position: "absolute", right: "-12px", top: "80px", width: "24px", height: "24px", borderRadius: "50%",
             background: "#fff", border: "1px solid #ececee", color: "#71717a", cursor: "pointer", display: "flex",
@@ -153,14 +178,61 @@ export default function SettingsPage() {
           }}>
             {sidebarCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
           </button>
-          <nav style={{ flex: 1 }}>
+          <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
             <NavItem icon={Home} label="Dashboard" href="/dashboard" collapsed={sidebarCollapsed} />
             <NavItem icon={FileText} label="Trips" href="/trips2" collapsed={sidebarCollapsed} />
             <NavItem icon={Search} label="Library" href="/library2" collapsed={sidebarCollapsed} />
             <NavItem icon={BarChart3} label="Analytics" href="/analytics2" collapsed={sidebarCollapsed} />
-            <div style={{ marginTop: "24px" }}>
-              <NavItem icon={Settings} label="Settings" href="/settings2" active collapsed={sidebarCollapsed} />
+            
+            <div style={{ flex: 1 }} />
+
+            {/* Pro Plan Card */}
+            <div style={{
+              position: "relative",
+              overflow: "hidden",
+              borderRadius: sidebarCollapsed ? "12px" : "18px",
+              background: "linear-gradient(155deg,#22242b 0%,#2e3039 100%)",
+              padding: sidebarCollapsed ? "12px 0" : "17px 17px 15px",
+              color: "#fff",
+              boxShadow: "0 14px 30px rgba(29,31,36,.25)",
+              border: "1px solid rgba(255,255,255,0.1)",
+              marginBottom: "16px",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: sidebarCollapsed ? "center" : "stretch"
+            }}>
+              {sidebarCollapsed ? (
+                <>
+                  <div style={{position:"relative",display:"flex",alignItems:"center",justifyContent:"center",width:"32px",height:"32px",borderRadius:"8px",background:"rgba(255,255,255,0.1)"}}>
+                    <img src="/kyvari-logo.png" alt="" width={18} height={18} style={{borderRadius:"4px"}} />
+                  </div>
+                  <div style={{marginTop:"8px",fontSize:"9px",fontWeight:700,color:"#ffb08f",letterSpacing:"1px"}}>PRO</div>
+                </>
+              ) : (
+                <>
+                  <div style={{ position: "absolute", top: 0, left: "-100%", width: "50%", height: "100%", background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)", transform: "skewX(-20deg)", animation: "sweepShine 5s linear infinite 2s", zIndex: 10, pointerEvents: "none" }}></div>
+                  <span style={{position:"absolute",top:"-46px",right:"-36px",width:"140px",height:"140px",borderRadius:"50%",background:"radial-gradient(circle,rgba(255,138,92,.4),transparent 68%)",animation:"haloBreathe 6s ease-in-out infinite"}}></span>
+                  <span style={{position:"absolute",bottom:"-50px",left:"-30px",width:"120px",height:"120px",borderRadius:"50%",background:"radial-gradient(circle,rgba(255,194,77,.22),transparent 68%)",animation:"haloBreathe 8s ease-in-out 1.5s infinite"}}></span>
+                  
+                  <div style={{position:"relative",display:"flex",alignItems:"center",gap:"7px",fontSize:"9.5px",fontWeight:500,letterSpacing:".22em",color:"#ffb08f"}}>
+                    <img src="/kyvari-logo.png" alt="Logo" width={14} height={14} style={{ filter: "drop-shadow(0 2px 4px rgba(255,176,143,0.4))", borderRadius: "3px" }} />
+                    PRO PLAN
+                  </div>
+                  <div style={{position:"relative",fontFamily:"Cosmic, serif",fontWeight:600,fontSize:"15.5px",lineHeight:1.3,margin:"9px 0 4px", background: "linear-gradient(180deg, #fff, #d1d5db)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>Go Ultimate for more itineraries</div>
+                  <div style={{position:"relative",fontSize:"11px",color:"#a5a7ad",lineHeight:1.55}}>500 itineraries / month & priority AI.</div>
+                  <div style={{position:"relative",display:"flex",justifyContent:"space-between",fontSize:"10px",fontWeight:500,color:"#c6c8cd",margin:"12px 0 6px"}}><span>24 / 100 used</span><span style={{color:"#ffc24d"}}>76 left</span></div>
+                  <div style={{position:"relative",height:"5px",borderRadius:"99px",background:"rgba(255,255,255,.12)",overflow:"hidden", border: "1px solid rgba(255,255,255,0.05)"}}>
+                    <div style={{width:"24%",height:"100%",borderRadius:"99px",background:"linear-gradient(90deg,#ffc24d,#ff8a5c)",position:"relative",overflow:"hidden", boxShadow: "0 0 10px rgba(255,194,77,0.5)"}}>
+                      <span style={{position:"absolute",inset:0,background:"linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent)",animation:"shine 2.8s linear infinite"}}></span>
+                    </div>
+                  </div>
+                  <div className="hover-scale" style={{position:"relative",marginTop:"13px",background:"linear-gradient(180deg, #fff, #e5e7eb)",color:"#1d1f24",borderRadius:"10px",padding:"9px",textAlign:"center",fontWeight:600,fontSize:"12.5px",cursor:"pointer",transition:"all .2s", boxShadow: "0 4px 12px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,1)"}}>Upgrade</div>
+                </>
+              )}
             </div>
+
+            {/* Settings Tab */}
+            <NavItem icon={Settings} label="Settings" href="/settings2" active collapsed={sidebarCollapsed} />
           </nav>
           <div style={{ paddingTop: "20px", borderTop: "1px solid #ececee" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: sidebarCollapsed ? "center" : "flex-start" }}>
@@ -171,7 +243,7 @@ export default function SettingsPage() {
         </aside>
 
         {/* ─── MAIN CONTENT ─── */}
-        <main style={{ flex: 1, marginLeft: sidebarCollapsed ? "72px" : "260px", transition: "margin 0.3s", padding: "32px", background: "#f8f8fa", minHeight: "100vh" }}>
+        <main style={{ flex: 1, marginLeft: sidebarCollapsed ? "72px" : "260px", transition: "margin 0.3s", padding: "32px", background: "#f8f8fa", minHeight: "100vh", minWidth: 0, overflowX: "hidden" }}>
 
           {/* Page Header */}
           <div style={{ marginBottom: "32px", animation: "fadeUp 0.4s ease-out" }}>
@@ -181,14 +253,14 @@ export default function SettingsPage() {
 
           {/* Business Profile */}
           <div className="ky-card">
-            <h2 className="ky-card-title"><User size={20} /> Business Profile</h2>
+            <h2 className="ky-card-title"><Building size={20} style={{ color: '#e8543f' }} /> Business Profile</h2>
             <div className="ky-form-grid">
               <div>
-                <label className="ky-label">Business Name</label>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Building size={13} /> Business Name</label>
                 <input type="text" className="ky-input" defaultValue="Wanderlust Travel Co." />
               </div>
               <div>
-                <label className="ky-label">Business Email</label>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Mail size={13} /> Business Email</label>
                 <input type="email" className="ky-input" defaultValue="hello@wanderlust.co" disabled />
               </div>
             </div>
@@ -209,9 +281,77 @@ export default function SettingsPage() {
             </div>
           </div>
 
+          {/* Personal Info */}
+          <div className="ky-card">
+            <h2 className="ky-card-title"><User size={20} style={{ color: '#e8543f' }} /> Personal Information</h2>
+            <div className="ky-form-grid">
+              <div>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <User size={13} /> Full Name
+                </label>
+                <input type="text" className="ky-input" defaultValue="Tarun Mehra" />
+              </div>
+              <div>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Phone size={13} /> Contact Number
+                </label>
+                <input type="tel" className="ky-input" defaultValue="+91 98765 43210" />
+              </div>
+              <div>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Globe size={13} /> Preferred Language
+                </label>
+                <select className="ky-input" defaultValue="en">
+                  <option value="en">English (US)</option>
+                  <option value="en-gb">English (UK)</option>
+                  <option value="es">Español</option>
+                  <option value="fr">Français</option>
+                </select>
+              </div>
+              <div>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Clock size={13} /> Timezone
+                </label>
+                <select className="ky-input" defaultValue="ist">
+                  <option value="ist">India Standard Time (GMT+5:30)</option>
+                  <option value="est">Eastern Standard Time (GMT-5:00)</option>
+                  <option value="pst">Pacific Standard Time (GMT-8:00)</option>
+                  <option value="gmt">Greenwich Mean Time (GMT+0:00)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          {/* Security & Password */}
+          <div className="ky-card">
+            <h2 className="ky-card-title"><Shield size={20} style={{ color: '#e8543f' }} /> Security &amp; Password</h2>
+            <div className="ky-form-grid">
+              <div>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Lock size={13} /> Current Password
+                </label>
+                <input type="password" className="ky-input" placeholder="••••••••" />
+              </div>
+              <div>
+                <label className="ky-label" style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <Key size={13} /> New Password
+                </label>
+                <input type="password" className="ky-input" placeholder="Min. 8 characters" />
+              </div>
+              <div style={{ gridColumn: 'span 2' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '8px' }}>
+                  <span style={{ fontSize: '13px', color: '#71717a' }}>Forgot your password or want to reset it via email?</span>
+                  <button type="button" className="ky-upload-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                    <Mail size={14} /> Send Reset Link
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Brand Identity */}
           <div className="ky-card">
-            <h2 className="ky-card-title"><Palette size={20} /> Brand Identity</h2>
+            <h2 className="ky-card-title"><Palette size={20} style={{ color: '#e8543f' }} /> Brand Identity</h2>
             <p style={{ fontSize: '13px', color: '#71717a', marginBottom: '20px' }}>Customize how your itineraries look when shared with clients.</p>
 
             <div className="ky-brand-row">
@@ -249,9 +389,9 @@ export default function SettingsPage() {
           {/* Custom Domain */}
           <div className="ky-card ky-domain-card">
             <div className="ky-domain-badge"><span className="ky-domain-dot"></span> Active white-label</div>
-            <h2 style={{ fontSize: "18px", fontWeight: 700, marginBottom: "12px" }}>Custom Domains</h2>
+            <h2 className="ky-card-title" style={{ marginBottom: "12px" }}><Globe size={20} style={{ color: '#e8543f' }} /> Custom Domains</h2>
             <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "10px", fontFamily: "ui-monospace, monospace", fontSize: "15px" }}>
-              <span>🔗</span><span>trips.wanderlust.co</span>
+              <Link2 size={16} style={{ color: '#e8543f' }} /><span>trips.wanderlust.co</span>
             </div>
             <p style={{ fontSize: "13px", color: "#71717a", lineHeight: 1.5, maxWidth: "480px" }}>
               Your itineraries are securely white-labeled and hosted directly on your custom sub-domain to keep your travel brand consistent and premium.

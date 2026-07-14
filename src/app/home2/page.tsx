@@ -1,5 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
+import { Zap, Workflow, Compass, CreditCard, Gift, Linkedin, Twitter, Instagram, Youtube } from 'lucide-react';
+
 
 /* ═══════════════════════════════════════════════════════════════
    KYVARI /home2 — upgraded version of /home (same design system)
@@ -46,23 +49,34 @@ const A = {
 };
 
 const LOGOS = [
-  { alt: "YC", src: `${CDN}/68c2a33d71ce477bc4cfb072_yc-new-png.png` },
-  { alt: "Coca-Cola", src: `${CDN}/68c2a33d71ce477bc4cfb06e_coca-cola-new-png.png` },
-  { alt: "Disney", src: `${CDN}/68c2a33d71ce477bc4cfb070_disney-new-png.png` },
-  { alt: "Genesis", src: `${CDN}/68c2a33d71ce477bc4cfaa42_genesis.avif` },
-  { alt: "Udemy", src: `${CDN}/68c2a33d71ce477bc4cfb06d_udemy-new-png.png` },
-  { alt: "EY", src: `${CDN}/68c2a33d71ce477bc4cfb06f_ey-new-png.png` },
-  { alt: "PandaDoc", src: `${CDN}/68c2a33d71ce477bc4cfb071_panda-doc-new-png.png` },
+  { alt: "Booking.com", src: "https://logos.hunter.io/booking.com" },
+  { alt: "Expedia", src: "https://logos.hunter.io/expedia.com" },
+  { alt: "TripAdvisor", src: "https://logos.hunter.io/tripadvisor.com" },
+  { alt: "Airbnb", src: "https://logos.hunter.io/airbnb.com" },
+  { alt: "Skyscanner", src: "https://logos.hunter.io/skyscanner.net" },
+  { alt: "Kayak", src: "https://logos.hunter.io/kayak.com" },
+  { alt: "TUI Group", src: "https://logos.hunter.io/tui.com" },
+  { alt: "Viator", src: "https://logos.hunter.io/viator.com" },
+  { alt: "GetYourGuide", src: "https://logos.hunter.io/getyourguide.com" },
+  { alt: "Trivago", src: "https://logos.hunter.io/trivago.com" },
+  { alt: "Priceline", src: "https://logos.hunter.io/priceline.com" },
+  { alt: "Orbitz", src: "https://logos.hunter.io/orbitz.com" },
+  { alt: "Hotwire", src: "https://logos.hunter.io/hotwire.com" },
+  { alt: "Marriott", src: "https://logos.hunter.io/marriott.com" },
+  { alt: "Hilton", src: "https://logos.hunter.io/hilton.com" },
+  { alt: "Hyatt", src: "https://logos.hunter.io/hyatt.com" },
+  { alt: "Emirates", src: "https://logos.hunter.io/emirates.com" },
+  { alt: "Singapore Airlines", src: "https://logos.hunter.io/singaporeair.com" },
 ];
 
 const SERVICE_CARDS = [
   { title: "Deep Destination\nResearch", type: "list", items: ["Live maps & routing APIs", "Verified local reviews", "Opening hours checking", "Custom flight inputs", "Curated culinary spots", "Off-beat travel ideas", "And more"] },
-  { title: "Interactive Web\nProposals", type: "image", tags: ["Web Itinerary", "Mobile Optimized", "Proposal Builder"], img: `${CDN}/698b4d1e064d84b3b0931f2d_web-and-prod-card.avif` },
-  { title: "One-Click\nAI Customization", type: "image", tags: ["AI Swapping", "Live Editable Canvas", "Drag & Drop Days", "Photo Galleries"], img: `${CDN}/698b4e0e0361d2746acc91ba_Graphic%20design%20card.avif` },
-  { title: "Client Engagement\nTracking", type: "image", tags: ["View Alerts", "Dwell Time Analytics", "Collaboration Link"], img: `${CDN}/699ee05f16453d7ac44ef111_brand-hero01.avif` },
+  { title: "Interactive Web\nProposals", type: "image", tags: ["Web Itinerary", "Mobile Optimized", "Proposal Builder"], img: "/florian-schonbrunner-rj6P1M_fz6M-unsplash.jpg" },
+  { title: "One-Click\nAI Customization", type: "image", tags: ["AI Swapping", "Live Editable Canvas", "Drag & Drop Days", "Photo Galleries"], img: "/airplane-window.png" },
+  { title: "Client Engagement\nTracking", type: "image", tags: ["View Alerts", "Dwell Time Analytics", "Collaboration Link"], img: "/casey-horner-w9mFAHtqB-k-unsplash.jpg" },
   { title: "Modern Agent\nWorkspace", type: "list", items: ["Natural language input", "E-mail parsing", "PDF brochure import", "Clean dashboard", "Collaborative links", "Brand personalization", "And more"] },
-  { title: "No-code Itinerary\nBranding", type: "image", tags: ["Custom Subdomain", "Agent Logo", "Personal Brand"], img: `${CDN}/698b5725e5db271f48eb9d34_No-code%20development%20card.avif` },
-  { title: "Stunning Visual\nGalleries", type: "image", tags: ["Eiffel Tower Spotlights", "Scenic Coastal Views"], img: `${CDN}/699ee0b2099e68d5257c7264_ill-hero-1.avif` },
+  { title: "Custom Itinerary\nBranding", type: "image", tags: ["Custom Colors", "Agent Logo", "Personal Brand"], img: "/Custom Itinerary .jpg" },
+  { title: "Stunning Visual\nGalleries", type: "image", tags: ["Eiffel Tower Spotlights", "Scenic Coastal Views"], img: "/stunning visuals itineraries.jpg" },
 ];
 
 const BOTTLENECK_ITEMS = [
@@ -75,11 +89,12 @@ const BOTTLENECK_ITEMS = [
 ];
 
 const CASES = [
-  { title: "Santorini honeymoon: brief to booked in one call", tags: ["Honeymoon", "7 days", "Luxury", "Web Proposal"], video: "/265655_medium.mp4" },
-  { title: "Rajasthan heritage circuit for a family of six", tags: ["Heritage", "14 days", "Family"], img: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1400&q=80" },
-  { title: "Alpine slow-travel by rail, timed to the minute", tags: ["Mountains", "6 days", "Rail-first"], img: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1400&q=80" },
-  { title: "Serengeti safari with private-camp upgrades", tags: ["Safari", "9 days", "Adventure"], img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&q=80" },
-  { title: "Kyoto in golden week — tea houses & temples", tags: ["Culture", "5 days", "Foodie"], img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1400&q=80" },
+  { title: "Mount Fuji for two, chasing the first light", tags: ["Couple", "5 days", "Spring", "Ryokan stays"], video: "/mount%20fuji.mp4" },
+  { title: "A honeymoon painted in Santorini blue", tags: ["Honeymoon", "7 days", "Luxury"], img: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1400&q=80" },
+  { title: "The Andes, the Amazon, and everything between", tags: ["Peru", "Adventure", "10 days", "Andes + Amazon"], img: "/peru.png" },
+  { title: "Slow trains, high passes, endless Alpine gold", tags: ["Mountains", "6 days", "Rail-first"], img: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=1400&q=80" },
+  { title: "Dawn on the Serengeti, and the plains all to yourselves", tags: ["Safari", "9 days", "Adventure"], img: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1400&q=80" },
+  { title: "Cherry blossoms and quiet shrines, all across Kyoto", tags: ["Culture", "5 days", "Foodie"], img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1400&q=80" },
 ];
 
 const DESTINATIONS = [
@@ -113,12 +128,13 @@ const WHY_TAGS_ROWS = [
 ];
 
 const TESTIMONIALS = [
-  { name: "Riya Malhotra", role: "Founder, Wanderlux Travel", text: "Before Kyvari, building a 7-day Europe proposal for a family used to take me 4–5 hours — cross-referencing hotels, writing day-by-day notes, formatting everything in Word. Now I describe the brief and get a full itinerary with maps in under 10 minutes. My clients comment on how premium the output looks.", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&fit=crop&crop=faces", location: "Mumbai, India" },
-  { name: "Arjun Nair", role: "CEO, Serene Routes", text: "I run a boutique agency focused on luxury South Asia tours — Sri Lanka, Bhutan, Maldives. The level of detail Kyvari generates is honestly better than what I used to write manually after 10 years of experience. I've cut my proposal turnaround from 2 days to 2 hours.", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces", location: "Kochi, India" },
-  { name: "Deepa Krishnamurthy", role: "Senior Travel Consultant, Heritage Trails", text: "My clients are mostly NRIs planning India trips — they want everything planned before they land. Kyvari handles the complexity perfectly. I can input '14 days, Rajasthan circuit, family of 6, heritage hotels' and it gives me a structured day-by-day plan with map view.", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&h=160&fit=crop&crop=faces", location: "Bengaluru, India" },
-  { name: "Sameer Qureshi", role: "Director, Offbeat Journeys", text: "I was skeptical about AI tools — tried a few and they gave generic, copy-paste itineraries. Kyvari is different. It actually understands nuance. When I said 'slow travel, local experiences, no tourist traps, budget ₹80,000 for 10 days in Vietnam', it gave me exactly that.", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", location: "Pune, India" },
+  { name: "Riya Malhotra", role: "Founder, Wanderlux Travel", text: "Before Kyvari, building a 7-day Europe proposal for a family used to take me 4 to 5 hours (cross-referencing hotels, writing day-by-day notes, and formatting everything in Word). Now I describe the brief and get a full itinerary with maps in under 10 minutes. My clients comment on how premium the output looks.", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&fit=crop&crop=faces", location: "Mumbai, India" },
+  { name: "Anamika Chauhan", role: "Founder, Girls on Trip (GOT Travel)", text: "Kyvari has completely transformed how we plan group trips. We can coordinate complex multi-destination itineraries for 20+ travelers in minutes, keeping every detail organized in one beautiful link.", photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&h=160&fit=crop&crop=faces", location: "New Delhi, India", video: "/flightcard.mp4" },
+  { name: "Arjun Nair", role: "CEO, Serene Routes", text: "I run a boutique agency focused on luxury South Asia tours, including Sri Lanka, Bhutan, and the Maldives. The level of detail Kyvari generates is honestly better than what I used to write manually after 10 years of experience. I've cut my proposal turnaround from 2 days to 2 hours.", photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&h=160&fit=crop&crop=faces", location: "Kochi, India", mediaImg: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" },
+  { name: "Deepa Krishnamurthy", role: "Senior Travel Consultant, Heritage Trails", text: "My clients are mostly NRIs planning India trips, and they want everything planned before they land. Kyvari handles the complexity perfectly. I can input '14 days, Rajasthan circuit, family of 6, heritage hotels' and it gives me a structured day-by-day plan with map view.", photo: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=160&h=160&fit=crop&crop=faces", location: "Bengaluru, India" },
+  { name: "Sameer Qureshi", role: "Director, Offbeat Journeys", text: "I was skeptical about AI tools, having tried a few that gave generic, copy-paste itineraries. Kyvari is different. It actually understands nuance. When I said 'slow travel, local experiences, no tourist traps, budget ₹80,000 for 10 days in Vietnam', it gave me exactly that.", photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&h=160&fit=crop&crop=faces", location: "Pune, India" },
   { name: "Elena Vasquez", role: "Owner, GlobeTrail", text: "We did the Pro plan, exceeded our expectations. Amazing support. Highly recommend.", photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&h=160&fit=crop&crop=faces", location: "Lisbon, Portugal" },
-  { name: "Daniel Koch", role: "Co-Founder, AtlasTravel", text: "Only a week into using Kyvari and we already have an entire branded proposal flow that my team and clients are super happy with. Speed, quality, and cost — somehow it pulls off all three.", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&h=160&fit=crop&crop=faces", location: "Berlin, Germany" },
+  { name: "Daniel Koch", role: "Co-Founder, AtlasTravel", text: "Only a week into using Kyvari and we already have an entire branded proposal flow that my team and clients are super happy with. Speed, quality, and cost: somehow it pulls off all three.", photo: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&h=160&fit=crop&crop=faces", location: "Berlin, Germany" },
   { name: "Aiko Tanaka", role: "Independent advisor", text: "Kyvari quickly became my quiet co-worker. Clients send screenshots of the itinerary back with heart emojis.", photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&h=160&fit=crop&crop=faces", location: "Osaka, Japan" },
 ];
 
@@ -141,12 +157,7 @@ const FOOTER_COLS = [
 /* ─── Kyvari logo mark (replaces missing /favicon_logo.png) ─── */
 function KyvariMark({ size = 32 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 38 38" style={{ display: 'block' }}>
-      <defs><linearGradient id="kylg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ff8a5c" /><stop offset="1" stopColor="#e8543f" /></linearGradient></defs>
-      <rect x="1" y="1" width="36" height="36" rx="11" fill="url(#kylg2)" />
-      <path d="M10 26 L23 12 c1.3-1.4 3.2-1.4 4-.5 .8.8.8 2.7-.5 4L12.6 29z" fill="#fff" />
-      <circle cx="12.6" cy="27" r="2" fill="#ffe08a" />
-    </svg>
+    <img src="/kyvari-logo.png" alt="Kyvari Logo" style={{ width: `${size}px`, height: `${size}px`, borderRadius: "8px", objectFit: "contain", display: 'block' }} />
   );
 }
 
@@ -186,6 +197,8 @@ const RailArrows = ({ go }: { go: (d: number) => void }) => (
 /* ─── Main Page Component ─── */
 export default function KyvariHome2() {
   const cases = useRail();
+  const [billingCycle, setBillingCycle] = useState<'monthly' | 'annually'>('monthly');
+  const [oneToOneMode, setOneToOneMode] = useState<'fulltime' | 'parttime'>('fulltime');
 
   useEffect(() => {
     const s = document.createElement('style');
@@ -201,65 +214,160 @@ export default function KyvariHome2() {
 
         {/* ═══ 1. NAVBAR ═══ */}
         <nav className="ky-nav">
-          <a href="#" className="ky-nav__logo">
+          <Link href="/dashboard" className="ky-nav__logo" style={{ textDecoration: 'none' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <KyvariMark size={32} />
-              <span style={{ fontSize: '20px', fontWeight: 800, color: '#09090b', letterSpacing: '-0.02em' }}>Kyvari</span>
+              <span style={{ fontSize: '20px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>Kyvari</span>
             </div>
-          </a>
+          </Link>
           <div className="ky-nav__links">
-            <a href="#work">Our work</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#features">Services</a>
-            <a href="#destinations">Browse destinations</a>
-            <a href="#testimonials">♥ Love</a>
-            <a href="#faq">FAQ</a>
+            <a href="#features">
+              <Zap size={14} />
+              <span>Features</span>
+            </a>
+            <a href="#how-it-works">
+              <Workflow size={14} />
+              <span>How it works</span>
+            </a>
+            <a href="#destinations">
+              <Compass size={14} />
+              <span>Inspirations</span>
+            </a>
+            <a href="#pricing">
+              <CreditCard size={14} />
+              <span>Pricing</span>
+            </a>
           </div>
           <div className="ky-nav__right">
-            <a href="#" className="ky-btn-outline"><span>Log in</span><img src={A.loginB} alt="" /></a>
-            <a href="#" className="ky-btn-dark"><span>Book demo</span></a>
+            <Link href="/dashboard" className="ky-nav__cta">
+              <span>Start Free</span>
+              <img src={A.loginW} alt="" />
+            </Link>
           </div>
         </nav>
 
         {/* ═══ 2. ANNOUNCEMENT BANNER ═══ */}
         <div className="ky-banner">
-          <span>🔥&nbsp; How modern travel agencies scale: read the Kyvari AI agent benchmark report</span>
-          <a href="#" className="ky-btn-outline ky-btn--sm"><span>Get the free report</span>&nbsp;🎁</a>
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <span>🔥</span>
+            <span>How modern travel agencies scale: read the Kyvari AI benchmark report</span>
+          </span>
+          <a href="#" className="ky-banner__btn">
+            <span>Get the free report</span>
+            <Gift size={15} />
+          </a>
         </div>
 
         {/* ═══ 3. HERO ═══ */}
-        <section className="ky-hero">
-          <div className="ky-hero__left">
-            <div className="ky-hero__tags">
-              <span className="ky-tag"><img src={A.ycBadge} alt="YC" />Built for travel professionals</span>
-              <span className="ky-tag">
-                <img src={A.google} alt="" style={{ height: 16 }} /> 4.9
-                <span style={{ color: '#00b67a', marginLeft: 8 }}>★</span> 4.8
-              </span>
-            </div>
-            <h1 className="ky-hero__h1">
-              All your travel{' '}
-              <span className="ky-rotate">
-                <span className="ky-rotate__inner">
-                  <span>itineraries</span><span>proposals</span><span>research</span><span>bookings</span><span>itineraries</span>
-                </span>
-              </span>
-            </h1>
-            <div className="ky-hero__h1-sub">done in under 60 seconds</div>
+        <section className="ky-hero" style={{ paddingTop: "120px" }}>
+          {/* Landmark Clay Icons */}
+          <img src="/eiffel.png" alt="" className="ky-landmark ky-landmark--eiffel" />
+          <img src="/bridge.png" alt="" className="ky-landmark ky-landmark--bridge" />
+          <img src="/liberty.png" alt="" className="ky-landmark ky-landmark--liberty" />
+          <img src="/burj.png" alt="" className="ky-landmark ky-landmark--burj" />
+
+          <div className="ky-hero__tags">
+            <span className="ky-tag" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}><KyvariMark size={14} />Built for travel professionals</span>
+            <span className="ky-tag">
+              <img src={A.google} alt="" style={{ height: 16 }} /> 4.9
+              <span style={{ color: '#00b67a', marginLeft: 8 }}>★</span> 4.8
+            </span>
           </div>
-          <div className="ky-hero__right">
-            <p className="ky-hero__text">
-              Stop searching hotels, routes, and opening hours by hand. Describe the trip, match with a ready
-              itinerary <img src={A.heroFaces} alt="" style={{ display: 'inline', height: 22, verticalAlign: '-4px' }} /> and get your proposal delivered.
-            </p>
-            <div className="ky-hero__form">
-              <input className="ky-input" type="email" placeholder="Email address" />
-              <a href="#" className="ky-btn-dark ky-btn--lg"><span>Book demo</span><img src={A.loginW} alt="" /></a>
+
+          <h1 className="ky-hero__h1">
+            All your travel{' '}
+            <span className="ky-rotate">
+              <span className="ky-rotate__inner">
+                <span>research</span><span>planning</span><span>itineraries</span><span>proposals</span><span>research</span>
+              </span>
+            </span>
+          </h1>
+          <div className="ky-hero__h1-sub">done in 60 seconds.</div>
+
+          <p className="ky-hero__text">
+            Kyvari does the deep research, tailors every trip to the{' '}
+            <img src={A.heroFaces} alt="" style={{ display: 'inline', height: 22, verticalAlign: '-4px' }} />{' '}
+            traveler, and turns it into an interactive itinerary you can share in a click. Every trip, one of a kind.
+          </p>
+
+          {/* AI Chat Prompt Box (Centrally aligned, styled like Dashboard) */}
+          <div style={{
+            width: "100%",
+            maxWidth: "720px",
+            background: "#fff",
+            border: "1px solid #eeece5",
+            borderRadius: "32px",
+            padding: "16px 24px",
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.03)",
+            margin: "0 auto"
+          }}>
+            {/* Glowing Blue AI Orb */}
+            <div style={{ position: "relative", width: "42px", height: "42px", borderRadius: "50%", background: "#fff", border: "1px solid #eeece5", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, boxShadow: "0 2px 8px rgba(0,0,0,0.04)" }}>
+              <span style={{ position: "absolute", width: "24px", height: "24px", borderRadius: "50%", background: "#3b82f6", opacity: 0.25, animation: "pulse 2s infinite" }} />
+              <span style={{ position: "relative", width: "14px", height: "14px", background: "#3b82f6", borderRadius: "50%", boxShadow: "0 0 10px rgba(59,130,246,0.6)" }} />
             </div>
-            <div className="ky-hero__stats">
-              <div className="ky-stat"><div className="ky-stat__num">15 000+</div><div className="ky-stat__label">itineraries<br />generated</div></div>
-              <div className="ky-stat"><div className="ky-stat__num">5 000+</div><div className="ky-stat__label">travel advisors<br />worldwide</div></div>
+
+            {/* Input Box (Textarea for wrapping 2-line placeholder) */}
+            <textarea 
+              rows={2}
+              placeholder="Describe the travelers, dates, pace, budget, and what would make the trip memorable..."
+              style={{
+                flex: 1,
+                border: "none",
+                outline: "none",
+                fontSize: "15px",
+                fontFamily: "Cosmic, sans-serif",
+                color: "#09090b",
+                background: "transparent",
+                resize: "none",
+                height: "44px",
+                lineHeight: "22px",
+                padding: "0"
+              }}
+            />
+            
+            {/* Mic and Send Button matching dashboard */}
+            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+              {/* Mic Icon */}
+              <span style={{ color: "#a1a1aa", cursor: "pointer", display: "flex", alignItems: "center" }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              </span>
+              {/* Send Button */}
+              <Link href="/dashboard" className="hover:scale-105 hover:bg-[#e8543f] active:scale-95 transition-all" style={{
+                width: "36px",
+                height: "36px",
+                borderRadius: "12px",
+                background: "#1d1f24",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                boxShadow: "0 4px 12px rgba(29,31,36,.15)",
+                color: "#fff",
+                textDecoration: "none"
+              }}>
+                <svg width="14" height="14" viewBox="0 0 16 16">
+                  <path d="M2.5 8h10M8.5 3.5L13 8l-4.5 4.5" stroke="#fff" strokeWidth="1.9" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
             </div>
+          </div>
+
+          {/* CTA Button directly below AI Prompt Box */}
+          <div style={{ marginTop: "8px" }}>
+            <Link href="/dashboard" className="ky-btn-dark ky-btn--lg" style={{ textDecoration: 'none', padding: "14px 40px", fontSize: "16px", borderRadius: "16px" }}>
+              <span>Start Free</span>
+              <img src={A.loginW} alt="" style={{ marginLeft: "8px" }} />
+            </Link>
+          </div>
+
+          {/* Centered Stats Grid */}
+          <div className="ky-hero__stats">
+            <div className="ky-stat"><div className="ky-stat__num">5 000+</div><div className="ky-stat__label">itineraries<br />generated</div></div>
+            <div className="ky-stat"><div className="ky-stat__num">1 000+</div><div className="ky-stat__label">travel advisors<br />worldwide</div></div>
           </div>
         </section>
 
@@ -293,16 +401,40 @@ export default function KyvariHome2() {
             <div className="ky-bottleneck__left">
               <h2 className="ky-h3">We solve the bottlenecks that kill your speed</h2>
             </div>
-            <div className="ky-bottleneck__right">
-              {BOTTLENECK_ITEMS.map((b, i) => (
-                <div key={i} className="ky-bn-item">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, color: '#fff' }}>
-                    <circle cx="12" cy="12" r="10" fill="#27272a" stroke="none" />
-                    <path d="M10 8l4 4-4 4" stroke="#fff" />
-                  </svg>
-                  <span><span className="ky-text-muted">{b.gray}</span>{b.bold}</span>
-                </div>
-              ))}
+            <div className="ky-bottleneck__right" style={{ position: 'relative', overflow: 'hidden' }}>
+              <video 
+                src="/bottle%20neck%20cards.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  zIndex: 1,
+                  opacity: 0.65
+                }}
+              />
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                background: 'linear-gradient(to bottom, rgba(20, 20, 22, 0.4), rgba(20, 20, 22, 0.7))',
+                zIndex: 2
+              }} />
+              <div style={{ position: 'relative', zIndex: 3, width: '100%' }}>
+                {BOTTLENECK_ITEMS.map((b, i) => (
+                  <div key={i} className="ky-bn-item">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, color: '#fff' }}>
+                      <circle cx="12" cy="12" r="10" fill="#27272a" stroke="none" />
+                      <path d="M10 8l4 4-4 4" stroke="#fff" />
+                    </svg>
+                    <span><span className="ky-text-muted">{b.gray}</span>{b.bold}</span>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="ky-bottleneck__review">
               <div className="ky-review-card">
@@ -324,7 +456,7 @@ export default function KyvariHome2() {
         {/* ═══ 7. CASE CAROUSEL (new) ═══ */}
         <section className="ky-section ky-section--white" id="work" style={{ paddingLeft: 0, paddingRight: 0 }}>
           <div className="ky-section__header-row" style={{ padding: '0 32px' }}>
-            <h2 className="ky-h4">15,000+ briefs became booked journeys</h2>
+            <h2 className="ky-h4">5,000+ ideas turned into unforgettable journeys</h2>
             <RailArrows go={cases.go} />
           </div>
           <div className="ky-cases" ref={cases.ref}>
@@ -385,36 +517,46 @@ export default function KyvariHome2() {
           <div className="ky-why2">
             <div className="ky-why2__col">
               <div className="ky-why-card">
-                <div className="ky-why-card__row"><div><div className="ky-h4">5 000+</div><div className="ky-h5">Travel Advisors</div></div><img src={A.customersIcon} alt="" width={72} /></div>
+                <div className="ky-why-card__row"><div><div className="ky-h4">1 000+</div><div className="ky-h5">Travel Advisors & Creators</div></div><img src={A.customersIcon} alt="" width={72} /></div>
                 <div className="ky-why-card__logos"><div className="ky-logos ky-logos--sm"><div className="ky-logos__track">{[...LOGOS, ...LOGOS].map((l, i) => <img key={i} src={l.src} alt={l.alt} />)}</div></div></div>
               </div>
-              <div className="ky-why-card ky-why-card--imgbg">
-                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80" alt="" className="ky-why-card__bgimg" />
-                <div className="ky-why-card__bgfade" />
-                <div className="ky-h5 ky-text-center" style={{ position: 'relative' }}>Verified<br />0.82% travel data</div>
+              <div className="ky-why-card ky-why-card--imgbg" style={{ position: 'relative', overflow: 'hidden' }}>
+                <img src="/hilsolman-mountains-10368354_1920.jpg" alt="" className="ky-why-card__bgimg" style={{ height: '133.33%', objectPosition: 'top' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'rgba(255, 255, 255, 0.55)', zIndex: 2 }} />
+                <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', zIndex: 3 }}>
+                  <div className="ky-h4" style={{ fontSize: '38px', fontWeight: '800', color: '#18181b', marginBottom: '4px' }}>100%</div>
+                  <div className="ky-h5 ky-text-center" style={{ color: '#18181b', fontWeight: '600', fontSize: '15px', lineHeight: '1.4' }}>Verified, real-time<br />travel data</div>
+                </div>
               </div>
-              <div className="ky-why-card ky-why-card--dark">
-                <div className="ky-h5 ky-text-center ky-text-white">Build high-converting travel proposals in 60 seconds</div>
+              <div className="ky-why-card ky-why-card--dark" style={{ position: 'relative', overflow: 'hidden' }}>
+                <img src="/hilsolman-mountains-10368354_1920.jpg" alt="" className="ky-why-card__bgimg" style={{ height: '400%', objectPosition: 'bottom', bottom: 0, top: 'auto', opacity: 0.85 }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'rgba(24, 24, 27, 0.45)', zIndex: 2 }} />
+                <div className="ky-h5 ky-text-center ky-text-white" style={{ position: 'relative', zIndex: 3 }}>Plan every trip with an unfair advantage</div>
               </div>
             </div>
 
             <div className="ky-why2__col">
               <div className="ky-why-card ky-why-card--videotall">
-                <div className="ky-review-card__header">
+                <div className="ky-review-card__header" style={{ width: '100%' }}>
                   <img src={TESTIMONIALS[1].photo} alt={TESTIMONIALS[1].name} className="ky-avatar" />
-                  <div><div className="ky-review-card__name">{TESTIMONIALS[1].name}</div><div className="ky-review-card__role">{TESTIMONIALS[1].role}</div></div>
+                  <div>
+                    <div className="ky-review-card__name">{TESTIMONIALS[1].name}</div>
+                    <div className="ky-review-card__role">{TESTIMONIALS[1].role}</div>
+                  </div>
                 </div>
-                <div className="ky-whyvideo">
+                <p style={{ fontSize: '15px', color: '#18181b', margin: '12px 4px 12px 4px', fontWeight: 500, textAlign: 'left', width: '100%' }}>
+                  &ldquo;Our first month with Kyvari&rdquo;
+                </p>
+                <div className="ky-whyvideo" style={{ marginTop: '0', width: '100%' }}>
                   <video autoPlay loop muted playsInline><source src="/265655_medium.mp4" type="video/mp4" /></video>
                   <div className="ky-play-btn">▶</div>
-                  <span className="ky-whyvideo__tag">OUR FIRST</span>
                 </div>
               </div>
             </div>
 
             <div className="ky-why2__col">
               <div className="ky-why-card ky-why-card--short">
-                <div className="ky-why-card__row"><div><div className="ky-h4">15,000+</div><div className="ky-h5">Itineraries Generated</div></div><img src={A.projectsIcon} alt="" width={72} /></div>
+                <div className="ky-why-card__row"><div><div className="ky-h4">5,000+</div><div className="ky-h5">Trips planned</div></div><img src={A.projectsIcon} alt="" width={72} /></div>
               </div>
               <div className="ky-why-card" style={{ overflow: 'hidden' }}>
                 <div className="ky-tag-marquee">{WHY_TAGS_ROWS.map((row, i) => (
@@ -427,7 +569,7 @@ export default function KyvariHome2() {
               <div className="ky-why-card ky-why-card--fee">
                 <div className="ky-h5 ky-text-center">Flat monthly pricing</div>
                 <span className="ky-cattag" style={{ marginTop: 12, background: '#fff' }}>from $0/month</span>
-                <img src={A.rockLogo} alt="" className="ky-why-card__rock" />
+                <img src="/Gemini_Generated_Image_uvq593uvq593uvq5.png" alt="" className="ky-why-card__rock" />
               </div>
             </div>
           </div>
@@ -436,37 +578,13 @@ export default function KyvariHome2() {
         {/* ═══ 10. HOW IT WORKS (tabs left + visual right) ═══ */}
         <HowItWorks />
 
-        {/* ═══ 11. VETTING FUNNEL ═══ */}
-        <section className="ky-section ky-section--gray">
-          <div className="ky-section__header ky-text-center">
-            <h2 className="ky-h3">Only the top 0.82% gets proposed</h2>
-            <p className="ky-subtitle">Every suggestion is matched against verified, real-time travel data</p>
-          </div>
-          <div className="ky-vetting">
-            {VETTING_STEPS.map((s, i) => (
-              <div key={i} className={`ky-vet-step ${i === 0 ? 'ky-vet-step--first' : ''} ${i === 3 ? 'ky-vet-step--last' : ''}`}>
-                <div className="ky-vet-step__top">
-                  <span className="ky-cattag">{s.step}</span>
-                  <div className="ky-h5" style={{ marginTop: 12 }}>{s.title}</div>
-                </div>
-                <div className="ky-vet-step__bottom">
-                  {i === 3 && <img src={A.step4Img} alt="" width={112} style={{ marginBottom: 24 }} />}
-                  <div className="ky-vet-step__pct">{s.pct}%</div>
-                  <p className="ky-text-sm">{s.desc}</p>
-                  {i === 3 && <a href="#" className="ky-btn-dark ky-btn--full" style={{ marginTop: 24 }}><span>Start Free</span></a>}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* ═══ 12. CONSULTATION BANNER (new) ═══ */}
         <section className="ky-consult">
           <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=2000&q=80" alt="" className="ky-consult__img" />
           <div className="ky-consult__overlay" />
           <div className="ky-consult__content">
-            <h2>Free walkthrough to scope<br />your travel workflow</h2>
-            <a href="#" className="ky-btn-glassdark"><span>›››&nbsp;&nbsp;Book demo&nbsp;&nbsp;‹‹‹</span></a>
+            <h2>Everything you need to plan a<br />great trip, fast</h2>
+            <Link href="/dashboard" className="ky-btn-glassdark" style={{ textDecoration: 'none' }}><span>›››&nbsp;&nbsp;Start Free&nbsp;&nbsp;‹‹‹</span></Link>
           </div>
         </section>
 
@@ -477,22 +595,32 @@ export default function KyvariHome2() {
               <span className="ky-tag"><img src={A.google} alt="" style={{ height: 14 }} /> 4.9</span>
               <span className="ky-tag"><span style={{ color: '#00b67a' }}>★</span> 4.8</span>
             </div>
-            <h2 className="ky-h3" style={{ marginTop: 18 }}>Trusted by 5,000+ travel companies</h2>
+            <h2 className="ky-h3" style={{ marginTop: 18 }}>Trusted by 1,000+ travel pros</h2>
           </div>
           <div className="ky-masonry">
             {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="ky-review-card ky-masonry__card">
+              <div key={i} className="ky-review-card ky-masonry__card" style={{ position: 'relative' }}>
+                {/* Top Right Placeholder Logo */}
+                <div style={{ position: 'absolute', top: '24px', right: '24px', opacity: 0.15 }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
                 <div className="ky-review-card__header">
                   <img src={t.photo} alt={t.name} className="ky-avatar" />
                   <div><div className="ky-review-card__name">{t.name}</div><div className="ky-review-card__role">{t.role}</div></div>
                 </div>
-                {i === 1 && (
+                {t.mediaImg && (
                   <div className="ky-masonry__media">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=900&q=80" alt="" />
+                    <img src={t.mediaImg} alt="" />
                     <div className="ky-play-btn">▶</div>
                   </div>
                 )}
                 <p className="ky-review-card__text">{t.text}</p>
+                {t.video && (
+                  <div className="ky-whyvideo" style={{ marginTop: '16px', width: '100%', minHeight: '220px', height: '220px', borderRadius: '22px' }}>
+                    <video autoPlay loop muted playsInline style={{ borderRadius: '22px' }}><source src={t.video} type="video/mp4" /></video>
+                    <div className="ky-play-btn">▶</div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -502,69 +630,284 @@ export default function KyvariHome2() {
         <section className="ky-section ky-section--white" id="pricing">
           <div className="ky-section__header ky-text-center">
             <h2 className="ky-h3">Simple, flat-rate pricing</h2>
-            <p className="ky-subtitle">No hidden fees. Scale your travel business with predictable pricing.</p>
+            <p className="ky-subtitle">No hidden fees. Scale your travel business with pricing that grows with you.</p>
+            
+            {/* Billing Switcher */}
+            <div className="ky-pricing-tabs" style={{ display: "flex", justifyContent: "center", marginTop: "24px", marginBottom: "8px" }}>
+              <div className="ky-pricing-tab-menu" style={{ display: "inline-flex", background: "#e4e4e7", padding: "4px", borderRadius: "12px", gap: "4px" }}>
+                <button 
+                  onClick={() => setBillingCycle('monthly')} 
+                  className={`ky-pricing-tab-btn ${billingCycle === 'monthly' ? 'ky-pricing-tab-btn--active' : ''}`}
+                  style={{
+                    padding: "8px 16px",
+                    borderRadius: "8px",
+                    fontSize: "13px",
+                    fontWeight: 600,
+                    transition: "all 0.2s",
+                    color: billingCycle === 'monthly' ? "#09090b" : "#71717a",
+                    background: billingCycle === 'monthly' ? "#fff" : "transparent",
+                    boxShadow: billingCycle === 'monthly' ? "0 4px 10px rgba(0,0,0,0.06)" : "none",
+                    cursor: "pointer"
+                  }}
+                >
+                  Monthly
+                </button>
+                <button 
+                  onClick={() => setBillingCycle('annually')} 
+                  className={`ky-pricing-tab-btn ${billingCycle === 'annually' ? 'ky-pricing-tab-btn--active' : ''}`}
+                  style={{
+                    padding: "8px 16px",
+                    borderRadius: "8px",
+                    fontSize: "13px",
+                    fontWeight: 600,
+                    transition: "all 0.2s",
+                    color: billingCycle === 'annually' ? "#09090b" : "#71717a",
+                    background: billingCycle === 'annually' ? "#fff" : "transparent",
+                    boxShadow: billingCycle === 'annually' ? "0 4px 10px rgba(0,0,0,0.06)" : "none",
+                    cursor: "pointer"
+                  }}
+                >
+                  Annually · Save 22%
+                </button>
+              </div>
+            </div>
           </div>
-          <div className="ky-pricing-grid">
-            <div className="ky-price-card">
-              <div className="ky-price-card__title">Starter</div>
-              <div className="ky-price-card__price">$0<span>/mo</span></div>
-              <p className="ky-price-card__desc">Perfect for trying out Kyvari AI for your agency.</p>
-              <ul className="ky-price-card__features">
-                <li><img src={A.check} alt="" />5 itineraries per month</li>
-                <li><img src={A.check} alt="" />AI prompt planner</li>
-                <li><img src={A.check} alt="" />Interactive web links</li>
-                <li><img src={A.check} alt="" />Live map view</li>
+
+          <div className="ky-pricing-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "24px", marginTop: "40px" }}>
+            
+            {/* CARD 1: Basic (white card) */}
+            <div className="ky-price-card" style={{ background: "#fff", border: "1px solid #ececee", borderRadius: "36px", padding: "32px", display: "flex", flexDirection: "column", position: "relative" }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa8fb_rock-light.avif" alt="" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                <span style={{ fontSize: '20px', fontWeight: 600 }}>Basic</span>
+              </div>
+              <p className="ky-price-card__desc" style={{ color: "#52525b", fontSize: "14px", marginBottom: "24px", lineHeight: 1.45 }}>For solo advisors getting started.</p>
+              
+              <div className="ky-price-card__price" style={{ fontSize: "40px", fontWeight: 800, color: "#09090b", marginBottom: "24px", fontFamily: "Cosmic, serif" }}>
+                $0<span style={{ fontSize: "14px", color: "#71717a", fontWeight: 500 }}>/forever</span>
+              </div>
+
+              <Link href="/dashboard" className="ky-btn-dark ky-btn--full" style={{ textDecoration: 'none', marginBottom: "28px" }}>
+                <span>Get Started Free</span>
+              </Link>
+
+              <div style={{ borderTop: "1px solid #ececee", paddingTop: "20px", marginBottom: "20px" }}>
+                <span style={{ fontSize: "13px", fontWeight: 600, color: "#71717a" }}>Free, forever:</span>
+              </div>
+
+              <ul className="ky-price-card__features" style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "20px", listStyle: "none" }}>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>10 AI itineraries / month</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Up to 5-day trips</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>AI &quot;brief-to-trip&quot; builder</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Auto image sourcing</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Interactive smart maps</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Mobile-first share links</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Standard Kyvari branding</span>
+                </li>
               </ul>
-              <a href="#" className="ky-btn-outline ky-btn--full" style={{ marginTop: 'auto' }}><span>Start free</span></a>
             </div>
 
-            <div className="ky-price-card ky-price-card--featured">
-              <span className="ky-price-card__badge">MOST POPULAR</span>
-              <div className="ky-price-card__title">Pro</div>
-              <div className="ky-price-card__price">$29<span>/mo</span></div>
-              <p className="ky-price-card__desc">For professional travel agents ready to scale.</p>
-              <ul className="ky-price-card__features">
-                <li><img src={A.check} alt="" />Unlimited itineraries</li>
-                <li><img src={A.check} alt="" />Custom branding & logo</li>
-                <li><img src={A.check} alt="" />Client view tracking & analytics</li>
-                <li><img src={A.check} alt="" />Priority AI processing queue</li>
-                <li><img src={A.check} alt="" />Premium image gallery access</li>
+            {/* CARD 2: Pro (featured black card ⭐ Most popular) */}
+            <div className="ky-price-card ky-price-card--featured" style={{ background: "#09090b", color: "#fff", borderColor: "#2c2e34", display: "flex", flexDirection: "column", padding: "32px", borderRadius: "36px", position: "relative", boxShadow: "0 20px 40px rgba(0,0,0,0.15)" }}>
+              <div style={{ position: "absolute", top: "20px", right: "20px", background: "linear-gradient(135deg, #ff8a5c, #e8543f)", color: "#fff", fontSize: "10px", fontWeight: 700, padding: "4px 10px", borderRadius: "1000px", letterSpacing: ".05em" }}>⭐ MOST POPULAR</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa8fd_rock-super.avif" alt="" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                <span style={{ fontSize: '20px', fontWeight: 600 }}>Pro</span>
+              </div>
+              <p className="ky-price-card__desc" style={{ color: "#a1a1aa", fontSize: "14px", marginBottom: "24px", lineHeight: 1.45 }}>Everything a growing advisor needs to win and wow clients.</p>
+              
+              <div className="ky-price-card__price" style={{ fontSize: "40px", fontWeight: 800, color: "#fff", marginBottom: "24px", fontFamily: "Cosmic, serif" }}>
+                {billingCycle === 'annually' ? (
+                  <>
+                    <span style={{ fontSize: "16px", textDecoration: "line-through", color: "#a1a1aa", marginRight: "8px", fontWeight: 500 }}>$49</span>
+                    $39<span style={{ fontSize: "14px", color: "#a1a1aa", fontWeight: 500 }}>/mo</span>
+                  </>
+                ) : (
+                  <>$49<span style={{ fontSize: "14px", color: "#a1a1aa", fontWeight: 500 }}>/mo</span></>
+                )}
+              </div>
+
+              <Link href="/dashboard" className="ky-btn-dark ky-btn--full" style={{ textDecoration: 'none', marginBottom: "28px" }}>
+                <span>Unlock Pro</span>
+              </Link>
+
+              <div style={{ borderTop: "1px solid #27272a", paddingTop: "20px", marginBottom: "20px" }}>
+                <span style={{ fontSize: "13px", fontWeight: 600, color: "#a1a1aa" }}>Everything in Basic, plus:</span>
+              </div>
+
+              <ul className="ky-price-card__features" style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "20px", listStyle: "none" }}>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>100 AI itineraries / month</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Up to 14-day trips</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Custom branding &amp; colors on share links</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Client engagement analytics (opens, dwell, geography)</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Custom AI powered itinerary editing</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Export to PDF</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#fff" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", flexShrink: 0, marginTop: "2px" }} />
+                  <span>Priority email support</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "14px", color: "#a1a1aa" }}>
+                  <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa903_checkmark-circle-white.svg" alt="" style={{ width: "16px", height: "16px", opacity: 0.3, flexShrink: 0, marginTop: "2px" }} />
+                  <span style={{ opacity: 0.7 }}>Coming soon: client collaboration (comments &amp; likes)</span>
+                </li>
               </ul>
-              <a href="#" className="ky-btn-dark ky-btn--full" style={{ marginTop: 'auto' }}><span>Go Pro</span><img src={A.loginW} alt="" /></a>
             </div>
 
-            <div className="ky-price-card">
-              <div className="ky-price-card__title">Agency</div>
-              <div className="ky-price-card__price">$79<span>/mo</span></div>
-              <p className="ky-price-card__desc">For collaborative teams and travel groups.</p>
-              <ul className="ky-price-card__features">
-                <li><img src={A.check} alt="" />Everything in Pro</li>
-                <li><img src={A.check} alt="" />Up to 5 team members</li>
-                <li><img src={A.check} alt="" />Collaborative workspace</li>
-                <li><img src={A.check} alt="" />Custom subdomain setup</li>
-                <li><img src={A.check} alt="" />Dedicated support desk</li>
+            {/* CARD 3: Ultimate (white card using 1 to 1 icon) */}
+            <div className="ky-price-card" style={{ background: "#fff", border: "1px solid #ececee", borderRadius: "36px", padding: "32px", display: "flex", flexDirection: "column", position: "relative" }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
+                <img src="https://cdn.prod.website-files.com/68c2a33d71ce477bc4cfa871/68c2a33d71ce477bc4cfa8fe_rock-1-1.avif" alt="" style={{ height: '32px', width: 'auto', objectFit: 'contain' }} />
+                <span style={{ fontSize: '20px', fontWeight: 600 }}>Ultimate</span>
+              </div>
+              <p className="ky-price-card__desc" style={{ color: "#52525b", fontSize: "14px", marginBottom: "24px", lineHeight: 1.45 }}>For agencies scaling volume and going fully branded.</p>
+              
+              <div className="ky-price-card__price" style={{ fontSize: "40px", fontWeight: 800, color: "#09090b", marginBottom: "24px", fontFamily: "Cosmic, serif" }}>
+                {billingCycle === 'annually' ? (
+                  <>
+                    <span style={{ fontSize: "16px", textDecoration: "line-through", color: "#a1a1aa", marginRight: "8px", fontWeight: 500 }}>$199</span>
+                    $159<span style={{ fontSize: "14px", color: "#71717a", fontWeight: 500 }}>/mo</span>
+                  </>
+                ) : (
+                  <>$199<span style={{ fontSize: "14px", color: "#71717a", fontWeight: 500 }}>/mo</span></>
+                )}
+              </div>
+
+              <Link href="/dashboard" className="ky-btn-dark ky-btn--full" style={{ textDecoration: 'none', marginBottom: "28px" }}>
+                <span>Unlock Ultimate</span>
+              </Link>
+
+              <div style={{ borderTop: "1px solid #ececee", paddingTop: "20px", marginBottom: "20px" }}>
+                <span style={{ fontSize: "13px", fontWeight: 600, color: "#71717a" }}>Everything in Pro, plus:</span>
+              </div>
+
+              <ul className="ky-price-card__features" style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "20px", listStyle: "none" }}>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>500 AI itineraries / month</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Up to 28-day trips</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Deep analytics dashboard</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#09090b" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px" }} />
+                  <span>Priority 24/7 support</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#71717a" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px", opacity: 0.4 }} />
+                  <span style={{ opacity: 0.7 }}>Coming soon: affiliate booking links (Viator, Booking, Expedia)</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#71717a" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px", opacity: 0.4 }} />
+                  <span style={{ opacity: 0.7 }}>Coming soon: white-label custom domain</span>
+                </li>
+                <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#71717a" }}>
+                  <img src={A.check} alt="" style={{ width: "16px", height: "16px", opacity: 0.4 }} />
+                  <span style={{ opacity: 0.7 }}>Coming soon: team seats &amp; CRM / Zapier sync</span>
+                </li>
               </ul>
-              <a href="#" className="ky-btn-outline ky-btn--full" style={{ marginTop: 'auto' }}><span>Contact sales</span></a>
             </div>
+
           </div>
         </section>
 
         {/* ═══ 15. CTA SECTION (inline faces) ═══ */}
-        <section className="ky-cta-section">
-          <div className="ky-cta-section__inner">
-            <h2 className="ky-h2 ky-text-center">
-              You are one call away from<br />a top travel{' '}
+        <section className="ky-cta-section" style={{ position: 'relative', overflow: 'hidden' }}>
+          <img src="/hilsolman-mountains-10368354_1920.jpg" alt="" className="ky-cta-section__bg" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transform: 'none', left: 0, right: 0, bottom: 0, zIndex: 0 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(9, 9, 11, 0.3)', zIndex: 1 }} />
+          <div className="ky-cta-section__inner" style={{ position: 'relative', zIndex: 2 }}>
+            <h2 className="ky-h2 ky-text-center" style={{ color: '#ffffff' }}>
+              Stop building itineraries manually.<br />Start growing your{' '}
               <span className="ky-cta-faces">
-                <img src={TESTIMONIALS[0].photo} alt="" /><img src={TESTIMONIALS[1].photo} alt="" /><img src={TESTIMONIALS[3].photo} alt="" />
+                <img src={TESTIMONIALS[0].photo} alt="" /><img src={TESTIMONIALS[1].photo} alt="" /><img src={TESTIMONIALS[2].photo} alt="" />
               </span>{' '}
-              team
+              agency.
             </h2>
-            <div className="ky-hero__form" style={{ maxWidth: 520, margin: '40px auto 0' }}>
-              <input className="ky-input" type="email" placeholder="Email address" />
-              <a href="#" className="ky-btn-dark ky-btn--lg"><span>Book a call</span><img src={A.loginW} alt="" /></a>
+            <div style={{
+              maxWidth: "600px",
+              background: "#fff",
+              border: "1px solid #eeece5",
+              borderRadius: "28px",
+              padding: "10px 14px 10px 20px",
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.06)",
+              margin: "40px auto 0",
+              position: "relative"
+            }}>
+              {/* Sparkle Icon */}
+              <span style={{ color: '#3b82f6', fontSize: '18px', display: 'flex', alignItems: 'center', flexShrink: 0 }}>✦</span>
+              
+              {/* Prompt Input */}
+              <input 
+                type="text"
+                placeholder="Describe the travelers, dates, pace, budget..."
+                style={{
+                  flex: 1,
+                  border: "none",
+                  outline: "none",
+                  fontSize: "14px",
+                  fontFamily: "Cosmic, sans-serif",
+                  color: "#09090b",
+                  background: "transparent",
+                  padding: "0"
+                }}
+              />
+              
+              {/* Mic Icon */}
+              <span style={{ color: "#a1a1aa", cursor: "pointer", display: "flex", alignItems: "center", marginRight: '4px' }}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+              </span>
+              
+              {/* Start Free Button */}
+              <Link href="/dashboard" className="ky-btn-dark" style={{ borderRadius: '18px', padding: '10px 20px', fontSize: '14px', textDecoration: 'none' }}>
+                <span>Start Free</span>
+              </Link>
             </div>
           </div>
-          <img src={A.whiteBg} alt="" className="ky-cta-section__bg" />
         </section>
 
         {/* ═══ 16. FAQ ═══ */}
@@ -597,9 +940,20 @@ export default function KyvariHome2() {
                   <KyvariMark size={32} />
                   <span style={{ fontSize: '20px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>Kyvari</span>
                 </div>
-                <p className="ky-text-sm ky-text-muted" style={{ marginTop: 16, maxWidth: 280 }}>The conversational workspace that matches travel advisors with AI itinerary builder tools.</p>
+                <p className="ky-text-sm ky-text-muted" style={{ marginTop: 16, maxWidth: 280 }}>Kyvari helps travel advisors research, design, and send stunning trips - in a fraction of the time.</p>
                 <div className="ky-footer__socials" style={{ marginTop: 16 }}>
-                  {['LinkedIn', 'X', 'Instagram', 'YouTube'].map(s => <span key={s} className="ky-footer-social">{s[0]}</span>)}
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="ky-footer-social" style={{ textDecoration: 'none' }}>
+                    <Linkedin size={16} />
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="ky-footer-social" style={{ textDecoration: 'none' }}>
+                    <Twitter size={16} />
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="ky-footer-social" style={{ textDecoration: 'none' }}>
+                    <Instagram size={16} />
+                  </a>
+                  <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="ky-footer-social" style={{ textDecoration: 'none' }}>
+                    <Youtube size={16} />
+                  </a>
                 </div>
               </div>
               {FOOTER_COLS.map((col, i) => (
@@ -628,7 +982,64 @@ export default function KyvariHome2() {
 /* ─── How It Works: tabs left + big visual right ─── */
 function HowItWorks() {
   const [active, setActive] = useState(0);
-  useEffect(() => { const t = setInterval(() => setActive(p => (p + 1) % 4), 5000); return () => clearInterval(t); }, []);
+  const [steps, setSteps] = useState([
+    { icon: "✈", title: "AF1204 · CDG → JTR", desc: "09:10 · window seats left for the caldera", state: "normal", id: 1 },
+    { icon: "🏨", title: "Check-in · Cave villa, Oia", desc: "13:00 · clifftop, sea view", state: "normal", id: 2 },
+    { icon: "🌅", title: "Sunset · Ammoudi Bay dinner", desc: "19:40 · table on the water", state: "normal", id: 3 },
+  ]);
+
+  useEffect(() => {
+    const t = setInterval(() => setActive(p => (p + 1) % 4), 6000);
+    return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    if (active !== 1) return;
+
+    const generatorPool = [
+      { icon: "✈", title: "AF1204 · CDG → JTR", desc: "09:10 · window seats left for the caldera" },
+      { icon: "🏨", title: "Check-in · Cave villa, Oia", desc: "13:00 · clifftop, sea view" },
+      { icon: "🌅", title: "Sunset · Ammoudi Bay dinner", desc: "19:40 · table on the water" },
+      { icon: "🛥", title: "Caldera Catamaran Cruise", desc: "10:00 · semi-private, barbecue lunch" },
+      { icon: "🍷", title: "Wine Tasting at Santo Wines", desc: "17:00 · local Assyrtiko, sunset views" },
+      { icon: "🚶", title: "Hike Oia to Fira", desc: "08:30 · 10km scenic trail" },
+      { icon: "🍽", title: "Akrotiri archaeological tour", desc: "11:00 · ancient Minoan city guide" },
+      { icon: "🏖", title: "Black Sand beach swim", desc: "14:30 · Kamari beach loungers reserved" }
+    ];
+
+    let poolIdx = 3;
+    let nextId = 4;
+
+    const interval = setInterval(() => {
+      const nextItem = generatorPool[poolIdx];
+      poolIdx = (poolIdx + 1) % generatorPool.length;
+      const currentNextId = nextId++;
+
+      setSteps(prev => {
+        const updated = prev.map((item, idx) => idx === 0 ? { ...item, state: "leaving" } : item);
+        return [...updated, { ...nextItem, state: "entering", id: currentNextId }];
+      });
+
+      setTimeout(() => {
+        setSteps(prev => {
+          return prev
+            .filter(item => item.state !== "leaving")
+            .map(item => item.state === "entering" ? { ...item, state: "normal" } : item);
+        });
+      }, 400);
+
+    }, 1800);
+
+    return () => {
+      clearInterval(interval);
+      setSteps([
+        { icon: "✈", title: "AF1204 · CDG → JTR", desc: "09:10 · window seats left for the caldera", state: "normal", id: 1 },
+        { icon: "🏨", title: "Check-in · Cave villa, Oia", desc: "13:00 · clifftop, sea view", state: "normal", id: 2 },
+        { icon: "🌅", title: "Sunset · Ammoudi Bay dinner", desc: "19:40 · table on the water", state: "normal", id: 3 },
+      ]);
+    };
+  }, [active]);
+
   return (
     <section className="ky-section ky-section--white" id="how-it-works">
       <div className="ky-section__header ky-text-center">
@@ -647,8 +1058,8 @@ function HowItWorks() {
           ))}
         </div>
         <div className="ky-how2__visual">
-          <img src={A.howImg} alt="" className="ky-how2__bg" />
-          <div className="ky-how2__panel" key={active}>
+          <img src="/hilsolman-mountains-10368354_1920.jpg" alt="" className="ky-how2__bg" />
+          <div className="ky-how2__panel" key={active} style={{ overflow: 'hidden', minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
             {active === 0 && <>
               <div className="ky-how2__panel-head">Untitled trip ⌄</div>
               <label>Trip title</label>
@@ -657,12 +1068,24 @@ function HowItWorks() {
               <div className="ky-how2__input ky-how2__input--area">Boutique cave hotels, private sunset cruise, quiet beaches. Budget $5k.<span className="ky-how2__gen">Generate with AI ✦</span></div>
               <div className="ky-how2__row"><div className="ky-how2__input">📅 Add travel dates</div><div className="ky-how2__input">⬆ Upload files</div></div>
             </>}
-            {active === 1 && <>
-              <div className="ky-how2__panel-head">Kyvari is crafting · Day 1 of 7</div>
-              <div className="ky-how2__step"><b>✈ AF1204 · CDG → JTR</b><em>09:10 · window seats left for the caldera</em></div>
-              <div className="ky-how2__step"><b>🏨 Check-in · Cave villa, Oia</b><em>13:00 · clifftop, sea view</em></div>
-              <div className="ky-how2__step"><b>🌅 Sunset · Ammoudi Bay dinner</b><em>19:40 · table on the water</em></div>
-            </>}
+            {active === 1 && (
+              <div style={{ display: 'flex', flexDirection: 'column', height: '250px', overflow: 'hidden' }}>
+                <div className="ky-how2__panel-head" style={{ marginBottom: '12px' }}>Kyvari is crafting · Day 1 of 7</div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', flex: 1 }}>
+                  {steps.map(step => {
+                    let className = "ky-how2__step";
+                    if (step.state === "leaving") className += " ky-how2__step--leaving";
+                    if (step.state === "entering") className += " ky-how2__step--entering";
+                    return (
+                      <div key={step.id} className={className}>
+                        <b>{step.icon} {step.title}</b>
+                        <em>{step.desc}</em>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
             {active === 2 && <>
               <div className="ky-how2__panel-head">Live canvas · editing Day 3</div>
               <div className="ky-how2__step"><b>Hotel Aria → Canaves Suites</b><em>swapped in one click</em></div>
@@ -739,27 +1162,47 @@ const PAGE_CSS = `
 .ky-case-card .ky-cattag{border-color:rgba(255,255,255,.3);color:#fff;background:rgba(20,20,22,.35);backdrop-filter:blur(6px)}
 
 /* ── Navbar ── */
-.ky-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:64px}
-.ky-nav__links{display:flex;gap:24px;font-size:14px;font-weight:500;color:#18181b}
-.ky-nav__links a:hover{color:#71717a}
-.ky-nav__right{display:flex;gap:12px;align-items:center}
+.ky-nav{position:fixed;top:24px;left:50%;transform:translateX(-50%);width:92%;max-width:1080px;height:68px;background:rgba(20,22,28,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.08);border-radius:9999px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:1000;box-shadow:0 20px 40px rgba(0,0,0,0.2)}
+.ky-nav__logo{color:#fff !important;text-decoration:none}
+.ky-nav__links{display:flex;align-items:center;gap:32px;font-size:14px;font-weight:600;color:rgba(255,255,255,0.8)}
+.ky .ky-nav__links a{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.8);text-decoration:none;transition:all 0.2s}
+.ky .ky-nav__links a:hover{color:#fff}
+.ky-nav__right{display:flex;align-items:center}
+.ky a.ky-nav__cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(255,255,255,0.2);border-radius:9999px;padding:10px 24px;color:#fff;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.25s}
+.ky a.ky-nav__cta img{height:16px;transition:transform 0.25s}
+.ky a.ky-nav__cta:hover{background:rgba(255,255,255,0.1);border-color:#fff;box-shadow:0 0 16px rgba(255,255,255,0.08);color:#fff}
+.ky a.ky-nav__cta:hover img{transform:translateX(2px)}
 
-/* ── Banner ── */
-.ky-banner{margin-top:64px;background:#09090b;color:#fff;text-align:center;padding:14px 20px;font-size:14px;font-weight:500;display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap}
+
+.ky-banner{margin:108px auto 0;width:92%;max-width:1080px;height:54px;border-radius:9999px;background:linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.88) 24%, rgba(255, 255, 255, 0.88) 76%, rgba(255, 255, 255, 0) 100%), url('/florian-schonbrunner-rj6P1M_fz6M-unsplash.jpg') 50% 22%/cover no-repeat;border:1px solid rgba(0, 0, 0, 0.06);display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 24px;color:#18181b;font-size:14px;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.03);overflow:hidden}
+.ky-banner span{color:#18181b;font-weight:500}
+.ky-banner__btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#18181b;border:1px solid rgba(0,0,0,0.08);border-radius:9999px;padding:8px 16px;font-size:13px;font-weight:600;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,0.04);transition:all 0.2s ease;white-space:nowrap}
+.ky-banner__btn:hover{background:#fafafa;transform:translateY(-0.5px);box-shadow:0 4px 12px rgba(0,0,0,0.06)}
+.ky a.ky-banner__btn{color:#18181b}
+
 
 /* ── Hero ── */
-.ky-hero{max-width:1280px;margin:0 auto;padding:96px 32px 0;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
-.ky-hero__tags{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.ky-hero{position:relative;max-width:960px;margin:0 auto;padding:96px 24px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.ky-landmark{position:absolute;pointer-events:none;z-index:10;transition:all 0.3s ease;filter:drop-shadow(0 20px 30px rgba(0,0,0,0.06))}
+.ky-landmark--eiffel{top:10px;left:-150px;width:180px;height:auto;animation:float-eiffel 6s ease-in-out infinite}
+.ky-landmark--bridge{bottom:40px;left:-110px;width:220px;height:auto;animation:float-bridge 7s ease-in-out infinite}
+.ky-landmark--liberty{top:0px;right:-160px;width:220px;height:auto;animation:float-liberty 8s ease-in-out infinite}
+.ky-landmark--burj{bottom:60px;right:-150px;width:180px;height:auto;animation:float-burj 6.5s ease-in-out infinite}
+
+@keyframes float-eiffel { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-8px) rotate(1deg); } }
+@keyframes float-bridge { 0%, 100% { transform: translateY(0) rotate(1deg); } 50% { transform: translateY(-10px) rotate(-1deg); } }
+@keyframes float-liberty { 0%, 100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-6px) rotate(1deg); } }
+@keyframes float-burj { 0%, 100% { transform: translateY(0) rotate(1deg); } 50% { transform: translateY(-12px) rotate(-1deg); } }
+.ky-hero__tags{display:flex;gap:8px;justify-content:center;margin-bottom:8px;flex-wrap:wrap}
 .ky-hero__h1{font-size:64px;font-weight:600;line-height:1.12;letter-spacing:-.02em}
 .ky-hero__h1-sub{font-size:64px;font-weight:600;line-height:1.12;margin-top:-4px}
-.ky-rotate{display:inline-block;overflow:hidden;height:1.15em;vertical-align:bottom;position:relative}
-.ky-rotate__inner{display:inline-block;animation:ky-scroll 10s cubic-bezier(.175,.885,.32,1.275) infinite}
-.ky-rotate__inner span{display:block;color:#a1a1aa;margin-top:8px}
-@keyframes ky-scroll{0%,20%{transform:translateY(-85%)}25%,45%{transform:translateY(-65%)}50%,70%{transform:translateY(-45%)}75%,95%{transform:translateY(-25%)}100%{transform:translateY(-5%)}}
-.ky-hero__right{padding-top:24px}
-.ky-hero__text{font-size:15px;font-weight:400;line-height:1.56;color:#52525b;margin-bottom:48px}
-.ky-hero__form{display:flex;gap:8px}
-.ky-hero__stats{display:flex;gap:40px;margin-top:48px}
+.ky-rotate{display:inline-block;overflow:hidden;height:1.12em;vertical-align:bottom;position:relative}
+.ky-rotate__inner{display:block;animation:ky-scroll 10s cubic-bezier(.175,.885,.32,1.275) infinite}
+.ky-rotate__inner span{display:block;color:#a1a1aa;height:1.12em;line-height:1.12em}
+@keyframes ky-scroll{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-20%)}50%,70%{transform:translateY(-40%)}75%,95%{transform:translateY(-60%)}100%{transform:translateY(-80%)}}
+.ky-hero__text{font-size:16px;font-weight:400;line-height:1.56;color:#52525b;max-width:680px;margin:0 auto 12px}
+.ky-hero__form{display:flex;gap:8px;justify-content:center;width:100%}
+.ky-hero__stats{display:flex;gap:48px;justify-content:center;margin-top:24px}
 .ky-stat__num{font-size:32px;font-weight:600;line-height:1}
 .ky-stat__label{font-size:13px;font-weight:500;color:#52525b;line-height:1.35;margin-top:6px}
 
@@ -863,7 +1306,7 @@ const PAGE_CSS = `
 .ky-whyvideo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ky-whyvideo__tag{position:absolute;right:0;bottom:24px;background:#09090b;color:#fff;font-size:12px;font-weight:700;letter-spacing:.06em;padding:8px 14px}
 .ky-why-card--fee{position:relative;overflow:hidden;min-height:220px;justify-content:flex-start;padding-top:30px}
-.ky-why-card__rock{position:absolute;bottom:-18px;right:50%;transform:translateX(50%);width:180px;opacity:.95}
+.ky-why-card__rock{position:absolute;bottom:-30px;right:50%;transform:translateX(50%);width:230px;opacity:.95}
 
 /* ── Tag Marquee ── */
 .ky-tag-marquee{width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -894,9 +1337,13 @@ const PAGE_CSS = `
 .ky-how2__input--area{min-height:74px;line-height:1.5;text-align:left}
 .ky-how2__gen{position:absolute;right:10px;bottom:8px;font-size:11px;font-weight:600;color:#7c3aed}
 .ky-how2__row{display:flex;gap:8px;margin-top:12px}
-.ky-how2__step{background:#fff;border:1px solid #ececee;border-radius:13px;padding:11px 14px;margin-bottom:9px}
+.ky-how2__step{background:#fff;border:1px solid #ececee;border-radius:13px;padding:11px 14px;margin-bottom:9px;transition:all 0.4s ease}
 .ky-how2__step b{display:block;font-size:13.5px;font-weight:600}
 .ky-how2__step em{display:block;font-style:normal;font-size:11.5px;color:#71717a;margin-top:2px}
+.ky-how2__step--entering{animation:ky-craft-slide-in 0.4s ease forwards}
+.ky-how2__step--leaving{animation:ky-craft-fade-out 0.4s ease forwards}
+@keyframes ky-craft-slide-in{from{opacity:0;transform:translateY(20px) scale(0.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes ky-craft-fade-out{from{opacity:1;transform:translateY(0) scale(1);height:52px;margin-bottom:9px;padding-top:11px;padding-bottom:11px;border-color:#ececee}to{opacity:0;transform:translateY(-20px) scale(0.96);height:0;margin-bottom:0;padding-top:0;padding-bottom:0;border-color:transparent;overflow:hidden}}
 
 /* ── Vetting Steps ── */
 .ky-vetting{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px}
@@ -924,9 +1371,11 @@ const PAGE_CSS = `
 .ky-masonry__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
 /* ── Pricing ── */
-.ky-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.ky-price-card{background:#fff;border:1px solid #ececee;border-radius:36px;padding:32px;display:flex;flex-direction:column;min-height:500px;position:relative}
+.ky-pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.ky-price-card{background:#fff;border:1px solid #ececee;border-radius:36px;padding:32px;display:flex;flex-direction:column;min-height:540px;position:relative;transition:all 0.3s cubic-bezier(0.16, 1, 0.3, 1)}
+.ky-price-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.05)}
 .ky-price-card--featured{background:#09090b;color:#fff;border-color:#2c2e34;box-shadow:0 12px 32px rgba(0,0,0,.15)}
+.ky-price-card--featured:hover{box-shadow:0 24px 48px rgba(0,0,0,0.25)}
 .ky-price-card__badge{position:absolute;top:20px;right:20px;background:#fff;color:#09090b;font-size:10px;font-weight:700;padding:4px 8px;border-radius:1000px;letter-spacing:.05em}
 .ky-price-card__title{font-size:24px;font-weight:700;margin-bottom:8px}
 .ky-price-card__price{font-size:48px;font-weight:800;line-height:1;margin-bottom:12px}
@@ -976,9 +1425,16 @@ const PAGE_CSS = `
 .ky-footer__bottom a:hover{color:#fff}
 
 /* ── Responsive ── */
+@media(max-width:1200px){
+  .ky-landmark--eiffel{left:-70px;width:130px}
+  .ky-landmark--bridge{left:-50px;width:160px}
+  .ky-landmark--liberty{right:-80px;width:160px}
+  .ky-landmark--burj{right:-80px;width:130px}
+}
 @media(max-width:991px){
+  .ky-landmark{display:none}
   .ky-nav__links{display:none}
-  .ky-hero{grid-template-columns:1fr;padding-top:64px}
+  .ky-hero{padding-top:120px}
   .ky-hero__h1,.ky-hero__h1-sub{font-size:40px}
   .ky-h2{font-size:40px}
   .ky-h3{font-size:32px}
@@ -993,7 +1449,7 @@ const PAGE_CSS = `
   .ky-vet-step--last{border-radius:0 0 36px 36px}
   .ky-case-card{width:86vw;height:480px}
   .ky-masonry{columns:2}
-  .ky-pricing-grid{grid-template-columns:1fr}
+  .ky-pricing-grid{grid-template-columns:repeat(2,1fr)}
   .ky-price-card{min-height:auto}
   .ky-faq-layout{grid-template-columns:1fr}
   .ky-faq-left{position:static}
@@ -1001,6 +1457,8 @@ const PAGE_CSS = `
 }
 @media(max-width:767px){
   .ky-hero{padding:48px 20px 0}
+  .ky-banner{border-radius:20px;height:auto;padding:16px;flex-direction:column;gap:12px;text-align:center;background:#ffffff;border:1px solid rgba(0,0,0,0.08)}
+  .ky-banner__btn{width:100%;justify-content:center}
   .ky-hero__h1,.ky-hero__h1-sub{font-size:32px}
   .ky-hero__form{flex-direction:column}
   .ky-section{padding:48px 20px}
@@ -1023,5 +1481,6 @@ const PAGE_CSS = `
   .ky-footer__bottom{flex-direction:column;text-align:center}
   .ky-bn-stat__num{font-size:32px}
   .ky-bottleneck__nums{flex-direction:column;gap:24px}
+  .ky-pricing-grid{grid-template-columns:1fr !important}
 }
 `;

@@ -1,8 +1,5 @@
-'use client';
-import dynamic from 'next/dynamic';
-
-const Home = dynamic(() => import('../components/Home').then(m => m.Home), { ssr: false });
+import { redirect } from 'next/navigation';
 
 export default function Page() {
-  return <Home />;
+  redirect('/home2');
 }
