@@ -103,9 +103,12 @@ export default function SettingsPage() {
         .ky-pro-bar { height: 6px; background: rgba(255,255,255,.15); border-radius: 3px; width: 220px; overflow: hidden; }
         .ky-pro-bar-fill { height: 100%; width: 24%; background: linear-gradient(90deg, #ff8a5c, #e8543f); border-radius: 3px; }
         .ky-pro-remaining { font-size: 12px; color: #22c55e; margin-top: 6px; font-weight: 600; }
-        .ky-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all .2s; text-decoration: none; font-family: Cosmic, sans-serif; border: none; }
-        .ky-btn-white { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
-        .ky-btn-white:hover { background: rgba(255,255,255,.2); }
+        .ky-preview-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 24px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all .2s; font-family: Cosmic, sans-serif; border: none; background: #09090b; color: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .ky-preview-btn:hover { transform: translateY(-2px); }
+        
+        .ky-btn-awesomic { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .2s ease; border: 0.5px solid rgba(255,255,255,0.2); background: #09090b; color: #fff; box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0; position: relative; overflow: hidden; z-index: 1; text-decoration: none; font-family: 'Cosmica', system-ui, sans-serif; }
+        .ky-btn-awesomic:hover { transform: translateY(-1px); }
+        .ky-btn-awesomic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%); transform: translateX(-120%); animation: kyAuthShine 4s ease-in-out infinite; z-index: -1; pointer-events: none; }
 
         /* Brand */
         .ky-brand-row { display: flex; gap: 24px; margin-bottom: 24px; flex-wrap: wrap; }
@@ -133,8 +136,10 @@ export default function SettingsPage() {
         .ky-preview-btn:hover { transform: translateY(-2px); }
 
         /* Save */
-        .ky-save-btn { background: linear-gradient(135deg, #ff8a5c, #e8543f); color: #fff; padding: 14px 32px; border-radius: 14px; font-size: 15px; font-weight: 600; border: none; cursor: pointer; font-family: Cosmic, sans-serif; box-shadow: 0 8px 20px rgba(232,84,63,.3); transition: all .2s; }
-        .ky-save-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(232,84,63,.4); }
+        .ky-save-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 14px; font-size: 15px; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .2s ease; text-decoration: none; font-family: Cosmic, sans-serif; border: 0.5px solid rgba(255,255,255,0.2); background: #09090b; color: #fff; box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0; position: relative; overflow: hidden; z-index: 1; }
+        .ky-save-btn:hover { transform: translateY(-1px); }
+        .ky-save-btn::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%); transform: translateX(-120%); animation: kyAuthShine 4s ease-in-out infinite; z-index: -1; pointer-events: none; }
+        @keyframes kyAuthShine { 0% { transform: translateX(-120%); } 45%,100% { transform: translateX(120%); } }
 
         @media (max-width: 768px) { .ky-form-grid { grid-template-columns: 1fr; } }
       `}</style>
@@ -152,23 +157,22 @@ export default function SettingsPage() {
             {!sidebarCollapsed && <span style={{ fontSize: "20px", fontWeight: 700 }}>Kyvari</span>}
           </div>
           <Link href="/detail2" style={{ textDecoration: "none", marginBottom: "20px", display: "block" }}>
-            <div style={{
-              display: "flex",
-              alignItems: "center",
+            <div className="hover-scale" style={{
+              display: "flex", alignItems: "center", gap: "10px",
               justifyContent: sidebarCollapsed ? "center" : "flex-start",
-              gap: "10px",
               padding: sidebarCollapsed ? "12px" : "12px 16px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #ff8a5c, #e8543f)",
-              color: "#fff",
-              fontWeight: 600,
-              fontSize: "14px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(232,84,63,0.2)",
-              transition: "transform 0.2s"
-            }} className="hover-scale">
-              <Plus size={16} />
-              {!sidebarCollapsed && <span>New Itinerary</span>}
+              borderRadius: "12px", background: "#09090b", color: "#fff",
+              fontWeight: 600, fontSize: "14px", cursor: "pointer",
+              boxShadow: "rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0",
+              transition: "transform 0.2s", position: "relative", overflow: "hidden"
+            }}>
+              <Plus size={16} style={{ position: "relative", zIndex: 2 }} />
+              {!sidebarCollapsed && <span style={{ position: "relative", zIndex: 2 }}>New Itinerary</span>}
+              <div style={{
+                position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none",
+                background: "linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%)",
+                animation: "kyAuthShine 4s ease-in-out infinite"
+              }} />
             </div>
           </Link>
           <button onClick={() => setSidebarCollapsed(!sidebarCollapsed)} style={{
@@ -179,10 +183,13 @@ export default function SettingsPage() {
             {sidebarCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
           </button>
           <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
-            <NavItem icon={Home} label="Dashboard" href="/dashboard" collapsed={sidebarCollapsed} />
-            <NavItem icon={FileText} label="Trips" href="/trips2" collapsed={sidebarCollapsed} />
-            <NavItem icon={Search} label="Library" href="/library2" collapsed={sidebarCollapsed} />
-            <NavItem icon={BarChart3} label="Analytics" href="/analytics2" collapsed={sidebarCollapsed} />
+            <div style={{ marginBottom: "8px" }}>
+              {!sidebarCollapsed && <div style={{ fontSize: "10px", fontWeight: 600, color: "rgba(0,0,0,0.4)", marginBottom: "8px", paddingLeft: "16px" }}>MENU</div>}
+              <NavItem icon={Home} label="Dashboard" href="/dashboard" collapsed={sidebarCollapsed} />
+              <NavItem icon={FileText} label="Trips" href="/trips2" collapsed={sidebarCollapsed} />
+              <NavItem icon={Search} label="Library" href="/library2" collapsed={sidebarCollapsed} />
+              <NavItem icon={BarChart3} label="Analytics" href="/analytics2" collapsed={sidebarCollapsed} />
+            </div>
             
             <div style={{ flex: 1 }} />
 
@@ -232,7 +239,10 @@ export default function SettingsPage() {
             </div>
 
             {/* Settings Tab */}
-            <NavItem icon={Settings} label="Settings" href="/settings2" active collapsed={sidebarCollapsed} />
+            <div style={{ marginBottom: "8px" }}>
+              {!sidebarCollapsed && <div style={{ fontSize: "10px", fontWeight: 600, color: "rgba(0,0,0,0.4)", marginBottom: "8px", paddingLeft: "16px", marginTop: "16px" }}>ACCOUNT</div>}
+              <NavItem icon={Settings} label="Settings" href="/settings2" active collapsed={sidebarCollapsed} />
+            </div>
           </nav>
           <div style={{ paddingTop: "20px", borderTop: "1px solid #ececee" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px", justifyContent: sidebarCollapsed ? "center" : "flex-start" }}>

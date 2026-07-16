@@ -212,7 +212,11 @@ export default function AnalyticsPage() {
         /* Range Tabs */
         .ky-range-tabs { display: flex; background: #fff; border: 1px solid #ececee; border-radius: 100px; padding: 4px; gap: 4px; }
         .ky-range-tab { padding: 8px 16px; border-radius: 100px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all .2s; color: #71717a; border: none; background: transparent; font-family: Cosmic, sans-serif; }
-        .ky-range-tab.active { background: #09090b; color: #fff; }
+        .ky-range-tab.active { background: #09090b; color: #fff; border-color: #09090b; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        
+        .ky-btn-awesomic { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .2s ease; border: 0.5px solid rgba(255,255,255,0.2); background: #09090b; color: #fff; box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0; position: relative; overflow: hidden; z-index: 1; text-decoration: none; font-family: 'Cosmica', system-ui, sans-serif; }
+        .ky-btn-awesomic:hover { transform: translateY(-1px); }
+        .ky-btn-awesomic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%); transform: translateX(-120%); animation: kyAuthShine 4s ease-in-out infinite; z-index: -1; pointer-events: none; }
 
         @media (max-width: 1024px) {
           .ky-kpi-grid { grid-template-columns: repeat(2, 1fr); }
@@ -238,23 +242,22 @@ export default function AnalyticsPage() {
             {!sidebarCollapsed && <span style={{ fontSize: "20px", fontWeight: 700 }}>Kyvari</span>}
           </div>
           <Link href="/detail2" style={{ textDecoration: "none", marginBottom: "20px", display: "block" }}>
-            <div style={{
-              display: "flex",
-              alignItems: "center",
+            <div className="hover-scale" style={{
+              display: "flex", alignItems: "center", gap: "10px",
               justifyContent: sidebarCollapsed ? "center" : "flex-start",
-              gap: "10px",
               padding: sidebarCollapsed ? "12px" : "12px 16px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #ff8a5c, #e8543f)",
-              color: "#fff",
-              fontWeight: 600,
-              fontSize: "14px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(232,84,63,0.2)",
-              transition: "transform 0.2s"
-            }} className="hover-scale">
-              <Plus size={16} />
-              {!sidebarCollapsed && <span>New Itinerary</span>}
+              borderRadius: "12px", background: "#09090b", color: "#fff",
+              fontWeight: 600, fontSize: "14px", cursor: "pointer",
+              boxShadow: "rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0",
+              transition: "transform 0.2s", position: "relative", overflow: "hidden"
+            }}>
+              <Plus size={16} style={{ position: "relative", zIndex: 2 }} />
+              {!sidebarCollapsed && <span style={{ position: "relative", zIndex: 2 }}>New Itinerary</span>}
+              <div style={{
+                position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none",
+                background: "linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%)",
+                animation: "kyAuthShine 4s ease-in-out infinite"
+              }} />
             </div>
           </Link>
 
@@ -271,10 +274,13 @@ export default function AnalyticsPage() {
           </button>
 
           <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
-            <NavItem icon={Home} label="Dashboard" href="/dashboard" collapsed={sidebarCollapsed} />
-            <NavItem icon={FileText} label="Trips" href="/trips2" collapsed={sidebarCollapsed} />
-            <NavItem icon={Search} label="Library" href="/library2" collapsed={sidebarCollapsed} />
-            <NavItem icon={BarChart3} label="Analytics" href="/analytics2" active collapsed={sidebarCollapsed} />
+            <div style={{ marginBottom: "8px" }}>
+              {!sidebarCollapsed && <div style={{ fontSize: "10px", fontWeight: 600, color: "rgba(0,0,0,0.4)", marginBottom: "8px", paddingLeft: "16px" }}>MENU</div>}
+              <NavItem icon={Home} label="Dashboard" href="/dashboard" collapsed={sidebarCollapsed} />
+              <NavItem icon={FileText} label="Trips" href="/trips2" collapsed={sidebarCollapsed} />
+              <NavItem icon={Search} label="Library" href="/library2" collapsed={sidebarCollapsed} />
+              <NavItem icon={BarChart3} label="Analytics" href="/analytics2" active collapsed={sidebarCollapsed} />
+            </div>
             
             <div style={{ flex: 1 }} />
 
@@ -324,7 +330,10 @@ export default function AnalyticsPage() {
             </div>
 
             {/* Settings Tab */}
-            <NavItem icon={Settings} label="Settings" href="/settings2" collapsed={sidebarCollapsed} />
+            <div style={{ marginBottom: "8px" }}>
+              {!sidebarCollapsed && <div style={{ fontSize: "10px", fontWeight: 600, color: "rgba(0,0,0,0.4)", marginBottom: "8px", paddingLeft: "16px", marginTop: "16px" }}>ACCOUNT</div>}
+              <NavItem icon={Settings} label="Settings" href="/settings2" collapsed={sidebarCollapsed} />
+            </div>
           </nav>
 
           {/* User */}

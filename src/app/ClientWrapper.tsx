@@ -8,7 +8,7 @@ export default function ClientWrapper({ children }: { children: React.ReactNode 
   const pathname = usePathname();
 
   // Pages with their own navigation - don't wrap with old sidebar
-  const standalonePages = ['/awesomic', '/mindtrip', '/home2', '/dashboard', '/detail2', '/preview2', '/analytics2', '/trips2', '/settings2', '/library2'];
+  const standalonePages = ['/awesomic', '/mindtrip', '/home2', '/dashboard', '/detail2', '/preview2', '/preview3', '/analytics2', '/trips2', '/settings2', '/library2'];
   if (standalonePages.some(p => pathname?.startsWith(p))) {
     return <>{children}</>;
   }

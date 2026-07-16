@@ -1,0 +1,554 @@
+- generic [active] [ref=f8e1]:
+  - generic [ref=f8e2]:
+    - generic [ref=f8e3]:
+      - generic [ref=f8e4]: W
+      - generic [ref=f8e5]: Wanderlust Experts
+    - generic [ref=f8e6]: "Bhutanese Bliss: A Himalayan Adventure"
+    - generic [ref=f8e7]:
+      - button [ref=f8e8] [cursor=pointer]
+      - button [ref=f8e15] [cursor=pointer]
+  - generic [ref=f8e18]:
+    - button "Summary" [ref=f8e19] [cursor=pointer]
+    - button "Days" [ref=f8e24] [cursor=pointer]
+    - button "Map" [ref=f8e28] [cursor=pointer]
+    - button "Advisor" [ref=f8e32] [cursor=pointer]
+    - button "Price" [ref=f8e36] [cursor=pointer]
+  - button [ref=f8e43] [cursor=pointer]
+  - generic [ref=f8e48]:
+    - generic [ref=f8e49]:
+      - generic [ref=f8e50]:
+        - img "Bhutan mountains" [ref=f8e51]
+        - generic [ref=f8e54]:
+          - button "Save" [ref=f8e55] [cursor=pointer]
+          - button "Edit" [ref=f8e58] [cursor=pointer]
+          - button "Share" [ref=f8e62] [cursor=pointer]
+        - generic [ref=f8e69]:
+          - generic [ref=f8e70]: Made for Meera & Arjun's Honeymoon
+          - 'heading "Bhutanese Bliss: A Himalayan Adventure" [level=1] [ref=f8e73]'
+          - generic [ref=f8e74]:
+            - generic [ref=f8e75]: Bhutan & Nepal
+            - generic [ref=f8e79]: 20–22 Jul
+            - generic [ref=f8e82]: 2 Adults
+            - generic [ref=f8e88]: 7 days
+      - generic [ref=f8e93]:
+        - generic [ref=f8e94]:
+          - generic [ref=f8e95]:
+            - generic [ref=f8e99]: "7"
+            - generic [ref=f8e100]: days
+          - generic [ref=f8e101]:
+            - generic [ref=f8e105]: "8"
+            - generic [ref=f8e106]: experiences
+          - generic [ref=f8e107]:
+            - generic [ref=f8e111]: "6"
+            - generic [ref=f8e112]: stays
+          - generic [ref=f8e113]:
+            - generic [ref=f8e117]: Moderate
+            - generic [ref=f8e118]: pace
+        - generic [ref=f8e119]:
+          - button "Book this trip" [ref=f8e120] [cursor=pointer]
+          - button "Ask advisor" [ref=f8e123] [cursor=pointer]
+        - generic [ref=f8e124]:
+          - img "Riya Malhotra" [ref=f8e125]
+          - generic [ref=f8e126]: Curated by Riya Malhotra · 64 reviews
+          - generic [ref=f8e127]: "4.9"
+    - generic [ref=f8e130]:
+      - heading "Trip at a glance" [level=2] [ref=f8e131]
+      - paragraph [ref=f8e132]: Everything you need to know before you go.
+      - generic [ref=f8e133]:
+        - generic [ref=f8e134]:
+          - button "Visa included Bhutan visa & permits arranged by our team — no embassy visit needed." [ref=f8e138] [cursor=pointer]:
+            - generic [ref=f8e145]:
+              - generic [ref=f8e146]: Visa included
+              - generic [ref=f8e147]: Bhutan visa & permits arranged by our team — no embassy visit needed.
+          - generic: Bhutan visa is included in your package and will be arranged by our team. No embassy visit needed.
+        - generic [ref=f8e151]:
+          - generic [ref=f8e152]: Weather · July
+          - generic [ref=f8e159]:
+            - generic [ref=f8e160]: 22°avg
+            - paragraph [ref=f8e161]: Clear, cool mornings with sharp Himalayan light. Showers most afternoons — pack a light shell.
+            - generic [ref=f8e162]: Best for trekking visibility
+        - generic [ref=f8e164]:
+          - generic [ref=f8e165]: Local know-how
+          - generic [ref=f8e169]:
+            - generic [ref=f8e170]:
+              - button "Temple etiquette Remove shoes, cover shoulders" [ref=f8e171] [cursor=pointer]:
+                - generic [ref=f8e175]:
+                  - generic [ref=f8e176]: Temple etiquette
+                  - generic [ref=f8e177]: Remove shoes, cover shoulders
+              - generic: Remove shoes before entering dzongs and monasteries. Shoulders and knees must be covered. Walk clockwise around prayer wheels — always.
+            - generic [ref=f8e181]:
+              - button "Cultural note Gross National Happiness" [ref=f8e182] [cursor=pointer]:
+                - generic [ref=f8e186]:
+                  - generic [ref=f8e187]: Cultural note
+                  - generic [ref=f8e188]: Gross National Happiness
+              - generic: Bhutan measures Gross National Happiness, not GDP. Say "shezu" (thank you) when seated. Tipping is appreciated but not expected.
+        - generic [ref=f8e196]:
+          - generic [ref=f8e201]:
+            - text: What to pack
+            - generic [ref=f8e202]: Tap any item to see why it matters
+          - generic [ref=f8e203]:
+            - generic [ref=f8e204]:
+              - button "Trail shoes" [ref=f8e205] [cursor=pointer]
+              - generic: The Tiger's Nest hike has uneven stone paths — proper grip prevents slips.
+            - generic [ref=f8e210]:
+              - button "Layered jacket" [ref=f8e211] [cursor=pointer]
+              - generic: Mornings can be 14°C even in July. Layers let you adjust as the day warms.
+            - generic [ref=f8e216]:
+              - button "Temple cover-ups" [ref=f8e217] [cursor=pointer]
+              - generic: Shoulders and knees must be covered inside dzongs and monasteries.
+            - generic [ref=f8e222]:
+              - button "SPF 50" [ref=f8e223] [cursor=pointer]
+              - generic: High altitude means stronger UV even on cloudy days. Reapply every 2 hours.
+            - generic [ref=f8e228]:
+              - button "Reusable bottle" [ref=f8e229] [cursor=pointer]
+              - generic: Clean water refill stations at most stops. Reduces plastic waste in Bhutan.
+            - generic [ref=f8e234]:
+              - button "Evening fleece" [ref=f8e235] [cursor=pointer]
+              - generic: Evenings drop below 12°C. The hotel terrace is magical but crisp.
+        - generic [ref=f8e240]:
+          - generic [ref=f8e241]: Getting around
+          - generic [ref=f8e248]: Private luxury SUV
+          - paragraph [ref=f8e249]: English-speaking guide for all transfers and excursions.
+          - generic [ref=f8e250]:
+            - generic [ref=f8e251]: Wi-Fi
+            - generic [ref=f8e252]: Private transfers
+            - generic [ref=f8e253]: Airport pickup
+        - generic [ref=f8e257]:
+          - generic [ref=f8e258]:
+            - generic [ref=f8e262]: Your stay
+            - generic [ref=f8e263]: "4.5"
+          - generic [ref=f8e266]:
+            - generic [ref=f8e267]:
+              - generic [ref=f8e268]: Hotel Olathang
+              - generic [ref=f8e269]: P.Box No. 1214, Paro 12008, Bhutan
+              - generic [ref=f8e273]:
+                - generic [ref=f8e274]: Check-in 12:00
+                - generic [ref=f8e275]: Check-out 11:00
+                - generic [ref=f8e276]: 2 nights
+                - generic [ref=f8e277]: Breakfast incl.
+            - button "View on map" [ref=f8e278] [cursor=pointer]
+    - generic [ref=f8e281]:
+      - generic [ref=f8e282]:
+        - heading "Moments you'll remember" [level=2] [ref=f8e283]
+        - paragraph [ref=f8e284]: The highlights of your journey.
+      - generic [ref=f8e285]:
+        - generic [ref=f8e286] [cursor=pointer]:
+          - img "Sunrise flight past Everest" [ref=f8e288]
+          - generic [ref=f8e291]:
+            - generic [ref=f8e292]: Day 1
+            - heading "Sunrise flight past Everest" [level=3] [ref=f8e293]
+            - generic [ref=f8e294]: See the day
+        - generic [ref=f8e297] [cursor=pointer]:
+          - img "The Tiger's Nest climb" [ref=f8e299]
+          - generic [ref=f8e302]:
+            - generic [ref=f8e303]: Day 2
+            - heading "The Tiger's Nest climb" [level=3] [ref=f8e304]
+            - generic [ref=f8e305]: See the day
+        - generic [ref=f8e308] [cursor=pointer]:
+          - img "A hot-stone bath under the stars" [ref=f8e310]
+          - generic [ref=f8e313]:
+            - generic [ref=f8e314]: Day 2
+            - heading "A hot-stone bath under the stars" [level=3] [ref=f8e315]
+            - generic [ref=f8e316]: See the day
+        - generic [ref=f8e319] [cursor=pointer]:
+          - img "Prayer flags at Dochula Pass" [ref=f8e321]
+          - generic [ref=f8e324]:
+            - generic [ref=f8e325]: Day 3
+            - heading "Prayer flags at Dochula Pass" [level=3] [ref=f8e326]
+            - generic [ref=f8e327]: See the day
+        - generic [ref=f8e330] [cursor=pointer]:
+          - img "Traditional archery in Thimphu" [ref=f8e332]
+          - generic [ref=f8e335]:
+            - generic [ref=f8e336]: Day 3
+            - heading "Traditional archery in Thimphu" [level=3] [ref=f8e337]
+            - generic [ref=f8e338]: See the day
+    - generic [ref=f8e347]:
+      - heading "Your itinerary" [level=2] [ref=f8e348]
+      - generic [ref=f8e349]:
+        - generic [ref=f8e350]:
+          - button "Day 1 · Soar into the" [ref=f8e351] [cursor=pointer]:
+            - text: Day 1
+            - generic [ref=f8e352]: · Soar into the
+          - button "Day 2 · The Tiger's Nest" [ref=f8e353] [cursor=pointer]:
+            - text: Day 2
+            - generic [ref=f8e354]: · The Tiger's Nest
+          - button "Day 3 · Thimphu run &" [ref=f8e355] [cursor=pointer]:
+            - text: Day 3
+            - generic [ref=f8e356]: · Thimphu run &
+        - generic [ref=f8e357]:
+          - generic [ref=f8e358]:
+            - img "Soar into the Paro Valley" [ref=f8e359]
+            - generic [ref=f8e362]:
+              - generic [ref=f8e363]: Day 1 · Arrival
+              - heading "Soar into the Paro Valley" [level=2] [ref=f8e364]
+              - paragraph [ref=f8e365]: Begin by flying into the breathtaking Paro Valley, settle into a forest retreat, then end the day inside a 17th-century fortress as the light turns gold.
+              - generic [ref=f8e366]:
+                - generic [ref=f8e367]: ◉ 4 stops
+                - generic [ref=f8e368]: ⌂ Hotel Olathang
+                - generic [ref=f8e369]: ➤ 1,663 km total
+          - generic [ref=f8e370]:
+            - generic [ref=f8e371]:
+              - generic [ref=f8e378]: Morning
+              - generic [ref=f8e379]: 06:00 – 12:00
+            - generic [ref=f8e383]:
+              - generic [ref=f8e384]:
+                - generic [ref=f8e385]:
+                  - generic [ref=f8e389]:
+                    - generic [ref=f8e390]: BOARDING PASS
+                    - generic [ref=f8e391]: Flight KB205
+                  - generic [ref=f8e392]: 2h 15m · NONSTOP
+                - generic [ref=f8e393]:
+                  - generic [ref=f8e394]:
+                    - generic [ref=f8e395]:
+                      - generic [ref=f8e396]:
+                        - generic [ref=f8e397]: DEL
+                        - generic [ref=f8e398]: 06:00 · Delhi
+                      - generic [ref=f8e406]:
+                        - generic [ref=f8e407]: PBH
+                        - generic [ref=f8e408]: Paro
+                    - generic [ref=f8e409]:
+                      - generic [ref=f8e410]: Departs 06:00
+                      - generic [ref=f8e414]: 2h 15m in air
+                      - generic [ref=f8e415]: Window requested
+                    - generic [ref=f8e416]: Flight notes. Wheels up at dawn. Window seats on the left catch Everest at sunrise before the famous curling descent into Paro Valley.
+                  - generic [ref=f8e417]: KB205
+              - generic [ref=f8e440]:
+                - img "Arrival & Immigration · PBH" [ref=f8e442]
+                - generic [ref=f8e443]:
+                  - generic [ref=f8e444]:
+                    - generic [ref=f8e449]: Sightseeing
+                    - generic [ref=f8e450]: "4.6"
+                  - generic [ref=f8e453]: Arrival & Immigration · PBH
+                  - paragraph [ref=f8e454]: Formalities are refreshingly calm — about an hour, with prayer flags fluttering outside the arrival hall.
+                  - generic [ref=f8e455]: Airport Road, Paro 12001, Bhutan
+              - generic [ref=f8e459]:
+                - img "Check in · Hotel Olathang" [ref=f8e461]
+                - generic [ref=f8e462]:
+                  - generic [ref=f8e463]:
+                    - generic [ref=f8e468]: Hotel
+                    - generic [ref=f8e469]: "4.5"
+                  - generic [ref=f8e472]: Check in · Hotel Olathang
+                  - paragraph [ref=f8e473]: Drop your bags at a 1974 royal guesthouse turned hotel, set in blue-pine forest above the valley.
+                  - generic [ref=f8e474]: P.Box No. 1214, Paro 12008, Bhutan
+          - generic [ref=f8e478]:
+            - generic [ref=f8e479]:
+              - generic [ref=f8e487]: Afternoon
+              - generic [ref=f8e488]: 12:30 – 17:30
+            - generic [ref=f8e492]:
+              - generic [ref=f8e493]:
+                - img "Lunch · Sonam Trophel" [ref=f8e495]
+                - generic [ref=f8e496]:
+                  - generic [ref=f8e497]:
+                    - generic [ref=f8e502]: Food
+                    - generic [ref=f8e503]: "4.4"
+                  - generic [ref=f8e506]: Lunch · Sonam Trophel
+                  - paragraph [ref=f8e507]: Ema datshi done right — Paro’s most loved family kitchen, five minutes from the dzong.
+                  - generic [ref=f8e508]: Main Street, Paro, Bhutan
+              - generic [ref=f8e512]:
+                - img "Explore Rinpung Dzong" [ref=f8e514]
+                - generic [ref=f8e515]:
+                  - generic [ref=f8e516]:
+                    - generic [ref=f8e520]: Activity
+                    - generic [ref=f8e521]: "4.6"
+                  - generic [ref=f8e524]: Explore Rinpung Dzong
+                  - paragraph [ref=f8e525]: The "Fortress on a Heap of Jewels". Timed for late light, when the whitewashed walls turn amber.
+                  - generic [ref=f8e526]: CCGF Q54, Paro, Bhutan
+          - generic [ref=f8e530]:
+            - generic [ref=f8e531]:
+              - generic [ref=f8e538]: Evening
+              - generic [ref=f8e539]: 19:00 – 22:00
+            - generic [ref=f8e544]:
+              - img "Dinner · Hotel Olathang" [ref=f8e546]
+              - generic [ref=f8e547]:
+                - generic [ref=f8e548]:
+                  - generic [ref=f8e553]: Food
+                  - generic [ref=f8e554]: "4.3"
+                - generic [ref=f8e557]: Dinner · Hotel Olathang
+                - paragraph [ref=f8e558]: "End slow: a traditional set dinner by the wood fire, then the valley’s first stars from the terrace."
+                - generic [ref=f8e559]: Hotel Olathang, Paro, Bhutan
+        - generic [ref=f8e563]:
+          - generic [ref=f8e564]:
+            - img "The Tiger's Nest pilgrimage" [ref=f8e565]
+            - generic [ref=f8e568]:
+              - generic [ref=f8e569]: Day 2 · The Climb
+              - heading "The Tiger's Nest pilgrimage" [level=2] [ref=f8e570]
+              - paragraph [ref=f8e571]: "The day the whole trip builds to: a dawn start, pine forests strung with prayer flags, and a monastery pinned impossibly to the cliff face."
+              - generic [ref=f8e572]:
+                - generic [ref=f8e573]: ◉ 3 stops
+                - generic [ref=f8e574]: ▲ 900 m ascent
+                - generic [ref=f8e575]: ⏱ 4–5 hr hike
+          - generic [ref=f8e576]:
+            - generic [ref=f8e577]:
+              - generic [ref=f8e584]: Morning
+              - generic [ref=f8e585]: 06:30 – 12:30
+            - generic [ref=f8e590]:
+              - img "Hike · Tiger's Nest" [ref=f8e592]
+              - generic [ref=f8e593]:
+                - generic [ref=f8e594]:
+                  - generic [ref=f8e598]: Activity
+                  - generic [ref=f8e599]: "4.9"
+                - generic [ref=f8e602]: Hike · Tiger's Nest
+                - paragraph [ref=f8e603]: Start at 07:30 to beat the cloud. Steady switchbacks, butter tea at the half-way house, then the reveal.
+                - generic [ref=f8e604]: Taktsang Trail, Paro, Bhutan
+          - generic [ref=f8e608]:
+            - generic [ref=f8e609]:
+              - generic [ref=f8e617]: Afternoon
+              - generic [ref=f8e618]: 13:00 – 17:00
+            - generic [ref=f8e623]:
+              - img "Trailhead farmhouse lunch" [ref=f8e625]
+              - generic [ref=f8e626]:
+                - generic [ref=f8e627]:
+                  - generic [ref=f8e632]: Food
+                  - generic [ref=f8e633]: "4.4"
+                - generic [ref=f8e636]: Trailhead farmhouse lunch
+                - paragraph [ref=f8e637]: "Earned carbs: red rice, buckwheat pancakes and chilli-cheese at a farmhouse by the trailhead."
+                - generic [ref=f8e638]: Main Street, Paro, Bhutan
+          - generic [ref=f8e642]:
+            - generic [ref=f8e643]:
+              - generic [ref=f8e650]: Evening
+              - generic [ref=f8e651]: 18:00 – 21:30
+            - generic [ref=f8e656]:
+              - img "Hot-stone bath & dinner" [ref=f8e658]
+              - generic [ref=f8e659]:
+                - generic [ref=f8e660]:
+                  - generic [ref=f8e665]: Food
+                  - generic [ref=f8e666]: "4.3"
+                - generic [ref=f8e669]: Hot-stone bath & dinner
+                - paragraph [ref=f8e670]: A traditional dotsho hot-stone bath for the legs, then a slow dinner by the fire.
+                - generic [ref=f8e671]: Hotel Olathang, Paro, Bhutan
+        - generic [ref=f8e675]:
+          - generic [ref=f8e676]:
+            - img "Thimphu run & farewell" [ref=f8e677]
+            - generic [ref=f8e680]:
+              - generic [ref=f8e681]: Day 3 · Farewell
+              - heading "Thimphu run & farewell" [level=2] [ref=f8e682]
+              - paragraph [ref=f8e683]: "A gentle final morning: the capital’s giant Buddha, a last bowl of momos at the weekend market, and the drive back for the afternoon flight."
+              - generic [ref=f8e684]:
+                - generic [ref=f8e685]: ◉ 3 stops
+                - generic [ref=f8e686]: ⌂ Thimphu day trip
+                - generic [ref=f8e687]: ✈ 16:10 departure
+          - generic [ref=f8e688]:
+            - generic [ref=f8e689]:
+              - generic [ref=f8e696]: Morning
+              - generic [ref=f8e697]: 08:00 – 12:00
+            - generic [ref=f8e702]:
+              - img "Buddha Dordenma · Thimphu" [ref=f8e704]
+              - generic [ref=f8e705]:
+                - generic [ref=f8e706]:
+                  - generic [ref=f8e710]: Activity
+                  - generic [ref=f8e711]: "4.6"
+                - generic [ref=f8e714]: Buddha Dordenma · Thimphu
+                - paragraph [ref=f8e715]: An hour’s drive up-valley to the 52 m golden Buddha watching over the capital.
+                - generic [ref=f8e716]: CCGF Q54, Paro, Bhutan
+          - generic [ref=f8e720]:
+            - generic [ref=f8e721]:
+              - generic [ref=f8e729]: Afternoon
+              - generic [ref=f8e730]: 12:30 – 15:00
+            - generic [ref=f8e735]:
+              - img "Centenary Farmers’ Market" [ref=f8e737]
+              - generic [ref=f8e738]:
+                - generic [ref=f8e739]:
+                  - generic [ref=f8e744]: Food
+                  - generic [ref=f8e745]: "4.4"
+                - generic [ref=f8e748]: Centenary Farmers’ Market
+                - paragraph [ref=f8e749]: One last bowl of momos among the chilli sellers and butter-tea stalls, then souvenirs done properly.
+                - generic [ref=f8e750]: Main Street, Paro, Bhutan
+          - generic [ref=f8e754]:
+            - generic [ref=f8e755]:
+              - generic [ref=f8e762]: Evening
+              - generic [ref=f8e763]: 15:00 – 16:10
+            - generic [ref=f8e768]:
+              - generic [ref=f8e769]:
+                - generic [ref=f8e773]:
+                  - generic [ref=f8e774]: BOARDING PASS
+                  - generic [ref=f8e775]: Flight KB204
+                - generic [ref=f8e776]: 2h 15m · NONSTOP
+              - generic [ref=f8e777]:
+                - generic [ref=f8e778]:
+                  - generic [ref=f8e779]:
+                    - generic [ref=f8e780]:
+                      - generic [ref=f8e781]: PBH
+                      - generic [ref=f8e782]: 15:00 · Paro
+                    - generic [ref=f8e790]:
+                      - generic [ref=f8e791]: DEL
+                      - generic [ref=f8e792]: Delhi
+                  - generic [ref=f8e793]:
+                    - generic [ref=f8e794]: Departs 15:00
+                    - generic [ref=f8e798]: 2h 15m in air
+                    - generic [ref=f8e799]: Window requested
+                  - generic [ref=f8e800]: Flight notes. The curling take-off is just as spectacular in reverse — right-side windows this time.
+                - generic [ref=f8e801]: KB204
+    - region "Route and map" [ref=f8e825]:
+      - generic [ref=f8e826]:
+        - generic [ref=f8e827]:
+          - generic [ref=f8e828]:
+            - generic [ref=f8e829]: Your route map
+            - heading "The Paro Valley loop, mapped" [level=3] [ref=f8e833]
+            - paragraph [ref=f8e834]: Paro arrival, the ascent to Tiger's Nest, and the valley drive down to Thimphu — the full daywise route on a live map.
+          - link "Open in Google Maps" [ref=f8e835] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/Paro,+Bhutan/Tigers+Nest+Monastery/Thimphu,+Bhutan
+        - generic [ref=f8e840]:
+          - generic [ref=f8e841]:
+            - iframe [ref=f8e842]
+            - generic [ref=f8e843]: Paro · Bhutan
+          - generic [ref=f8e847]:
+            - img "Stylized route" [ref=f8e848]:
+              - generic [ref=f8e854]: Paro (PBH)
+              - generic [ref=f8e859]: Tiger's Nest
+              - generic [ref=f8e864]: Thimphu
+            - generic [ref=f8e869]:
+              - generic [ref=f8e870]:
+                - generic [ref=f8e871]: Distance
+                - generic [ref=f8e872]: ~65 km loop
+              - generic [ref=f8e874]:
+                - generic [ref=f8e875]: Transport
+                - generic [ref=f8e876]: Private SUV
+    - generic [ref=f8e879]:
+      - generic [ref=f8e880]:
+        - generic [ref=f8e881]: Your Travel Advisor
+        - heading "Why travelers choose Riya" [level=2] [ref=f8e882]
+      - generic [ref=f8e883]:
+        - generic [ref=f8e889]:
+          - generic [ref=f8e890]: 0+
+          - generic [ref=f8e892]: Years Experience
+        - generic [ref=f8e893]:
+          - img "Riya Malhotra" [ref=f8e894]
+          - img [ref=f8e901]:
+            - generic [ref=f8e903]: CERTIFIED · SPECIALIST · ✦ ·
+          - generic [ref=f8e904]:
+            - generic [ref=f8e905]: Riya Malhotra
+            - generic [ref=f8e906]: Certified Himalayan Specialist
+            - paragraph [ref=f8e907]: 15 years crafting luxury Himalayan trips. Specializes in wellness and cultural immersion.
+        - generic [ref=f8e913]:
+          - generic [ref=f8e914]: 0+
+          - generic [ref=f8e916]: Trips Completed
+        - generic [ref=f8e917]:
+          - generic [ref=f8e918]: Expertise
+          - generic [ref=f8e919]:
+            - generic [ref=f8e920]: Himalayan Treks
+            - generic [ref=f8e921]: Wellness
+            - generic [ref=f8e922]: Cultural Immersion
+            - generic [ref=f8e923]: Luxury Stays
+            - generic [ref=f8e924]: Honeymoons
+            - generic [ref=f8e925]: Photography
+            - generic [ref=f8e926]: Spiritual Journeys
+            - generic [ref=f8e927]: Adventure
+        - generic [ref=f8e933]:
+          - generic [ref=f8e934]: 0%
+          - generic [ref=f8e936]: Client Satisfaction
+      - generic [ref=f8e937]:
+        - generic [ref=f8e943]:
+          - generic [ref=f8e944]: Typical response
+          - generic [ref=f8e945]: Under 2 hours
+        - generic [ref=f8e946]:
+          - button "Ask Riya" [ref=f8e947] [cursor=pointer]
+          - button "Customize" [ref=f8e950] [cursor=pointer]
+      - generic [ref=f8e951]:
+        - heading "What travelers say" [level=3] [ref=f8e952]
+        - generic [ref=f8e953]:
+          - generic "5 out of 5 stars" [ref=f8e954]
+          - generic [ref=f8e965]: 98% satisfaction · 4 verified reviews
+      - generic [ref=f8e966]:
+        - generic [ref=f8e967]:
+          - generic [ref=f8e968]:
+            - generic [ref=f8e969]: PV
+            - generic [ref=f8e970]:
+              - generic [ref=f8e971]: Priya & Vikram
+              - generic [ref=f8e972]:
+                - generic "5 out of 5 stars" [ref=f8e973]
+                - generic [ref=f8e984]: March 2024
+            - generic [ref=f8e985]: Verified
+          - paragraph [ref=f8e989]: “Absolutely seamless experience. Riya understood exactly what we wanted for our honeymoon. The custom flight window suggestion was fantastic — we saw Everest at sunrise.”
+        - generic [ref=f8e990]:
+          - generic [ref=f8e991]:
+            - generic [ref=f8e992]: TK
+            - generic [ref=f8e993]:
+              - generic [ref=f8e994]: The Kapoors
+              - generic [ref=f8e995]:
+                - generic "5 out of 5 stars" [ref=f8e996]
+                - generic [ref=f8e1007]: Nov 2023
+            - generic [ref=f8e1008]: Verified
+          - paragraph [ref=f8e1012]: “Every detail was handled. The boutique stays were stunning and the private guide made Bhutan come alive. We never once felt lost or rushed.”
+        - generic [ref=f8e1013]:
+          - generic [ref=f8e1014]:
+            - generic [ref=f8e1015]: AS
+            - generic [ref=f8e1016]:
+              - generic [ref=f8e1017]: Aditya S.
+              - generic [ref=f8e1018]:
+                - generic "5 out of 5 stars" [ref=f8e1019]
+                - generic [ref=f8e1030]: Feb 2024
+            - generic [ref=f8e1031]: Verified
+          - paragraph [ref=f8e1035]: “Riya replied within an hour every single time. She rebuilt our whole Day 2 around a spa request without any fuss. Genuinely the best trip we've taken.”
+        - generic [ref=f8e1036]:
+          - generic [ref=f8e1037]:
+            - generic [ref=f8e1038]: MR
+            - generic [ref=f8e1039]:
+              - generic [ref=f8e1040]: Meera R.
+              - generic [ref=f8e1041]:
+                - generic "4 out of 5 stars" [ref=f8e1042]
+                - generic [ref=f8e1053]: Jan 2024
+            - generic [ref=f8e1054]: Verified
+          - paragraph [ref=f8e1058]: “Beautiful itinerary and thoughtful pacing. The hot-stone bath under the stars was a highlight we'd never have found on our own.”
+    - generic [ref=f8e1061]:
+      - generic [ref=f8e1062]: Fully customizable
+      - heading "Make it yours" [level=2] [ref=f8e1063]
+      - paragraph [ref=f8e1064]: Swap any stop, stretch a night, or reroute a whole leg. Every itinerary is a starting point — flex it until it fits the trip you actually want.
+      - button "Customize this trip" [ref=f8e1066] [cursor=pointer]
+    - generic [ref=f8e1074]:
+      - generic [ref=f8e1075]:
+        - heading "What's included" [level=2] [ref=f8e1076]
+        - paragraph [ref=f8e1077]: Transparent pricing — everything in your trip, at a glance.
+      - generic [ref=f8e1078]:
+        - generic [ref=f8e1079]:
+          - generic [ref=f8e1080]: Estimated price
+          - generic [ref=f8e1081]: $1,850pp
+          - generic [ref=f8e1082]: Total $3,700 · 2 Adults
+          - generic [ref=f8e1083]:
+            - button "Per person" [ref=f8e1084] [cursor=pointer]
+            - button "Total" [ref=f8e1085] [cursor=pointer]
+          - paragraph [ref=f8e1086]: Riya Malhotra at Wanderlust Experts will confirm live fares and availability before any payment is processed.
+          - generic [ref=f8e1087]:
+            - button "Book this trip" [ref=f8e1088] [cursor=pointer]
+            - generic [ref=f8e1091]: Secure booking · no payment until confirmed
+            - button "Ask about this trip" [ref=f8e1096] [cursor=pointer]
+        - generic [ref=f8e1099]:
+          - heading "Included" [level=3] [ref=f8e1100]
+          - generic [ref=f8e1103]:
+            - generic [ref=f8e1104]: All internal flights
+            - generic [ref=f8e1107]: 6 nights boutique stays
+            - generic [ref=f8e1110]: Private English-speaking guide
+            - generic [ref=f8e1113]: All entrance fees & permits
+            - generic [ref=f8e1116]: Daily breakfast and 4 dinners
+            - generic [ref=f8e1119]: Airport transfers
+        - generic [ref=f8e1122]:
+          - heading "Not included" [level=3] [ref=f8e1123]
+          - generic [ref=f8e1126]:
+            - generic [ref=f8e1127]: International flights
+            - generic [ref=f8e1128]: Travel insurance
+            - generic [ref=f8e1129]: Personal expenses
+        - generic [ref=f8e1130]:
+          - heading "Good to know" [level=3] [ref=f8e1131]
+          - generic [ref=f8e1132]:
+            - button "Deposit & Payment" [expanded] [ref=f8e1133] [cursor=pointer]
+            - paragraph [ref=f8e1141]: A 25% deposit is required to secure your booking. The remaining balance is due 60 days before departure.
+          - button "Cancellation Policy Refundable up to 90 days" [ref=f8e1143] [cursor=pointer]:
+            - generic [ref=f8e1147]:
+              - generic [ref=f8e1148]: Cancellation Policy
+              - generic [ref=f8e1149]: Refundable up to 90 days
+    - generic [ref=f8e1154]:
+      - generic [ref=f8e1155]: Wanderlust Experts · Newsletter
+      - heading "Start your journey" [level=2] [ref=f8e1156]
+      - paragraph [ref=f8e1157]: Handpicked itineraries, quiet-season deals and route notes from the trail — a few times a month, never more.
+      - generic [ref=f8e1158]:
+        - textbox "Email address" [ref=f8e1159]:
+          - /placeholder: you@email.com
+        - button "Send" [ref=f8e1160] [cursor=pointer]
+      - paragraph [ref=f8e1161]: By sending, you agree to our Privacy Policy.
+    - contentinfo [ref=f8e1164]:
+      - generic [ref=f8e1165]:
+        - generic [ref=f8e1166]:
+          - text: Crafted by
+          - strong [ref=f8e1167]: Wanderlust Experts
+        - strong [ref=f8e1172]: Kyvari
+  - button "Open Next.js Dev Tools" [ref=f8e1178] [cursor=pointer]
+  - alert [ref=f8e1182]

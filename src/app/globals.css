@@ -97,6 +97,12 @@ a:hover { color:var(--color-awesomic-purple); }
 ::-webkit-scrollbar { width:8px; height:8px; }
 ::-webkit-scrollbar-thumb { background:#c9d4ea; border-radius:99px; }
 
+/* Awesomic Global Button */
+.ky-btn-awesomic { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .2s ease; border: 0.5px solid rgba(255,255,255,0.2); background: #09090b; color: #fff; box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0; position: relative; overflow: hidden; z-index: 1; text-decoration: none; font-family: 'Cosmica', system-ui, sans-serif; }
+.ky-btn-awesomic:hover { transform: translateY(-1px); }
+.ky-btn-awesomic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%); transform: translateX(-120%); animation: kyAuthShine 4s ease-in-out infinite; z-index: -1; pointer-events: none; }
+@keyframes kyAuthShine { 0% { transform: translateX(-120%); } 45%,100% { transform: translateX(120%); } }
+
 /* Awesomic Gradients */
 .cta-gradient-1 {
   -webkit-text-fill-color: transparent;

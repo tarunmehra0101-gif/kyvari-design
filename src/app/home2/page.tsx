@@ -50,24 +50,19 @@ const A = {
 };
 
 const LOGOS = [
-  { alt: "Booking.com", src: "https://logos.hunter.io/booking.com" },
-  { alt: "Expedia", src: "https://logos.hunter.io/expedia.com" },
-  { alt: "TripAdvisor", src: "https://logos.hunter.io/tripadvisor.com" },
-  { alt: "Airbnb", src: "https://logos.hunter.io/airbnb.com" },
-  { alt: "Skyscanner", src: "https://logos.hunter.io/skyscanner.net" },
-  { alt: "Kayak", src: "https://logos.hunter.io/kayak.com" },
-  { alt: "TUI Group", src: "https://logos.hunter.io/tui.com" },
-  { alt: "Viator", src: "https://logos.hunter.io/viator.com" },
-  { alt: "GetYourGuide", src: "https://logos.hunter.io/getyourguide.com" },
-  { alt: "Trivago", src: "https://logos.hunter.io/trivago.com" },
-  { alt: "Priceline", src: "https://logos.hunter.io/priceline.com" },
-  { alt: "Orbitz", src: "https://logos.hunter.io/orbitz.com" },
-  { alt: "Hotwire", src: "https://logos.hunter.io/hotwire.com" },
-  { alt: "Marriott", src: "https://logos.hunter.io/marriott.com" },
-  { alt: "Hilton", src: "https://logos.hunter.io/hilton.com" },
-  { alt: "Hyatt", src: "https://logos.hunter.io/hyatt.com" },
-  { alt: "Emirates", src: "https://logos.hunter.io/emirates.com" },
-  { alt: "Singapore Airlines", src: "https://logos.hunter.io/singaporeair.com" },
+  { alt: "Virtuoso", src: "https://logos.hunter.io/virtuoso.com" },
+  { alt: "Fora Travel", src: "https://logos.hunter.io/foratravel.com" },
+  { alt: "Intrepid Travel", src: "https://logos.hunter.io/intrepidtravel.com" },
+  { alt: "G Adventures", src: "https://logos.hunter.io/gadventures.com" },
+  { alt: "Black Tomato", src: "https://logos.hunter.io/blacktomato.com" },
+  { alt: "Kensington Tours", src: "https://logos.hunter.io/kensingtontours.com" },
+  { alt: "Audley Travel", src: "https://logos.hunter.io/audleytravel.com" },
+  { alt: "Scott Dunn", src: "https://logos.hunter.io/scottdunn.com" },
+  { alt: "Travel Counsellors", src: "https://logos.hunter.io/travelcounsellors.com" },
+  { alt: "Zicasso", src: "https://logos.hunter.io/zicasso.com" },
+  { alt: "Kuoni", src: "https://logos.hunter.io/kuoni.co.uk" },
+  { alt: "Trafalgar", src: "https://logos.hunter.io/trafalgar.com" },
+  { alt: "Contiki", src: "https://logos.hunter.io/contiki.com" }
 ];
 
 const SERVICE_CARDS = [
@@ -374,9 +369,13 @@ export default function KyvariHome2() {
         </section>
 
         {/* ═══ 4. LOGO CAROUSEL ═══ */}
-        <div className="ky-logos"><div className="ky-logos__track">
-          {[...LOGOS, ...LOGOS, ...LOGOS].map((l, i) => <img key={i} src={l.src} alt={l.alt} />)}
-        </div></div>
+        <div className="ky-logos-wrapper" style={{ maxWidth: 1440, margin: '0 auto', padding: '0 48px' }}>
+          <div className="ky-logos" style={{ borderRadius: '24px' }}>
+            <div className="ky-logos__track">
+              {[...LOGOS, ...LOGOS, ...LOGOS].map((l, i) => <img key={i} src={l.src} alt={l.alt} />)}
+            </div>
+          </div>
+        </div>
 
         {/* ═══ 5. FEATURE CARDS SLIDER ═══ */}
         <section id="features">
@@ -1461,6 +1460,7 @@ const PAGE_CSS = `
   .ky-nav__cta-text{display:none}
   .ky-nav__cta-icon{display:inline-flex !important}
   .ky-nav__cta{padding:10px !important;border-radius:50%;width:40px;height:40px}
+  .ky-logos-wrapper{padding:0 20px !important}
   .ky-hero{padding:120px 20px 0}
   .ky-banner{border-radius:20px;height:auto;padding:16px;flex-direction:column;gap:12px;text-align:center;border:1px solid rgba(0,0,0,0.08)}
   .ky-banner__btn{width:100%;justify-content:center}

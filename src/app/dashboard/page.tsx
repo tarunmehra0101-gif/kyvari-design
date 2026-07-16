@@ -213,6 +213,14 @@ export default function KyvariDashboard() {
         .hide-scrollbar {
           scrollbar-width: none;
         }
+        
+        .ky-btn-awesomic { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 14px; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .2s ease; border: 0.5px solid rgba(255,255,255,0.2); background: #09090b; color: #fff; box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0; position: relative; overflow: hidden; z-index: 1; text-decoration: none; font-family: Cosmic, sans-serif; }
+        .ky-btn-awesomic:hover { transform: translateY(-1px); }
+        .ky-btn-awesomic::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%); transform: translateX(-120%); animation: kyAuthShine 4s ease-in-out infinite; z-index: -1; pointer-events: none; }
+
+        .ky-btn-awesomic-circle { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; font-weight: 600; cursor: pointer; transition: transform .18s ease, box-shadow .2s ease; border: 0.5px solid rgba(255,255,255,0.2); background: #09090b; color: #fff; box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0; position: relative; overflow: hidden; z-index: 1; }
+        .ky-btn-awesomic-circle:hover { transform: translateY(-1px); }
+        .ky-btn-awesomic-circle::after { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%); transform: translateX(-120%); animation: kyAuthShine 4s ease-in-out infinite; z-index: -1; pointer-events: none; }
 
         @media (max-width: 1200px) {
           .ky-stats-grid {
@@ -252,21 +260,15 @@ export default function KyvariDashboard() {
 
           {/* New Itinerary CTA */}
           <Link href="/detail2" style={{ textDecoration: "none", marginBottom: "20px", display: "block" }}>
-            <div style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: sidebarCollapsed ? "center" : "flex-start",
-              gap: "10px",
-              padding: sidebarCollapsed ? "12px" : "12px 16px",
-              borderRadius: "12px",
-              background: "linear-gradient(135deg, #ff8a5c, #e8543f)",
-              color: "#fff",
-              fontWeight: 600,
-              fontSize: "14px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(232,84,63,0.2)",
-              transition: "transform 0.2s"
-            }} className="hover-scale">
+            <div 
+              className="ky-btn-awesomic hover-scale"
+              style={{
+                justifyContent: sidebarCollapsed ? "center" : "flex-start",
+                padding: sidebarCollapsed ? "12px" : "12px 16px",
+                width: "100%",
+                fontSize: "14px"
+              }}
+            >
               <Plus size={16} />
               {!sidebarCollapsed && <span>New Itinerary</span>}
             </div>
@@ -378,7 +380,7 @@ export default function KyvariDashboard() {
             
             <div style={{ position: "relative", zIndex: 10, height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "32px" }}>
               {/* Date Badge */}
-              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.1)", padding: "8px 18px", borderRadius: "100px", color: "#fff", fontSize: "12px", fontWeight: 700, width: "fit-content", textTransform: "uppercase", letterSpacing: ".1em" }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "rgba(255,255,255,0.15)", backdropFilter: "blur(12px)", border: "1px solid rgba(255,255,255,0.1)", padding: "8px 18px", borderRadius: "100px", color: "#fff", fontSize: "12px", fontWeight: 700, width: "fit-content", letterSpacing: ".02em", fontFamily: "Cosmic, sans-serif" }}>
                 <Calendar size={14} />
                 <span>Monday • July 13</span>
               </div>
@@ -435,22 +437,8 @@ export default function KyvariDashboard() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
               </button>
               <button 
+                className="ky-btn-awesomic-circle hover-scale"
                 onClick={() => router.push('/detail2')}
-                style={{ 
-                  background: "linear-gradient(135deg, #ff8a5c, #e8543f)", 
-                  border: "none", 
-                  color: "#fff", 
-                  cursor: "pointer", 
-                  display: "flex", 
-                  alignItems: "center", 
-                  justifyContent: "center",
-                  width: "40px", 
-                  height: "40px", 
-                  borderRadius: "50%",
-                  boxShadow: "0 4px 10px rgba(232,84,63,0.3)",
-                  transition: "all 0.2s"
-                }}
-                className="hover-scale"
               >
                 <Send size={16} />
               </button>
@@ -516,7 +504,8 @@ export default function KyvariDashboard() {
                         alt={idea.title} 
                         style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 0 }} 
                       />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%)", zIndex: 1 }} />
+                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%)", zIndex: 1 }} />
+                      <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "50%", backdropFilter: "blur(6px)", WebkitMaskImage: "linear-gradient(to top, black 10%, transparent 100%)", maskImage: "linear-gradient(to top, black 10%, transparent 100%)", zIndex: 1 }} />
                       
                       <div style={{ position: "relative", zIndex: 2 }}>
                         <span style={{
@@ -529,10 +518,9 @@ export default function KyvariDashboard() {
                           backdropFilter: "blur(8px)",
                           border: "1px solid rgba(255,255,255,0.2)",
                           color: "#fff",
-                          fontSize: "11px",
-                          fontWeight: 700,
-                          letterSpacing: ".08em",
-                          textTransform: "uppercase"
+                          fontSize: "12px",
+                          fontWeight: 600,
+                          letterSpacing: ".02em",
                         }}>
                           {React.createElement(ideaIcons[idea.tag] || Compass, { size: 12 })}
                           {idea.tag}
@@ -540,10 +528,14 @@ export default function KyvariDashboard() {
                       </div>
 
                       <div style={{ position: "relative", zIndex: 2, marginTop: "auto", color: "#fff" }}>
-                        <h3 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "8px", lineHeight: 1.2, fontFamily: "Cosmic, sans-serif" }}>{idea.title}</h3>
-                        <div style={{ display: "flex", alignItems: "center", gap: "6px", fontSize: "13px", color: "rgba(255,255,255,0.85)" }}>
-                          <MapPin size={13} />
-                          <span>{idea.location}</span>
+                        <h3 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "8px", lineHeight: 1.2, fontFamily: "Cosmic, sans-serif", textShadow: "0 2px 10px rgba(0,0,0,0.3)" }}>{idea.title}</h3>
+                        <div style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "13px", color: "rgba(255,255,255,0.9)", fontWeight: 500 }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                            <MapPin size={13} />
+                            <span>{idea.location}</span>
+                          </div>
+                          <span>•</span>
+                          <span>{idea.count} days</span>
                         </div>
                       </div>
                     </div>
@@ -723,19 +715,14 @@ export default function KyvariDashboard() {
                 background: "linear-gradient(135deg, #fff5f3 0%, #fef7f5 100%)",
                 border: "1px solid #fde8e3", borderRadius: "20px"
               }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "12px" }}>
-                  <Sparkles size={20} color="#e8543f" />
+                <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
+                  <img src="/kyvari-logo.png" alt="Kyvari Logo" style={{ width: "20px", height: "20px", borderRadius: "4px", objectFit: "contain" }} />
                   <span style={{ fontSize: "15px", fontWeight: 700, color: "#09090b" }}>AI Assistant</span>
                 </div>
                 <p style={{ fontSize: "14px", color: "#52525b", marginBottom: "16px", lineHeight: 1.6 }}>
                   Need help creating an itinerary? Describe your client's dream trip.
                 </p>
-                <Link href="/detail2" style={{
-                  display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
-                  padding: "14px", borderRadius: "12px",
-                  background: "linear-gradient(135deg, #ff8a5c, #e8543f)",
-                  color: "#fff", textDecoration: "none", fontSize: "14px", fontWeight: 600, boxShadow: "0 4px 12px rgba(232,84,63,0.3)"
-                }}>
+                <Link href="/detail2" className="ky-btn-awesomic hover-scale" style={{ padding: "14px", width: "100%" }}>
                   <Sparkles size={16} /> Start Planning
                 </Link>
               </div>

@@ -1,0 +1,116 @@
+- generic [ref=f16e1]:
+  - generic [active]:
+    - generic [ref=f16e4]:
+      - generic [ref=f16e5]:
+        - navigation [ref=f16e7]:
+          - button [disabled] [ref=f16e8]:
+            - img "previous" [ref=f16e9]
+          - generic [ref=f16e11]:
+            - generic [ref=f16e12]: 1/
+            - text: "1"
+          - button [disabled] [ref=f16e13]:
+            - img "next" [ref=f16e14]
+        - generic [ref=f16e17]:
+          - generic "Latest available version is detected (16.2.10)." [ref=f16e20]: Next.js 16.2.10
+          - generic [ref=f16e21]: Turbopack
+      - dialog "Runtime ReferenceError" [ref=f16e23]:
+        - generic [ref=f16e26]:
+          - generic [ref=f16e27]:
+            - generic [ref=f16e28]:
+              - generic [ref=f16e29]: Runtime ReferenceError
+              - generic [ref=f16e31]:
+                - button "Copy Error Info" [ref=f16e32] [cursor=pointer]
+                - button "No related documentation found" [disabled] [ref=f16e35]
+                - button "Attach Node.js inspector" [ref=f16e38] [cursor=pointer]
+            - generic [ref=f16e47]: TrendingUp is not defined
+          - generic [ref=f16e50]:
+            - paragraph [ref=f16e52]:
+              - text: Call Stack
+              - generic [ref=f16e53]: "14"
+            - generic [ref=f16e54]:
+              - generic [ref=f16e55]:
+                - text: Advisor
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e56] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/src_1p_5wxi._.js (3645:242)
+            - generic [ref=f16e59]:
+              - generic [ref=f16e60]:
+                - text: Object.react_stack_bottom_frame
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e61] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (15037:24)
+            - generic [ref=f16e64]:
+              - generic [ref=f16e65]:
+                - text: renderWithHooks
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e66] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (4620:24)
+            - generic [ref=f16e69]:
+              - generic [ref=f16e70]:
+                - text: updateFunctionComponent
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e71] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (6081:21)
+            - generic [ref=f16e74]:
+              - generic [ref=f16e75]:
+                - text: beginWork
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e76] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (6691:24)
+            - generic [ref=f16e79]:
+              - generic [ref=f16e80]:
+                - text: runWithFiberInDEV
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e81] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (965:74)
+            - generic [ref=f16e84]:
+              - generic [ref=f16e85]:
+                - text: performUnitOfWork
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e86] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (9555:97)
+            - generic [ref=f16e89]:
+              - generic [ref=f16e90]:
+                - text: workLoopSync
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e91] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (9449:40)
+            - generic [ref=f16e94]:
+              - generic [ref=f16e95]:
+                - text: renderRootSync
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e96] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (9433:13)
+            - generic [ref=f16e99]:
+              - generic [ref=f16e100]:
+                - text: performWorkOnRoot
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e101] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (9098:47)
+            - generic [ref=f16e104]:
+              - generic [ref=f16e105]:
+                - text: performWorkOnRootViaSchedulerTask
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e106] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js (10255:9)
+            - generic [ref=f16e109]:
+              - generic [ref=f16e110]:
+                - text: MessagePort.performWorkUntilDeadline
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e111] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_next_dist_compiled_1amofcm._.js (2647:64)
+            - generic [ref=f16e114]:
+              - generic [ref=f16e115]:
+                - text: Preview3Page
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e116] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/src_1p_5wxi._.js (9683:237)
+            - generic [ref=f16e119]:
+              - generic [ref=f16e120]:
+                - text: ClientPageRoot
+                - button "Sourcemapping failed. Click to log cause of error." [ref=f16e121] [cursor=pointer]
+              - text: file:///Users/kumarlouhit/Documents/New%20project/kyvari-design/.next/dev/static/chunks/node_modules_1yl8dyi._.js (6085:50)
+        - generic [ref=f16e124]: "1"
+        - generic [ref=f16e125]: "2"
+    - generic [ref=f16e130] [cursor=pointer]:
+      - button "Open Next.js Dev Tools" [ref=f16e131]
+      - generic [ref=f16e135]:
+        - button "Open issues overlay" [ref=f16e136]:
+          - generic [ref=f16e137]:
+            - generic [ref=f16e138]: "0"
+            - generic [ref=f16e139]: "1"
+          - generic [ref=f16e140]: Issue
+        - button "Collapse issues badge" [ref=f16e141]
+  - generic [ref=f16e145]:
+    - heading "This page couldn’t load" [level=1] [ref=f16e148]
+    - paragraph [ref=f16e149]: Reload to try again, or go back.
+    - generic [ref=f16e150]:
+      - button "Reload" [ref=f16e152] [cursor=pointer]
+      - button "Back" [ref=f16e153] [cursor=pointer]

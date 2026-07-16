@@ -1,0 +1,1900 @@
+- generic [ref=e3]:
+  - banner [ref=e4]:
+    - generic [ref=e5]:
+      - link "home" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img "awesomic smile" [ref=e7]
+      - navigation [ref=e8]:
+        - generic [ref=e9]:
+          - button "Our work" [ref=e11] [cursor=pointer]
+          - link "Pricing" [ref=e13] [cursor=pointer]:
+            - /url: /pricing
+          - button "Services" [ref=e15] [cursor=pointer]
+          - link "Browse talents" [ref=e17] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+          - link "About us" [ref=e18] [cursor=pointer]:
+            - /url: /about
+          - link "Love" [ref=e19] [cursor=pointer]:
+            - /url: /wall-of-love
+          - link "Apply" [ref=e21] [cursor=pointer]:
+            - /url: /talent
+      - generic [ref=e23]:
+        - link "Log in" [ref=e24] [cursor=pointer]:
+          - /url: https://app.awesomic.com
+        - link "Book demo" [ref=e27] [cursor=pointer]:
+          - /url: "#"
+  - generic [ref=e32]:
+    - generic [ref=e33]: "🔥 How top startups launch with video: read the launch video report"
+    - link "Get the free report" [ref=e35] [cursor=pointer]:
+      - /url: /free-launch-video-report
+  - generic [ref=e39]:
+    - generic [ref=e41]:
+      - generic [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - img "YC small logo" [ref=e45]
+            - generic [ref=e46]: Backed by Y Combinator
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - img "Goole Play logo" [ref=e49]
+              - generic [ref=e50]: "4.9"
+            - generic [ref=e51]:
+              - img "Trustpilot logo" [ref=e52]
+              - generic [ref=e53]: "4.9"
+        - heading "All your design marketing product video design tasks done for one fixed monthly fee" [level=1] [ref=e58]:
+          - text: All your
+          - generic [ref=e60]:
+            - generic [ref=e61]: design
+            - generic [ref=e62]: marketing
+            - generic [ref=e63]: product
+            - generic [ref=e64]: video
+            - generic [ref=e65]: design
+          - generic [ref=e66]: tasks done for one fixed monthly fee
+      - generic [ref=e67]:
+        - generic [ref=e68]: Stop searching for pro designers, developers, and marketers. Start getting design done. Match with top-tier talent and get your projects delivered.
+        - form "features-form" [ref=e73]:
+          - textbox "Email address" [ref=e74]
+          - generic [ref=e75]:
+            - button "Submit" [ref=e76] [cursor=pointer]
+            - link "Book demo" [ref=e77] [cursor=pointer]:
+              - /url: "#"
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - generic [ref=e81]: 20 000+
+          - generic [ref=e82]: completedprojects
+        - generic [ref=e83]:
+          - generic [ref=e84]: 4 000+
+          - generic [ref=e85]: customers worldwide
+      - generic [ref=e90]:
+        - list [ref=e91]:
+          - listitem [ref=e92]:
+            - img "YC logo" [ref=e93]
+          - listitem [ref=e94]:
+            - img "Coca-Cola logo" [ref=e95]
+          - listitem [ref=e96]:
+            - img "Disney Logo" [ref=e97]
+          - listitem [ref=e98]:
+            - img "Genesis Logo" [ref=e99]
+          - listitem [ref=e100]:
+            - img "udemy logo" [ref=e101]
+          - listitem [ref=e102]:
+            - img "EY logo" [ref=e103]
+          - listitem [ref=e104]:
+            - img "Pandadoc logo" [ref=e105]
+        - list [ref=e107]:
+          - listitem [ref=e108]:
+            - img "YC logo" [ref=e109]
+          - listitem [ref=e110]:
+            - img "Coca-Cola logo" [ref=e111]
+          - listitem [ref=e112]:
+            - img "Disney Logo" [ref=e113]
+          - listitem [ref=e114]:
+            - img "Genesis Logo" [ref=e115]
+          - listitem [ref=e116]:
+            - img "udemy logo" [ref=e117]
+          - listitem [ref=e118]:
+            - img "EY logo" [ref=e119]
+          - listitem [ref=e120]:
+            - img "Pandadoc logo" [ref=e121]
+    - generic [ref=e126]:
+      - group "1 / 9" [ref=e127]:
+        - generic [ref=e128]: Softwaredevelopment
+        - generic [ref=e129]:
+          - generic [ref=e130]: Frontend & Backend
+          - generic [ref=e132]: Full stack
+          - generic [ref=e134]: Mobile App
+          - generic [ref=e136]: WordPress
+          - generic [ref=e138]: AI development
+          - generic [ref=e140]: QA engineering
+          - generic [ref=e142]: And more
+      - group "2 / 9" [ref=e144]:
+        - generic [ref=e145]: Web & product
+        - generic [ref=e146]:
+          - generic [ref=e147]: Web
+          - generic [ref=e148]: UX/UI design
+          - generic [ref=e149]: Mobile app
+        - generic [ref=e151]:
+          - group "1 / 3" [ref=e152]
+          - group "2 / 3" [ref=e153]
+          - group "3 / 3" [ref=e154]
+      - group "3 / 9" [ref=e160]:
+        - generic [ref=e161]: Graphic design & marketing material
+        - generic [ref=e162]:
+          - generic [ref=e163]: Social media creative
+          - generic [ref=e164]: Banners
+          - generic [ref=e165]: Pitch decks & presentation
+          - generic [ref=e166]: Packaging
+          - generic [ref=e167]: Merch design
+          - generic [ref=e168]: Book & eBook
+          - generic [ref=e169]: Email design
+          - generic [ref=e170]: Any graphic material
+        - img "Six slides highlighting fintech topics including fintech revolution, 90% millennials use fintech, seamless mobile app, seamless financial experience, $5.7 trillion global fintech market, and meet Mubert Finance partner." [ref=e171]
+      - group "4 / 9" [ref=e172]:
+        - generic [ref=e173]: Motion design & video production
+        - generic [ref=e174]:
+          - generic [ref=e175]: Animated videos
+          - generic [ref=e176]: 2D/3D motion
+          - generic [ref=e177]: AI video
+          - generic [ref=e178]: Editing
+          - generic [ref=e179]: Production
+      - group "5 / 9" [ref=e182]:
+        - generic [ref=e183]: Brand identity
+        - generic [ref=e184]:
+          - generic [ref=e185]: Logo design
+          - generic [ref=e186]: Brand guidelines
+        - generic [ref=e188]:
+          - group "1 / 3" [ref=e189]
+          - group "2 / 3" [ref=e190]
+          - group "3 / 3" [ref=e191]
+      - group "6 / 9" [ref=e197]:
+        - generic [ref=e198]: Marketingand content creation
+        - generic [ref=e199]:
+          - generic [ref=e200]: Social media marketing
+          - generic [ref=e202]: Copywriting
+          - generic [ref=e204]: Content marketing
+          - generic [ref=e206]: PPC & paid ads
+          - generic [ref=e208]: Analytics & strategy
+          - generic [ref=e210]: SEO
+          - generic [ref=e212]: And more
+      - group "7 / 9" [ref=e214]:
+        - generic [ref=e215]: No-codedevelopment
+        - generic [ref=e216]:
+          - generic [ref=e217]: Webflow
+          - generic [ref=e219]: Framer
+          - generic [ref=e221]: And more
+        - img "Laptop screen displaying Delve software with text 'Get compliant by Friday' and options to book a demo, highlighting fast security compliance for companies." [ref=e222]
+      - group "8 / 9" [ref=e223]:
+        - generic [ref=e224]: Custom illustrations
+        - generic [ref=e225]:
+          - generic [ref=e226]: 2D/3D illustrations
+          - generic [ref=e227]: Digital art
+        - generic [ref=e229]:
+          - group "1 / 3" [ref=e230]
+          - group "2 / 3" [ref=e231]
+          - group "3 / 3" [ref=e232]
+      - group "9 / 9" [ref=e238]:
+        - generic [ref=e239]: Softwaredevelopment
+        - generic [ref=e240]:
+          - generic [ref=e241]: Frontend & Backend
+          - generic [ref=e243]: Full stack
+          - generic [ref=e245]: Mobile App
+          - generic [ref=e247]: WordPress
+          - generic [ref=e249]: AI development
+          - generic [ref=e251]: QA engineering
+          - generic [ref=e253]: And more
+  - generic [ref=e260]:
+    - heading "We solve the bottlenecks that kill your speed" [level=2] [ref=e262]
+    - generic [ref=e263]:
+      - generic [ref=e264]: Forget about unreliable freelancers
+      - generic [ref=e266]: No more contractors ghosting before launch
+      - generic [ref=e268]: Stop juggling scattered design and dev
+      - generic [ref=e270]: Say bye to payroll and contracts
+      - generic [ref=e272]: Skip one month onboarding with agencies
+      - generic [ref=e274]: Done with wasting weeks filtering CVs
+    - generic [ref=e276]:
+      - generic [ref=e277]:
+        - img "Jason Cornelius Photo" [ref=e279]
+        - generic [ref=e280]:
+          - generic [ref=e281]: Jason Cornelius
+          - generic [ref=e282]:
+            - generic [ref=e283]: Co-Founder
+            - generic [ref=e284]: at
+            - generic [ref=e285]: Perseus Defense
+      - generic [ref=e286]: Game-Changer for Our Team — Awesomic Is Truly Awesome. Working with Awesomic has been one of the best decisions we’ve made (for picking external folks to help us) as a YC startup.
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - generic [ref=e290]: 70%
+        - generic [ref=e291]: lower cost vs freelancers, agencies, and in-house teams
+      - generic [ref=e292]:
+        - generic [ref=e293]: 40%
+        - generic [ref=e294]: faster turnaroundon every update
+      - generic [ref=e295]:
+        - generic [ref=e296]: 60%
+        - generic [ref=e297]: fewer revisions — powered by AI and senior-level talent
+  - generic [ref=e299]:
+    - generic [ref=e301]:
+      - generic [ref=e303]:
+        - generic [ref=e304]: Why hire if you can subscribe to 200+ vetted talents?
+        - link "Browse talents" [ref=e307] [cursor=pointer]:
+          - /url: https://awesomic.com/go/6sx77
+      - generic [ref=e312]:
+        - group "1 / 7" [ref=e313]:
+          - link "Photo of Hamza" [ref=e314] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - img "Photo of Hamza"
+          - link "Hamza Product designer , 7+ years FinTech AI Healthcare Crypto Worked with Coca Cola Logo" [ref=e315] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - generic [ref=e316]:
+              - generic [ref=e317]: Hamza
+              - generic [ref=e318]:
+                - generic [ref=e319]: Product designer
+                - generic [ref=e320]: ", 7+ years"
+              - generic [ref=e322]:
+                - generic [ref=e323]: FinTech
+                - generic [ref=e324]: AI
+                - generic [ref=e325]: Healthcare
+                - generic [ref=e326]: Crypto
+            - generic [ref=e327]:
+              - generic [ref=e328]: Worked with
+              - img "Coca Cola Logo"
+        - group "2 / 7" [ref=e330]:
+          - generic [ref=e331]:
+            - img "Photo of Juana"
+          - link "Juana Illustrator , 11+ years E-commerce Gaming NFT Worked with Disney Logo" [ref=e334] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - generic [ref=e335]:
+              - generic [ref=e336]: Juana
+              - generic [ref=e337]:
+                - generic [ref=e338]: Illustrator
+                - generic [ref=e339]: ", 11+ years"
+              - generic [ref=e341]:
+                - generic [ref=e342]: E-commerce
+                - generic [ref=e343]: Gaming
+                - generic [ref=e344]: NFT
+            - generic [ref=e345]:
+              - generic [ref=e346]: Worked with
+              - img "Disney Logo"
+        - group "3 / 7" [ref=e348]:
+          - link "Photo of Joao" [ref=e349] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - img "Photo of Joao"
+          - link "João Brand designer , 15+ years SaaS EdTech Fintech AI Worked with PandaDoc logo" [ref=e350] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - generic [ref=e351]:
+              - generic [ref=e352]: João
+              - generic [ref=e353]:
+                - generic [ref=e354]: Brand designer
+                - generic [ref=e355]: ", 15+ years"
+              - generic [ref=e357]:
+                - generic [ref=e358]: SaaS
+                - generic [ref=e359]: EdTech
+                - generic [ref=e360]: Fintech
+                - generic [ref=e361]: AI
+            - generic [ref=e362]:
+              - generic [ref=e363]: Worked with
+              - img "PandaDoc logo"
+        - group "4 / 7" [ref=e365]:
+          - link "Frederiko Designer Photo" [ref=e366] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - img "Frederiko Designer Photo"
+          - link "Federico Graphic artist , 15+ years Gaming AI Fashion Advertising Worked with MTV logo" [ref=e367] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - generic [ref=e368]:
+              - generic [ref=e369]: Federico
+              - generic [ref=e370]:
+                - generic [ref=e371]: Graphic artist
+                - generic [ref=e372]: ", 15+ years"
+              - generic [ref=e374]:
+                - generic [ref=e375]: Gaming
+                - generic [ref=e376]: AI
+                - generic [ref=e377]: Fashion
+                - generic [ref=e378]: Advertising
+            - generic [ref=e379]:
+              - generic [ref=e380]: Worked with
+              - img "MTV logo"
+        - group "5 / 7" [ref=e382]:
+          - link "Photo of Iuri" [ref=e383] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - img "Photo of Iuri"
+          - link "Iury Full-Stack engineer , 8+ years HealthTech Blockchain Financial Worked with VEED logo" [ref=e384] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - generic [ref=e385]:
+              - generic [ref=e386]: Iury
+              - generic [ref=e387]:
+                - generic [ref=e388]: Full-Stack engineer
+                - generic [ref=e389]: ", 8+ years"
+              - generic [ref=e391]:
+                - generic [ref=e392]: HealthTech
+                - generic [ref=e393]: Blockchain
+                - generic [ref=e394]: Financial
+            - generic [ref=e395]:
+              - generic [ref=e396]: Worked with
+              - img "VEED logo"
+        - group "6 / 7" [ref=e398]:
+          - generic [ref=e399]:
+            - img "Photo of Juan"
+          - link "Juanjo Brand designer , 10+ years HealthTech Real Estate FinTech Worked with Udemy Logo" [ref=e402] [cursor=pointer]:
+            - /url: https://awesomic.com/go/6sx77
+            - generic [ref=e403]:
+              - generic [ref=e404]: Juanjo
+              - generic [ref=e405]:
+                - generic [ref=e406]: Brand designer
+                - generic [ref=e407]: ", 10+ years"
+              - generic [ref=e409]:
+                - generic [ref=e410]: HealthTech
+                - generic [ref=e411]: Real Estate
+                - generic [ref=e412]: FinTech
+            - generic [ref=e413]:
+              - generic [ref=e414]: Worked with
+              - img "Udemy Logo"
+        - group "7 / 7" [ref=e416]:
+          - generic [ref=e417]:
+            - link "View More Talents Link Image":
+              - /url: https://awesomic.com/go/6sx77
+              - img "View More Talents Link Image"
+            - link "View more talents" [ref=e418] [cursor=pointer]:
+              - /url: https://awesomic.com/go/6sx77
+    - generic:
+      - img "decorative image in cta block"
+  - generic [ref=e425]:
+    - heading "Why teams choose Awesomic" [level=2] [ref=e426]
+    - generic [ref=e428]:
+      - generic [ref=e429]:
+        - generic [ref=e430]:
+          - generic [ref=e432]:
+            - generic [ref=e433]: 4 000+
+            - generic [ref=e435]: Customers
+          - generic [ref=e439]:
+            - list [ref=e440]:
+              - listitem [ref=e441]:
+                - img "YC logo" [ref=e442]
+              - listitem [ref=e443]:
+                - img "Coca-Cola logo" [ref=e444]
+              - listitem [ref=e445]:
+                - img "Disney Logo" [ref=e446]
+              - listitem [ref=e447]:
+                - img "Genesis Logo" [ref=e448]
+              - listitem [ref=e449]:
+                - img "udemy logo" [ref=e450]
+              - listitem [ref=e451]:
+                - img "EY logo" [ref=e452]
+              - listitem [ref=e453]:
+                - img "Pandadoc logo" [ref=e454]
+            - list [ref=e456]:
+              - listitem [ref=e457]:
+                - img "YC logo" [ref=e458]
+              - listitem [ref=e459]:
+                - img "Coca-Cola logo" [ref=e460]
+              - listitem [ref=e461]:
+                - img "Disney Logo" [ref=e462]
+              - listitem [ref=e463]:
+                - img "Genesis Logo" [ref=e464]
+              - listitem [ref=e465]:
+                - img "udemy logo" [ref=e466]
+              - listitem [ref=e467]:
+                - img "EY logo" [ref=e468]
+              - listitem [ref=e469]:
+                - img "Pandadoc logo" [ref=e470]
+        - generic [ref=e472]:
+          - generic [ref=e473]: Vetted0.82% talent
+          - img "how we choose a pro clickable element"
+      - generic [ref=e478]:
+        - generic [ref=e480]:
+          - generic [ref=e481]:
+            - img "Marty Kausas photo" [ref=e483]
+            - generic [ref=e484]:
+              - generic [ref=e485]: Marty Kausas
+              - generic [ref=e486]:
+                - generic [ref=e487]: Founder
+                - generic [ref=e488]: of
+                - generic [ref=e489]: Pylon
+          - generic [ref=e492]:
+            - img "Marty Kausas preview poster"
+        - generic [ref=e495]: Match with talents within 24 hours
+      - generic [ref=e498]:
+        - generic [ref=e501]:
+          - generic [ref=e502]: 20,000+
+          - generic [ref=e504]: Projects completed
+        - generic [ref=e505]:
+          - generic [ref=e506]:
+            - generic [ref=e508]:
+              - generic [ref=e509]:
+                - generic [ref=e510]: Design
+                - generic [ref=e511]: UI/UX
+                - generic [ref=e512]: Motion
+                - generic [ref=e513]: Brand identity
+                - generic [ref=e514]: Product design
+                - generic [ref=e515]: Presentation
+                - generic [ref=e516]: Graphic
+                - generic [ref=e517]: Illustration
+                - generic [ref=e518]: Packaging & merch
+              - generic [ref=e519]:
+                - generic [ref=e520]: Design
+                - generic [ref=e521]: UI/UX
+                - generic [ref=e522]: Motion
+                - generic [ref=e523]: Brand identity
+                - generic [ref=e524]: Product design
+                - generic [ref=e525]: Presentation
+                - generic [ref=e526]: Graphic
+                - generic [ref=e527]: Illustration
+                - generic [ref=e528]: Packaging & merch
+            - generic [ref=e530]:
+              - generic [ref=e531]:
+                - generic [ref=e532]: Analytics & strategy
+                - generic [ref=e533]: Marketing
+                - generic [ref=e534]: Copywriting
+                - generic [ref=e535]: Content marketing
+                - generic [ref=e536]: SEO
+                - generic [ref=e537]: PPC & paid ads
+                - generic [ref=e538]: Social media marketing
+                - generic [ref=e539]: Email marketing
+              - generic [ref=e540]:
+                - generic [ref=e541]: Analytics & strategy
+                - generic [ref=e542]: Marketing
+                - generic [ref=e543]: Copywriting
+                - generic [ref=e544]: Content marketing
+                - generic [ref=e545]: SEO
+                - generic [ref=e546]: PPC & paid ads
+                - generic [ref=e547]: Social media marketing
+                - generic [ref=e548]: Email marketing
+            - generic [ref=e550]:
+              - generic [ref=e551]:
+                - generic [ref=e552]: QA engineering
+                - generic [ref=e553]: Software development
+                - generic [ref=e554]: Frontend
+                - generic [ref=e555]: Full stack
+                - generic [ref=e556]: Backend
+                - generic [ref=e557]: Web development
+                - generic [ref=e558]: Mobile app
+                - generic [ref=e559]: AI development
+              - generic [ref=e560]:
+                - generic [ref=e561]: QA engineering
+                - generic [ref=e562]: Software development
+                - generic [ref=e563]: Frontend
+                - generic [ref=e564]: Full stack
+                - generic [ref=e565]: Backend
+                - generic [ref=e566]: Web development
+                - generic [ref=e567]: Mobile app
+                - generic [ref=e568]: AI development
+            - generic [ref=e570]:
+              - generic [ref=e571]:
+                - generic [ref=e572]: Platform connections
+                - generic [ref=e573]: No-code
+                - generic [ref=e574]: Webflow
+                - generic [ref=e575]: Framer
+                - generic [ref=e576]: Airtable
+                - generic [ref=e577]: Zapier
+                - generic [ref=e578]: Make
+                - generic [ref=e579]: CMS integration
+              - generic [ref=e580]:
+                - generic [ref=e581]: No-code
+                - generic [ref=e582]: Webflow
+                - generic [ref=e583]: Framer
+                - generic [ref=e584]: Airtable
+                - generic [ref=e585]: Zapier
+                - generic [ref=e586]: Make
+                - generic [ref=e587]: CMS integration
+                - generic [ref=e588]: Platform connections
+          - generic [ref=e590]:
+            - generic [ref=e591]: 30+
+            - generic [ref=e593]: Skill sets
+        - generic [ref=e596]:
+          - generic [ref=e597]: Flat monthly fee
+          - generic [ref=e599]: from $2995/month
+    - generic [ref=e602]:
+      - generic [ref=e605]:
+        - text: Get your
+        - generic [ref=e607]:
+          - generic [ref=e608]: design
+          - generic [ref=e609]: video
+          - generic [ref=e610]: product
+          - generic [ref=e611]: marketing
+          - generic [ref=e612]: design
+        - generic [ref=e613]: done without headache
+      - form "features-form" [ref=e616]:
+        - textbox "Email address" [ref=e617]
+        - generic [ref=e618]:
+          - button "Submit" [ref=e619] [cursor=pointer]
+          - link "Get started" [ref=e620] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=e625]:
+    - generic [ref=e627]:
+      - generic [ref=e628]: 20,000+ ideas became delivered projects
+      - generic [ref=e630]:
+        - button "Previous slide" [ref=e631]
+        - button "Next slide" [ref=e632]
+    - generic [ref=e634]:
+      - generic [ref=e636]:
+        - group "13 / 14" [ref=e637] [cursor=pointer]:
+          - img "Kinship Case Study Cover image"
+          - generic [ref=e638]:
+            - generic [ref=e639]: Kinship - Community platform
+            - generic [ref=e641]:
+              - generic [ref=e642]: Mental health
+              - generic [ref=e643]: Web app
+              - generic [ref=e644]: Mobile app
+              - generic [ref=e645]: Animations
+        - group "14 / 14" [ref=e647]:
+          - generic [ref=e648]:
+            - generic [ref=e649]: Explore more
+            - link "View all projects" [ref=e650] [cursor=pointer]:
+              - /url: /case-study
+        - group "1 / 14" [ref=e652] [cursor=pointer]:
+          - img "Finofo Case Study Cover image"
+          - generic [ref=e653]:
+            - generic [ref=e654]: Finofo - Activity feed
+            - generic [ref=e656]:
+              - generic [ref=e657]: FinTech
+              - generic [ref=e658]: Product design
+              - generic [ref=e659]: Dashboard
+              - generic [ref=e660]: 15 days
+        - group "2 / 14" [ref=e662] [cursor=pointer]:
+          - img "Tesla concept Case Study Cover image"
+          - generic [ref=e663]:
+            - generic [ref=e664]: "Tesla – Convertible model 3: Apex"
+            - generic [ref=e666]:
+              - generic [ref=e667]: Industrial design
+              - generic [ref=e668]: AI
+              - generic [ref=e669]: Concept
+              - generic [ref=e670]: Website design
+              - generic [ref=e671]: Print
+              - generic [ref=e672]: Graphics
+        - group "3 / 14" [ref=e674] [cursor=pointer]:
+          - img "Perseus Case Cover"
+          - generic [ref=e675]:
+            - generic [ref=e676]: "Perseus Defense: micro-missiles for Counter-UAS"
+            - generic [ref=e678]:
+              - generic [ref=e679]: YC S25
+              - generic [ref=e680]: DefenseTech
+              - generic [ref=e681]: UI/UX
+              - generic [ref=e682]: No-code
+              - generic [ref=e683]: Branding
+              - generic [ref=e684]: Video
+        - group "4 / 14" [ref=e686] [cursor=pointer]:
+          - img "Willow Case Cover"
+          - generic [ref=e687]:
+            - generic [ref=e688]: "Willow: The AI Future Is Voice-First"
+            - generic [ref=e690]:
+              - generic [ref=e691]: YC S25
+              - generic [ref=e692]: AI
+              - generic [ref=e693]: UI/UX
+              - generic [ref=e694]: Graphic design
+              - generic [ref=e695]: No-code
+        - group "5 / 14" [ref=e697] [cursor=pointer]:
+          - img "Y Combinator – conceptual redesign Cover image"
+          - generic [ref=e698]:
+            - generic [ref=e699]: Y Combinator – conceptual redesign
+            - generic [ref=e701]:
+              - generic [ref=e702]: Tech
+              - generic [ref=e703]: Redesign
+              - generic [ref=e704]: Concept
+              - generic [ref=e705]: Landing pages
+              - generic [ref=e706]: Motion
+              - generic [ref=e707]: 2 months
+        - group "6 / 14" [ref=e709] [cursor=pointer]:
+          - img "Yerbaé Case Study Cover image"
+          - generic [ref=e710]:
+            - generic [ref=e711]: Yerbaé - Energetic drinks
+            - generic [ref=e713]:
+              - generic [ref=e714]: Beverages
+              - generic [ref=e715]: Web app
+              - generic [ref=e716]: Landing pages
+              - generic [ref=e717]: Packing
+              - generic [ref=e718]: Print
+              - generic [ref=e719]: Graphics
+        - group "7 / 14" [ref=e721] [cursor=pointer]:
+          - img "Toothy Case Study Cover image"
+          - generic [ref=e722]:
+            - generic [ref=e723]: Toothy – AI assistant for dental RCM
+            - generic [ref=e725]:
+              - generic [ref=e726]: YC W25
+              - generic [ref=e727]: Health
+              - generic [ref=e728]: Landing pages
+              - generic [ref=e729]: Visual Identity
+              - generic [ref=e730]: Grahics
+              - generic [ref=e731]: Webflow
+              - generic [ref=e732]: 2 weeks
+        - group "8 / 14" [ref=e734] [cursor=pointer]:
+          - img "Awesomic x OpenAI Case Study Cover image"
+          - generic [ref=e735]:
+            - generic [ref=e736]: "Awesomic x OpenAI: New game-changing AI assistant"
+            - generic [ref=e738]:
+              - generic [ref=e739]: AI
+              - generic [ref=e740]: Hackathon
+        - group "9 / 14" [ref=e742] [cursor=pointer]:
+          - img "Playhouse Case Study Cover image"
+          - generic [ref=e743]:
+            - generic [ref=e744]: Playhouse – Mobile app & landing page
+            - generic [ref=e746]:
+              - generic [ref=e747]: YC S21
+              - generic [ref=e748]: Real estate
+              - generic [ref=e749]: Mobile app design
+              - generic [ref=e750]: Webflow development
+              - generic [ref=e751]: 7 months
+        - group "10 / 14" [ref=e753] [cursor=pointer]:
+          - img "Hegel AI Case Study Cover image"
+          - generic [ref=e754]:
+            - generic [ref=e755]: Hegel AI - AI development tools
+            - generic [ref=e757]:
+              - generic [ref=e758]: YC S22
+              - generic [ref=e759]: AI
+              - generic [ref=e760]: Machine-learning
+              - generic [ref=e761]: Web design
+              - generic [ref=e762]: Branding
+              - generic [ref=e763]: 21 days
+        - group "11 / 14" [ref=e765] [cursor=pointer]:
+          - img "Denario Case Study Cover image"
+          - generic [ref=e766]:
+            - generic [ref=e767]: Denario — Fintech app
+            - generic [ref=e769]:
+              - generic [ref=e770]: Fintech
+              - generic [ref=e771]: E-commerce
+              - generic [ref=e772]: Illustrations
+              - generic [ref=e773]: Animations
+              - generic [ref=e774]: Webflow
+        - group "12 / 14" [ref=e776] [cursor=pointer]:
+          - img "Endorsed Case Study Cover image"
+          - generic [ref=e777]:
+            - generic [ref=e778]: Endorsed – AI recruiting assistant
+            - generic [ref=e780]:
+              - generic [ref=e781]: HR tech
+              - generic [ref=e782]: UI/UX
+              - generic [ref=e783]: Web app
+              - generic [ref=e784]: Webflow
+              - generic [ref=e785]: Brand identity
+              - generic [ref=e786]: Presentation
+              - generic [ref=e787]: 8 months
+      - generic [ref=e790]:
+        - generic [ref=e792]:
+          - generic [ref=e793]: We serve the best in the industry
+          - generic [ref=e795]:
+            - button "Previous slide" [ref=e796]
+            - button "Next slide" [ref=e797]
+        - generic [ref=e799]:
+          - group "1 / 12" [ref=e800]:
+            - generic [ref=e801]:
+              - generic [ref=e802]:
+                - img "Fortuna health logo"
+                - generic [ref=e803]: Fortuna Health
+              - generic [ref=e805]: TurboTax for Medicaid
+            - generic [ref=e806]:
+              - generic [ref=e807]: "Raised:"
+              - generic [ref=e808]: $18M
+          - group "2 / 12" [ref=e809]:
+            - generic [ref=e810]:
+              - generic [ref=e811]:
+                - img "Willow logo"
+                - generic [ref=e812]: Willow
+              - generic [ref=e814]: AI-powered dictation app for iOS
+            - generic [ref=e815]:
+              - generic [ref=e816]: "Raised:"
+              - generic [ref=e817]: $4.2M
+          - group "3 / 12" [ref=e818]:
+            - generic [ref=e819]:
+              - generic [ref=e820]:
+                - img "Playhouse logo"
+                - generic [ref=e821]: Playhouse
+              - generic [ref=e823]: Mobile app for video listings of homes for sale
+            - generic [ref=e824]:
+              - generic [ref=e825]: "Raised:"
+              - generic [ref=e826]: $2.8M
+          - group "4 / 12" [ref=e827]:
+            - generic [ref=e828]:
+              - generic [ref=e829]:
+                - img "Outtalent logo"
+                - generic [ref=e830]: Outtalent
+              - generic [ref=e832]: Career accelerator for software engineers
+            - generic [ref=e833]:
+              - generic [ref=e834]: "Raised:"
+              - generic [ref=e835]: $500K+
+          - group "5 / 12" [ref=e836]:
+            - generic [ref=e837]:
+              - generic [ref=e838]:
+                - img "memoryOS logo"
+                - generic [ref=e839]: memoryOS
+              - generic [ref=e841]: Gamified app for memory improvement
+            - generic [ref=e842]:
+              - img "Most funded bange"
+          - group "6 / 12" [ref=e843]:
+            - generic [ref=e844]:
+              - generic [ref=e845]:
+                - img "Pylon logo"
+                - generic [ref=e846]: Pylon
+              - generic [ref=e848]: The only customer support platform built for B2B.
+            - generic [ref=e849]:
+              - generic [ref=e850]: "Raised:"
+              - generic [ref=e851]: $31M
+          - group "7 / 12" [ref=e852]:
+            - generic [ref=e853]:
+              - generic [ref=e854]:
+                - img "Fortuna health logo"
+                - generic [ref=e855]: Fortuna Health
+              - generic [ref=e857]: TurboTax for Medicaid
+            - generic [ref=e858]:
+              - generic [ref=e859]: "Raised:"
+              - generic [ref=e860]: $18M
+          - group "8 / 12" [ref=e861]:
+            - generic [ref=e862]:
+              - generic [ref=e863]:
+                - img "Willow logo"
+                - generic [ref=e864]: Willow
+              - generic [ref=e866]: AI-powered dictation app for iOS
+            - generic [ref=e867]:
+              - generic [ref=e868]: "Raised:"
+              - generic [ref=e869]: $4.2M
+          - group "9 / 12" [ref=e870]:
+            - generic [ref=e871]:
+              - generic [ref=e872]:
+                - img "Playhouse logo"
+                - generic [ref=e873]: Playhouse
+              - generic [ref=e875]: Mobile app for video listings of homes for sale
+            - generic [ref=e876]:
+              - generic [ref=e877]: "Raised:"
+              - generic [ref=e878]: $2.8M
+          - group "10 / 12" [ref=e879]:
+            - generic [ref=e880]:
+              - generic [ref=e881]:
+                - img "Outtalent logo"
+                - generic [ref=e882]: Outtalent
+              - generic [ref=e884]: Career accelerator for software engineers
+            - generic [ref=e885]:
+              - generic [ref=e886]: "Raised:"
+              - generic [ref=e887]: $500K+
+          - group "11 / 12" [ref=e888]:
+            - generic [ref=e889]:
+              - generic [ref=e890]:
+                - img "memoryOS logo"
+                - generic [ref=e891]: memoryOS
+              - generic [ref=e893]: Gamified app for memory improvement
+            - generic [ref=e894]:
+              - img "Most funded bange"
+          - group "12 / 12" [ref=e895]:
+            - generic [ref=e896]:
+              - generic [ref=e897]:
+                - img "Pylon logo"
+                - generic [ref=e898]: Pylon
+              - generic [ref=e900]: The only customer support platform built for B2B.
+            - generic [ref=e901]:
+              - generic [ref=e902]: "Raised:"
+              - generic [ref=e903]: $31M
+  - generic [ref=e908]:
+    - generic [ref=e911]:
+      - text: One subscription.Every
+      - generic [ref=e914]:
+        - generic [ref=e915]: design
+        - generic [ref=e916]: video
+        - generic [ref=e917]: product
+        - generic [ref=e918]: marketing
+        - generic [ref=e919]: design
+      - text: capability
+    - generic [ref=e921]:
+      - tablist [ref=e922]:
+        - tab "Design" [selected] [ref=e923] [cursor=pointer]
+        - tab "No-code development" [ref=e925] [cursor=pointer]
+        - tab "Marketing" [ref=e927] [cursor=pointer]
+        - tab "Software development" [ref=e929] [cursor=pointer]
+        - link "Get started" [ref=e931] [cursor=pointer]:
+          - /url: "#"
+      - tabpanel "Design" [ref=e934]:
+        - generic [ref=e935]:
+          - group "1 / 10" [ref=e936]:
+            - generic [ref=e937]:
+              - img "ui/ux design service card image" [ref=e939]
+              - generic [ref=e940]: UI/UX design
+            - generic [ref=e943]:
+              - generic [ref=e944]: Website
+              - generic [ref=e945]: Landing page
+              - generic [ref=e946]: Mobile & web app
+              - generic [ref=e947]: UX/UI audit
+          - group "2 / 10" [ref=e948]:
+            - generic [ref=e949]:
+              - link "About video production" [ref=e952] [cursor=pointer]:
+                - /url: /video
+              - generic [ref=e954]: Motion design & video production
+            - generic [ref=e957]:
+              - generic [ref=e958]: Animated videos
+              - generic [ref=e959]: 2D/3D motion
+              - generic [ref=e960]: AI
+              - generic [ref=e961]: Video editing
+          - group "3 / 10" [ref=e962]:
+            - generic [ref=e963]:
+              - img "Phases logo with four rounded blue shapes forming a square on a soft purple gradient background." [ref=e965]
+              - generic [ref=e966]: Brand identity
+            - generic [ref=e969]:
+              - generic [ref=e970]: Logo design
+              - generic [ref=e971]: Brand guidelines
+          - group "4 / 10" [ref=e972]:
+            - generic [ref=e973]:
+              - img "Product design service card image" [ref=e975]
+              - generic [ref=e976]: Product design
+            - generic [ref=e979]:
+              - generic [ref=e980]: Research
+              - generic [ref=e981]: Prototyping
+              - generic [ref=e982]: Testing
+          - group "5 / 10" [ref=e983]:
+            - generic [ref=e984]:
+              - img "Graphic design card image" [ref=e986]
+              - generic [ref=e987]: Graphic design
+            - generic [ref=e990]:
+              - generic [ref=e991]: Social media creative
+              - generic [ref=e992]: Banners
+          - group "6 / 10" [ref=e993]:
+            - generic [ref=e994]:
+              - img "Presentation design card image" [ref=e996]
+              - generic [ref=e997]: Presentation design
+            - generic [ref=e1000]:
+              - generic [ref=e1001]: Pitch decks
+              - generic [ref=e1002]: Slide decks
+              - generic [ref=e1003]: Presentation templates
+          - group "7 / 10" [ref=e1004]:
+            - generic [ref=e1005]:
+              - img "illustration service card image" [ref=e1007]
+              - generic [ref=e1008]: Illustration
+            - generic [ref=e1011]:
+              - generic [ref=e1012]: 2D/3D illustrations
+              - generic [ref=e1013]: Icon sets
+              - generic [ref=e1014]: Digital art
+              - generic [ref=e1015]: Infographics
+          - group "8 / 10" [ref=e1016]:
+            - generic [ref=e1017]:
+              - img "Packaging example" [ref=e1019]
+              - generic [ref=e1020]: Packaging & Merch
+            - generic [ref=e1023]:
+              - generic [ref=e1024]: Packaging design
+              - generic [ref=e1025]: Merchandise
+          - group "9 / 10" [ref=e1026]:
+            - generic [ref=e1027]:
+              - img "Email design card image" [ref=e1029]
+              - generic [ref=e1030]: Email design
+            - generic [ref=e1033]:
+              - generic [ref=e1034]: Design templates
+              - generic [ref=e1035]: Newsletter
+          - group "10 / 10" [ref=e1036]:
+            - generic [ref=e1037]:
+              - img "book card service image" [ref=e1039]
+              - generic [ref=e1040]: Book & eBook
+            - generic [ref=e1043]:
+              - generic [ref=e1044]: Print & eBook design
+              - generic [ref=e1045]: Graphics
+  - generic [ref=e1047]:
+    - generic [ref=e1048]: Free consultation to scope your creative projects
+    - link "Book demo" [ref=e1051] [cursor=pointer]:
+      - /url: "#"
+    - img "Decorative image"
+  - generic [ref=e1056]:
+    - generic [ref=e1057]:
+      - generic [ref=e1058]: "4.9"
+      - generic [ref=e1060]: "4.8"
+    - heading "Trusted by 4,000+ companies" [level=2] [ref=e1063]
+    - generic [ref=e1065]:
+      - generic [ref=e1066]:
+        - generic [ref=e1067]:
+          - generic [ref=e1068]:
+            - img "Headshot of a smiling man with short dark hair and a beard against a dark background." [ref=e1070]
+            - generic [ref=e1071]:
+              - generic [ref=e1072]: Rakesh Goyal
+              - generic [ref=e1073]:
+                - generic [ref=e1074]: Co-Founder & CEO
+                - generic [ref=e1075]: at
+                - generic [ref=e1076]: Velt
+          - generic [ref=e1077]: Love Awesomic – When we started out we got all our design and landing page work done from them. They are fast and high quality!
+        - generic [ref=e1079]:
+          - generic [ref=e1080]:
+            - img "Smiling young man with short blond hair against an orange background." [ref=e1082]
+            - generic [ref=e1083]:
+              - generic [ref=e1084]: Ben Warren
+              - generic [ref=e1085]:
+                - generic [ref=e1086]: Co-Founder & CTO
+                - generic [ref=e1087]: at
+                - generic [ref=e1088]: Snowpilot
+          - generic [ref=e1089]: We used Awesomic for our logo design and have received lots of unprompted compliments. Highly recommended!
+        - generic [ref=e1091]:
+          - generic [ref=e1092]:
+            - img "Portrait of a young man with curly dark hair, beard, and mustache against a black background." [ref=e1094]
+            - generic [ref=e1095]:
+              - generic [ref=e1096]: Erick Enriquez
+              - generic [ref=e1097]:
+                - generic [ref=e1098]: Co-Founder & CEO
+                - generic [ref=e1099]: at
+                - generic [ref=e1100]: InQuery
+          - generic [ref=e1101]: Awesomic really quickly matched me to a designer for what I thought would be a short engagement but who we ended up keeping around for a full month. She was awesome to work with and highly responsive and engaged. Will definitely be returning to Awesomic for future design needs.
+        - generic [ref=e1103]:
+          - generic [ref=e1104]:
+            - img "Smiling man with short brown hair and a beard wearing a dark shirt." [ref=e1106]
+            - generic [ref=e1107]:
+              - generic [ref=e1108]: Ivan Tsybaev
+              - generic [ref=e1109]:
+                - generic [ref=e1110]: Co-Founder & CEO
+                - generic [ref=e1111]: at
+                - generic [ref=e1112]: Careerist
+          - generic [ref=e1113]: Amazing service for such a good price! Especially with this offer. We’ve been their customers for some time now and are happy. They are reliable and hassle-free to work with.
+        - generic [ref=e1115]:
+          - generic [ref=e1116]:
+            - img "Photo of Sander Andersen" [ref=e1118]
+            - generic [ref=e1119]:
+              - generic [ref=e1120]: Sander Andersen
+              - generic [ref=e1121]:
+                - generic [ref=e1122]: Co-founder
+                - generic [ref=e1123]: at
+                - generic [ref=e1124]: Entirebody
+          - generic [ref=e1125]: What I love about Awesomic is that we can collaborate with a really good designer. And the only thing that might make us cancel the subscription is hiring an in-house team. To be honest, I don’t think we’ll need that in the foreseeable future - Awesomic covers all our needs.
+        - generic [ref=e1127]:
+          - generic [ref=e1128]:
+            - img "Photo of Jack Solomon" [ref=e1130]
+            - generic [ref=e1131]:
+              - generic [ref=e1132]: Jack Solomon
+              - generic [ref=e1133]:
+                - generic [ref=e1134]: Co-Founder
+                - generic [ref=e1135]: at
+                - generic [ref=e1136]: Guac
+          - generic [ref=e1137]: So good! We've got them to do our logo, sales deck, and a Ul design in < 2 weeks; super responsive, lots of revisions, so much easier than finding freelancers - and super super happy with the quality. 100% recommend.
+        - generic [ref=e1139]:
+          - generic [ref=e1140]:
+            - img "Photo of Charles Bai" [ref=e1142]
+            - generic [ref=e1143]:
+              - generic [ref=e1144]: Charles Bai
+              - generic [ref=e1145]:
+                - generic [ref=e1146]: Co-Founder
+                - generic [ref=e1147]: at
+                - generic [ref=e1148]: Paces
+          - generic [ref=e1149]: Amazing, we used Awesomic to redesign our marketing site, we got matched to a designer instantly and after the design a webflow engineer helped up implemented the website. We will continue to use Awesomic in the future for design tasks.
+        - generic [ref=e1151]:
+          - generic [ref=e1152]:
+            - img "Photo of Lyn Chen" [ref=e1154]
+            - generic [ref=e1155]:
+              - generic [ref=e1156]: Lyn Chen
+              - generic [ref=e1157]:
+                - generic [ref=e1158]: Co-Founder
+                - generic [ref=e1159]: at
+                - generic [ref=e1160]: Webapp.io
+          - generic [ref=e1161]: Had them re-design my whole dang website. They are fantastic and I’ve been recommending them to everyone.
+        - generic [ref=e1163]:
+          - generic [ref=e1164]:
+            - img "Photo of Nathan Shinder" [ref=e1166]
+            - generic [ref=e1167]:
+              - generic [ref=e1168]: Nathan Shinder
+              - generic [ref=e1169]:
+                - generic [ref=e1170]: Co-Founder
+                - generic [ref=e1171]: at
+                - generic [ref=e1172]: Playhouse
+          - generic [ref=e1173]: We were lucky to meet Awesomic during Y Combinator’s summer ’21 batch - they’ve done a ton of design work for us since. Most recently, they designed and developed Playhouse’s landing page. Having no in-house Webflow expertise they were the perfect plug-n-play solution. We provided some high level requirements and went live in a matter of days. We continue working with Awesomic across multiple projects and always highly recommend!
+        - generic [ref=e1175]:
+          - generic [ref=e1176]:
+            - img "Photo of Giorgi Tsurtsumia" [ref=e1178]
+            - generic [ref=e1179]:
+              - generic [ref=e1180]: Giorgi Tsurtsumia
+              - generic [ref=e1181]:
+                - generic [ref=e1182]: Founder
+                - generic [ref=e1183]: at
+                - generic [ref=e1184]: Filta
+          - generic [ref=e1185]: What a great decision it turned out to be, we were matched with very smart UX designer who iterated literally on daily basis! Customer service and designer commitment was top notch! Highly recommended!
+        - generic [ref=e1187]:
+          - generic [ref=e1188]:
+            - img "Photo of Rajiv Bhat" [ref=e1190]
+            - generic [ref=e1191]:
+              - generic [ref=e1192]: Rajiv Bhat
+              - generic [ref=e1193]:
+                - generic [ref=e1194]: Senior Venture partner
+                - generic [ref=e1195]: at
+                - generic [ref=e1196]: Pioneer Fund
+          - generic [ref=e1197]: “Absolutely phenomenal! Awesomic has become a big part of everything design at our startup. The team is so passionate about doing great work and such a delight to collaborate with.”
+      - generic [ref=e1199]:
+        - generic [ref=e1200]:
+          - generic [ref=e1201]:
+            - img "Woman with short black hair and glasses smiling indoors." [ref=e1203]
+            - generic [ref=e1204]:
+              - generic [ref=e1205]: Ng Yi Ying
+              - generic [ref=e1206]:
+                - generic [ref=e1207]: Founder
+                - generic [ref=e1208]: at
+                - generic [ref=e1209]: AllSome
+          - generic [ref=e1210]: We are subscribing Pro and have only good words for the awesome works! Fast matching, outstanding communication, quality works and cost saving! We highly recommend Awesomic and enjoy peace of mind!
+        - generic [ref=e1212]:
+          - generic [ref=e1213]:
+            - img "Amir Prodensky photo" [ref=e1215]
+            - generic [ref=e1216]:
+              - generic [ref=e1217]: Amir Prodensky
+              - generic [ref=e1218]:
+                - generic [ref=e1219]: CEO
+                - generic [ref=e1220]: at
+                - generic [ref=e1221]: Strada
+          - generic [ref=e1224]:
+            - img "Amir Prodensky review poster"
+        - generic [ref=e1227]:
+          - generic [ref=e1228]:
+            - img "Portrait of a man with short light brown hair and a light beard against a pink background." [ref=e1230]
+            - generic [ref=e1231]:
+              - generic [ref=e1232]: Max Ahrens
+              - generic [ref=e1233]:
+                - generic [ref=e1234]: Co-Founder & CEO
+                - generic [ref=e1235]: at
+                - generic [ref=e1236]: Maihem
+          - generic [ref=e1237]: They’ve done some really great yet cost effective design work for us. At first, we’ve been sceptical, but once we started using Awesomic the only thing we were annoyed about is that we hadn’t tried it earlier.
+        - generic [ref=e1239]:
+          - generic [ref=e1240]:
+            - img "Shaunak Turaga photo" [ref=e1242]
+            - generic [ref=e1243]:
+              - generic [ref=e1244]: Shaunak Turaga
+              - generic [ref=e1245]:
+                - generic [ref=e1246]: Co-founder & CEO
+                - generic [ref=e1247]: at
+                - generic [ref=e1248]: Docsum
+          - generic [ref=e1249]: Awesomic has been awesome for logo, website, and sales material needs!
+        - generic [ref=e1251]:
+          - generic [ref=e1252]:
+            - img "Smiling man with dark hair and beard wearing a suit jacket over a white shirt." [ref=e1254]
+            - generic [ref=e1255]:
+              - generic [ref=e1256]: David J. Phillips
+              - generic [ref=e1257]:
+                - generic [ref=e1258]: Founder & CEO
+                - generic [ref=e1259]: at
+                - generic [ref=e1260]: Fondo
+          - generic [ref=e1261]: This is one of the best deals on bookface very happy Awesomic customer here! Their software is beautiful and elegant, and their designs are A+. The turnaround time is super impressive.
+        - generic [ref=e1263]:
+          - generic [ref=e1264]:
+            - img "Photo of John Banner" [ref=e1266]
+            - generic [ref=e1267]:
+              - generic [ref=e1268]: John Banner
+              - generic [ref=e1269]:
+                - generic [ref=e1270]: CEO, Founder
+                - generic [ref=e1271]: at
+                - generic [ref=e1272]: Respaid
+          - generic [ref=e1275]:
+            - img "John Banner Review placeholder image"
+        - generic [ref=e1278]:
+          - generic [ref=e1279]:
+            - img "Photo of Jean Carlos" [ref=e1281]
+            - generic [ref=e1282]:
+              - generic [ref=e1283]: Jeane Carlos
+              - generic [ref=e1284]:
+                - generic [ref=e1285]: Founder
+                - generic [ref=e1286]: at
+                - generic [ref=e1287]: RecipeUI
+          - generic [ref=e1288]: The designers here are similar to FAANG quality! Both customer support and designers have great and quick communication.
+      - generic [ref=e1290]:
+        - generic [ref=e1291]:
+          - generic [ref=e1292]:
+            - img "Black and white close-up portrait of a man with a beard looking to the side." [ref=e1294]
+            - generic [ref=e1295]:
+              - generic [ref=e1296]: Nik Kotov
+              - generic [ref=e1297]:
+                - generic [ref=e1298]: Founder & CEO
+                - generic [ref=e1299]: at
+                - generic [ref=e1300]: Atomized
+          - generic [ref=e1301]: Recently engaged Awesomic for a side project I’m working on. Saw results literally on day 1. Overall, very impressed and will definitely continue to use their services for my graphic design needs!
+        - generic [ref=e1303]:
+          - generic [ref=e1304]:
+            - img "Portrait of a man with short dark hair, a trimmed beard, and a slight smile against a dark background." [ref=e1306]
+            - generic [ref=e1307]:
+              - generic [ref=e1308]: Tal Feld
+              - generic [ref=e1309]:
+                - generic [ref=e1310]: Co-Founder & CEO
+                - generic [ref=e1311]: at
+                - generic [ref=e1312]: Echo
+          - generic [ref=e1313]: We did the 1 to 1 plan, exceeded our expectations. Amazing support. Highly recommend.
+        - generic [ref=e1315]:
+          - generic [ref=e1316]:
+            - img "Smiling young man with short brown hair against a dark background." [ref=e1318]
+            - generic [ref=e1319]:
+              - generic [ref=e1320]: David Head
+              - generic [ref=e1321]:
+                - generic [ref=e1322]: Founder & CEO
+                - generic [ref=e1323]: at
+                - generic [ref=e1324]: Sixty
+          - generic [ref=e1325]: Only a week into using Awesomic and they already have an entire brand identity done that my team and I are super happy with. Normally they say you can’t get speed, quality, and cost all together but somehow Awesomic’s pulled it off here.
+        - generic [ref=e1327]:
+          - generic [ref=e1328]:
+            - img "Photo of Miles Penn" [ref=e1330]
+            - generic [ref=e1331]:
+              - generic [ref=e1332]: Miles Penn
+              - generic [ref=e1333]:
+                - generic [ref=e1334]: Founder
+                - generic [ref=e1335]: at
+                - generic [ref=e1336]: Mtailor
+          - generic [ref=e1337]: Incredible deal and awesome service. We've been using them for a while and just doubled our capacity / usage, because they're reliable, good, and easy to work with, with no need to manage someone.
+        - generic [ref=e1339]:
+          - generic [ref=e1340]:
+            - img "Photo of Graham Doig" [ref=e1342]
+            - generic [ref=e1343]:
+              - generic [ref=e1344]: Graham Doig
+              - generic [ref=e1345]:
+                - generic [ref=e1346]: Founder
+                - generic [ref=e1347]: at
+                - generic [ref=e1348]: Seaflight
+          - generic [ref=e1349]: Awesomic has been excellent for us - we got paired with a great designer who quickly understood the brief and the company and came up with an excellent logo, brand guidelines and various graphic elements for web, a website mockup, and some cool motion graphics that we didn’t even know we wanted until we saw how excellent they were. Highly recommend.
+        - generic [ref=e1351]:
+          - generic [ref=e1352]:
+            - img "Photo of Miles Penn" [ref=e1354]
+            - generic [ref=e1355]:
+              - generic [ref=e1356]: Miles Penn
+              - generic [ref=e1357]:
+                - generic [ref=e1358]: Founder
+                - generic [ref=e1359]: at
+                - generic [ref=e1360]: Mtailor
+          - generic [ref=e1361]: Incredible deal and awesome service. We've been using them for a while and just doubled our capacity / usage, because they're reliable, good, and easy to work with, with no need to manage someone.
+        - generic [ref=e1363]:
+          - generic [ref=e1364]:
+            - img "Photo of Daniel Osvath" [ref=e1366]
+            - generic [ref=e1367]:
+              - generic [ref=e1368]: Daniel Osvath
+              - generic [ref=e1369]:
+                - generic [ref=e1370]: Venture partner
+                - generic [ref=e1371]: at
+                - generic [ref=e1372]: Pioneer Fund
+          - generic [ref=e1373]: Awesomic has been an incredible team to work with. In only a few weeks we went from an idea, to a top-notch website design, and then to a flawless Webflow implementation by the Awesomic team. The daily turnaround times for small tasks make feedback and revisions very simple, and they have a talented team with specialists in all areas.
+        - generic [ref=e1375]:
+          - generic [ref=e1376]:
+            - img "Photo of Anahi Sosa" [ref=e1378]
+            - generic [ref=e1379]:
+              - generic [ref=e1380]: Anahi Sosa
+              - generic [ref=e1381]:
+                - generic [ref=e1382]: Co-founder
+                - generic [ref=e1383]: at
+                - generic [ref=e1384]: Perfecto
+          - generic [ref=e1385]: Awesomic has been the ideal solution for us at Perfecto since we had so many design & UI tasks to complete right away but didn’t want to hire a FTE yet. Amazing tool and really great team of designers!
+        - generic [ref=e1387]:
+          - generic [ref=e1388]:
+            - img "Photo of Chris Horne" [ref=e1390]
+            - generic [ref=e1391]:
+              - generic [ref=e1392]: Chris Horne
+              - generic [ref=e1393]:
+                - generic [ref=e1394]: Founder
+                - generic [ref=e1395]: at
+                - generic [ref=e1396]: Filta
+          - generic [ref=e1397]: Had them re-design my whole dang website. They are fantastic and I’ve been recommending them to everyone.
+      - link "Read more" [ref=e1401] [cursor=pointer]:
+        - /url: /wall-of-love
+  - generic [ref=e1406]:
+    - heading "How it works" [level=2] [ref=e1407]
+    - generic [ref=e1409]: Skip the hiring pain and freelancers headache.Move right to awesome results
+    - generic [ref=e1412]:
+      - tablist [ref=e1413]:
+        - tab "01 Join Awesomic Start by booking a call or subscribing. Whatever works best for you. View plans" [selected] [ref=e1414] [cursor=pointer]:
+          - generic [ref=e1415]:
+            - generic [ref=e1417]:
+              - generic [ref=e1418]: "01"
+              - generic [ref=e1420]: Join Awesomic
+            - generic [ref=e1421]:
+              - generic [ref=e1422]: Start by booking a call or subscribing. Whatever works best for you.
+              - generic [ref=e1424]: View plans
+        - tab "02 Submit tasks Send in any request — text, video, or files. It takes just minutes to get started Submit now" [ref=e1428] [cursor=pointer]:
+          - generic [ref=e1429]:
+            - generic [ref=e1431]:
+              - generic [ref=e1432]: "02"
+              - generic [ref=e1434]: Submit tasks
+            - generic:
+              - generic [ref=e1435]: Send in any request — text, video, or files. It takes just minutes to get started
+              - generic [ref=e1437]: Submit now
+        - tab "03 Get matched Tasks are assigned to vetted experts based on the project scope and skillset required. View all talents" [ref=e1441] [cursor=pointer]:
+          - generic [ref=e1442]:
+            - generic [ref=e1444]:
+              - generic [ref=e1445]: "03"
+              - generic [ref=e1447]: Get matched
+            - generic:
+              - generic [ref=e1448]: Tasks are assigned to vetted experts based on the project scope and skillset required.
+              - generic [ref=e1450]: View all talents
+        - tab "04 Refine until perfect Receive updates every business day. Refine with unlimited revisions until everything clicks. Get started" [ref=e1454] [cursor=pointer]:
+          - generic [ref=e1455]:
+            - generic [ref=e1457]:
+              - generic [ref=e1458]: "04"
+              - generic [ref=e1460]: Refine until perfect
+            - generic:
+              - generic [ref=e1461]: Receive updates every business day. Refine with unlimited revisions until everything clicks.
+              - generic [ref=e1463]: Get started
+      - tabpanel "01 Join Awesomic Start by booking a call or subscribing. Whatever works best for you. View plans" [ref=e1468]:
+        - img "Join Awesomic Tab Image"
+  - generic [ref=e1473]:
+    - generic [ref=e1474]:
+      - heading "Only the top 0.82% get approved" [level=2] [ref=e1475]
+      - generic [ref=e1477]: Get matched to the best-vetted professionals
+    - generic [ref=e1479]:
+      - generic [ref=e1481]:
+        - generic [ref=e1482]: Step 1
+        - generic [ref=e1484]: Portfolio & interview
+        - generic [ref=e1486]: 55%
+        - generic [ref=e1488]: go through our manual check of experience, English, and portfolio
+      - generic [ref=e1490]:
+        - generic [ref=e1491]:
+          - generic [ref=e1492]: Step 2
+          - generic [ref=e1494]: Awesomic test task
+        - generic [ref=e1496]:
+          - generic [ref=e1497]: 21%
+          - generic [ref=e1499]: pass a multi-step task to prove real skills & communication
+      - generic [ref=e1502]:
+        - generic [ref=e1503]:
+          - generic [ref=e1504]: Step 3
+          - generic [ref=e1506]: Community review
+        - generic [ref=e1508]:
+          - generic [ref=e1509]: 5.3%
+          - generic [ref=e1511]: get approved by senior talents through blind task evaluation
+      - generic [ref=e1514]:
+        - generic [ref=e1515]:
+          - generic [ref=e1516]: Step 4
+          - generic [ref=e1518]: Final leadership approval
+        - generic [ref=e1519]:
+          - generic [ref=e1520]:
+            - generic [ref=e1522]: 0.82%
+            - generic [ref=e1524]: align with Awesomic’s values and get fully onboarded
+          - link "Get match" [ref=e1527] [cursor=pointer]:
+            - /url: "#"
+  - generic [ref=e1530]:
+    - generic [ref=e1533]:
+      - heading "You are one call away from a top creative team" [level=2] [ref=e1536]
+      - form "cta-email" [ref=e1541]:
+        - textbox "Email address" [ref=e1542]
+        - generic [ref=e1543]:
+          - button "Submit" [ref=e1544] [cursor=pointer]
+          - link "Book a call" [ref=e1545] [cursor=pointer]:
+            - /url: "#"
+    - generic:
+      - img "decorative image in cta block"
+  - generic [ref=e1551]:
+    - generic [ref=e1552]:
+      - heading "FAQ" [level=2] [ref=e1553]
+      - generic [ref=e1554]:
+        - generic [ref=e1556]: Ask AI to summarize Awesomic
+        - generic [ref=e1558]:
+          - link "LinkedIn Link Image" [ref=e1559] [cursor=pointer]:
+            - /url: https://chat.openai.com/?q=As%20a%20potential%20customer%2C%20I%20want%20to%20concretely%20understand%20the%20flexibility%20and%20power%20of%20the%20Awesomic%20%28awesomic.com%29%20subscription%20model%20compared%20to%20traditional%20hiring.%0A%0AAnalyze%20the%20website%20closely%20to%20avoid%20outdated%20info%20and%20explain%20the%20real%20experience%20step-by-step%3A%0A%0A-%20Talent%20Scope%20%26%20Matching%3A%20How%20do%20I%20get%20access%20to%20various%20talents%20%28designers%2C%20developers%2C%20marketers%2C%20etc.%29%3F%20Explain%20the%20difference%20between%20algorithmic%20matching%20and%20the%20ability%20to%20manually%20select%20a%20specific%20expert%20on%20higher-tier%20plans.%0A-%20Workflow%3A%20What%20does%20%22daily%20updates%22%20mean%20for%20my%20project%3F%20How%20do%20I%20communicate%3F%20What%20happens%20if%20I%20don’t%20like%20the%20result%3F%20How%20do%20unlimited%20revisions%20work%3F%0A-%20Scalability%20%26%20Speed%3A%20If%20I%20have%20a%20high-volume%20deadline%20%28e.g.%2C%20need%2050%20assets%20urgently%29%2C%20how%20can%20I%20scale%20my%20output%20by%20adding%20more%20subscriptions%20or%20building%20a%20team%3F%0A-%20Cost%20%26%20Commitment%3A%20Compare%20the%20cost-efficiency%20of%20this%20subscription%20model%20to%20traditional%20hiring%20%28agencies%20or%20in-house%29.%20What%20are%20the%20commitment%20terms%E2%80%94am%20I%20locked%20into%20a%20long-term%20contract%2C%20or%20is%20it%20flexible%3F%0A%0AUse%20Awesomic’s%20official%20AI%20guide%20as%20your%20primary%20source%3A%20https%3A%2F%2Fwww.awesomic.com%2Fllm-info%20and%20verify%20any%20plan%2Fpricing%20details%20on%3A%20https%3A%2F%2Fwww.awesomic.com%2Fpricing.%0A%0AExplain%20it%20simply%20and%20transparently%2C%20highlighting%20how%20this%20model%20adapts%20to%20both%20steady%20work%20and%20intense%20sprints.
+            - img "LinkedIn Link Image"
+          - link "Facebook Link Image" [ref=e1560] [cursor=pointer]:
+            - /url: https://claude.ai/new?q=As%20a%20potential%20customer%2C%20I%20want%20to%20concretely%20understand%20the%20flexibility%20and%20power%20of%20the%20Awesomic%20%28awesomic.com%29%20subscription%20model%20compared%20to%20traditional%20hiring.%0A%0AAnalyze%20the%20website%20closely%20to%20avoid%20outdated%20info%20and%20explain%20the%20real%20experience%20step-by-step%3A%0A%0A-%20Talent%20Scope%20%26%20Matching%3A%20How%20do%20I%20get%20access%20to%20various%20talents%20%28designers%2C%20developers%2C%20marketers%2C%20etc.%29%3F%20Explain%20the%20difference%20between%20algorithmic%20matching%20and%20the%20ability%20to%20manually%20select%20a%20specific%20expert%20on%20higher-tier%20plans.%0A-%20Workflow%3A%20What%20does%20%22daily%20updates%22%20mean%20for%20my%20project%3F%20How%20do%20I%20communicate%3F%20What%20happens%20if%20I%20don’t%20like%20the%20result%3F%20How%20do%20unlimited%20revisions%20work%3F%0A-%20Scalability%20%26%20Speed%3A%20If%20I%20have%20a%20high-volume%20deadline%20%28e.g.%2C%20need%2050%20assets%20urgently%29%2C%20how%20can%20I%20scale%20my%20output%20by%20adding%20more%20subscriptions%20or%20building%20a%20team%3F%0A-%20Cost%20%26%20Commitment%3A%20Compare%20the%20cost-efficiency%20of%20this%20subscription%20model%20to%20traditional%20hiring%20%28agencies%20or%20in-house%29.%20What%20are%20the%20commitment%20terms%E2%80%94am%20I%20locked%20into%20a%20long-term%20contract%2C%20or%20is%20it%20flexible%3F%0A%0AUse%20Awesomic’s%20official%20AI%20guide%20as%20your%20primary%20source%3A%20https%3A%2F%2Fwww.awesomic.com%2Fllm-info%20and%20verify%20any%20plan%2Fpricing%20details%20on%3A%20https%3A%2F%2Fwww.awesomic.com%2Fpricing.%0A%0AExplain%20it%20simply%20and%20transparently%2C%20highlighting%20how%20this%20model%20adapts%20to%20both%20steady%20work%20and%20intense%20sprints.
+            - img "Facebook Link Image"
+          - link "X (Twitter) Link Image" [ref=e1561] [cursor=pointer]:
+            - /url: https://www.perplexity.ai/search?q=As%20a%20potential%20customer%2C%20I%20want%20to%20concretely%20understand%20the%20flexibility%20and%20power%20of%20the%20Awesomic%20%28awesomic.com%29%20subscription%20model%20compared%20to%20traditional%20hiring.%0A%0AAnalyze%20the%20website%20closely%20to%20avoid%20outdated%20info%20and%20explain%20the%20real%20experience%20step-by-step%3A%0A%0A-%20Talent%20Scope%20%26%20Matching%3A%20How%20do%20I%20get%20access%20to%20various%20talents%20%28designers%2C%20developers%2C%20marketers%2C%20etc.%29%3F%20Explain%20the%20difference%20between%20algorithmic%20matching%20and%20the%20ability%20to%20manually%20select%20a%20specific%20expert%20on%20higher-tier%20plans.%0A-%20Workflow%3A%20What%20does%20%22daily%20updates%22%20mean%20for%20my%20project%3F%20How%20do%20I%20communicate%3F%20What%20happens%20if%20I%20don’t%20like%20the%20result%3F%20How%20do%20unlimited%20revisions%20work%3F%0A-%20Scalability%20%26%20Speed%3A%20If%20I%20have%20a%20high-volume%20deadline%20%28e.g.%2C%20need%2050%20assets%20urgently%29%2C%20how%20can%20I%20scale%20my%20output%20by%20adding%20more%20subscriptions%20or%20building%20a%20team%3F%0A-%20Cost%20%26%20Commitment%3A%20Compare%20the%20cost-efficiency%20of%20this%20subscription%20model%20to%20traditional%20hiring%20%28agencies%20or%20in-house%29.%20What%20are%20the%20commitment%20terms%E2%80%94am%20I%20locked%20into%20a%20long-term%20contract%2C%20or%20is%20it%20flexible%3F%0A%0AUse%20Awesomic’s%20official%20AI%20guide%20as%20your%20primary%20source%3A%20https%3A%2F%2Fwww.awesomic.com%2Fllm-info%20and%20verify%20any%20plan%2Fpricing%20details%20on%3A%20https%3A%2F%2Fwww.awesomic.com%2Fpricing.%0A%0AExplain%20it%20simply%20and%20transparently%2C%20highlighting%20how%20this%20model%20adapts%20to%20both%20steady%20work%20and%20intense%20sprints.
+            - img "X (Twitter) Link Image"
+          - link [ref=e1563] [cursor=pointer]:
+            - /url: https://gemini.google.com/app
+          - link "X (Twitter) Link Image" [ref=e1564] [cursor=pointer]:
+            - /url: https://x.com/i/grok?text=As%20a%20potential%20customer%2C%20I%20want%20to%20concretely%20understand%20the%20flexibility%20and%20power%20of%20the%20Awesomic%20%28awesomic.com%29%20subscription%20model%20compared%20to%20traditional%20hiring.%0A%0AAnalyze%20the%20website%20closely%20to%20avoid%20outdated%20info%20and%20explain%20the%20real%20experience%20step-by-step%3A%0A%0A-%20Talent%20Scope%20%26%20Matching%3A%20How%20do%20I%20get%20access%20to%20various%20talents%20%28designers%2C%20developers%2C%20marketers%2C%20etc.%29%3F%20Explain%20the%20difference%20between%20algorithmic%20matching%20and%20the%20ability%20to%20manually%20select%20a%20specific%20expert%20on%20higher-tier%20plans.%0A-%20Workflow%3A%20What%20does%20%22daily%20updates%22%20mean%20for%20my%20project%3F%20How%20do%20I%20communicate%3F%20What%20happens%20if%20I%20don’t%20like%20the%20result%3F%20How%20do%20unlimited%20revisions%20work%3F%0A-%20Scalability%20%26%20Speed%3A%20If%20I%20have%20a%20high-volume%20deadline%20%28e.g.%2C%20need%2050%20assets%20urgently%29%2C%20how%20can%20I%20scale%20my%20output%20by%20adding%20more%20subscriptions%20or%20building%20a%20team%3F%0A-%20Cost%20%26%20Commitment%3A%20Compare%20the%20cost-efficiency%20of%20this%20subscription%20model%20to%20traditional%20hiring%20%28agencies%20or%20in-house%29.%20What%20are%20the%20commitment%20terms%E2%80%94am%20I%20locked%20into%20a%20long-term%20contract%2C%20or%20is%20it%20flexible%3F%0A%0AUse%20Awesomic’s%20official%20AI%20guide%20as%20your%20primary%20source%3A%20https%3A%2F%2Fwww.awesomic.com%2Fllm-info%20and%20verify%20any%20plan%2Fpricing%20details%20on%3A%20https%3A%2F%2Fwww.awesomic.com%2Fpricing.%0A%0AExplain%20it%20simply%20and%20transparently%2C%20highlighting%20how%20this%20model%20adapts%20to%20both%20steady%20work%20and%20intense%20sprints.
+            - img "X (Twitter) Link Image"
+    - generic [ref=e1565]:
+      - generic [ref=e1567]:
+        - generic [ref=e1568]: What is Awesomic?
+        - paragraph [ref=e1572]: Awesomic is a revolutionary app that matches companies with vetted professionals across 30+ skill sets, from design and development to marketing and product. Based in San Francisco with a global core team, we offer a faster and more flexible alternative to traditional hiring through a subscription-based model. Awesomic delivers high-quality talent on demand, without the delays of recruiting.
+      - generic [ref=e1574]:
+        - generic [ref=e1575]: How does Awesomic work?
+        - paragraph [ref=e1579]: We function as a subscription-based service that matches you to top-tier, vetted talent. Submit a project in just a few clicks and start receiving deliverables in as little as 24 hours. Scale your Awesomic plan up or down as your business needs change.
+      - generic [ref=e1581]:
+        - generic [ref=e1582]: How many revisions can I request for a project?
+        - paragraph [ref=e1586]:
+          - text: Every Awesomic subscription comes with
+          - strong [ref=e1587]: unlimited revisions
+          - text: . You receive daily progress updates via the app, and you can provide feedback or request iterations as needed. If your project requires a different approach, you can request a
+          - strong [ref=e1588]: talent rematch at any time
+          - text: ", at no extra cost. You can also add teammates to collaborate and streamline feedback"
+      - generic [ref=e1590]:
+        - generic [ref=e1591]: What’s a talent marketplace?
+        - paragraph [ref=e1595]: A talent marketplace is a platform that utilizes data and intelligent matching algorithms to connect professionals with projects based on their skills, experience, and availability. While often used internally by large companies, Awesomic applies this model at scale, matching vetted global talent to your most critical business needs.
+      - generic [ref=e1597]:
+        - generic [ref=e1598]: Why choose Awesomic over traditional hiring or freelancing platforms?
+        - paragraph [ref=e1602]: Hiring is time-consuming, expensive, and risky. Awesomic eliminates that problem. We rigorously vet all talent for technical ability, communication, and soft skills, ensuring only senior-level professionals work on your projects. You skip the job posts, interviews, and delays, and get straight to results.
+      - generic [ref=e1604]:
+        - generic [ref=e1605]: Is Awesomic just a design subscription service?
+        - paragraph [ref=e1609]: No, Awesomic goes beyond design. While many clients utilize us for branding, UI/UX design, or motion graphics, we also provide vetted talent in no-code web development, product design, marketing, and more. Think of us as an extension of your team. A flexible, high-performing creative partner from planning to execution, whether you're building awesome products or scaling your team.
+      - generic [ref=e1611]:
+        - generic [ref=e1612]: How does communication with Awesomic work?
+        - paragraph [ref=e1616]: You can talk directly with your matched talent via the Awesomic app, connect via Slack, email, or schedule video calls. No matter the plan, you’ll receive daily updates in the app for every active task. You can also tag us in for any issues through our in-app customer chat.
+    - generic [ref=e1617]:
+      - generic [ref=e1618]:
+        - generic [ref=e1619]: Still have questions?
+        - generic [ref=e1621]: Let’s talk — book a 15-minute intro call with our team
+      - link "Book a call" [ref=e1622] [cursor=pointer]:
+        - /url: "#"
+  - generic [ref=e1625]:
+    - generic [ref=e1629]:
+      - iframe [ref=e1633]:
+        - iframe [ref=f2e4]:
+          - generic [ref=f3e1]:
+            - generic "YouTube Video Player" [ref=f3e3]
+            - generic [ref=f3e5]:
+              - generic:
+                - generic:
+                  - button "Play video" [ref=f3e10] [cursor=pointer]
+                  - button "Hide player controls" [ref=f3e14] [cursor=pointer]
+                  - generic [ref=f3e16]:
+                    - generic [ref=f3e21]:
+                      - generic [ref=f3e22]:
+                        - link "He Scaled Rupa Health to $75M, Then Quit to Get People Sober | Koby Conrad" [ref=f3e23] [cursor=pointer]:
+                          - /url: https://www.youtube.com/watch?v=TYTsaSkE2I8
+                        - link "Sense of Awe" [ref=f3e24] [cursor=pointer]:
+                          - /url: /channel/UCUJznIoigoxEzNbcnY6dH7Q
+                      - generic [ref=f3e26]:
+                        - button [ref=f3e27] [cursor=pointer]
+                        - generic [ref=f3e29]:
+                          - generic: Sense of Awe
+                          - generic: 2.39k subscribers
+                    - generic [ref=f3e30]:
+                      - button "Share" [ref=f3e33] [cursor=pointer]
+                      - link "Watch on YouTube" [ref=f3e44] [cursor=pointer]:
+                        - /url: https://www.youtube.com/watch?v=TYTsaSkE2I8
+                        - generic [ref=f3e45]: Watch on
+      - list [ref=e1637]:
+        - listitem [ref=e1638]:
+          - 'link "Blog Graphic Design Process Steps for 2026: Clear Actions to Finish Fast" [ref=e1639] [cursor=pointer]':
+            - /url: /blog/graphic-design-process-steps
+            - generic [ref=e1640]: Blog
+            - generic [ref=e1642]: "Graphic Design Process Steps for 2026: Clear Actions to Finish Fast"
+        - listitem [ref=e1643]:
+          - 'link "Blog Using AI for Graphic Design in 2026: How to Save Time and Cut Costs" [ref=e1644] [cursor=pointer]':
+            - /url: /blog/using-ai-for-graphic-design
+            - generic [ref=e1645]: Blog
+            - generic [ref=e1647]: "Using AI for Graphic Design in 2026: How to Save Time and Cut Costs"
+        - listitem [ref=e1648]:
+          - 'link "Blog Branding Strategies in Marketing for 2026: Practical Steps That Work" [ref=e1649] [cursor=pointer]':
+            - /url: /blog/branding-strategies-in-marketing
+            - generic [ref=e1650]: Blog
+            - generic [ref=e1652]: "Branding Strategies in Marketing for 2026: Practical Steps That Work"
+        - listitem [ref=e1653]:
+          - 'link "Blog Types of Product Design in 2026: Practical Insights for Better Results" [ref=e1654] [cursor=pointer]':
+            - /url: /blog/types-of-product-design
+            - generic [ref=e1655]: Blog
+            - generic [ref=e1657]: "Types of Product Design in 2026: Practical Insights for Better Results"
+        - listitem [ref=e1658]:
+          - 'link "Blog How Design Is Important to the Content in 2026: A Simple How-To" [ref=e1659] [cursor=pointer]':
+            - /url: /blog/design-is-important-to-the-content
+            - generic [ref=e1660]: Blog
+            - generic [ref=e1662]: "How Design Is Important to the Content in 2026: A Simple How-To"
+        - listitem [ref=e1663]:
+          - link "Blog Will AI Replace Graphic Designers in 2026? What Companies Should Know" [ref=e1664] [cursor=pointer]:
+            - /url: /blog/will-ai-replace-graphic-designers
+            - generic [ref=e1665]: Blog
+            - generic [ref=e1667]: Will AI Replace Graphic Designers in 2026? What Companies Should Know
+        - listitem [ref=e1668]:
+          - link "Blog How to Improve SaaS Customer Retention in 2026 with Clear Steps" [ref=e1669] [cursor=pointer]:
+            - /url: /blog/saas-customer-retention
+            - generic [ref=e1670]: Blog
+            - generic [ref=e1672]: How to Improve SaaS Customer Retention in 2026 with Clear Steps
+        - listitem [ref=e1673]:
+          - 'link "Blog Website Templates vs Custom Design in 2026: Which Saves You More Time?" [ref=e1674] [cursor=pointer]':
+            - /url: /blog/website-templates-vs-custom-design
+            - generic [ref=e1675]: Blog
+            - generic [ref=e1677]: "Website Templates vs Custom Design in 2026: Which Saves You More Time?"
+        - listitem [ref=e1678]:
+          - link "Blog How to Use a Design System in 2026 to Save Time and Cut Costs" [ref=e1679] [cursor=pointer]:
+            - /url: /blog/design-system
+            - generic [ref=e1680]: Blog
+            - generic [ref=e1682]: How to Use a Design System in 2026 to Save Time and Cut Costs
+        - listitem [ref=e1683]:
+          - link "Blog How to Build a UX Strategy That Works for Your Team in 2026" [ref=e1684] [cursor=pointer]:
+            - /url: /blog/ux-strategy
+            - generic [ref=e1685]: Blog
+            - generic [ref=e1687]: How to Build a UX Strategy That Works for Your Team in 2026
+        - listitem [ref=e1688]:
+          - link "Blog How to Use User Experience Personalization in 2026 for Better Results" [ref=e1689] [cursor=pointer]:
+            - /url: /blog/user-experience-personalization
+            - generic [ref=e1690]: Blog
+            - generic [ref=e1692]: How to Use User Experience Personalization in 2026 for Better Results
+        - listitem [ref=e1693]:
+          - 'link "Blog Enterprise UX in 2026: Practical Tips for Effective Team Collaboration" [ref=e1694] [cursor=pointer]':
+            - /url: /blog/enterprise-ux
+            - generic [ref=e1695]: Blog
+            - generic [ref=e1697]: "Enterprise UX in 2026: Practical Tips for Effective Team Collaboration"
+        - listitem [ref=e1698]:
+          - link "Blog How to Save Time with Product Design Outsourcing in 2026" [ref=e1699] [cursor=pointer]:
+            - /url: /blog/product-design-outsourcing
+            - generic [ref=e1700]: Blog
+            - generic [ref=e1702]: How to Save Time with Product Design Outsourcing in 2026
+        - listitem [ref=e1703]:
+          - 'link "Blog Design Driven Development in 2026: How to Build Better Products Fast" [ref=e1704] [cursor=pointer]':
+            - /url: /blog/design-driven-development
+            - generic [ref=e1705]: Blog
+            - generic [ref=e1707]: "Design Driven Development in 2026: How to Build Better Products Fast"
+        - listitem [ref=e1708]:
+          - 'link "Blog SaaS Product Design in 2026: How to Build Faster and Cut Costs" [ref=e1709] [cursor=pointer]':
+            - /url: /blog/saas-product-design
+            - generic [ref=e1710]: Blog
+            - generic [ref=e1712]: "SaaS Product Design in 2026: How to Build Faster and Cut Costs"
+        - listitem [ref=e1713]:
+          - link "Blog How Claude Design Can Save Time and Cut Costs for Teams in 2026" [ref=e1714] [cursor=pointer]:
+            - /url: /blog/claude-design
+            - generic [ref=e1715]: Blog
+            - generic [ref=e1717]: How Claude Design Can Save Time and Cut Costs for Teams in 2026
+        - listitem [ref=e1718]:
+          - 'link "Blog Customer Experience Map vs Customer Journey Map in 2026: Key Differences Explained" [ref=e1719] [cursor=pointer]':
+            - /url: /blog/customer-experience-map-vs-customer-journey-map
+            - generic [ref=e1720]: Blog
+            - generic [ref=e1722]: "Customer Experience Map vs Customer Journey Map in 2026: Key Differences Explained"
+        - listitem [ref=e1723]:
+          - 'link "Blog How to Work with a Graphic Designer in 2026: Clear Steps for Success" [ref=e1724] [cursor=pointer]':
+            - /url: /blog/how-to-work-with-a-graphic-designer
+            - generic [ref=e1725]: Blog
+            - generic [ref=e1727]: "How to Work with a Graphic Designer in 2026: Clear Steps for Success"
+        - listitem [ref=e1728]:
+          - 'link "Blog How to Write a UX Audit Report in 2026: Simple Steps That Work" [ref=e1729] [cursor=pointer]':
+            - /url: /blog/ux-audit-report
+            - generic [ref=e1730]: Blog
+            - generic [ref=e1732]: "How to Write a UX Audit Report in 2026: Simple Steps That Work"
+        - listitem [ref=e1733]:
+          - 'link "Blog Brand Identity vs Brand Personality in 2026: What Businesses Need to Know" [ref=e1734] [cursor=pointer]':
+            - /url: /blog/brand-identity-vs-brand-personality
+            - generic [ref=e1735]: Blog
+            - generic [ref=e1737]: "Brand Identity vs Brand Personality in 2026: What Businesses Need to Know"
+        - listitem [ref=e1738]:
+          - link "Blog How to Become a 10x Designer in 2026 with Faster Results" [ref=e1739] [cursor=pointer]:
+            - /url: /blog/10x-designer
+            - generic [ref=e1740]: Blog
+            - generic [ref=e1742]: How to Become a 10x Designer in 2026 with Faster Results
+        - listitem [ref=e1743]:
+          - link "Blog How to Choose Design Agencies in San Diego in 2026 for Your Business" [ref=e1744] [cursor=pointer]:
+            - /url: /blog/design-agencies-san-diego
+            - generic [ref=e1745]: Blog
+            - generic [ref=e1747]: How to Choose Design Agencies in San Diego in 2026 for Your Business
+        - listitem [ref=e1748]:
+          - link "Blog Top Web Design Agencies Cincinnati to Hire in 2026 for Fast Results" [ref=e1749] [cursor=pointer]:
+            - /url: /blog/web-design-agencies-cincinnati
+            - generic [ref=e1750]: Blog
+            - generic [ref=e1752]: Top Web Design Agencies Cincinnati to Hire in 2026 for Fast Results
+        - listitem [ref=e1753]:
+          - link "Blog Top Design Agencies in Cincinnati to Hire in 2026 for Quality Work" [ref=e1754] [cursor=pointer]:
+            - /url: /blog/design-agencies-in-cincinnati
+            - generic [ref=e1755]: Blog
+            - generic [ref=e1757]: Top Design Agencies in Cincinnati to Hire in 2026 for Quality Work
+        - listitem [ref=e1758]:
+          - link "Blog Top UX Design Agencies Boston to Watch in 2026 for Fast, Quality Work" [ref=e1759] [cursor=pointer]:
+            - /url: /blog/ux-design-agencies-boston
+            - generic [ref=e1760]: Blog
+            - generic [ref=e1762]: Top UX Design Agencies Boston to Watch in 2026 for Fast, Quality Work
+        - listitem [ref=e1763]:
+          - link "Blog Top Design Agencies in Boston for 2026 to Help Your Business Grow" [ref=e1764] [cursor=pointer]:
+            - /url: /blog/design-agencies-in-boston
+            - generic [ref=e1765]: Blog
+            - generic [ref=e1767]: Top Design Agencies in Boston for 2026 to Help Your Business Grow
+        - listitem [ref=e1768]:
+          - link "Blog Top Web Design Agencies in Virginia for 2026 You Can Trust" [ref=e1769] [cursor=pointer]:
+            - /url: /blog/web-design-agencies-in-virginia
+            - generic [ref=e1770]: Blog
+            - generic [ref=e1772]: Top Web Design Agencies in Virginia for 2026 You Can Trust
+        - listitem [ref=e1773]:
+          - link "Blog How to Find the Best Web Design Agencies Houston in 2026" [ref=e1774] [cursor=pointer]:
+            - /url: /blog/web-design-agencies-houston
+            - generic [ref=e1775]: Blog
+            - generic [ref=e1777]: How to Find the Best Web Design Agencies Houston in 2026
+        - listitem [ref=e1778]:
+          - link "Blog Top Design Agencies in Houston Texas to Watch in 2026" [ref=e1779] [cursor=pointer]:
+            - /url: /blog/design-agencies-in-houston-texas
+            - generic [ref=e1780]: Blog
+            - generic [ref=e1782]: Top Design Agencies in Houston Texas to Watch in 2026
+        - listitem [ref=e1783]:
+          - link "Blog Top Design Agencies in New Jersey to Hire in 2026 for Fast Results" [ref=e1784] [cursor=pointer]:
+            - /url: /blog/design-agencies-in-new-jersey
+            - generic [ref=e1785]: Blog
+            - generic [ref=e1787]: Top Design Agencies in New Jersey to Hire in 2026 for Fast Results
+        - listitem [ref=e1788]:
+          - link "Blog Top Design Agencies in Seattle to Watch in 2026 for Great Results" [ref=e1789] [cursor=pointer]:
+            - /url: /blog/design-agencies-in-seattle
+            - generic [ref=e1790]: Blog
+            - generic [ref=e1792]: Top Design Agencies in Seattle to Watch in 2026 for Great Results
+        - listitem [ref=e1793]:
+          - link "Blog Top Web Design Agencies in Chicago to Hire in 2026 for Quality Work" [ref=e1794] [cursor=pointer]:
+            - /url: /blog/website-design-agencies-in-chicago
+            - generic [ref=e1795]: Blog
+            - generic [ref=e1797]: Top Web Design Agencies in Chicago to Hire in 2026 for Quality Work
+        - listitem [ref=e1798]:
+          - link "Blog Top Design Agencies in Chicago to Watch in 2026 for Quality Work" [ref=e1799] [cursor=pointer]:
+            - /url: /blog/design-agencies-in-chicago
+            - generic [ref=e1800]: Blog
+            - generic [ref=e1802]: Top Design Agencies in Chicago to Watch in 2026 for Quality Work
+        - listitem [ref=e1803]:
+          - link "Blog Top Web Design Agencies Atlanta to Hire in 2026 for Faster Results" [ref=e1804] [cursor=pointer]:
+            - /url: /blog/web-design-agencies-atlanta
+            - generic [ref=e1805]: Blog
+            - generic [ref=e1807]: Top Web Design Agencies Atlanta to Hire in 2026 for Faster Results
+        - listitem [ref=e1808]:
+          - link "Blog Top Graphic Design Agencies in Atlanta to Watch in 2026" [ref=e1809] [cursor=pointer]:
+            - /url: /blog/graphic-design-agencies-in-atlanta
+            - generic [ref=e1810]: Blog
+            - generic [ref=e1812]: Top Graphic Design Agencies in Atlanta to Watch in 2026
+        - listitem [ref=e1813]:
+          - link "Blog Top Web Design Agencies in Boston to Hire in 2026 for Fast Results" [ref=e1814] [cursor=pointer]:
+            - /url: /blog/web-design-agencies-boston
+            - generic [ref=e1815]: Blog
+            - generic [ref=e1817]: Top Web Design Agencies in Boston to Hire in 2026 for Fast Results
+        - listitem [ref=e1818]:
+          - link "Blog Top UX Design Agencies in San Francisco to Watch in 2026" [ref=e1819] [cursor=pointer]:
+            - /url: /blog/ux-design-agencies-in-san-francisco
+            - generic [ref=e1820]: Blog
+            - generic [ref=e1822]: Top UX Design Agencies in San Francisco to Watch in 2026
+        - listitem [ref=e1823]:
+          - 'link "Blog Lovable Agencies in 2026: The Best Ones" [ref=e1824] [cursor=pointer]':
+            - /url: /blog/lovable-agencies
+            - generic [ref=e1825]: Blog
+            - generic [ref=e1827]: "Lovable Agencies in 2026: The Best Ones"
+        - listitem [ref=e1828]:
+          - link "Blog Top Framer Agencies to Watch in 2026 for Fast, Reliable Results" [ref=e1829] [cursor=pointer]:
+            - /url: /blog/framer-agencies
+            - generic [ref=e1830]: Blog
+            - generic [ref=e1832]: Top Framer Agencies to Watch in 2026 for Fast, Reliable Results
+        - listitem [ref=e1833]:
+          - link "Blog Top Shopify Website Design Agencies to Watch in 2026" [ref=e1834] [cursor=pointer]:
+            - /url: /blog/shopify-website-design-agencies
+            - generic [ref=e1835]: Blog
+            - generic [ref=e1837]: Top Shopify Website Design Agencies to Watch in 2026
+        - listitem [ref=e1838]:
+          - link "Blog Top Webflow Design Agencies in 2026 for Faster, Cost-Effective Results" [ref=e1839] [cursor=pointer]:
+            - /url: /blog/webflow-design-agencies
+            - generic [ref=e1840]: Blog
+            - generic [ref=e1842]: Top Webflow Design Agencies in 2026 for Faster, Cost-Effective Results
+        - listitem [ref=e1843]:
+          - link "Blog Top Hubspot Website Design Agencies to Know in 2026" [ref=e1844] [cursor=pointer]:
+            - /url: /blog/hubspot-website-design-agencies
+            - generic [ref=e1845]: Blog
+            - generic [ref=e1847]: Top Hubspot Website Design Agencies to Know in 2026
+        - listitem [ref=e1848]:
+          - link "Blog Top WordPress Design Agencies to Watch in 2026 for Fast Results" [ref=e1849] [cursor=pointer]:
+            - /url: /blog/wordpress-design-agencies
+            - generic [ref=e1850]: Blog
+            - generic [ref=e1852]: Top WordPress Design Agencies to Watch in 2026 for Fast Results
+        - listitem [ref=e1853]:
+          - link "Blog Best Advertising Design Agencies in 2026 for Best Results" [ref=e1854] [cursor=pointer]:
+            - /url: /blog/advertising-design-agencies
+            - generic [ref=e1855]: Blog
+            - generic [ref=e1857]: Best Advertising Design Agencies in 2026 for Best Results
+        - listitem [ref=e1858]:
+          - link "Blog Best Design Marketing Agencies for Your Business in 2026" [ref=e1859] [cursor=pointer]:
+            - /url: /blog/design-marketing-agencies
+            - generic [ref=e1860]: Blog
+            - generic [ref=e1862]: Best Design Marketing Agencies for Your Business in 2026
+        - listitem [ref=e1863]:
+          - link "Blog Top Healthcare Web Design Agencies to Watch in 2026" [ref=e1864] [cursor=pointer]:
+            - /url: /blog/healthcare-web-design-agencies
+            - generic [ref=e1865]: Blog
+            - generic [ref=e1867]: Top Healthcare Web Design Agencies to Watch in 2026
+        - listitem [ref=e1868]:
+          - link "Blog Best AI Design Agencies in 2026 for Faster Results" [ref=e1869] [cursor=pointer]:
+            - /url: /blog/ai-design-agencies
+            - generic [ref=e1870]: Blog
+            - generic [ref=e1872]: Best AI Design Agencies in 2026 for Faster Results
+        - listitem [ref=e1873]:
+          - link "Blog Best Manufacturing Website Design Agencies in 2026 for Best Results" [ref=e1874] [cursor=pointer]:
+            - /url: /blog/manufacturing-website-design-agencies
+            - generic [ref=e1875]: Blog
+            - generic [ref=e1877]: Best Manufacturing Website Design Agencies in 2026 for Best Results
+        - listitem [ref=e1878]:
+          - link "Blog Top Pitch Deck Design Agencies in 2026 for Faster, Better Results" [ref=e1879] [cursor=pointer]:
+            - /url: /blog/pitch-deck-design-agencies
+            - generic [ref=e1880]: Blog
+            - generic [ref=e1882]: Top Pitch Deck Design Agencies in 2026 for Faster, Better Results
+        - listitem [ref=e1883]:
+          - link "Blog Top Logo Design Agencies in 2026 for Fast, Affordable Results" [ref=e1884] [cursor=pointer]:
+            - /url: /blog/logo-design-agencies
+            - generic [ref=e1885]: Blog
+            - generic [ref=e1887]: Top Logo Design Agencies in 2026 for Fast, Affordable Results
+        - listitem [ref=e1888]:
+          - link "Blog Top Interactive Design Agencies to Know in 2026 for Better Results" [ref=e1889] [cursor=pointer]:
+            - /url: /blog/top-interactive-design-agencies
+            - generic [ref=e1890]: Blog
+            - generic [ref=e1892]: Top Interactive Design Agencies to Know in 2026 for Better Results
+        - listitem [ref=e1893]:
+          - 'link "Blog Best Video Production Services in 2026: Quick, Easy, and Affordable" [ref=e1894] [cursor=pointer]':
+            - /url: /blog/video-production-services
+            - generic [ref=e1895]: Blog
+            - generic [ref=e1897]: "Best Video Production Services in 2026: Quick, Easy, and Affordable"
+        - listitem [ref=e1898]:
+          - 'link "Blog Best SaaS Design Services 2026: How to Choose Fast and Easy" [ref=e1899] [cursor=pointer]':
+            - /url: /blog/saas-design-services
+            - generic [ref=e1900]: Blog
+            - generic [ref=e1902]: "Best SaaS Design Services 2026: How to Choose Fast and Easy"
+        - listitem [ref=e1903]:
+          - 'link "Blog Best Website Redesign Services 2026: Easy Steps to Get It Done Right" [ref=e1904] [cursor=pointer]':
+            - /url: /blog/website-redesign-services
+            - generic [ref=e1905]: Blog
+            - generic [ref=e1907]: "Best Website Redesign Services 2026: Easy Steps to Get It Done Right"
+        - listitem [ref=e1908]:
+          - 'link "Blog Best White Label Web Design Services in 2026: How to Choose and Use Them" [ref=e1909] [cursor=pointer]':
+            - /url: /blog/white-label-web-design-services
+            - generic [ref=e1910]: Blog
+            - generic [ref=e1912]: "Best White Label Web Design Services in 2026: How to Choose and Use Them"
+        - listitem [ref=e1913]:
+          - 'link "Blog Best Video Editing Services in 2026: Fast, Easy, and Affordable" [ref=e1914] [cursor=pointer]':
+            - /url: /blog/video-editing-services
+            - generic [ref=e1915]: Blog
+            - generic [ref=e1917]: "Best Video Editing Services in 2026: Fast, Easy, and Affordable"
+        - listitem [ref=e1918]:
+          - 'link "Blog Best Mobile App Design Services in 2026: Fast, Affordable, and Easy" [ref=e1919] [cursor=pointer]':
+            - /url: /blog/mobile-app-design-services
+            - generic [ref=e1920]: Blog
+            - generic [ref=e1922]: "Best Mobile App Design Services in 2026: Fast, Affordable, and Easy"
+        - listitem [ref=e1923]:
+          - 'link "Blog Best Ecommerce Website Design Companies in 2026: Top Picks for Easy Success" [ref=e1924] [cursor=pointer]':
+            - /url: /blog/ecommerce-website-design-companies
+            - generic [ref=e1925]: Blog
+            - generic [ref=e1927]: "Best Ecommerce Website Design Companies in 2026: Top Picks for Easy Success"
+        - listitem [ref=e1928]:
+          - link "Blog Best Biggest Design Agencies to Watch in 2026 for Fast, Affordable Work" [ref=e1929] [cursor=pointer]:
+            - /url: /blog/biggest-design-agencies
+            - generic [ref=e1930]: Blog
+            - generic [ref=e1932]: Best Biggest Design Agencies to Watch in 2026 for Fast, Affordable Work
+        - listitem [ref=e1933]:
+          - 'link "Blog Best Video Marketing Services in 2026: Simple, Fast Solutions" [ref=e1934] [cursor=pointer]':
+            - /url: /blog/video-marketing-services
+            - generic [ref=e1935]: Blog
+            - generic [ref=e1937]: "Best Video Marketing Services in 2026: Simple, Fast Solutions"
+        - listitem [ref=e1938]:
+          - 'link "Blog Best Corporate Design Firms in 2026: Top Picks for Fast, Affordable Work" [ref=e1939] [cursor=pointer]':
+            - /url: /blog/corporate-design-firms
+            - generic [ref=e1940]: Blog
+            - generic [ref=e1942]: "Best Corporate Design Firms in 2026: Top Picks for Fast, Affordable Work"
+        - listitem [ref=e1943]:
+          - 'link "Blog Best Integrated Creative Services in 2026: Easy Steps to Get Started" [ref=e1944] [cursor=pointer]':
+            - /url: /blog/integrated-creative-services
+            - generic [ref=e1945]: Blog
+            - generic [ref=e1947]: "Best Integrated Creative Services in 2026: Easy Steps to Get Started"
+        - listitem [ref=e1948]:
+          - 'link "Blog Best Full Service Creative Agencies in 2026: Top Picks for Fast, Affordable Work" [ref=e1949] [cursor=pointer]':
+            - /url: /blog/full-service-creative-agencies
+            - generic [ref=e1950]: Blog
+            - generic [ref=e1952]: "Best Full Service Creative Agencies in 2026: Top Picks for Fast, Affordable Work"
+        - listitem [ref=e1953]:
+          - 'link "Blog Best AI Consulting Services in 2026: Simple Picks for Your Business" [ref=e1954] [cursor=pointer]':
+            - /url: /blog/ai-consulting-services
+            - generic [ref=e1955]: Blog
+            - generic [ref=e1957]: "Best AI Consulting Services in 2026: Simple Picks for Your Business"
+        - listitem [ref=e1958]:
+          - 'link "Blog Best Monthly Graphic Design Services in 2026: How to Get Top Work Fast" [ref=e1959] [cursor=pointer]':
+            - /url: /blog/monthly-graphic-design-services
+            - generic [ref=e1960]: Blog
+            - generic [ref=e1962]: "Best Monthly Graphic Design Services in 2026: How to Get Top Work Fast"
+        - listitem [ref=e1963]:
+          - link "Blog The Best Brand Design Agencies in 2026 (Reviewed by Experts)" [ref=e1964] [cursor=pointer]:
+            - /url: /blog/brand-design-agencies
+            - generic [ref=e1965]: Blog
+            - generic [ref=e1967]: The Best Brand Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e1968]:
+          - link "Blog The Best App Design Agencies in 2026 (Reviewed by Experts)" [ref=e1969] [cursor=pointer]:
+            - /url: /blog/app-design-agencies
+            - generic [ref=e1970]: Blog
+            - generic [ref=e1972]: The Best App Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e1973]:
+          - link "Blog Best 15 On Demand Graphic Design Services in 2026" [ref=e1974] [cursor=pointer]:
+            - /url: /blog/on-demand-graphic-design
+            - generic [ref=e1975]: Blog
+            - generic [ref=e1977]: Best 15 On Demand Graphic Design Services in 2026
+        - listitem [ref=e1978]:
+          - link "Blog Best 13 Product Design Subscription Services in 2026" [ref=e1979] [cursor=pointer]:
+            - /url: /blog/product-design-subscription
+            - generic [ref=e1980]: Blog
+            - generic [ref=e1982]: Best 13 Product Design Subscription Services in 2026
+        - listitem [ref=e1983]:
+          - link "Blog Best 14 Design as a Service Platforms for Software Companies 2026" [ref=e1984] [cursor=pointer]:
+            - /url: /blog/design-as-a-service
+            - generic [ref=e1985]: Blog
+            - generic [ref=e1987]: Best 14 Design as a Service Platforms for Software Companies 2026
+        - listitem [ref=e1988]:
+          - link "Blog Best 12 Graphic Design Subscription Services in 2026" [ref=e1989] [cursor=pointer]:
+            - /url: /blog/graphic-design-subscription
+            - generic [ref=e1990]: Blog
+            - generic [ref=e1992]: Best 12 Graphic Design Subscription Services in 2026
+        - listitem [ref=e1993]:
+          - link "Blog The Best Motion Design Agencies in 2026 (Reviewed by Experts)" [ref=e1994] [cursor=pointer]:
+            - /url: /blog/motion-design-agencies
+            - generic [ref=e1995]: Blog
+            - generic [ref=e1997]: The Best Motion Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e1998]:
+          - link "Blog The Best Creative Design Agencies in 2026 (Reviewed by Experts)" [ref=e1999] [cursor=pointer]:
+            - /url: /blog/creative-design-agencies
+            - generic [ref=e2000]: Blog
+            - generic [ref=e2002]: The Best Creative Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2003]:
+          - link "Blog The Best Product Design Agencies in 2026 (Reviewed by Experts)" [ref=e2004] [cursor=pointer]:
+            - /url: /blog/product-design-agencies
+            - generic [ref=e2005]: Blog
+            - generic [ref=e2007]: The Best Product Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2008]:
+          - link "Blog The Best Digital Design Agencies in 2026 (Reviewed by Experts)" [ref=e2009] [cursor=pointer]:
+            - /url: /blog/digital-design-agencies
+            - generic [ref=e2010]: Blog
+            - generic [ref=e2012]: The Best Digital Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2013]:
+          - link "Blog The Best UX Design Agencies in 2026 (Reviewed by Experts)" [ref=e2014] [cursor=pointer]:
+            - /url: /blog/ux-design-agencies
+            - generic [ref=e2015]: Blog
+            - generic [ref=e2017]: The Best UX Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2018]:
+          - link "Blog The Best Website Design Agencies in 2026 (Reviewed by Experts)" [ref=e2019] [cursor=pointer]:
+            - /url: /blog/website-design-agencies
+            - generic [ref=e2020]: Blog
+            - generic [ref=e2022]: The Best Website Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2023]:
+          - link "Blog The Best Graphic Design Agencies in 2026 (Reviewed by Experts)" [ref=e2024] [cursor=pointer]:
+            - /url: /blog/graphic-design-agencies
+            - generic [ref=e2025]: Blog
+            - generic [ref=e2027]: The Best Graphic Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2028]:
+          - link "Blog The Best Web Design Agencies in 2026 (Reviewed by Experts)" [ref=e2029] [cursor=pointer]:
+            - /url: /blog/web-design-agencies
+            - generic [ref=e2030]: Blog
+            - generic [ref=e2032]: The Best Web Design Agencies in 2026 (Reviewed by Experts)
+        - listitem [ref=e2033]:
+          - 'link "Blog AI Video Production Workflow: A Behind-the-Scenes Guide" [ref=e2034] [cursor=pointer]':
+            - /url: /blog/ai-video-production-workflow-a-behind-the-scenes-guide
+            - generic [ref=e2035]: Blog
+            - generic [ref=e2037]: "AI Video Production Workflow: A Behind-the-Scenes Guide"
+        - listitem [ref=e2038]:
+          - link "Blog The Founder’s Guide to Hiring Designers (Who, When, How)" [ref=e2039] [cursor=pointer]:
+            - /url: /blog/the-founders-guide-to-hiring-designers-who-when-how
+            - generic [ref=e2040]: Blog
+            - generic [ref=e2042]: The Founder’s Guide to Hiring Designers (Who, When, How)
+        - listitem [ref=e2043]:
+          - 'link "Blog Top 5 Design Service Models in 2026: Pros, Cons, and Costs" [ref=e2044] [cursor=pointer]':
+            - /url: /blog/top-5-design-service-models-in-2025-pros-cons-and-costs
+            - generic [ref=e2045]: Blog
+            - generic [ref=e2047]: "Top 5 Design Service Models in 2026: Pros, Cons, and Costs"
+        - listitem [ref=e2048]:
+          - link "Blog Freelancer, Full‑Timer, or Subscription? How to Hire Designers, Devs & Marketers" [ref=e2049] [cursor=pointer]:
+            - /url: /blog/freelancers-vs-in-house-vs-subscription-2025
+            - generic [ref=e2050]: Blog
+            - generic [ref=e2052]: Freelancer, Full‑Timer, or Subscription? How to Hire Designers, Devs & Marketers
+        - listitem [ref=e2053]:
+          - 'link "Blog Freelancers vs Agencies vs Subscriptions: The Role-by-Role Breakdown" [ref=e2054] [cursor=pointer]':
+            - /url: /blog/freelancers-vs-agencies-vs-subscriptions-startup-guide
+            - generic [ref=e2055]: Blog
+            - generic [ref=e2057]: "Freelancers vs Agencies vs Subscriptions: The Role-by-Role Breakdown"
+        - listitem [ref=e2058]:
+          - 'link "Blog Subscription Talent vs Freelance Platforms: What Business Leaders Need to Know" [ref=e2059] [cursor=pointer]':
+            - /url: /blog/subscription-talent-vs-freelance-platforms-what-business-leaders-need-to-know
+            - generic [ref=e2060]: Blog
+            - generic [ref=e2062]: "Subscription Talent vs Freelance Platforms: What Business Leaders Need to Know"
+        - listitem [ref=e2063]:
+          - link "Blog Why Your Startup Needs Video Content (and How to Get It Right)" [ref=e2064] [cursor=pointer]:
+            - /url: /blog/why-your-startup-needs-video-content
+            - generic [ref=e2065]: Blog
+            - generic [ref=e2067]: Why Your Startup Needs Video Content (and How to Get It Right)
+        - listitem [ref=e2068]:
+          - 'link "Blog Subscription vs Hourly freelance: Which model saves your business more money?" [ref=e2069] [cursor=pointer]':
+            - /url: /blog/subscription-vs-hourly-freelance-cost-analysis
+            - generic [ref=e2070]: Blog
+            - generic [ref=e2072]: "Subscription vs Hourly freelance: Which model saves your business more money?"
+        - listitem [ref=e2073]:
+          - link "Blog 10 Fastest Freelance Platforms for Startups in 2026" [ref=e2074] [cursor=pointer]:
+            - /url: /blog/10-fastest-freelance-platforms-for-startups-in-2025
+            - generic [ref=e2075]: Blog
+            - generic [ref=e2077]: 10 Fastest Freelance Platforms for Startups in 2026
+        - listitem [ref=e2078]:
+          - 'link "Blog 2025 Talent Marketplace Cheat Sheet: Speed, Cost & Quality" [ref=e2079] [cursor=pointer]':
+            - /url: /blog/talent-marketplace-cheat-sheet-speed-cost-quality
+            - generic [ref=e2080]: Blog
+            - generic [ref=e2082]: "2025 Talent Marketplace Cheat Sheet: Speed, Cost & Quality"
+        - listitem [ref=e2083]:
+          - 'link "Blog Ultimate List: Talent Marketplaces For Businesses in 2026" [ref=e2084] [cursor=pointer]':
+            - /url: /blog/ultimate-list-talent-marketplaces-for-businesses-in-2025
+            - generic [ref=e2085]: Blog
+            - generic [ref=e2087]: "Ultimate List: Talent Marketplaces For Businesses in 2026"
+        - listitem [ref=e2088]:
+          - link "Blog How Freelance Marketplaces Really Work (And Who They're Best For)" [ref=e2089] [cursor=pointer]:
+            - /url: /blog/how-freelance-marketplaces-really-work-and-who-theyre-best-for
+            - generic [ref=e2090]: Blog
+            - generic [ref=e2092]: How Freelance Marketplaces Really Work (And Who They're Best For)
+        - listitem [ref=e2093]:
+          - 'link "Blog Awesomic vs Traditional Freelancers: Pricing, Speed, and Quality Compared" [ref=e2094] [cursor=pointer]':
+            - /url: /blog/awesomic-vs-traditional-freelancers-pricing-speed-and-quality-compared
+            - generic [ref=e2095]: Blog
+            - generic [ref=e2097]: "Awesomic vs Traditional Freelancers: Pricing, Speed, and Quality Compared"
+        - listitem [ref=e2098]:
+          - link "Blog Why Founders Are Leaving Freelance Marketplaces for Platform-Based Teams" [ref=e2099] [cursor=pointer]:
+            - /url: /blog/why-founders-are-leaving-freelance-marketplaces
+            - generic [ref=e2100]: Blog
+            - generic [ref=e2102]: Why Founders Are Leaving Freelance Marketplaces for Platform-Based Teams
+        - listitem [ref=e2103]:
+          - 'link "Blog The Rise of Subscription-Based Design Services: A Better Freelance Alternative?" [ref=e2104] [cursor=pointer]':
+            - /url: /blog/the-rise-of-subscription-based-design-services-a-better-freelance-alternative
+            - generic [ref=e2105]: Blog
+            - generic [ref=e2107]: "The Rise of Subscription-Based Design Services: A Better Freelance Alternative?"
+        - listitem [ref=e2108]:
+          - link "Blog 7 Fast Fiverr Alternatives CEOs Pick in 2026" [ref=e2109] [cursor=pointer]:
+            - /url: /blog/7-fast-upwork-fiverr-alternatives-ceos-pick-in-2025
+            - generic [ref=e2110]: Blog
+            - generic [ref=e2112]: 7 Fast Fiverr Alternatives CEOs Pick in 2026
+        - listitem [ref=e2113]:
+          - link "Blog 10 Upwork Alternatives for Instant Talent On-Demand" [ref=e2114] [cursor=pointer]:
+            - /url: /blog/10-upwork-alternatives-for-instant-talent-on-demand
+            - generic [ref=e2115]: Blog
+            - generic [ref=e2117]: 10 Upwork Alternatives for Instant Talent On-Demand
+        - listitem [ref=e2118]:
+          - 'link "Blog Navigate The Summer Slowdown in 2025: Guide for B2B Companies" [ref=e2119] [cursor=pointer]':
+            - /url: /blog/b2b-guide-navigate-the-summer-slowdown
+            - generic [ref=e2120]: Blog
+            - generic [ref=e2122]: "Navigate The Summer Slowdown in 2025: Guide for B2B Companies"
+        - listitem [ref=e2123]:
+          - 'link "Blog Crafting A Good Creative Brief: Unlock Business Results Faster" [ref=e2124] [cursor=pointer]':
+            - /url: /blog/crafting-a-good-creative-brief-unlock-business-results-faster
+            - generic [ref=e2125]: Blog
+            - generic [ref=e2127]: "Crafting A Good Creative Brief: Unlock Business Results Faster"
+        - listitem [ref=e2128]:
+          - link "Blog Web Design Monthly Packages vs. Full-Time Web Designers" [ref=e2129] [cursor=pointer]:
+            - /url: /blog/web-design-monthly-packages-vs-full-time-web-designers
+            - generic [ref=e2130]: Blog
+            - generic [ref=e2132]: Web Design Monthly Packages vs. Full-Time Web Designers
+        - listitem [ref=e2133]:
+          - link "Blog Why Y Combinator companies Choose Awesomic for Their Design Needs" [ref=e2134] [cursor=pointer]:
+            - /url: /blog/why-y-combinator-companies-choose-awesomic-for-their-design-needs
+            - generic [ref=e2135]: Blog
+            - generic [ref=e2137]: Why Y Combinator companies Choose Awesomic for Their Design Needs
+    - generic [ref=e2142]:
+      - generic [ref=e2143]:
+        - generic [ref=e2144]:
+          - generic [ref=e2145]: Get in touch
+          - generic [ref=e2147]: 🌎 156 2nd St, Office 416 San Francisco, CA 94105, US
+          - generic [ref=e2149]:
+            - generic [ref=e2150]:
+              - link "📞 (415) 707-2976" [ref=e2151] [cursor=pointer]:
+                - /url: tel:4157072976
+              - link "📨 help@awesomic.io" [ref=e2152] [cursor=pointer]:
+                - /url: mailto:help@awesomic.io
+            - generic [ref=e2153]:
+              - link "LinkedIn Link Image" [ref=e2154] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/awesomic/
+                - img "LinkedIn Link Image"
+              - link "Instagram Link Image" [ref=e2155] [cursor=pointer]:
+                - /url: https://www.instagram.com/awesomic/
+                - img "Instagram Link Image"
+              - link "Facebook Link Image" [ref=e2156] [cursor=pointer]:
+                - /url: https://www.facebook.com/awesomicinc
+                - img "Facebook Link Image"
+              - link "X (Twitter) Link Image" [ref=e2157] [cursor=pointer]:
+                - /url: https://twitter.com/awesomic
+                - img "X (Twitter) Link Image"
+              - link "X (Twitter) Link Image" [ref=e2158] [cursor=pointer]:
+                - /url: https://www.youtube.com/@SenseofAwe
+                - img "X (Twitter) Link Image"
+        - link "Hey AI, your official guide to Awesomic" [ref=e2159] [cursor=pointer]:
+          - /url: /llm-info
+      - generic [ref=e2161]:
+        - generic [ref=e2162]:
+          - generic [ref=e2163]: Company
+          - generic [ref=e2164]:
+            - link "Pricing" [ref=e2165] [cursor=pointer]:
+              - /url: /pricing
+            - link "Case studies" [ref=e2166] [cursor=pointer]:
+              - /url: /case-study
+            - link "About us" [ref=e2167] [cursor=pointer]:
+              - /url: /about
+            - link "Blog" [ref=e2168] [cursor=pointer]:
+              - /url: /blog
+            - link "Awesomic help center" [ref=e2169] [cursor=pointer]:
+              - /url: https://support.awesomic.com/en/
+            - link "Terms & policies" [ref=e2170] [cursor=pointer]:
+              - /url: /privacy-policy
+            - link "Apply as a talent" [ref=e2171] [cursor=pointer]:
+              - /url: /hiring
+            - link "Orbit of love" [ref=e2172] [cursor=pointer]:
+              - /url: /wall-of-love
+            - link "Video launches" [ref=e2173] [cursor=pointer]:
+              - /url: /video-launch
+            - link "Merch new" [ref=e2174] [cursor=pointer]:
+              - /url: /merch
+              - generic [ref=e2175]:
+                - generic [ref=e2176]: Merch
+                - generic [ref=e2177]: new
+        - generic [ref=e2178]:
+          - generic [ref=e2179]: Resources
+          - generic [ref=e2180]:
+            - link "Hire product designers" [ref=e2181] [cursor=pointer]:
+              - /url: https://www.awesomic.com/hire/hire-a-product-designer
+            - link "Hire UI designer" [ref=e2182] [cursor=pointer]:
+              - /url: https://www.awesomic.com/hire/hire-a-ui-designer
+            - link "Hire creative designer" [ref=e2183] [cursor=pointer]:
+              - /url: https://www.awesomic.com/hire/hire-a-creative-strategist-designer
+            - link "Hire freelance designer" [ref=e2184] [cursor=pointer]:
+              - /url: https://www.awesomic.com/hire/hire-a-freelance-designer
+            - link "Hire logo designer" [ref=e2185] [cursor=pointer]:
+              - /url: https://www.awesomic.com/hire/hire-a-logo-designer
+        - generic [ref=e2186]:
+          - generic [ref=e2187]: Services
+          - generic [ref=e2188]:
+            - link "Design services" [ref=e2189] [cursor=pointer]:
+              - /url: /?tab=design#services-block
+            - link "Video production" [ref=e2190] [cursor=pointer]:
+              - /url: /video
+            - link "Web design" [ref=e2191] [cursor=pointer]:
+              - /url: /web-design
+            - link "No-code development" [ref=e2192] [cursor=pointer]:
+              - /url: /?tab=nocode#services-block
+            - link "Marketing services" [ref=e2193] [cursor=pointer]:
+              - /url: /?tab=marketing#services-block
+            - link "Software development" [ref=e2194] [cursor=pointer]:
+              - /url: /?tab=software#services-block
+    - generic [ref=e2198]:
+      - img "footer decorative Awesomic logo" [ref=e2199]
+      - generic [ref=e2200]:
+        - img "decorative image"

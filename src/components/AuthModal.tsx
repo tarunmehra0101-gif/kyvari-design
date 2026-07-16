@@ -19,6 +19,9 @@ export default function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClos
   return (
     <div className="ky-auth-overlay" onClick={onClose}>
       <style dangerouslySetInnerHTML={{ __html: `
+        .ky-auth-overlay, .ky-auth-overlay * {
+          font-family: 'Cosmic', system-ui, -apple-system, sans-serif;
+        }
         .ky-auth-overlay {
           position: fixed;
           top: 0; left: 0; right: 0; bottom: 0;
@@ -107,7 +110,15 @@ export default function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClos
           display: flex;
           flex-direction: column;
           position: relative;
-          max-width: 450px;
+        }
+        @media(max-width: 767px) {
+          .ky-auth-modal {
+            max-width: 440px;
+            min-height: auto;
+          }
+          .ky-auth-right {
+            padding: 32px 24px;
+          }
         }
         .ky-auth-close {
           position: absolute;
@@ -154,6 +165,12 @@ export default function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClos
           line-height: 1.2;
           margin-bottom: 8px;
           min-height: 34px;
+        }
+        @media(max-width: 767px) {
+          .ky-auth-title {
+            font-size: 24px;
+            min-height: auto;
+          }
         }
         .ky-auth-sub {
           font-size: 15px;
@@ -233,36 +250,35 @@ export default function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClos
           margin-top: 8px;
           width: 100%;
           padding: 14px;
-          border-radius: 12px;
-          border: none;
-          background: #e54c2a !important;
+          border-radius: 16px;
+          border: 0.5px solid rgba(255,255,255,0.2);
+          background: #09090b !important;
           color: #fff !important;
           font-weight: 600;
-          font-size: 16px;
+          font-size: 15px;
           cursor: pointer;
           position: relative;
           overflow: hidden;
-          transition: all 0.3s;
+          transition: transform .18s ease, box-shadow .2s ease;
+          box-shadow: rgba(255,255,255,0.5) 0 0.5px 0 0 inset, rgba(117,123,133,0.4) 0 9px 14px -5px inset, rgb(44,46,52) 0 0 0 1.5px, rgba(0,0,0,0.14) 0 4px 6px 0;
           z-index: 1;
         }
         .ky-auth-submit:hover {
-          background: #d64020 !important;
           transform: translateY(-1px);
-          box-shadow: 0 8px 24px rgba(229,76,42,0.3);
         }
         .ky-auth-submit::after {
           content: "";
           position: absolute;
-          top: 0; left: -100%; width: 50%; height: 100%;
-          background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
-          transform: skewX(-20deg);
-          animation: kyAuthShine 3s infinite;
+          inset: 0;
+          background: linear-gradient(120deg, transparent 28%, rgba(255,255,255,0.28) 50%, transparent 72%);
+          transform: translateX(-120%);
+          animation: kyAuthShine 4s ease-in-out infinite;
           z-index: -1;
+          pointer-events: none;
         }
         @keyframes kyAuthShine {
-          0% { left: -100%; }
-          20% { left: 200%; }
-          100% { left: 200%; }
+          0% { transform: translateX(-120%); }
+          45%,100% { transform: translateX(120%); }
         }
         .ky-auth-terms {
           margin-top: 24px;
@@ -282,7 +298,6 @@ export default function AuthModal({ isOpen, onClose }: { isOpen: boolean; onClos
             className="ky-auth-video"
           />
           <div className="ky-auth-left-overlay">
-            <div className="ky-auth-quote-sm"><Compass size={14} /> Built around the way travel pros work</div>
             <div className="ky-auth-quote-lg">Beautiful trips, planned in seconds.</div>
             <div className="ky-auth-quote-p">Research, itinerary, and an interactive proposal — ready to share in minutes.</div>
           </div>
